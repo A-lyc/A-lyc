@@ -1,0 +1,95 @@
+menu:
+  Home: /
+  Archives: /archives
+  about: /about
+  
+theme_color:
+  primary: brown #颜色值
+  accent: blue  #强调一个颜色值
+
+notice: 欢迎来到李勇超的个人博客 #内容页顶部提示位置
+
+favicon: /images/favicon.png  #icon
+banner: /images/banner.png  #横幅
+avatar: /images/avatar.png  #头像
+rss: /atom.xml  
+
+email: a15854388082@163.com
+sns:
+  twitter:
+  facebook:
+  google_plus:
+  weibo:
+  instagram:
+  tumblr:
+  github:
+  linkedin:
+  zhihu:
+  douban:
+  qq: 821328978
+  wechat: 15854388082
+
+open_graph:
+  twitter:
+  google_plus:
+  fb_admins:
+  fb_app_id:
+site_verification:
+  google:
+  baidu:
+analytics:
+  google_site_id:
+  baidu_site_id:
+  cnzz_site_id:
+
+pages:
+- name: 标签云
+  link: /tagcloud
+- name: 设计作品
+  link: /production
+links: 
+- name: 个人简历
+  link: 
+
+since: 2020
+footer_text:  #页脚底部位置
+license: 
+
+gallery:
+  fancybox_css: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css
+  fancybox_js: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js
+  jquery_js: https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js
+  lazyload_js: https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+busuanzi:
+  site: false
+  page: false
+  busuanzi_js: http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+qrcode:
+  caption: 发送到手机
+  use: online
+donate: 
+search:
+  placeholder: 请输入关键字
+  path: /search.xml
+  use: online
+comment:
+  use: false
+  disqus_shortname:
+  gitalk_client_id:
+  gitalk_client_secret:
+  gitalk_repo:
+  gitalk_owner:
+  gitalk_sid_type:
+  livere_data_uid:
+  valine_leancloud_app_id:
+  valine_leancloud_app_key:
+  valine_placeholder:
+  valine_page_size:
+  valine_avatar:
+  valine_lang:
+  valine_guest_info:
+  valine_notify:
+  valine_verify:
+  changyan_app_id:
+  changyan_app_key:
+  changyan_sid_type:

@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: HelloLYC
+title: yonghcao Li
 subtitle: '个人博客'
-description: ''
-keywords:
-author: yongchao Li
-language: en
-timezone: ''
+description: '个人整理的数据和学习资料，以方便查看，以及应用'
+keywords: 
+author: 李勇超
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -41,7 +41,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -93,7 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: default
 theme_config:
   bio: "My awesome bio"
 
