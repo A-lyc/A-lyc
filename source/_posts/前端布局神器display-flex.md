@@ -29,6 +29,7 @@ category: 学习整理的前端
 
  > 采用Flex布局的元素，被称为Flex容器(flex container)，简称“容器”。其所有子元素自动成为容器成员，成为Flex项目(Flex item)，简称“项目”。
 
+![查入图片](前端布局神器display-flex/image.png)
 {% asset_img /image.png %}
 {% img [class names] http://778855.com.cn/wp-content/uploads/2019/11/image.png [width] [height] '"title text" "alt text"' %}
 
@@ -84,7 +85,7 @@ category: 学习整理的前端
     justify-content: start | end | flex-start | flex-end | center | left | right | space-between | space-around | space-evenly | stretch | safe | unsafe | baseline | first baseline | last baseline;
   }
 
-  flex-start（默认值）：左对齐；
+  * flex-start（默认值）：左对齐；
 {% img /前端布局神器display-flex/03.png %}
 
   * flex-end：右对齐；
@@ -166,6 +167,7 @@ category: 学习整理的前端
   .item {
       order: <整数>;
   }
+
 {% img /前端布局神器display-flex/20.png %}
 
   * 展示效果不明显，直接盗图
@@ -181,7 +183,7 @@ category: 学习整理的前端
   }
   若所有项目的flex-grow的数值都相同，则等分剩余空间
   等分剩余空间
-{% img /前端布局神器display-flex/22.png %}
+  {% img /前端布局神器display-flex/22.png %}
 
   * 若果有一个项目flex-grow为2，其余都为1，则该项目占据剩余空间是其余的2倍
 {% img /前端布局神器display-flex/22.png %}
