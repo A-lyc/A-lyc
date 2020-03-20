@@ -27,8 +27,10 @@ category: 学习整理的前端
 
 ### 二、基本概念
 
-  * 采用Flex布局的元素，被称为Flex容器(flex container)，简称“容器”。其所有子元素自动成为容器成员，成为Flex项目(Flex item)，简称“项目”。
-{% asset_img image.png %}
+ > 采用Flex布局的元素，被称为Flex容器(flex container)，简称“容器”。其所有子元素自动成为容器成员，成为Flex项目(Flex item)，简称“项目”。
+
+{% asset_img image.jpg %}
+
  *  结构示意图
   容器默认存在两根主轴：水平方向主轴(main axis)和垂直方向交叉轴(cross axis)，默认项目按主轴排列。
   • main start/main end：主轴开始位置/结束位置；
