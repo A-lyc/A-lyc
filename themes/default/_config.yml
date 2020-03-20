@@ -1,8 +1,3 @@
-menu:
-  Home: /A-lyc/
-  Archives: /archives
-  about: /about
-  
 theme_color:
   primary: brown #颜色值
   accent: blue  #强调一个颜色值
