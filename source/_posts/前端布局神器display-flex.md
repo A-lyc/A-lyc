@@ -31,7 +31,15 @@ category: 学习整理的前端
 
 ![查入图片](/前端布局神器display-flex/image.png)
 ---------------------------
+![查入图片](/image.png)
+---------------------------
+![查入图片](image.png)
+---------------------------
 {% asset_img /前端布局神器display-flex/image.png This is an example image %}
+--------------------------
+{% asset_img /image.png This is an example image %}
+--------------------------
+{% asset_img image.png This is an example image %}
 
 {% asset_img /image.png %}
 {% img [class names] http://778855.com.cn/wp-content/uploads/2019/11/image.png [width] [height] '"title text" "alt text"' %}
