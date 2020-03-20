@@ -29,7 +29,7 @@ category: 学习整理的前端
 
  > 采用Flex布局的元素，被称为Flex容器(flex container)，简称“容器”。其所有子元素自动成为容器成员，成为Flex项目(Flex item)，简称“项目”。
 
-![查入图片](前端布局神器display-flex/image.png)
+![查入图片](/前端布局神器display-flex/image.png)
 {% asset_img /image.png %}
 {% img [class names] http://778855.com.cn/wp-content/uploads/2019/11/image.png [width] [height] '"title text" "alt text"' %}
 
