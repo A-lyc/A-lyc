@@ -14,11 +14,10 @@ category: 学习整理的前端
     display: flex; //将对象作为弹性伸缩盒显示
     }
 
-## 当然，行内元素也可以使用Flex布局。
-
-* .box {
-    display: inline-flex; //将对象作为内联块级弹性伸缩盒显示
-    }
+* 当然，行内元素也可以使用Flex布局。
+  .box {
+      display: inline-flex; //将对象作为内联块级弹性伸缩盒显示
+      }
 
 * 兼容性写法
   .box {
@@ -46,9 +45,10 @@ category: 学习整理的前端
   justify-content
   align-item
   align-content
-  flex-direction属性：决定主轴的方向（即项目的排列方向）
 
-  .box {
+##  flex-direction属性：决定主轴的方向（即项目的排列方向）
+
+  * .box {
     flex-direction: row | row-reverse | column | column-reverse;
   }
 
@@ -56,9 +56,11 @@ category: 学习整理的前端
   row-reverse：主轴水平方向，起点在右端；
   column：主轴垂直方向，起点在上边沿；
   column-reserve：主轴垂直方向，起点在下边沿。
+
 ![查入图片](/02.png)
 
-* flex-wrap属性：定义换行情况 默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。
+##  flex-wrap属性：定义换行情况 默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。
+
 
   * .box{
     flex-wrap: nowrap | wrap | wrap-reverse;
@@ -233,3 +235,5 @@ category: 学习整理的前端
   .item{
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
   }
+
+内容以共享、参考、研究为目的,不存在任何商业目的。其版权属原作者所有,如有侵权,请与小编联系!情况属实本人将予以删除!
