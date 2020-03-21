@@ -6,11 +6,15 @@ tags: css3动画
 category: 学习整理的前端
 ---
 
-### transfrom
-tarnsfrom可以用来设置元素的形状改变、主要有几种：rotata（旋转（单位deg））、scale（缩放）、skew（扭曲）、teanslate（移动）、marix（矩形变阵）
+### transfrom设置元素的形状改变
+tarnsfrom可以用来设置元素的形状改变、主要有几种：
+rotata（旋转（单位deg））、
+scale（缩放）、
+skew（扭曲）、
+teanslate（移动）、
+marix（矩形变阵）
 
 使用方法
-
 .类名称{
 transfrom：rotate（60deg） scale（.2） skew（） translate（X，Y） matrix（）；
 }
@@ -19,6 +23,7 @@ transfrom：rotate（60deg） scale（.2） skew（） translate（X，Y） matr
 
 所有的变形都是基于基点，基点默认为元素的中心点。用法：transform-origin: (x, y)，其中 x 和 y 的值可以是百分比、rem 或者是 px 等等，也可以用表示位置的单词来表示例如：x 可以用left、center、right；y 可以用top、center、bottom。
 
+使用方法
 .transform-class {
     transform-origin: (left, bottom);
 }
@@ -74,17 +79,19 @@ transfrom：rotate（60deg） scale（.2） skew（） translate（X，Y） matr
     transform: skewY(10deg);
 }
 
-### transition
+### transition一种状态变平滑过渡到另外一种状态
 transition是用来设置样式的属性值是如何从从一种状态变平滑过渡到另外一种状态，它有四个属性：
 
 transition-property（变换的属性，即那种形式的变换：大小、位置、扭曲等）；
 transition-duration（变换延续的时间）；
 transition-timing-function（变换的速率）
 transition-delay（变换的延时）
+
 .transition-class {
     transition ： [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]*;
 }
-transition-property
+
+##  transition-property平滑过渡的效果
 它是用来设置哪些属性的改变会有这种平滑过渡的效果，主要有以下值：
 
 none；
@@ -98,14 +105,14 @@ visibility；
     transition-property ： none | all | [ <IDENT> ] [ ',' <IDENT> ]*;
 }
 
-### transition-duration
+### transition-duration转换过程的持续时间
 它是用来设置转换过程的持续时间，单位是s或者ms，默认值为0；
 
 .transition-duration {
     transition-duration ： <time> [, <time>]* ;
 }
 
-### transition-timing-function
+### transition-timing-function渡效果的速率
 它是来设置过渡效果的速率，它有6种形式的速率：
 
 ease：逐渐变慢（默认），等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)；
@@ -119,21 +126,20 @@ cubic-bezier：自定义贝塞尔曲线。
 }
 
 ### 贝塞尔曲线
-##  transition-delay
+##  transition-delay渡动画开始执行的时间
 它是来设置过渡动画开始执行的时间，单位是s或者ms，默认值为0；
 
 .transition-delay {
     transition-delay ： <time> [, <time>]*;
 }
 
-##  transition
-它是transition-property、transition-duration、transition-timing-function、transition-delay的简写：
+##  transition它是transition-property、transition-duration、transition-timing-function、transition-delay的简写：
 
 .transition {
     transition ：<property> <duration> <timing function> <delay>;
 }
 
-##  animation
+##  animationflash 中的逐帧动画
 animation比较类似于 flash 中的逐帧动画，逐帧动画就像电影的播放一样，表现非常细腻并且有非常大的灵活性。然而transition只是指定了开始和结束态，整个动画的过程也是由特定的函数控制。学习过 flash 的同学知道，这种逐帧动画是由关键帧组成，很多个关键帧连续的播放就组成了动画，在 CSS3 中是由属性keyframes来完成逐帧动画的。
 
 ##  @keyframes
@@ -164,55 +170,56 @@ animationName：动画名称，开发人员自己命名；
 percentage：为百分比值，可以添加多个百分比值；
 properties：样式属性名称，例如：color、left、width等等。
 
-##  animation-name
+##  animation-name设置动画的名称
 它是用来设置动画的名称，可以同时赋值多个动画名称，用,隔开：
 
 .animation {
     animation-name: none | IDENT[,none | IDENT]*;
 }
-animation-duration
+
+##  animation-duration设置动画的持续时间
 它是用来设置动画的持续时间，单位为s，默认值为0：
 
 .animation {
     animation-duration: <time>[,<time>]*;
 }
 
-##  animation-timing-function
+##  animation-timing-function和transition-timing-function类似
 和transition-timing-function类似：
 
 .animation {
     animation-timing-function:ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>)]*;
 }
 
-##  animation-delay
+##  animation-delay设置动画的开始时间
 它是来设置动画的开始时间，单位是s或者ms，默认值为0：
 
 .animation {
     animation-delay: <time>[,<time>]*;
 }
 
-##  animation-iteration-count
+##  animation-iteration-count动画循环的次数
 它是来设置动画循环的次数，默认为1，infinite为无限次数的循环：
 
 .animation {
     animation-iteration-count:infinite | <number> [, infinite | <number>]*;
 }
 
-##  animation-direction
+##  animation-direction动画播放的方向
 它是来设置动画播放的方向，默认值为normal表示向前播放，alternate代表动画播放在第偶数次向前播放，第奇数次向反方向播放：
 
 .animation {
     animation-direction: normal | alternate [, normal | alternate]*;
 }
 
-##  animation-play-state
+##  animation-play-state控制动画的播放状态
 它主要是来控制动画的播放状态：running代表播放，而paused代表停止播放，running为默认值：
 
 .animation {
     animation-play-state:running | paused [, running | paused]*;
 }
 
-##  animation
+##  animation简写
 它是animation-name、animation-duration、animation-timing-function、animation-delay、animation-iteration-count、animation-direction的简写：
 
 .animation {
