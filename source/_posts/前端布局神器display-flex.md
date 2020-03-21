@@ -28,24 +28,7 @@ category: 学习整理的前端
 ### 二、基本概念
 
  > 采用Flex布局的元素，被称为Flex容器(flex container)，简称“容器”。其所有子元素自动成为容器成员，成为Flex项目(Flex item)，简称“项目”。
-
-![查入图片](/前端布局神器display-flex/image.png)
----------------------------
 ![查入图片](/image.png)
----------------------------
-![查入图片](image.png)
----------------------------
-{% asset_img /前端布局神器display-flex/image.png This is an example image %}
---------------------------
-{% asset_img /image.png This is an example image %}
---------------------------
-{% asset_img image.png This is an example image %}
-
-{% asset_img /image.png %}
-{% img [class names] http://778855.com.cn/wp-content/uploads/2019/11/image.png [width] [height] '"title text" "alt text"' %}
-
-{% img [class names] /前端布局神器display-flex/image.png [width] [height] '"title text" "alt text"' %}
---------------------------------------
 
  *  结构示意图
   容器默认存在两根主轴：水平方向主轴(main axis)和垂直方向交叉轴(cross axis)，默认项目按主轴排列。
@@ -73,7 +56,8 @@ category: 学习整理的前端
   row-reverse：主轴水平方向，起点在右端；
   column：主轴垂直方向，起点在上边沿；
   column-reserve：主轴垂直方向，起点在下边沿。
-{% img /前端布局神器display-flex/02.png %}
+![查入图片](/02.png)
+
 * flex-wrap属性：定义换行情况 默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。
 
   * .box{
@@ -97,19 +81,19 @@ category: 学习整理的前端
   }
 
   * flex-start（默认值）：左对齐；
-{% img /前端布局神器display-flex/03.png %}
+![查入图片](/03.png)
 
   * flex-end：右对齐；
-{% img /前端布局神器display-flex/04.png %}
+![查入图片](/04.png)
 
   * center：居中；
-{% img /前端布局神器display-flex/05.png %}
+![查入图片](/05.png)
 
   * space-between：两端对齐，项目之间间隔相等；
-{% img /前端布局神器display-flex/06.png %}
+![查入图片](/06.png)
 
   * space-around：每个项目两侧的间隔相等，即项目之间的间隔比项目与边框的间隔大一倍。
-{% img /前端布局神器display-flex/07.png %}
+![查入图片](/07.png)
 
 ### align-items属性：定义在交叉轴上的对齐方式
 
@@ -120,15 +104,15 @@ category: 学习整理的前端
   }
 
   flex-start：起点对齐；
-{% img /前端布局神器display-flex/08.png %}
+![查入图片](/08.png)
   * flex-end：终点对齐；
-{% img /前端布局神器display-flex/09.png %}
+![查入图片](/09.png)
   * center：中点对齐；
-{% img /前端布局神器display-flex/10.png %}
+![查入图片](/10.png)
   * baseline：项目的第一行文字的基线对齐；
-{% img /前端布局神器display-flex/11.png %}
+![查入图片](/11.png)
   * stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
-{% img /前端布局神器display-flex/12.png %}
+![查入图片](/12.png)
 
 ### align-content属性：定义多根轴线的对齐方式
 
@@ -140,25 +124,25 @@ category: 学习整理的前端
   }
 
   * flex-start：与交叉轴的起点对齐；
-{% img /前端布局神器display-flex/13.png %}
+![查入图片](/13.png)
 
   * flex-end：与交叉轴的终点对齐；
-{% img /前端布局神器display-flex/14.png %}
+![查入图片](/14.png)
 
   * center：与交叉轴的中点对齐；
-{% img /前端布局神器display-flex/15.png %}
+![查入图片](/15.png)
 
   * space-between：与交叉轴的两端对齐，轴线之间的间隔平均分布；
-{% img /前端布局神器display-flex/16.png %}
+![查入图片](/16.png)
 
   * space-around：每根轴线两侧的间隔相等，即轴线之间的间隔比轴线与边框的间隔大一倍；
-{% img /前端布局神器display-flex/17.png %}
+![查入图片](/17.png)
 
   * stretch（默认值）：轴线占满整个交叉轴。
-{% img /前端布局神器display-flex/18.png %}
+![查入图片](/18.png)
 
   * 有意思的是，当你不给项目设置高度但是给容器设置align-content不为stretch时，同一轴线上的项目的高度将等于项目中高度最高的项目。
-{% img /前端布局神器display-flex/19.png %}
+![查入图片](/19.png)
 
 
 ### 四、项目的属性
@@ -179,7 +163,7 @@ category: 学习整理的前端
       order: <整数>;
   }
 
-{% asset_img 20.png %}
+![查入图片](/20.png)
 
   * 展示效果不明显，直接盗图
 
@@ -187,7 +171,7 @@ category: 学习整理的前端
 
   默认值为0，即如果空间有剩余，也不放大。
   可以是小数，按比例占据剩余空间。
-{% img /前端布局神器display-flex/21.png %}
+![查入图片](/21.png)
 
   * .item{
       flex-grow: <数字>;
@@ -197,9 +181,9 @@ category: 学习整理的前端
   {% img /前端布局神器display-flex/22.png %}
 
   * 若果有一个项目flex-grow为2，其余都为1，则该项目占据剩余空间是其余的2倍
-{% img /前端布局神器display-flex/22.png %}
+![查入图片](/22.png)
 
-flex-shrink属性：定义项目的缩小比例
+* flex-shrink属性：定义项目的缩小比例
 
   * 默认值都为1，即如果空间不足将等比例缩小。
   如果有一个项目的值为0，其他项目为1，当空间不足时，该项目不缩小。
@@ -209,16 +193,16 @@ flex-shrink属性：定义项目的缩小比例
       flex-shrink: <非负整数>;
   }
   如果一个项目设置flex-shrink为0；而其他项目都为1，则空间不足时，该项目不缩小。
-{% img /前端布局神器display-flex/23.png %}
+![查入图片](/23.png)
 
   * 如果所有项目都为0，则当空间不足时，项目撑破容器而溢出。
-{% img /前端布局神器display-flex/24.png %}
+![查入图片](/24.png)
 
   * 如果设置项目的flex-shrink不为0的非负数效果同设置为1。
-{% img /前端布局神器display-flex/25.png %}
+![查入图片](/25.png)
 
   * flex-basis属性：定义在分配多余空间之前，项目占据的主轴空间。
-{% img /前端布局神器display-flex/26.png %}
+![查入图片](/26.png)
 
 
 ### 默认值为auto，浏览器根据此属性检查主轴是否有多余空间。
@@ -228,10 +212,10 @@ flex-shrink属性：定义项目的缩小比例
   }
 
   注意设置的flex-basis是分配多余空间之前项目占据的主轴空间，如果空间不足则默认情况下该项目也会缩小。
-{% img /前端布局神器display-flex/27.png %}
+![查入图片](/27.png)
 
 * 设置flex-basis为350px，但空间充足
-{% img /前端布局神器display-flex/28.png %}
+![查入图片](/28.png)
 
   * 空间不足，项目缩小，小于设定值
   flex属性是flex-grow，flex-shrink和flex-basis的简写
