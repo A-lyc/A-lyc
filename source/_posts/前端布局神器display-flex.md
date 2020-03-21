@@ -179,7 +179,7 @@ category: 学习整理的前端
       order: <整数>;
   }
 
-{% img /前端布局神器display-flex/20.png %}
+{% asset_img 20.png %}
 
   * 展示效果不明显，直接盗图
 
