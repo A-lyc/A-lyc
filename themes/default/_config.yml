@@ -21,7 +21,7 @@ sns:
   linkedin:
   zhihu:
   douban:
-  qq: 821328978
+  qq: tencent://message/?uin=821328978&Menu=yes
   wechat: 15854388082
 
 open_graph:
@@ -43,7 +43,7 @@ pages:
 - name: 设计作品
   link: /production
 links: 
-- name: 个人简历
+- name: 
   link: 
 
 since: 2020
@@ -63,10 +63,12 @@ qrcode:
   caption: 发送到手机
   use: online
 donate: 
+- name: 微信
+  link: /A-lyc/images/wechat.jpg
 search:
   placeholder: 请输入关键字
   path: /search.xml
-  use: online
+  use: plugin
 comment:
   use: false
   disqus_shortname:

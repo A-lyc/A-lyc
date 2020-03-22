@@ -924,3 +924,15 @@ img.avatar-animation:hover {
     transition: none !important;
   }
 }
+
+.lyc-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lyc-width-12{
+  width: 100% !important;
+}
+.lyc-width-5{
+  width: 48% !important;
+}

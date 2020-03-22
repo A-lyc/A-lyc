@@ -8,6 +8,12 @@ hexo server
 hexo new '文章名'
 ---------------
 
+### 清理缓存
+``
+hexo clean
+清除缓存文件 (db.json) 和已生成的静态文件 (public)
+------------
+
 ###  文章分类需要添加标签
 ``
 --category: 分类标签
@@ -27,6 +33,9 @@ hexo new '文章名'
 
 ### 创建文件夹
 ``
-hexo new page --path about/index "个人简历"
+hexo new page --path tagcloud/index 标签云
 -----------------------
 
+### 去除表单内格式的html
+``
+进环境的时候注意看这个（去除表单内格式的html），会出现很多无用代码
