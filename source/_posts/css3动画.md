@@ -2,7 +2,7 @@
 uuid: 5af8db2d-f6c8-ae8c-c397-5d833fd3ec13
 title: 'css3动画'
 date: 2020-03-21 19:09:05
-tags: css3效果
+tags: css效果
 category: 学习整理的前端
 ---
 
@@ -166,15 +166,21 @@ animation比较类似于 flash 中的逐帧动画，逐帧动画就像电影的�
         properties: value;
     }
 }
-animationName：动画名称，开发人员自己命名；
+
 percentage：为百分比值，可以添加多个百分比值；
 properties：样式属性名称，例如：color、left、width等等。
 
-##  animation-name设置动画的名称
-它是用来设置动画的名称，可以同时赋值多个动画名称，用,隔开：
+##  animation设置动画的名称
+它是用来设置动画的名称，可以同时赋值多个动画名称用空格隔开：
+
+none：不改变默认行为。    
+forwards ：当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。    
+backwards：在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。    
+both：向前和向后填充模式都被应用。  
 
 .animation {
-    animation-name: none | IDENT[,none | IDENT]*;
+    animation:name| none | IDENT[,none | IDENT]*;
+    例子:animation: name .5s forwards;
 }
 
 ##  animation-duration设置动画的持续时间
