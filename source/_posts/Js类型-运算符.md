@@ -2,9 +2,7 @@
 uuid: 1efce2c2-c8fc-1b64-7c47-15eff870de83
 title: 'Js类型-运算符'
 date: 2020-03-21 19:13:35
-tags: 
-- js
-- 运算符
+tags: jsES5-js单词jsES5-js单词
 category: 学习整理的前端
 ---
 Js类型： 

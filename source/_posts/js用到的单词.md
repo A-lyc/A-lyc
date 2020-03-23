@@ -2,7 +2,7 @@
 uuid: cf745db9-f49e-7928-e983-ec9527f46ebd
 title: js用到的单词
 date: 2020-03-22 21:29:38
-tags: jsES5
+tags: jsES5-js单词
 category: 学习整理的前端
 ---
 document-->文档	element-->元素	node-->节点	

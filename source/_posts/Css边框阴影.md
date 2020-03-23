@@ -2,9 +2,7 @@
 uuid: 63b51f83-06f5-560c-5da8-88cfff2f626f
 title: 'Css边框阴影'
 date: 2020-03-21
-tags: 
-- css阴影
-- 阴影
+tags: css效果
 category: 学习整理的前端
 ---
 ####  box-shadow
