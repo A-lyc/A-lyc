@@ -69,9 +69,9 @@ $0  鼠标在的位置
     }
 ```
 
-####  第二步: 添加配置，让vscode允许自定义的代码片段提示出来
-### 文件 --> 首选项 --> 设置 ---> 添加这2项
-##  // Specifies the location of snippets in the suggestion widget
+#  第二步: 添加配置，让vscode允许自定义的代码片段提示出来
+#  文件 --> 首选项 --> 设置 ---> 添加这2项
+#  // Specifies the location of snippets in the suggestion widget
 # "editor.snippetSuggestions": "top",
-##  // Controls whether format on paste is on or off
+#  // Controls whether format on paste is on or off
 # "editor.formatOnPaste": true
