@@ -6,3 +6,4 @@ category:
 ---
 显示图片
 项目网址
+{% link text url [https://www.haixindichan.com/] [title] %}
