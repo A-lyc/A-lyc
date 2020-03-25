@@ -10,6 +10,7 @@ npm i --save jason-webmap
 安装，使用秦哥脚手架自动安装的
 然后建立一个wenmap的文件，
 Js：
+```
 import webmap from 'jason-webmap';
 import '~jason-webmap/dist/jason-webmap.css';
 // or// 推荐，可通过变量定制
@@ -20,8 +21,9 @@ webmap({
   // 跟随者 map 一同移动的内容选择器  最好市body市第一父级，之后有个自己名称叫做comp-root类名
   moveSelector: '.comp-root'
 })
-
+```
 Eis
+```
 <aside class="jason-map">
   <div class="jason-map-content">
     <h3 class="jason-map-heading">网站导航</h3>
@@ -55,11 +57,13 @@ Eis
     </div>
   </div>
 </aside>
+```
 
-
+```
 Css：
 @import "../../assets/styles/utils";
 @import '~jason-webmap/src/style.scss';
+```
 需要导入css
 定制的时候可以使用强制执行来做
 
