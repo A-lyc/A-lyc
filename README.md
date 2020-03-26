@@ -39,7 +39,9 @@ hexo new page --path tagcloud/index 标签云
 ### 去除表单内格式的html
 ``
 进环境的时候注意看这个（去除表单内格式的html），会出现很多无用代码
+---------
 
-
-### npm 卸载 
+### npm 卸载
+``
 npm uninstall 插件名
+--------------
