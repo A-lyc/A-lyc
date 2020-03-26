@@ -17,7 +17,7 @@ sns:
   weibo:
   instagram:
   tumblr:
-  github: https://github.com/A-lyc
+  github: 
   linkedin:
   zhihu:
   douban:
@@ -60,8 +60,8 @@ busuanzi:
   page: false
   busuanzi_js: http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 qrcode:
-  caption: 发送到手机
-  use: plugin
+  caption: 
+  use: 
 donate: 
 - name: 微信
   link: /A-lyc/images/wechat.jpg
