@@ -3,7 +3,7 @@ uuid: f15e10b4-7b04-ff6c-b1a1-a6b987910e6a
 title: vsCoods快捷创建模板
 date: 2020-03-24 18:42:04
 tags: vue
-category: vue知识点
+category: vue
 ---
 > 在一个Vue的项目中，反复的新建.vue文件是一个必不可少的工序。本着科技让人偷懒的原则，我们可以利用VSCode的snippet在.vue文件创建后能轻松地生成一套模板。
 
@@ -69,9 +69,9 @@ $0  鼠标在的位置
     }
 ```
 
-#  第二步: 添加配置，让vscode允许自定义的代码片段提示出来
-#  文件 --> 首选项 --> 设置 ---> 添加这2项
-#  // Specifies the location of snippets in the suggestion widget
-# "editor.snippetSuggestions": "top",
-#  // Controls whether format on paste is on or off
-# "editor.formatOnPaste": true
+第二步: 添加配置，让vscode允许自定义的代码片段提示出来
+文件 --> 首选项 --> 设置 ---> 添加这2项
+// Specifies the location of snippets in the suggestion widget
+"editor.snippetSuggestions": "top",
+// Controls whether format on paste is on or off
+"editor.formatOnPaste": true

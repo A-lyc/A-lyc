@@ -9,6 +9,7 @@ category: 学习整理的前端
 npm i --save jason-webmap
 安装，使用秦哥脚手架自动安装的
 然后建立一个wenmap的文件，
+
 Js：
 ```
 import webmap from 'jason-webmap';
@@ -21,6 +22,14 @@ webmap({
   // 跟随者 map 一同移动的内容选择器  最好市body市第一父级，之后有个自己名称叫做comp-root类名
   moveSelector: '.comp-root'
 })
+```
+
+Html
+```
+<body>
+<div clss=’'.comp-root'’></div>
+<aside class="jason-map"></aside>
+</body>
 ```
 Eis
 ```
@@ -59,8 +68,8 @@ Eis
 </aside>
 ```
 
-```
 Css：
+```
 @import "../../assets/styles/utils";
 @import '~jason-webmap/src/style.scss';
 ```
@@ -68,4 +77,6 @@ Css：
 定制的时候可以使用强制执行来做
 
 语法引入：
-<%= require('../../components/webmap/index.ejs')() %>
+```
+<%= require('../../components/webmap/index.ejs')() %>//创建一个webmap组件文件进行引入，
+```
