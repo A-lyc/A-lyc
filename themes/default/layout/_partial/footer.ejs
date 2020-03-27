@@ -37,9 +37,10 @@
       <a href="<%- theme.sns.wechat %>" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe6e1;</i></a>
     <% } %>
   </div>
-  <div class="mdui-p-y-1 mdui-text-center">
-    Copyright &copy; <% if (theme.since) { %><%= theme.since %> - <% } %><%- date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a><% if (theme.footer_text) { %><%- theme.footer_text %><% } %>
+  <div class="mdui-p-y-1 mdui-text-center" style="line-height: 1.5">
+    Copyright &copy; <% if (theme.since) { %><%= theme.since %> - <% } %><%- date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a><br>
+    <% if (theme.footer_text) { %><%- theme.footer_text %><% } %>
     <% if (theme.busuanzi.site) { %><br>
       <span id="busuanzi_container_site_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_site_pv"></span></span> &nbsp;&nbsp;
       <span id="busuanzi_container_site_uv" style="display: none;"><i class="iconfont">&#xe601;</i> <span id="busuanzi_value_site_uv"></span></span>

@@ -2,7 +2,7 @@ theme_color:
   primary: brown #颜色值
   accent: blue  #强调一个颜色值
 
-notice: 欢迎来到李勇超的个人博客 #内容页顶部提示位置
+notice: 欢迎来到李勇超的个人博客，联系方式：15854388082 #内容页顶部提示位置
 
 favicon: /images/favicon.png  #icon
 banner: /images/banner.png  #横幅
@@ -17,7 +17,7 @@ sns:
   weibo:
   instagram:
   tumblr:
-  github: 
+  github: https://github.com/A-lyc
   linkedin:
   zhihu:
   douban:
@@ -43,11 +43,11 @@ pages:
 - name: 设计作品
   link: /production
 links: 
-- name: 
-  link: 
+- name: 图片版简历
+  link: /images/resume.jpg
 
 since: 2020
-footer_text:  #页脚底部位置
+footer_text:  个人博客，如有侵权及时联系，随时保持下架，联系方式：821328978@qq.com #页脚底部位置
 license: 
 
 gallery:
