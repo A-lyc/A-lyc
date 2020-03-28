@@ -15,3 +15,9 @@ category: vue
 > import {} from ''导入
 
 > :before  在父元素上面   :after   在父级元素底下
+
+>处理异步操作的时候使用的
+  ```
+  new Promise((resolve,reject)=>{}).then(()=>{成功}).catch(()=>{失败})
+  ```
+固定写法

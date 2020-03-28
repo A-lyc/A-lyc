@@ -44,8 +44,14 @@ pages:
   link: /production
 links: 
 - name: 图片版简历
-  link: /images/resume.jpg
-
+  link: /A-lyc/images/resume.jpg
+- name: vue主题XMind ZEN
+  link: /A-lyc/images/vue主题知识.xmind
+- name: vue总结XMind ZEN
+  link: /A-lyc/images/总结Vue.xmind
+- name: vue插件XMind ZEN
+  link: /A-lyc/images/vue插件封装使用方法.xmind
+  
 since: 2020
 footer_text:  个人博客，如有侵权及时联系，随时保持下架，联系方式：821328978@qq.com #页脚底部位置
 license: 
