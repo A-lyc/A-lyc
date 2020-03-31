@@ -2,8 +2,8 @@
 uuid: 58664c45-bcd5-e8d1-ab2d-d66ce0118816
 title: ES6的简单语法
 date: 2020-03-25 14:59:58
-tags: 
-category: vue
+tags: ES6
+category: ES6
 ---
 
 > ES6 简单的几个语法 const：常量   let：变量  具有闭包局部作用域
@@ -21,3 +21,18 @@ category: vue
   new Promise((resolve,reject)=>{}).then(()=>{成功}).catch(()=>{失败})
   ```
 固定写法
+
+> ES6为Array增加了find()，findIndex函数。
+* find()函数用来查找目标元素，找到就返回该元素，找不到返回undefined。
+  findIndex()函数也是查找目标元素，找到就返回元素的位置，找不到就返回-1。
+  他们的都是一个查找回调函数。
+
+```
+[1, 2, 3, 4].find((value, index, arr) => {
+})
+```
+
+* 查找函数有三个参数。
+  value：每一次迭代查找的数组元素。
+  index：每一次迭代查找的数组元素索引。
+  arr：被查找的数组。
