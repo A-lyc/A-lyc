@@ -5,7 +5,7 @@ date: 2020-03-23 09:50:56
 tags: 前端脚手架
 category: 前端模块化脚手架
 ---
-给input一个相对定位之后使用valid属性，同级别的p标签
+给input一个相对定位之后使用valid属性，同级别的p标签,注意在html上添加 required
 
 ```
 <div class="from-content" id="from">

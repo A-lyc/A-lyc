@@ -10,7 +10,7 @@ npm i --save jason-webmap
 安装，使用秦哥脚手架自动安装的
 然后建立一个wenmap的文件，
 
-Js：
+webmap-Js：
 ```
 import webmap from 'jason-webmap';
 import '~jason-webmap/dist/jason-webmap.css';
@@ -18,20 +18,13 @@ import '~jason-webmap/dist/jason-webmap.css';
 import '~jason-webmap/src/style.scss';
 webmap({
   // 激活 map 的按钮选择器  选择器是根据a标签的open-map来的，可以写成a[open-map=”webmap”]
-  openSelector: 'a.open-map',
+  openSelector: 'a[open-map=webmap]',
   // 跟随者 map 一同移动的内容选择器  最好市body市第一父级，之后有个自己名称叫做comp-root类名
   moveSelector: '.comp-root'
 })
 ```
 
-Html
-```
-<body>
-<div clss=’'.comp-root'’></div>
-<aside class="jason-map"></aside>
-</body>
-```
-Eis
+webmap-ejs
 ```
 <aside class="jason-map">
   <div class="jason-map-content">
@@ -68,7 +61,7 @@ Eis
 </aside>
 ```
 
-Css：
+webmap - Css：
 ```
 @import "../../assets/styles/utils";
 @import '~jason-webmap/src/style.scss';
@@ -76,7 +69,24 @@ Css：
 需要导入css
 定制的时候可以使用强制执行来做
 
+footer组件-ejs
+```
+  <a href="#" open-map="webmap">
+    DESIGNED BY LTD
+  </a>
+```
+
+
+首页以及其他页面 - ejs  和内容为兄弟级别
+```
+<body>
+ <main class="comp-root"></main>
+<%= require('../../components/webmap/index.ejs')() %>
+</body>
+```
+
 语法引入：
 ```
 <%= require('../../components/webmap/index.ejs')() %>//创建一个webmap组件文件进行引入，
+
 ```

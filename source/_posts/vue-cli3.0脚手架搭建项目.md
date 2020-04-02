@@ -56,6 +56,11 @@ module.exports = {
         'views': '@/views',
       }
     }
-  }
+  },
+  //如有跨域问题：见vue3-0解决跨域问题
 }
 ```
+安装axios，异步：详情见：vue的axios封装好的
+需要安装 npm i axios --save
+
+待续，待更新
