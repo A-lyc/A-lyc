@@ -60,3 +60,8 @@ slot name=”left“单个替换
 
 :img加载完成
   @load=“方法”
+
+数据传输给对象需要新加建给对象
+this.res.data = res//data是对象中新加的值
+
+数据传输给数组的时候需要push进去，或者用数组其他方法
