@@ -5,7 +5,7 @@ date: 2020-03-27 21:14:50
 tags: vue
 category: vue
 ---
-vuex和全局组件传递的使用
+vuex和全局组件传递的使用，传给vuex的时候是一个确切的值，页面通过this.$store.dispatch("",{})的属性给Action值进行整合，Action之后通过commit属性给mutations值，之后mutations直接把值给state
 ##  vuex
 * 向vuex中传递参数
 * 执行一个动作或者一个事件如：页面加载，点击。处于活跃状态等生命周期
@@ -17,7 +17,47 @@ vuex和全局组件传递的使用
   //划分模块，Module
 
 
-* 使用commit传输给VUEX中的mutations
+* 页面使用使用this.$store.dispatch传输给VUEX中的actions
+
+```
+/*
+*引号内是发出的事件，vuex actions中接收，
+*this.index是data或者其他地方的参数。可以是任何形式的，如{}，[]
+*/
+this.$store.dispatch('addClick',this.index)
+
+//Promise
+this.$store.dispatch('addClick',this.index).then(res => {
+
+  //打印的是在vuex中的actions里面的resolve()  id：01
+  console.log(res)
+})
+```
+
+* actions接收页面传来的数据
+
+```
+//传入的方法，之后给到mutations
+  actions: {
+    //事件名称接收addClick
+    addClick(context, payLoad) {
+
+      //返回的是上一级调用Promise的res（使用dispatch传输给VUEX中的actions）id：01
+      resolve('当前数量+1')
+    },
+  },
+```
+
+* actions使用commit传输给VUEX中的mutations
+
+```
+//接收到参数通过commit给mutations  getTabControl(){}
+actions{
+   context.commit('getTabControl',payLoad)
+}
+```
+
+* 也可以在页面直接传递
 
 ```
 this.$store.commit('getTabControl',this.index)
@@ -27,22 +67,57 @@ this.index是data或者其他地方的参数。可以是任何形式的，如{}�
 */
 ```
 
-
-* 使用dispatch传输给VUEX中的actions
+* mutations接收actions和页面传来的参数
 
 ```
+//传入的方法最好是是单一的 getTabControl
+mutations: {
+  //需要通过state.tabcontrol赋值给state
+    getTabControl(state, payLoad){
+      state.tabcontrol = payLoad
+    }
+  },
+```
+
+* vuex页面上的应用
+
+```
+//导入vuex会找到Actions内定义的方法进行传入
 /*
-*引号内是发出的事件，vuex actions中接收，
-*this.index是data或者其他地方的参数。可以是任何形式的，如{}，[]
+*mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性
+*mapActions 辅助函数仅仅是将 store 中的 actions 映射到methods ......
 */
-this.$store.dispatch('addClick',this.index)
 
-//这个可以传输一个Promise
-this.$store.dispatch('addClick',this.index).then(res => {
+import {mapActions} from 'vuex'
 
-  //打印的是在vuex中的actions里面的resolve()
-  console.log(res)
-})
+//使用vuex
+  methods : {
+    //数组方式使用，还可以对象方式等
+    ...mapActions([
+      //tabcontrol是Actions内的一个方法，进行导入的是在计算属性内，
+          'tabcontrol'
+      ]),
+  },
+
+//调用vuex的数据，由于此步骤的上一步进行了导入，所以这里可以直接操作
+this.tabcontrol//可以直接达到
+```
+
+async/await
+
+```
+// 假设 getData() 和 getOtherData() 返回的是 Promise
+
+actions: {
+  async actionA ({ commit }) {
+    commit('gotData', await getData())
+  },
+  async actionB ({ dispatch, commit }) {
+    await dispatch('actionA') // 等待 actionA 完成后执行下面的
+    commit('gotOtherData', await getOtherData())
+  }
+}
+
 ```
 
 
@@ -80,23 +155,7 @@ mutations: {
 ```
 
 
-* vuex应用
 
-```
-//导入vuex
-import {mapActions} from 'vuex'
-
-//使用vuex
-  computed: {
-    //数组方式使用，还可以对象方式等
-    ...mapActions([
-          'tabcontrol'
-      ]),
-  },
-
-//调用vuex的数据
-this.$store.state.tabcontrol
-```
 
 ##  $bus  自定义后缀
 
