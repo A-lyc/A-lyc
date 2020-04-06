@@ -13,11 +13,12 @@ vuex和全局组件传递的使用，传给vuex的时候是一个确切的值，
   //保存状态的：state
   /保存方法的：mutations：//单独页面，统一导入
   //计算属性：Getters；//单独页面，统一导入
-  //处理异步的操作：Action；//单独页面，统一导入
+  //处理异步的操作：Action；//单独页面，统一导入-Action 提交的是 mutation，而不是直接变更状态-
   //划分模块，Module
 
 
-* 页面使用使用this.$store.dispatch传输给VUEX中的actions
+* 页面使用使用this.$store.dispatch传输给VUEX中的actions-----1：Action 提交的是 mutation，而不是直接变更状态；2：Action 可以包含任意异步操作。
+Action返回值可以是一个Promise通过.then可以调用返回值-----id="0"
 
 ```
 /*
@@ -26,7 +27,7 @@ vuex和全局组件传递的使用，传给vuex的时候是一个确切的值，
 */
 this.$store.dispatch('addClick',this.index)
 
-//Promise
+//Promise   -----id="0"
 this.$store.dispatch('addClick',this.index).then(res => {
 
   //打印的是在vuex中的actions里面的resolve()  id：01
@@ -35,11 +36,12 @@ this.$store.dispatch('addClick',this.index).then(res => {
 ```
 
 * actions接收页面传来的数据
+你可以调用 context.commit 提交一个 mutation，或者通过 context.state 和 context.getters 来获取 state 和 getters
 
 ```
 //传入的方法，之后给到mutations
   actions: {
-    //事件名称接收addClick
+    //事件名称接收addClick  //第一个参数是固定的，第二个payLoad传来的参数
     addClick(context, payLoad) {
 
       //返回的是上一级调用Promise的res（使用dispatch传输给VUEX中的actions）id：01
@@ -63,7 +65,8 @@ actions{
 this.$store.commit('getTabControl',this.index)
 /*
 *引号内是发出的事件，vuex mutations中接收，
-this.index是data或者其他地方的参数。可以是任何形式的，如{}，[]
+*this.index是data或者其他地方的参数。可以是任何形式的，如{}，[]
+*payLoad接收，可以其他名字，但不建议
 */
 ```
 
@@ -73,6 +76,12 @@ this.index是data或者其他地方的参数。可以是任何形式的，如{}�
 //传入的方法最好是是单一的 getTabControl
 mutations: {
   //需要通过state.tabcontrol赋值给state
+  /*
+  *参数：
+  *payLoad--传输来的值
+  *state----state系统定义的第一个参数
+  *
+  */
     getTabControl(state, payLoad){
       state.tabcontrol = payLoad
     }
