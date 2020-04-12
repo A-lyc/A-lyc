@@ -82,7 +82,7 @@ export default {
 }
 ```
 
-+ get请求：
++ get请求，不传递参数
 
 ```
 //定义的变量和url
@@ -93,12 +93,15 @@ $H.get('/index_category/data').then((res) =>{
 				})
 ```
 
-+ 使用最好使用async在异步操作await同步执行
++ 使用1:请求的时候传递参数过去post和get
 ```
-let R = await $H.get('/index_category/data')
+let R = await $H.get('/index_category/data',{name:this.name,age:this.age})
+
+//给/index_category/data传输参数，post请求传输的是name，age，传过去的参数返回是一个Promise可以使用.then接收
+this.$H.post('/index_category/data',{name:this.name,age:this.age}).then(res => {})
 ```
 
-+ 使用：需要引入之后自定义一个名称，
++ 使用2:需要引入之后自定义一个名称，
 
 ```
 $H.request({
