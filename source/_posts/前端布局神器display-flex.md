@@ -1,12 +1,12 @@
 ---
 uuid: 61a211e7-ab9a-f5f1-7513-378d291cd7d8
-title: '前端布局神器display:flex'
+title: 前端布局神器display:flex
 date: 2020-03-20 20:13:53
 tags: Flex布局
 category: 学习整理的前端
 ---
 
-### 一、Flex布局是什么？
+### 一、Flex不仅可以水平方向布局也可以垂直方向布局
 
 * Flex是Flexible Box的缩写，翻译成中文就是“弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。
 * .box{
@@ -46,7 +46,7 @@ category: 学习整理的前端
   align-item
   align-content
 
-##  flex-direction属性：决定主轴的方向（即项目的排列方向）
+###  flex-direction属性：决定主轴的方向（即项目的排列方向）
 
   * .box {
     flex-direction: row | row-reverse | column | column-reverse;
