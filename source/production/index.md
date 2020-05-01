@@ -42,6 +42,22 @@ category:
 >   #####  网址：http://www.sdguoyun.com/
 
 ---------------
+>   ####  {% link 尼欧迪克 http://www.neotechnik-china.com/ [尼欧迪克] %}
+>   #####  网址：http://www.neotechnik-china.com/ 
+
+---------------
+>   ####  {% link 吉宝生物 http://keppelbio.com/ [吉宝生物] %}
+>   #####  网址：http://keppelbio.com/
+
+---------------
+>   ####  {% link 兴和石墨 http://www.qdxhsm.com/ [吉宝生物] %}
+>   #####  网址：http://www.qdxhsm.com/
+
+---------------
+>   ####  {% link 山东万得福 http://www.chinaprotein.com.cn/ [山东万得福] %}
+>   #####  网址：http://www.chinaprotein.com.cn/
+
+---------------
 >   ####  {% link 正爱（未上线） http://zhengai.leadto.cn/ [正爱] %}
 >   #####  网址：http://zhengai.leadto.cn/
 
@@ -49,4 +65,4 @@ category:
 >   ####  {% link 瑞林假发（未上线） http://ruilin.leadto.cn/ [瑞林假发（未上线）] %}
 >   #####  网址：http://ruilin.leadto.cn/
 
----------------
+--------------
