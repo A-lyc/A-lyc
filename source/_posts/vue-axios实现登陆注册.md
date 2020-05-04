@@ -48,7 +48,7 @@ window.sessionStorage.clear => 清除
         if (!e) return;
         // 提交表单
         this.axios
-          .post("url", this.form)//传入的用户名和密码
+          .post("url", this.form)//post请求传入的用户名和信息给后端验证之后返回数据
           .then(res => {
             //请求成功打印的数据
             console.log(res);

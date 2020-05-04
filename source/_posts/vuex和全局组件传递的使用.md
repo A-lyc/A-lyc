@@ -5,6 +5,8 @@ date: 2020-03-27 21:14:50
 tags: vue
 category: vue
 ---
+使用vuex中的state需要在组件中导入，计算属性中使用...mapState({name: state => state.XX.XXX.XXX})，使用方法的时候可以直接this.$store.commit("logout");就是调用mutations上的方法
+
 vuex和全局组件传递的使用，传给vuex的时候是一个确切的值，页面通过this.$store.dispatch("",{})的属性给Action值进行整合，Action之后通过commit属性给mutations值，之后mutations直接把值给state
 ##  vuex
 * 向vuex中传递参数
