@@ -230,3 +230,17 @@ methods: {
 ```
 
 它用的是try/catch 来捕获异常，把await 放到 try 中进行执行，如有异常，就使用catch 进行处理。
+```
+// async/await
+async function show(){
+    let a = 12;
+    let b = 4;
+    try{
+        let data = await $.ajax({url:'data/1.txt',dataType:'json'});
+        console.log("async-try",data);
+    }catch(e){
+        console.log("async-catch",e)
+    }
+}
+show();
+```
