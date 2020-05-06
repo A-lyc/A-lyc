@@ -20,6 +20,7 @@ export function request(config) {
   // 2.axios的拦截器
   // 2.1.请求拦截的作用
   instance.interceptors.request.use(config => {
+    console.log("请求拦截器")
     return config
   },err => {
     return err.data
@@ -27,6 +28,7 @@ export function request(config) {
 
   // 2.2.响应拦截
   instance.interceptors.response.use(res => {
+    console.log("响应拦截")
     return res.data
   },err => {
     return err.data
@@ -44,14 +46,19 @@ import {request} from "./request";
 
 export function getHomeMultidata(){
   return request({
-    url: 'XXX'
+    url: 'XXX',
+    method:'post',
+    data: {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
   })
 }
 
+// get请求传值
 export function getHomeGoods(type,page){
   return request({
-    url: 'XXX',
-
+    url: 'XXX',//`XXX>?data=${data}&page=${page}`
     //传到后端一个type和page获取相应的数据
     params:{
       type,
@@ -78,6 +85,8 @@ methods: {
   getHomeMultidata() {
     getHomeMultidata().then(res => {
       console.log(res);
+    }).catch(() => {
+      console.log('请求失败')
     });
   },
  },
@@ -88,33 +97,38 @@ methods: {
  }
 
 ```
-可以封装一个class类来储存数据
+
+### 可以封装一个class类来储存数据
 ```
 export class Goods{
-  constructor(itemInfo){
-    this.title = itemInfo.title
+  constructor(itemInfo){//异步请求之后传来的值
+    this.title = itemInfo.title//this指向当前实例对象
   }
 }
 ```
 使用：在总的数据请求中把数据给到data中的Goods
 ```
- this.Goods = new Goods(res.result.itemInfo)
+ this.Goods = new Goods(res.result.itemInfo}//把异步请求到的数据传输给Goods，之后Goods接收之后处理接收的信息
+ // data中的this.Goods进行接收
 ```
 
 常识：
 
 导入main.js：import axios from 'axios'
 使用：
+导出：export class Goods{}//导出一个类名为Goods的
 ```
 axios({
 url:'',
 method:''//修改请求方式（个get等）
 params:{//针对get请求参数拼接
-type:"pop",
-page:1
+  type:"pop",
+  page:1
 }
 }).then( res => {
 console.log(res)
+}).catch(()=>{
+  console.log('失败')
 })
 ```
 params：{}  get参数拼接的
@@ -126,7 +140,7 @@ axis请求方式
 创建实例的axios
 ```
 	const app = axios.create({
- 公用的如：baseUrl：“”
+ 公用的如：baseUrl：''
   })
 	使用：
 app({
