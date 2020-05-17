@@ -8,7 +8,7 @@ category: vue
 如何在vue中使用图表，是图表不是简单的图标
 首先导入使用webpack，node安装
 + 通过 npm 获取 echarts，npm install echarts --save，详见“在 webpack 中使用 echarts”
-
++ 通过 vue 获取 vue add echarts，查询echarts的github
 绘制一个简单的图表
 引入图表
 import echarts from 'echarts'
