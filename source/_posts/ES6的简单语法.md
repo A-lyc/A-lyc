@@ -37,6 +37,13 @@ category: ES6
   index：每一次迭代查找的数组元素索引。
   arr：被查找的数组。
 
+* for(let i in this.arr){
+    this.arr[i]
+  }
+  for(let book of this.books){
+    books.XXX
+  }
+
 ### 我们可以使用 JSON.parse() 方法将数据转换为 JavaScript 对象  接收的JSON转成JavaScript
 
 ### 我们可以使用 JSON.stringify() 方法将 JavaScript 对象转换为字符串。 JavaScript转成JSON格式传给服务器

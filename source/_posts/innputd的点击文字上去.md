@@ -1,6 +1,6 @@
 ---
 uuid: 5cd0bb34-2e6a-1994-fdaf-8928af425a25
-title: innputd的点击文字上去和汉堡按钮
+title: inputd的点击文字上去和汉堡按钮
 date: 2020-03-23 09:50:56
 tags: 前端脚手架
 category: 前端模块化脚手架
