@@ -5,6 +5,12 @@ date: 2020-06-24 09:49:59
 tags: nuxt vue
 category: nuxt vue
 ---
+安装方法：npm install -d vue-quill-editor quill vue-cropper
+官网：
+vue-quill-editor：https://quilljs.com/ 
+git：https://github.com/surmon-china/vue-quill-editor
+vue-cropper：https://github.com/xyxiao001/vue-cropper
+
 nuxt制作服务器端渲染造成的找不到window和document的问题，是由于有些插件是获取window和document的，在vue中是没有window和document的，所以官方给出了解决方案，
 解决方案1：（局部组件使用 使用插件的时候不要使用，）
 ```js
