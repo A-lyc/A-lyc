@@ -189,3 +189,9 @@ export const mutations = {
 ```
 ##  用法
 和vue没有什么区别 安装脚手架的时候可以直接安装element，可直接使用
+
+
+##  获取win
+if (process.browser) {
+  //逻辑
+}
