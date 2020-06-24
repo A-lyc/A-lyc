@@ -36,6 +36,7 @@ Vue.use(VueQuillEditor)
   ],
 ```
 使用：（不需要引入了，就像element一样，按照官网直接写标签，）
+--  在使用上传的时候action是传输一个链接地址，如果想根据自己定义的axios上传需要添加一个auto-upload="false"意思不取消自动上传更据:on-change="onChange"(文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用)动作进行上传
 ···下面代码网上摘得，可用但需要读
 ```html
 <template>
@@ -59,6 +60,7 @@ Vue.use(VueQuillEditor)
       :options="editorOption"
       @change="onEditorChange($event)">
     </quill-editor>
+
     <!-- 图片裁剪组件-->
     <el-dialog top="5vh" :visible.sync="isShowCropper">
       <VueCropper
@@ -133,6 +135,7 @@ Vue.use(VueQuillEditor)
             toolbar: {
               container: toolbarOptions,
               // container: "#toolbar",
+              //触发富文本上的点击动作
               handlers: {
                 image: function(value) {
                   console.log(value)
