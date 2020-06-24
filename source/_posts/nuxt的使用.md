@@ -160,13 +160,13 @@ router: {
 }
 ```
 你会发现名称为users-id的路由路径带有:id？参数，表示该路由是可选的。原理跟vue动态路由是一致的。
-
+使用跳转的时候都是用nuxt-link或者this.$router.push({path:''})，这样的话可以使用vuex
 ```html
 <nuxt-link :to="'/users/' + id?name='四叶草'">首页</nuxt-link>
 ```
-
+---
 ## vuex使用
-模块式导出
+模块式导出 可以使用...MapXXX导入直接使用，state上的值最好不要直接修改
 ```js
 export const state = () => ({
   counter: 0
@@ -182,7 +182,7 @@ export const mutations = {
 
 使用：
 ```js
-   add() {
+   add(){
       this.$store.commit('increment', { name: '四叶草' })
       console.log(this.$store.state.counter)
     }
