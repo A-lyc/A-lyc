@@ -37,49 +37,49 @@ Vue.use(VueQuillEditor)
 ```
 使用：（不需要引入了，就像element一样，按照官网直接写标签，）
 --  在使用上传的时候action是传输一个链接地址，如果想根据自己定义的axios上传需要添加一个auto-upload="false"意思不取消自动上传更据:on-change="onChange"(文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用)动作进行上传
-···下面代码网上摘得，可用但需要读
 ```html
 <template>
   <div>
     <!-- 图片上传组件-->
     <el-upload
-      accept="image/*"
-      action="192.168.0.108/api/subject/file/upload"
-      class="avatar-uploader"
-      name="upload"
-      :show-file-list="false"
       :before-upload="beforeUpload"
-      hidden>
+      :show-file-list="false"
+      accept="image/*"
+      action=""
+      class="avatar-uploader"
+      hidden
+      name="file"
+      type='file'>
       <el-button size="small" type="primary">点击上传图片 到 文本编辑器</el-button>
     </el-upload>
     <!-- 编辑器组件-->
     <quill-editor
-      class="editor"
-      v-model="content"
-      ref="myQuillEditor"
       :options="editorOption"
-      @change="onEditorChange($event)">
+      @change="onEditorChange($event)"
+      class="editor"
+      ref="myQuillEditor"
+      v-model="content">
     </quill-editor>
-
     <!-- 图片裁剪组件-->
-    <el-dialog top="5vh" :visible.sync="isShowCropper">
+    <el-dialog :visible.sync="isShowCropper" top="5vh">
       <VueCropper
-        style="height:600px;margin:20px 0"
-        ref="cropper"
-        :img="option.img"
-        :outputSize="option.outputSize"
-        :outputType="option.outputType"
-        :info="option.info"
-        :canScale="option.canScale"
         :autoCrop="option.autoCrop"
-        :autoCropWidth="option.autoCropWidth"
         :autoCropHeight="option.autoCropHeight"
+        :autoCropWidth="option.autoCropWidth"
+        :canScale="option.canScale"
         :fixed="option.fixed"
         :fixedNumber="option.fixedNumber"
+        :img="option.img"
+        :info="option.info"
+        :outputSize="option.outputSize"
+        :outputType="option.outputType"
+        ref="cropper"
+        style="height:600px;margin:20px 0"
       >
       </VueCropper>
       <br/>
-      <el-button type="primary" @click="onCubeImg()">生成图片</el-button>
+
+      <el-button @click="onCubeImg()" type="primary">生成图片</el-button>
       <el-button @click="isShowCropper = false">取消</el-button>
     </el-dialog>
   </div>
@@ -87,31 +87,31 @@ Vue.use(VueQuillEditor)
 <script>
   // 富文本工具栏配置
   const toolbarOptions = [
-    ["bold", "italic", "underline", "strike"], // 加粗 斜体 下划线 删除线
-    ["blockquote", "code-block"], // 引用  代码块
+    ['bold', 'italic', 'underline', 'strike'], // 加粗 斜体 下划线 删除线
+    ['blockquote', 'code-block'], // 引用  代码块
     [{ header: 1 }, { header: 2 }], // 1、2 级标题
-    [{ list: "ordered" }, { list: "bullet" }], // 有序、无序列表
-    [{ script: "sub" }, { script: "super" }], // 上标/下标
-    [{ indent: "-1" }, { indent: "+1" }], // 缩进
+    [{ list: 'ordered' }, { list: 'bullet' }], // 有序、无序列表
+    [{ script: 'sub' }, { script: 'super' }], // 上标/下标
+    [{ indent: '-1' }, { indent: '+1' }], // 缩进
     // [{'direction': 'rtl'}],                         // 文本方向
-    [{ size: ["small", false, "large", "huge"] }], // 字体大小
+    [{ size: ['small', false, 'large', 'huge'] }], // 字体大小
     [{ header: [1, 2, 3, 4, 5, 6, false] }], // 标题
     [{ color: [] }, { background: [] }], // 字体颜色、字体背景颜色
     [{ font: [] }], // 字体种类
     [{ align: [] }], // 对齐方式
-    ["clean"], // 清除文本格式
-    ["link", "image", "video"] // 链接、图片、视频
-  ];
+    ['clean'], // 清除文本格式
+    ['link', 'image', 'video'] // 链接、图片、视频
+  ]
 
-//单独引入编辑器的css - 以免冲突
-  import "quill/dist/quill.core.css";
-  import "quill/dist/quill.snow.css";
-  import "quill/dist/quill.bubble.css";
+
+  import 'quill/dist/quill.core.css'
+  import 'quill/dist/quill.snow.css'
+  import 'quill/dist/quill.bubble.css'
+  import { uImage } from '@/api/uploadImage.js'
 
   export default {
     name: 'textEditor',
-    components: {
-    },
+    components: {},
     props: {
       /*编辑器的内容*/
       value: {
@@ -129,23 +129,22 @@ Vue.use(VueQuillEditor)
         content: '',
         quillUpdateImg: false, // 根据图片上传状态来确定是否显示loading动画，刚开始是false,不显示
         editorOption: {
-          theme: "snow", // or 'bubble'
-          placeholder: "请输入您想输入的内容",
+          theme: 'snow', // or 'bubble'
+          placeholder: '请输入您想输入的内容',
           modules: {
             toolbar: {
               container: toolbarOptions,
-              // container: "#toolbar",
-              //触发富文本上的点击动作
+              // 和上传按钮进行绑定
               handlers: {
                 image: function(value) {
                   console.log(value)
                   if (value) {
                     // 触发input框选择图片文件
-                    document.querySelector(".avatar-uploader input").click();
+                    document.querySelector('.avatar-uploader input').click()
                   } else {
-                    this.quill.format("image", false);
+                    this.quill.format('image', false)
                   }
-                },
+                }
               }
             }
           }
@@ -156,91 +155,129 @@ Vue.use(VueQuillEditor)
           info: true,                      // 裁剪框的大小信息
           outputSize: 1,                   // 裁剪生成图片的质量
           outputType: 'png',               // 裁剪生成图片的格式
-          canScale: false,                 // 图片是否允许滚轮缩放
+          canScale: true,                 // 图片是否允许滚轮缩放
           autoCrop: true,                  // 是否默认生成截图框
           autoCropWidth: 150,              // 默认生成截图框宽度
           autoCropHeight: 150,             // 默认生成截图框高度
-          fixed: false,                    // 是否开启截图框宽高固定比例
-          fixedNumber: [4, 4],             // 截图框的宽高比例
+          fixed: true,                    // 是否开启截图框宽高固定比例
+          fixedNumber: [4, 4]             // 截图框的宽高比例
         },
         isShowCropper: false,
-        isClient:true,
-      };
+        isClient: true,
+        width: '150px',
+        height: '150px'
+      }
     },
     methods: {
       // 上传切图前调用
       beforeUpload(file) {
-        this.option.img = URL.createObjectURL(file);
-        this.option.autoCropWidth = this.width;
-        this.option.autoCropHeight = this.height;
-        this.isShowCropper = true;
-        return false;
+        /**
+         * URL.createObjectURL(file)生成本地的url
+         * 返回false终止了自动上传
+         * */
+        this.option.img = URL.createObjectURL(file)
+        this.option.autoCropWidth = this.width
+        this.option.autoCropHeight = this.height
+        this.isShowCropper = true
+        return false
       },
       // 确定裁剪图片
       onCubeImg() {
-        // 获取cropper的截图的base64 数据
+        // 获取cropper的截图的base64 数据data
         this.$refs.cropper.getCropData(data => {
-          this.isShowCropper = false
-          // 先将显示图片地址清空，防止重复显示
-          this.option.img = ''
-          // 将剪裁后base64的图片转化为file格式
-          let file = this.convertBase64UrlToBlob(data)
-          file.name = 'img' + new Date().getTime();
-          // 将剪裁后的图片执行上传
-          var fd = new FormData();
-          fd.append("file", file);
-          this.$message.success("图片正在上传");
-          ApiFileUploadFile(fd).then(res => {
+          //截取bas64 截取base64的格式 和 图片的后缀名
+          let baseSplit= data.split(',')
+          let format = baseSplit[0].split('/')[1].split(';')[0]
+          //获取base64格式的信息
+          let base = ''
+          if (process.client) {
+            base = window.atob(baseSplit[1])
+          }
+          //转格式：base64转图片
+          /**
+           *格式为：File
+           * lastModified: 1593134876792
+           * lastModifiedDate: Fri Jun 26 2020 09:27:56 GMT+0800 (中国标准时间) {}
+           * name: "img.png"
+           * size: 15407
+           * type: "image/png"
+           * webkitRelativePath: ""
+           * */
+          let index = base.length
+          let u8arr = new Uint8Array(index)
+          while (index--) {
+            u8arr[index] = base.charCodeAt(index)
+          }
+          let blods = new File([u8arr],'img.' + format,{type: 'image/' + format })
+
+          /**
+           * 建立一个formData表单，之后把上面的base64转换后的格式使用append传递给FormData
+           * */
+          let fromData = new FormData()
+          fromData.append('file',blods)
+
+          this.$notify({
+            title: '成功',
+            message: '正在上传中',
+            type: 'success'
+          });
+          //发出网络请求
+          uImage(fromData).then(res => {
+            this.$notify({
+              title: '成功',
+              message: '图片上传成功',
+              type: 'success'
+            });
             // 获取富文本组件实例
-            this.$message.success("图片上传成功");
-            let quill = this.$refs.myQuillEditor.quill;
-            // loading动画消失
-            this.quillUpdateImg = false;
-            // 如果上传成功
-            if (res.data.code == 0) {
+            let quill = this.$refs.myQuillEditor.quill
+            if(res.code === 200){
               // 获取光标所在位置
-              if (quill.getSelection()&&quill.getSelection().index) {
-                let length = quill.getSelection().index;
-              }else{
-                let length = 0;
+              /**
+               *  quill.insertEmbed(length, 'image', res.data.url)
+               *  图片显示的位置，根据length后的位置显示
+               * */
+              if (quill.getSelection() && quill.getSelection().index) {
+                let length = quill.getSelection().index
+                quill.insertEmbed(length, 'image', res.data.url)
+              } else {
+                let length = 0
+                quill.insertEmbed(length, 'image', res.data.url)
               }
-              // 插入图片  res.url为服务器返回的图片地址
-              console.log(res)
-              quill.insertEmbed(length, "image", res.data.data.imageUrl);
               // 调整光标到最后
-              quill.setSelection(length + 1);
-            } else {
-              this.$message.error("图片插入失败");
+              quill.setSelection(length + 1)
+            }else {
+              console.log(res.data.code)
+              this.$notify({
+                title: '警告',
+                message: '图片上传失败',
+                type: 'warning'
+              });
             }
+            this.isShowCropper = false
+            // 先将显示图片地址清空，防止重复显示
+            this.option.img = ''
           })
         })
       },
-      // 将base64的图片转换为file文件
-      convertBase64UrlToBlob(urlData) {
-        let bytes = window.atob(urlData.split(',')[1]);//去掉url的头，并转换为byte
-        //处理异常,将ascii码小于0的转换为大于0
-        let ab = new ArrayBuffer(bytes.length);
-        let ia = new Uint8Array(ab);
-        for (var i = 0; i < bytes.length; i++) {
-          ia[i] = bytes.charCodeAt(i);
-        }
-        return new Blob([ab], { type: 'image/png' });
-      },
       onEditorChange() {
-        //富文本内容改变事件
-        this.$emit("change", this.content);
-      },
+
+        console.log(this.content)
+        //富文本内容改变事件 发送给父级元素
+        this.$emit('change', this.content)
+      }
     },
     mounted() {
       setTimeout(() => {
         this.content = this.value
-      },500)
-    },
-  };
+      }, 500)
+    }
+  }
 </script>
 <style lang="scss">
 
 </style>
+
+
 ```
 
 
