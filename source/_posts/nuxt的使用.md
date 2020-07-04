@@ -195,3 +195,6 @@ export const mutations = {
 if (process.browser) {
   //逻辑
 }
+## 打包整理服务器端上线
+首先npm run dev 会生成一个dist和.nuxt文件，用到的是nuxt，nuxt.config.js，static，package.json四个文件
+之后本地服务器端运行 npm start

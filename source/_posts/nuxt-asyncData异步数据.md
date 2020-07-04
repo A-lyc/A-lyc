@@ -1,11 +1,18 @@
 ---
 uuid: 6a7ffb39-0dd3-1f1a-d30f-df238e382c2b
-title: nuxt异步数据
+title: nuxt-asyncData异步数据
 date: 2020-07-01 11:38:54
 tags:
 category:
 ---
 asyncData:参数：
+asyncData (ctx) {
+    ctx.app // 根实例
+    ctx.route // 路由实例
+    ctx.params  //路由参数
+    ctx.query  // 路由问号后面的参数
+    ctx.error   // 错误处理方法
+  }
 { params } = url上的/_.vue 参数：如果你定义一个名为_slug.vue的文件，您可以通过context.params.slug来访问它
 
 
