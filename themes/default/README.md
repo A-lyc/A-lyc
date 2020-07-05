@@ -1,173 +1,219 @@
-# hexo-theme-default
+<p align="center" class="mb-2">
+<img class="not-gallery-item" height="48" src="https://ppoffice.github.io/hexo-theme-icarus/img/logo.svg">
+<br> A simple, delicate, and modern theme for the static site generator Hexo.
+<br>
+<a href="https://ppoffice.github.io/hexo-theme-icarus/">Preview</a> |
+<a href="https://ppoffice.github.io/hexo-theme-icarus/categories/">Documentation</a> |
+<a href="https://gitter.im/hexo-theme-icarus/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">Chat on Gitter</a>
+<br>
+</p>
 
-An elegant Material Design theme for [Hexo](https://hexo.io/), based on [MDUI](https://www.mdui.org/).
+![Icarus](https://ppoffice.github.io/hexo-theme-icarus/gallery/preview.png?1 "Icarus Preview")
 
-## Installation
+### :cd: Installation
 
-### Install
+Download & extract or `git clone` Icarus from GitHub to your blog's theme folder, and that's it!
 
-``` bash
-$ git clone -b theme https://github.com/niemingzhao/niemingzhao.github.io.git themes/default
+```shell
+$ git clone https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus
+$ hexo s // start a live server
 ```
 
-Make a copy of `_config.template.yml` under the same folder and rename the copied file to `_config.yml` (called `theme configuration file`). **This is the necessary step.**
+Once started, Icarus will remind you of any missing dependencies to install.
+And it will create a theme configuration file (`_config.yml`) if it is not there.
 
-### Enable
+### :gift: Features
 
-Modify `theme` item in `_config.yml` in the site root directory (called `site configuration file`) to `default`.
+**Cyberpunk Theme Variant**
 
-### Update
+Tap into the future cyber world with the newly added Cyberpunk theme variant.
+Inspired by [Cyberpunk 2077](https://www.cyberpunk.net).
 
-``` bash
-cd themes/default
-git pull
-```
+![Icarus Cyberpunk](https://ppoffice.github.io/hexo-theme-icarus/gallery/screenshots/cyberpunk.png "Icarus Cyberpunk")
 
-## Configuration
+**Extensive Plugin Support**
 
-### _config.yml
+Icarus includes plentiful search, comment, sharing and other plugins out of the box that makes your
+blog feature-rich and powerful.
 
-``` yml
-theme_color:
-  primary: indigo
-  accent: pink
+<table>
+  <tr>
+    <th><a href="https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/">Comment</a></th>
+    <th><a href="https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/">Donation</a></th>
+    <th><a href="https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Search/">Search</a></th>
+    <th><a href="https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/">Share</a></th>
+    <th><a href="https://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/">Widgets</a></th>
+    <th><a href="https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/">Other Plugins</a></th>
+  </tr>
+  <tr>
+    <td>Changyan</td>
+    <td>Alipay</td>
+    <td>Insight</td>
+    <td>AddThis</td>
+    <td>Google AdSense</td>
+    <td>Baidu Analytics</td>
+  </tr>
+  <tr>
+    <td>Disqus</td>
+    <td>Buy Me A Coffee</td>
+    <td>Algolia</td>
+    <td>AddToAny</td>
+    <td>Archives</td>
+    <td>BuSuanZi Vistor Counter</td>
+  </tr>
+  <tr>
+    <td>DisqusJS</td>
+    <td>Patreon</td>
+    <td>Google CSE</td>
+    <td>Baidu Share</td>
+    <td>Categories</td>
+    <td>CNZZ Analytics</td>
+  </tr>
+  <tr>
+    <td>Facebook</td>
+    <td>Paypal</td>
+    <td>Baidu</td>
+    <td>Share.js</td>
+    <td>External Site Links</td>
+    <td>Light and Justified Gallery</td>
+  </tr>
+  <tr>
+    <td>Gitalk</td>
+    <td>Wechat</td>
+    <td></td>
+    <td>ShareThis</td>
+    <td>Recent Posts</td>
+    <td>Google Analytics</td>
+  </tr>
+  <tr>
+    <td>Gitment</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Google Feedburner</td>
+    <td>Hotjar User Feedback</td>
+  </tr>
+  <tr>
+    <td>Isso</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Author Profile</td>
+    <td>KaTex</td>
+  </tr>
+  <tr>
+    <td>LiveRe</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Tags</td>
+    <td>MathJax</td>
+  </tr>
+  <tr>
+    <td>Utterances</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Table of Contents</td>
+    <td>Outdated Browser Detection</td>
+  </tr>
+  <tr>
+    <td>Valine</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Page Loading Animations<br></td>
+  </tr>
+</table>
 
-notice:
+**Rich Code Highlight Theme Choices**
 
-favicon: /images/favicon.png
-banner: /images/banner.png
-avatar: /images/avatar.png
-rss: /atom.xml
+Icarus directly import stylesheets from the [highlight.js](https://highlightjs.org/) package and makes more than
+90 code highlight themes available to you.
 
-email:
-sns:
-  twitter:
-  facebook:
-  google_plus:
-  weibo:
-  instagram:
-  tumblr:
-  github:
-  linkedin:
-  zhihu:
-  douban:
-  qq:
-  wechat:
+<table>
+    <tr>
+        <th>Atom One Light</th>
+        <th>Monokai</th>
+        <th>Kimbie Dark</th>
+    </tr>
+    <tr>
+        <td><img width="266" src="https://ppoffice.github.io/hexo-theme-icarus/gallery/code-highlight/atom-one-light.png?2"></td>
+        <td><img width="266" src="https://ppoffice.github.io/hexo-theme-icarus/gallery/code-highlight/monokai.png?2"></td>
+        <td><img width="266" src="https://ppoffice.github.io/hexo-theme-icarus/gallery/code-highlight/kimbie-dark.png?2"></td>
+    </tr>
+</table>
 
-open_graph:
-  twitter:
-  google_plus:
-  fb_admins:
-  fb_app_id:
-site_verification:
-  google:
-  baidu:
-analytics:
-  google_site_id:
-  baidu_site_id:
-  cnzz_site_id:
+**Flexible Theme Configuration**
 
-pages:
-- name: 标签云
-  link: /tagcloud
-- name: 画廊
-  link: /gallery
-links:
+Icarus allows you to configure your site on a per-page or per-layout basis.
 
-since:
-footer_text:
-license:
+<div>
+<table>
+    <tr>
+        <th>_config.yml</th>
+        <th>post.md</th>
+        <th>_config.page.yml</th>
+    </tr>
+    <tr>
+        <td>
+<pre>widgets:
+  - type: profile
+    position: left
+  - type: recent_posts
+    position: right</pre>
+        </td>
+        <td>
+<pre>widgets:
+  - type: profile
+    position: left
+  - type: recent_posts
+    position: left</pre>
+        </td>
+        <td>
+<pre>widgets: null
+ 
+ 
+ 
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td><img width="266" src="https://ppoffice.github.io/hexo-theme-icarus/gallery/screenshots/default-config.png"></td>
+        <td><img width="266" src="https://ppoffice.github.io/hexo-theme-icarus/gallery/screenshots/post-config.png"></td>
+        <td><img width="266" src="https://ppoffice.github.io/hexo-theme-icarus/gallery/screenshots/layout-config.png"></td>
+    </tr>
+</table>
+</div>
 
-gallery:
-  fancybox_css: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css
-  fancybox_js: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js
-  jquery_js: https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js
-  lazyload_js: https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
-busuanzi:
-  site: false
-  page: false
-  busuanzi_js: http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
-qrcode:
-  caption: 发送到手机
-  use: online
-donate:
-search:
-  placeholder: 请输入关键字
-  path: /search.xml
-  use: online
-comment:
-  use: false
-  disqus_shortname:
-  gitalk_client_id:
-  gitalk_client_secret:
-  gitalk_repo:
-  gitalk_owner:
-  gitalk_sid_type:
-  livere_data_uid:
-  valine_leancloud_app_id:
-  valine_leancloud_app_key:
-  valine_placeholder:
-  valine_page_size:
-  valine_avatar:
-  valine_lang:
-  valine_guest_info:
-  valine_notify:
-  valine_verify:
-  changyan_app_id:
-  changyan_app_key:
-  changyan_sid_type:
-```
+**Responsive Layout**
 
-- **theme_color** - Theme color. Please refer to [颜色与主题](https://www.mdui.org/docs/color).
-- **notice** - Notice or announcement. Support `<a>` tag.
-- **favicon** - Favicon path.
-- **banner** - Sidebar bg image path.
-- **avatar** - Avatar image path.
-- **rss** - RSS link. `hexo-generator-feed` plugin is needed.
-- **email** - Email address.
-- **sns** - SNS links.
-- **open_graph** - OpenGraph settings.
-- **site_verification** - Site verification KEYs.
-- **analytics** - Site analytics IDs.
-- **pages** - Custom page links. Set with `name` and `link`.
-- **links** - Friendship links. Set with `name` and `link`.
-- **since** - Start year, use a 4-digit number.
-- **footer_text** - Additional text in footer, such as the record information. Support `<a>` tag.
-- **license** - License description of the article. Support `<a>` tag.
-- **gallery** - CDN links of `fancybox` plugin used on Gallery page.
-- **busuanzi** - Use `busuanzi` plugin to count website visits.
-- **qrcode** - Qrcode for articles. if use `plugin`, `hexo-helper-qrcode` plugin is needed.
-- **donate** - Use your payment qrcode or link to receive donations. Set with `name` and `link`.
-- **search** - Search settings. if use `plugin`, `hexo-generator-search` plugin is needed and `path` should be set correctly.
-- **comment** - Comment plugin settings. Set `use` with the plugin name such as `disqus`.
+Give your audiences best viewing experience with Icarus's mobile-friendly responsive layout.
 
-### Front-matter
+![Responsive Layout](https://ppoffice.github.io/hexo-theme-icarus/gallery/responsive.png)
 
-``` yml
-thumbnail: /xxx.jpg  # Custom page header image.
-author: xxx  # Author.
-categories:  # Categories.
-- xxx
-tags:  # Tags.
-- xxx
-qrcode: false  # Disable article qrcode.
-share_menu: false  # Disable article share menu.
-license: xxx  # License description of the article.
-donate: false  # Disable article donate link.
-toc: true  # Enable article toc.
-comments: true  # Enable article comment.
+### :hammer: Development
 
-tagcloud: true  # Turn the current page into a tagcloud page.
-photos:  # Turn the current page into a gallery page.
-- xxx
-```
+This project is built with
 
-### Other
+- [Hexo](https://hexo.io/)
+- [Inferno.js](https://infernojs.org/)
+- [Stylus](https://stylus-lang.com/)
+- [Bulma](https://bulma.io/)
 
-> `Dark Mode`: Long press the page header to toggle dark mode.
+Please refer to the [documentation](https://ppoffice.github.io/hexo-theme-icarus/categories/) and 
+[contributing guide](https://github.com/ppoffice/hexo-theme-icarus/blob/master/CONTRIBUTING.md) for implementation details.
 
-> `Sticky Post`: Use with the plugin [`hexo-generator-topindex`](https://github.com/amlove2/hexo-generator-topindex), posts can be set to the top.
+### :tada: Contribute
 
-> `Fancybox`: Set the `fancybox` class on the `<img>` tag in the post to enable the picture to popup, and the `center-block` class to center the picture.
+If you feel like to help us build a better Icarus, you can
 
-**Recommended**: This theme works better with the parser [`hexo-renderer-markdown`](https://github.com/niemingzhao/hexo-renderer-markdown).
+:black_nib: [Submit a tutorial](https://github.com/ppoffice/hexo-theme-icarus/new/site/source/_posts) |
+:earth_asia: [Add a translation](https://github.com/ppoffice/hexo-theme-icarus/tree/master/languages) |
+:triangular_flag_on_post: [Report a bug](https://github.com/ppoffice/hexo-theme-icarus/issues/new) |
+:electric_plug: [Suggest a new feature](https://github.com/ppoffice/hexo-theme-icarus/pulls)
+
+### :memo: License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/ppoffice/hexo-theme-icarus/blob/master/LICENSE) file for details.
