@@ -2,11 +2,11 @@
 uuid: f15e10b4-7b04-ff6c-b1a1-a6b987910e6a
 title: vsCoods快捷创建模板
 date: 2020-03-24 18:42:04
-tags: vue
+tags: vue vsCoods快捷创建模板
 category: vue
 ---
 > 在一个Vue的项目中，反复的新建.vue文件是一个必不可少的工序。本着科技让人偷懒的原则，我们可以利用VSCode的snippet在.vue文件创建后能轻松地生成一套模板。
-
+<!-- more -->
 ####    第一步：
 使用ctrl+shift+p（文件-首选项-用户代码片段）输入vue 自动打开vue.json 的文件输入模板
 模板具体格式：

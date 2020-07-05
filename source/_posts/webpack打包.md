@@ -10,7 +10,7 @@ category: webpack打包
 首先新建一个src文件，内有js，css，html文件，之后在npm init初始化一下wenpack，安装webpack，之后本地安装webpack：npm install --save-dev webpack，webpack4.0需要安装cli：npm install --save-dev webpack-cl
 在scripts内的打包后build:"webpack --config webpack.config.js"
 
-
+<!-- more -->
 
 1：单个js：比如将一个js打包到另一个js中：webpack index.js min.js将index.js打包到min.js中
 2：多文件需要export导出，import导入景行打包

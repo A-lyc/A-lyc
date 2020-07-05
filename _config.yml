@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: yongchao Li
+title: 李勇超的个人博客
 subtitle: '联系方式：15854388082'
 description: '个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用'
 keywords: 李勇超,博客,Hexo
@@ -21,7 +21,7 @@ pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
-# Directory
+# 目录
 source_dir: source
 public_dir: public
 tag_dir: tags
@@ -31,28 +31,28 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
+# 写作书写文字
+new_post_name: :title.md # 新文章的文件名称
+default_layout: post # 预设布局
+titlecase: false # 把标题转换为 title case
 external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
+  enable: true # 在新标签中打开链接
+  field: site # 适用于整个网站
   exclude: ''
 filename_case: 0
-render_drafts: false
-post_asset_folder: true
-relative_link: false
-future: true
-highlight:
-  enable: true
-  line_number: true
+render_drafts: false # 显示草稿
+post_asset_folder: true # 启动 Asset 文件夹
+relative_link: false # 把链接改为与根目录的相对位址
+future: true # 显示未来的文章
+highlight: # 代码块的设置
+  enable: true # 开启代码块高亮
+  line_number: true # 显示行数
   auto_detect: false
   tab_replace: 
   wrap: true
   hljs: false
 
-# Home page setting
+# 主页设置
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
@@ -61,12 +61,12 @@ index_generator:
   per_page: 10
   order_by: -date
 
-# Category & Tag
+# 分类标签
 default_category: uncategorized
 category_map:
 tag_map:
 
-# Metadata elements
+# 元数据元素
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true
 
@@ -93,9 +93,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: default
-theme_config:
-  bio: "My awesome bio"
+theme: icarus
+
 
 # # Deployment
 # ## Docs: https://hexo.io/docs/deployment.html
