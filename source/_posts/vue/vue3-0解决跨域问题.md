@@ -7,26 +7,29 @@ category: vue
 ---
 
 在vue的vue.config.js（自己创建的）里面进行添加
-<!-- more -->
-```
-  devServer: {
-    proxy: {
-      '/api': {
-        target: 'https://www.XXXXXXXXX.com/',
-        changeOrigin: true,
-        ws: true,
-        pathRewrite: {
-          '^/api': ''
+
+```js
+module.exports = {
+    devServer: {
+      proxy: {
+        '/api': {
+          target: 'https://www.XXXXXXXXX.com/',
+          changeOrigin: true,
+          ws: true,
+          pathRewrite: {
+            '^/api': ''
+          }
         }
       }
     }
-  }
+}
+
 ```
 
 使用的时候，发送网络请求：需要/api/请求地址
 
 自己封装的axios：
-```
+```js
 import axios from 'axios'
 
 export function request(config) {
