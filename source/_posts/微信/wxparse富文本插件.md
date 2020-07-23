@@ -7,6 +7,9 @@ category: 微信
 ---
 优点：目前已知唯一可以转化HTML到小程序识别的插件
 
+解决小程序富文本图片过大超出问题
+let dataAbout = res.data.data.about.replace(/\<img/gi, '<img style="width:100%;height:auto" ')
+
 缺点：转换一个HTML标签可能需要大量的微信小程序标签还有样式
 <!-- more -->
 配置：第一步，下载https://github.com/icindy/wxParse
