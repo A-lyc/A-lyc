@@ -2,7 +2,7 @@
 title: nuxt使用感悟-unxt配置
 date: 2020-07-14 19:45:10
 tags: nuxt配置到上线
-category:
+category: Nuxt
 ---
 首先新建项目安装完成npm和node，使用脚手架的命令去新建一个初始化的项目，我基本使用的是npm进行安装，输入命令行就可
 npx create-nuxt-app <项目名>
@@ -27,7 +27,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       {
-        content: 'viewport, width=device-width, initial-scale=1, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        content: `viewport, width=device-width, initial-scale=1, minimum-scale=1.0,
+maximum-scale=1.0,user-scalable=no`
       },
 
     ],
@@ -177,7 +178,7 @@ async asyncData ({app}) {//结构app进来
       }
     }
 ```
-fetch 方法
+### fetch 方法
 fetch 方法用于在渲染页面前填充应用的状态树（store）数据， 与 asyncData 方法类似，不同的是它不会设置组件的数据。
 类型： Function
 如果页面组件设置了 fetch 方法，它会在组件每次加载前被调用（在服务端或切换至目标路由之前）。

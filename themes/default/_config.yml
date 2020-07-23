@@ -68,7 +68,7 @@ article:
         # 显示赋值代码
         clipboard: true
         # 是否默认展开 "folded（不展开）", "unfolded"
-        fold: folded
+        fold: unfolded
     # 是否为每一篇文章显示缩略图
     thumbnail: true
     # 是否显示估计的文章阅读时间
