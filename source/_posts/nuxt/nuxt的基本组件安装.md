@@ -29,10 +29,10 @@ npm install node-sass sass-loader --save-dev
 使用：@import '@/assets/style/global.scss';
 找到进行引入
 
-##  使用axios
+##  使用axios这个方法不能使用，见nuxt使用感悟-unxt配置这个文件
 需要安装axios，
 npm i axios --save-dev
-使用axios： - > 参考：《vue的axios封装好的》这个文件，点击搜索即可需要将baseURL的值修改成跨域之后的值，
+使用axios： - > 参考：《vue的axios封装好的》这个文件，点击搜索即可需要将baseURL的值修改成跨域之后的值， - 
 ```js
 const instance = axios.create({
     baseURL: '/api',

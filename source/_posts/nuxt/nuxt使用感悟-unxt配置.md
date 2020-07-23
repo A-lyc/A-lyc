@@ -1,0 +1,457 @@
+---
+title: nuxt使用感悟-unxt配置
+date: 2020-07-14 19:45:10
+tags: nuxt配置到上线
+category:
+---
+首先新建项目安装完成npm和node，使用脚手架的命令去新建一个初始化的项目，我基本使用的是npm进行安装，输入命令行就可
+npx create-nuxt-app <项目名>
+选择默认初始化的项目名称，比如选择UI框架，安装axios，选择渲染方式，之后下一步下一步即可
+npm run dev即可进入开发环境
+页面内网络请求获取的数据使用asyncData获取，下面会有介绍
+点击动作请求数据可使用插件导出的网络请求，下面有介绍 this.$api.getInfo()
+使用cscc选要提前安装 npm install --save-dev node-sass sass-loader
+<!-- more -->
+配置nuxt.config.js
+```js
+export default {
+  mode: 'universal',
+  /*
+  * 头部显示区域 - 页面组件内可以使用
+  *  head(){return{title:'',
+  *  meta:[{hid: '网站描述',name: 'description',content:''}]}}来重定义头部标签
+  *  
+  */
+  head: {
+    title: '头部标题' || '',//
+    meta: [
+      { charset: 'utf-8' },
+      {
+        content: 'viewport, width=device-width, initial-scale=1, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+      },
+
+    ],
+    link: [//使用到的css可以使用link标签引入
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: 'https://static.com/css/index.css', rel: 'stylesheet' },
+      { href: 'https://static.com/css/bootstrap.min.css', rel: 'stylesheet' },
+      { href: 'https://static.com/css/bootstrap-vue.min.css', rel: 'stylesheet' }
+    ]
+  },
+  /*
+  ** loading的颜色
+  */
+  loading: { color: '#000' },
+
+  /**
+   * 新加导入scss - 需要提前安装 npm install --save-dev node-sass sass-loader
+   */
+  styleResources: {
+    scss: '@/assets/style/global.scss'
+  },
+
+  /*
+  **  外部导入的css可以直接在这显示，查看源码的时候会直接显示到页面上的
+  */
+  css: [
+    // 'element-ui/lib/theme-chalk/index.css'
+    // '@/assets/css/main.scss'
+  ],
+
+  /*
+  ** 插件配置目录，安装的插件都需要在这个位置配置，有的插件需要获取dom后者win
+  ** 建议安装插件的时候全局安装 { src: '@/plugins/map', ssr: false },可以获取dom后者win
+  ** 这样即可使用的时候之间按照官网的文档标签使用即可
+  ** 插件不单独使用的是因为需要获取dom和win的原因
+  ** '@/plugins/api'  api是封装的网络请求，下面会解释到的
+  */
+  plugins: [
+    '@/plugins/element-ui',//element
+    '@/plugins/api',//封装的axios
+    '@/plugins/bootstrap-vue',//栅格
+    '@/plugins/vue-moment',//格式化时间
+    { src: '@/plugins/map', ssr: false },//地图
+    { src: '@/plugins/vue-quill-editor', ssr: false },//裁切
+    { src: '@/plugins/vue-cropper', ssr: false },//裁切
+    { src: '@/plugins/md5', ssr: false }//md5加密
+  ],
+
+  /*
+  ** Nuxt.js dev-modules
+  */
+  buildModules: [],
+
+  /*
+  ** Nuxt.js modules - 请求需要
+  */
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+//没有的话都需要安装
+    '@nuxtjs/axios',
+    '@gauseen/nuxt-proxy',
+    '@nuxtjs/style-resources',
+    //缓存
+    // '@nuxtjs/component-cache',
+  ],
+
+  /*
+  ** Axios 配置跨域的问题，外部使用 /api/
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {
+    prefix: '/api/',
+    //是否允许跨域
+    proxy: true,
+    // 最多重发三次
+    retry: { retries: 5 },
+    //开发模式下开启debug
+    debug: process.env._ENV == 'production' ? false : true,
+    //设置不同环境的请求地址
+    baseURL:
+      process.env._ENV == 'production'
+        ? 'http://localhost:3000/api'
+        : 'http://localhost:3000/api',
+    //是否是可信任
+    withCredentials: true
+  },
+//切换网页url不正确 - 具体是意思不明
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
+  },
+//切换网页url不正确 - 具体是意思不明
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
+  },
+
+  // 代理服务器
+  proxyTable: {
+    '/api/': {
+      target: 'https://www.baidu.com/api',  // 线上地址
+      pathRewrite: { '^/api/': '' }
+    }
+  },
+
+  /*
+  ** Build configuration
+  */
+  build: {
+    transpile: [/^element-ui/],
+    /*
+    ** You can extend webpack config here
+    */
+    extend( config, { isDev, isClient }) {
+    }
+  },
+  // 中间件
+  serverMiddleware: [
+    '~/middleware/cookie.js'
+  ]
+}
+```
+### layouts文件夹
+layouts文件夹：是放置内容的，公共的部分可以在这个位置去引入一个组件，公共的头，footer等
+错误页也是在此文件夹内，error.vue,官网有详细写法
+这里定义的东西是全局都使用的，慎用
+
+### asyncData,fetch
+这里需要一个axios请求，等会会写道如何进行网络请求,需要服务器端加载的数据支持seo优化的信息要全部渲染到这个位置
+```js
+//这里接收一个上下文的对象；app//可以结构出stort，和自定义的插件内导出全局的方法，route//路由，params//路由参数，query，req，res，等等。见网址：https://www.nuxtjs.cn/api/context
+async asyncData ({app}) {//结构app进来
+      let {$api} = app//app进行结构初api全局暴漏的一个api的方法，请求中自己封装的
+      // 下面试简单的axios请求，安装axios即可使用 
+      let { data } = await axios.get('https://www.baidu.com/api/v1/config-info')
+
+      //使用 Promise.all 结果是个数组$api.getHotType(id1[0].class_id)
+      let obj = await Promise.all([ $api.getHotType(id1[0].class_id) , $api.getHotType(id1[1].class_id) , $api.getHotType(id1[2].class_id) , $api.getHotType(id1[3].class_id)])
+              
+      //请求banner下面的数据 footer上面的 使用封装好的请求content进行接收 - 建议使用结构的方式
+      //$api.getListData()后面不要.then,直接结构data即可
+      let {data:content}  = await $api.getListData()
+      return {//把数据return出去在template可以直接使用 - 最好在data中处理之后在使用，<div>{{info}}</div>
+        info: data.data,
+      }
+    }
+```
+fetch 方法
+fetch 方法用于在渲染页面前填充应用的状态树（store）数据， 与 asyncData 方法类似，不同的是它不会设置组件的数据。
+类型： Function
+如果页面组件设置了 fetch 方法，它会在组件每次加载前被调用（在服务端或切换至目标路由之前）。
+fetch 方法的第一个参数是页面组件的上下文对象 context，我们可以用 fetch 方法来获取数据填充应用的状态树。为了让获取过程可以异步，你需要返回一个 Promise，Nuxt.js 会等这个 promise 完成后再渲染组件。
+警告: 您无法在内部使用this获取组件实例，fetch是在组件初始化之前被调用
+```js
+async fetch ({ store, params }) {
+    let { data } = await axios.get('https://www.baidu.com/stars')
+    store.commit('setStars', data)//给vuex发送一个数据
+  }
+```
+### 网络请求 - 中间件 - 用户管理，获取token - 可以不进行使用
+首先获取中间件，就是用户登录的时候会把token保存到cookies这里面，之后要获取token活得用户的信息，登录状态等等，
+安装一个cookies格式化工具方便操作 ：npm i serve cookie-parser 之后在middleware（中间件）这个文件夹内新建文件进行导入
+我新建的cokie.js 内容是：
+```js
+module.exports = require('cookie-parser')()
+```
+导入npm的之后在nuxt.confige.js中进行导入中间件
+```js
+ // 中间件
+  serverMiddleware: [
+    '~/middleware/cookie.js'
+  ]
+```
+
+### axios网络请求
+在plugibns中新建文件api.js之后写入axios的网络请求配置，为什么在plugins中，因为这个位置可以获取到上下文对象，可以结构初store和app，以及获取win和dom
+别的位置暂时没有找到可以结构出的，所以放在这个插件文件夹下了 - 默认导出的配置
+ - 全局都可以使用直接在asyncData中$api.getInfo()，在vue其他方法中this.$api.getInfo(); 
+inject全局暴漏导出
+```js
+import apiAll from '../api/apiAll.js'//导入请求的n个地址 地址自定义
+export default function ({ app }, inject) {
+  let { store, $axios } = app//结构出store, $axios
+  $axios.defaults.baseUrl = '/api'//设置api，nuxt.confige.js中以解释/api的来历
+  /** 拦截请求设置 可以做一些请求之前的操作 token **/
+  $axios.interceptors.request.use(
+    function (config) {
+    //添加请求的头部，store.state.access_token这个是vuex中保存的token下面会解释到
+
+    //这个位置可以获取浏览器的win所以可以读取token，在请求拦截之前把token添加进去
+    //浏览器没有的话，说明不是登录状态，判断用户是否登录
+      let Token = ''
+      if (process.browser) {
+        Token = window.localStorage.getItem('token')
+      }
+
+      config.headers['Authorization'] = 'Bearer ' + Token
+      // 在发送请求之前做些什么
+      return config
+    },
+    function (error) {
+      // 对请求错误做些什么
+      return Promise.reject(error)
+    }
+  )
+// 2.2.响应拦截
+   $axios.interceptors.response.use(res => {
+//获取的数据返回一个data
+      return res.data
+    }, err => {
+      return err.data
+    })
+
+  inject('api', apiAll($axios))//inject全局暴漏，名字为api 导出的是这个axios
+}
+```
+apiAll，自定义的地址，和上面进行对应
+```js
+import homev2 from './homev2' //可以多个文件导入
+import institutionalUserv2 from './institutionalUserv2'
+
+export default function ($axios) {
+  return {
+    ...homev2($axios),//遍历导入
+    ...institutionalUserv2($axios)
+  }
+}
+```
+homev2的文件:
+```js
+/*url是个字符串可拼接
+axios.request(config)
+axios.get(url[, config])
+axios.delete(url[, config])
+axios.head(url[, config])
+axios.options(url[, config])
+axios.post(url[, data[, config]])
+axios.put(url[, data[, config]])
+axios.patch(url[, data[, config]])
+*/
+export default function ($axios) {
+  return {
+    /**
+     * 获取数据
+     * */
+    getListData () {
+      return $axios.get('/v1/index')
+    },
+    /**
+     *  热门分类 /v1/index/hot-type
+     * */
+    getHotType(id,data) {
+      return  $axios.post("/v1/index/hot-type?id=" + id,{
+        name:data.name
+        })
+    },
+    /**
+     * 传输图片，fil格式，前提提前转froomData格式
+     * */
+    uImage(data) {
+          return $axios.post('/v1/file/images',data)
+        }
+  }
+}
+
+```
+### vuex获取用户信息
+如何存储token
+if(process.browser){//获取浏览器对象cookie
+  document.cookie = 'token = ' + access_token;
+}
+如何清除token
+var keys = document.cookie.match(/[^ =;]+(?=\=)/g)
+if (keys) {
+  for (var i = keys.length; i--;)
+    document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+}
+
+window.localStorage.setItem('token',token)//存
+window.localStorage.getItem('token',token)//取
+window.localStorage.setItem('user', JSON.stringify(content.data))//json存储
+JSON.parse(json);　　//解析为JSON对象
+```js
+export const state = () => ({
+  access_token: '',
+
+})
+
+export const mutations = {
+  //保存access_token
+  ACCESS_TOKEN(state, playLoad) {
+    state.access_token = playLoad
+  },
+}
+export const actions = {
+  //每次页面加载的时候就会执行这个函数，之后可以获取到cookies保存的值，之后可以保存到vuex中，
+  //通过plugins文件新建api文件进行网络请求以及axios的拦截等
+  async nuxtServerInit({ commit }, { req,app }) {
+    try {
+      let { token } = req.cookies //用户登录保存token
+      if (token) {//如果用户登录，这里就是true
+
+        //将token报错到stat中，使用mutations内的commit方法进行保存
+        commit('ACCESS_TOKEN', token)
+
+        // 网络请求 通过token获取用户信息保存到vuex中去 - 页面刷新会有问题
+        let { data }  = await app.$api.getUserInfo(token)
+        commit('USER', data)
+      }else {
+      }
+    }catch (e) {
+      console.log(e)
+    }
+  },
+}
+```
+### 路由
+是根据文件的目录生成的路由_id.vue可以传输路由的参数，如果想有链接的标识，鼠标经过的时候下面显示连接使用标签：<nuxt-link to="/about">关于</nuxt-link>
+####  路由问题
+多个路由传参使用_.vue
+```
+pages/
+--| login/
+-----| _.vue
+-----| _log
+-------|_.vue
+--| index.vue
+```
+可以在:to="login/1/2/3",如果有子元素的话 :to="login/1/log/1" 传输多个参数文件夹_这个符号可以动态传参
+假设pages的目录结构如下
+```
+pages/
+--| user/
+-----| index.vue
+-----| one.vue
+--| index.vue
+```
+那么，Nuxt.js自动生成的路由配置如下
+```js
+router: {
+  routes: [
+    {
+      name: 'index',
+      path: '/',
+      component: 'pages/index.vue'
+    },
+    {
+      name: 'user',
+      path: '/user',
+      component: 'pages/user/index.vue'
+    },
+    {
+      name: 'user-one',
+      path: '/user/one',
+      component: 'pages/user/one.vue'
+    }
+  ]
+}
+```
+
+#### 动态路由
+在Nuxt.js里面定义带参数的动态路由，需要创建对应的以下划线作为前缀的Vue文件或目录。
+以下目录结构
+```
+pages/
+--| _slug/
+-----| comments.vue
+-----| index.vue
+--| users/
+-----| _id.vue
+--| index.vue
+```
+Nuxt.js生成对应的路由配置表为
+```js
+router: {
+  routes: [
+    {
+      name: 'index',
+      path: '/',
+      component: 'pages/index.vue'
+    },
+    {
+      name: 'users-id',
+      path: '/users/:id?',
+      component: 'pages/users/_id.vue'
+    },
+    {
+      name: 'slug',
+      path: '/:slug',
+      component: 'pages/_slug/index.vue'
+    },
+    {
+      name: 'slug-comments',
+      path: '/:slug/comments',
+      component: 'pages/_slug/comments.vue'
+    }
+  ]
+}
+```
+你会发现名称为users-id的路由路径带有:id？参数，表示该路由是可选的。原理跟vue动态路由是一致的。
+使用跳转的时候都是用nuxt-link或者this.$router.push({path:''})，这样的话可以使用vuex
+```html
+<nuxt-link :to="'/users/' + id?name='四叶草'">首页</nuxt-link>
+```
+
+### 插件使用
+之前默认安装element 安装富文本，图片裁切 地图，boot栅格，可以使用vue add方法进行安装，也可以npm i -d ...安装
+安装方法安装富文本图片裁切：npm install -d vue-quill-editor quill vue-cropper 
+官网：
+vue-quill-editor：https://quilljs.com/ 
+git：https://github.com/surmon-china/vue-quill-editor
+vue-cropper：https://github.com/xyxiao001/vue-cropper
+需要在plugins文件夹内注册插件
+注册插件：plugins文件夹内 新建js文件 - 例子：如果有导入的css的话，建议放到os上使用cdn进行引入
+```js
+import Vue from 'vue'
+import VueQuillEditor from 'vue-quill-editor'
+Vue.use(VueQuillEditor)
+```
+
+
+
+
+
+
