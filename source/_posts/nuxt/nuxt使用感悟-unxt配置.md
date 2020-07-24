@@ -11,15 +11,17 @@ npm run dev即可进入开发环境
 页面内网络请求获取的数据使用asyncData获取，下面会有介绍
 点击动作请求数据可使用插件导出的网络请求，下面有介绍 this.$api.getInfo()
 使用cscc选要提前安装 npm install --save-dev node-sass sass-loader
+
 <!-- more -->
-配置nuxt.config.js
+### 配置nuxt.config.js
 ```js
 export default {
   mode: 'universal',
   /*
   * 头部显示区域 - 页面组件内可以使用
   *  head(){return{title:'',
-  *  meta:[{hid: '网站描述',name: 'description',content:''}]}}来重定义头部标签
+  *  meta:[{hid: '网站描述',name: 'description',content:''}]}}
+  *  来重定义头部标签
   *  
   */
   head: {
@@ -27,8 +29,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       {
-        content: `viewport, width=device-width, initial-scale=1, minimum-scale=1.0,
-maximum-scale=1.0,user-scalable=no`
+        content: `viewport, width=device-width, initial-scale=1, 
+minimum-scale=1.0,maximum-scale=1.0,user-scalable=no`
       },
 
     ],
@@ -72,7 +74,7 @@ maximum-scale=1.0,user-scalable=no`
     '@/plugins/bootstrap-vue',//栅格
     '@/plugins/vue-moment',//格式化时间
     { src: '@/plugins/map', ssr: false },//地图
-    { src: '@/plugins/vue-quill-editor', ssr: false },//裁切
+    { src: '@/plugins/vue-quill-editor', ssr: false },//富文本
     { src: '@/plugins/vue-cropper', ssr: false },//裁切
     { src: '@/plugins/md5', ssr: false }//md5加密
   ],
@@ -153,10 +155,87 @@ maximum-scale=1.0,user-scalable=no`
   ]
 }
 ```
+
 ### layouts文件夹
 layouts文件夹：是放置内容的，公共的部分可以在这个位置去引入一个组件，公共的头，footer等
 错误页也是在此文件夹内，error.vue,官网有详细写法
 这里定义的东西是全局都使用的，慎用
+
+### 自定义页面布局
+在layouts中定义一个页面比如cishi.vue
+```vue
+<template>
+    <div>
+      layouts
+      <nuxt/>
+    </div>
+</template>
+<script>
+  export default {
+    name: 'ceshi',
+  }
+</script>
+```
+如何使用呢，在page文件内的.vue文件内加入
+```vue
+<template>
+<div>
+  asdsadas
+</div>
+</template>
+
+<script>
+  export default {
+    layout: 'ceshi', //重要的是这个代码和上面定义的页面相关联
+    name: 'ceshi'
+  }
+</script>
+```
+
+### 错误页面的定义
+举一个个性化错误页面的例子 layouts/error.vue:
+```vue
+<template>
+  <div class="container">
+    <h1 v-if="error.statusCode === 404">页面不存在</h1>
+    <h1 v-else>应用发生错误异常</h1>
+    <nuxt-link to="/">首 页</nuxt-link>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['error'],
+  layout: 'blog' // 你可以为错误页面指定自定义的布局
+}
+</script>
+```
+
+### 关于页面的
+页面组件实际上是 Vue 组件，只不过 Nuxt.js 为这些组件添加了一些特殊的配置项（对应 Nuxt.js 提供的功能特性）以便你能快速开发通用应用。
+```vue
+<template>
+  <h1 class="red">Hello {{ name }}!</h1>
+</template>
+
+<script>
+export default {
+// 每次在加载组件之前调用 - 初始加载数据在这位置请求，（动作方法不在这）
+  asyncData (context) {return { name: 'World' }},
+  fetch () {},// fetch方法用于在呈现页面之前填充存储
+  head () {},// 为此页设置元标记
+  layout(){},//指定当前页面使用的布局（layouts 根目录下的布局文件）
+  middleware(){},//中间件
+  ...
+}
+</script>
+
+<style>
+.red {
+  color: red;
+}
+</style>
+```
 
 ### asyncData,fetch
 这里需要一个axios请求，等会会写道如何进行网络请求,需要服务器端加载的数据支持seo优化的信息要全部渲染到这个位置
@@ -178,6 +257,7 @@ async asyncData ({app}) {//结构app进来
       }
     }
 ```
+
 ### fetch 方法
 fetch 方法用于在渲染页面前填充应用的状态树（store）数据， 与 asyncData 方法类似，不同的是它不会设置组件的数据。
 类型： Function
@@ -185,11 +265,12 @@ fetch 方法用于在渲染页面前填充应用的状态树（store）数据，
 fetch 方法的第一个参数是页面组件的上下文对象 context，我们可以用 fetch 方法来获取数据填充应用的状态树。为了让获取过程可以异步，你需要返回一个 Promise，Nuxt.js 会等这个 promise 完成后再渲染组件。
 警告: 您无法在内部使用this获取组件实例，fetch是在组件初始化之前被调用
 ```js
-async fetch ({ store, params }) {
+async fetch ({ store, params }){
     let { data } = await axios.get('https://www.baidu.com/stars')
     store.commit('setStars', data)//给vuex发送一个数据
   }
 ```
+
 ### 网络请求 - 中间件 - 用户管理，获取token - 可以不进行使用
 首先获取中间件，就是用户登录的时候会把token保存到cookies这里面，之后要获取token活得用户的信息，登录状态等等，
 安装一个cookies格式化工具方便操作 ：npm i serve cookie-parser 之后在middleware（中间件）这个文件夹内新建文件进行导入
@@ -205,7 +286,60 @@ module.exports = require('cookie-parser')()
   ]
 ```
 
-### axios网络请求
+### 中间件 - 官网说明
+中间件允许您定义一个自定义函数运行在一个页面或一组页面渲染之前。
+
+每一个中间件应放置在 middleware/ 目录。文件名的名称将成为中间件名称(middleware/auth.js将成为 auth 中间件)。
+
+一个中间件接收 context 作为第一个参数：
+```js
+export default function (context) {
+  context.userAgent = process.server ? context.req.headers['user-agent'] : navigator.userAgent
+}
+```
+
+中间件执行流程顺序：
+
+nuxt.config.js
+匹配布局
+匹配页面
+中间件可以异步执行,只需要返回一个 Promise 或使用第2个 callback 作为第一个参数：
+
+middleware/stats.js
+
+import axios from 'axios'
+```js
+export default function ({ route }) {
+  return axios.post('http://my-stats-api.com', {
+    url: route.fullPath
+  })
+}
+```
+然后在你的 nuxt.config.js 、 layouts 或者 pages 中使用中间件:
+
+nuxt.config.js
+```js
+module.exports = {
+  router: {
+    middleware: 'stats'
+  }
+}
+```
+
+现在，stats 中间件将在每个路由改变时被调用。
+
+您也可以将 middleware 添加到指定的布局或者页面:
+
+pages/index.vue 或者 layouts/default.vue
+```js
+export default {
+  middleware: 'stats'
+}
+
+```
+
+### axios网络请求 - https://zh.nuxtjs.org/guide/async-data
+安装axios - npm install @nuxtjs/auth @nuxtjs/axios
 在plugibns中新建文件api.js之后写入axios的网络请求配置，为什么在plugins中，因为这个位置可以获取到上下文对象，可以结构初store和app，以及获取win和dom
 别的位置暂时没有找到可以结构出的，所以放在这个插件文件夹下了 - 默认导出的配置
  - 全局都可以使用直接在asyncData中$api.getInfo()，在vue其他方法中this.$api.getInfo(); 
@@ -213,7 +347,7 @@ inject全局暴漏导出
 ```js
 import apiAll from '../api/apiAll.js'//导入请求的n个地址 地址自定义
 export default function ({ app }, inject) {
-  let { store, $axios } = app//结构出store, $axios
+  let { store, $axios } = app//结构出store, $axios - 自带的axios
   $axios.defaults.baseUrl = '/api'//设置api，nuxt.confige.js中以解释/api的来历
   /** 拦截请求设置 可以做一些请求之前的操作 token **/
   $axios.interceptors.request.use(
@@ -222,6 +356,7 @@ export default function ({ app }, inject) {
 
     //这个位置可以获取浏览器的win所以可以读取token，在请求拦截之前把token添加进去
     //浏览器没有的话，说明不是登录状态，判断用户是否登录
+// if (process.browser){}这个是获取浏览器的win和dom
       let Token = ''
       if (process.browser) {
         Token = window.localStorage.getItem('token')
@@ -247,7 +382,7 @@ export default function ({ app }, inject) {
   inject('api', apiAll($axios))//inject全局暴漏，名字为api 导出的是这个axios
 }
 ```
-apiAll，自定义的地址，和上面进行对应
+apiAll.js  请求集合，自定义的地址，和上面进行对应
 ```js
 import homev2 from './homev2' //可以多个文件导入
 import institutionalUserv2 from './institutionalUserv2'
@@ -259,7 +394,7 @@ export default function ($axios) {
   }
 }
 ```
-homev2的文件:
+homev2的文件:   请求分开的文件
 ```js
 /*url是个字符串可拼接
 axios.request(config)
@@ -297,6 +432,7 @@ export default function ($axios) {
 }
 
 ```
+
 ### vuex获取用户信息
 如何存储token
 if(process.browser){//获取浏览器对象cookie
@@ -347,6 +483,7 @@ export const actions = {
   },
 }
 ```
+
 ### 路由
 是根据文件的目录生成的路由_id.vue可以传输路由的参数，如果想有链接的标识，鼠标经过的时候下面显示连接使用标签：<nuxt-link to="/about">关于</nuxt-link>
 ####  路由问题
@@ -437,6 +574,7 @@ router: {
 ```
 
 ### 插件使用
+需要详细阅读官方文章： - https://zh.nuxtjs.org/guide/plugins
 之前默认安装element 安装富文本，图片裁切 地图，boot栅格，可以使用vue add方法进行安装，也可以npm i -d ...安装
 安装方法安装富文本图片裁切：npm install -d vue-quill-editor quill vue-cropper 
 官网：
@@ -449,7 +587,9 @@ vue-cropper：https://github.com/xyxiao001/vue-cropper
 import Vue from 'vue'
 import VueQuillEditor from 'vue-quill-editor'
 Vue.use(VueQuillEditor)
-```
+``` 
+
+
 
 
 

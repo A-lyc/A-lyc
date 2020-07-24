@@ -11,6 +11,8 @@ category: Nuxt
 2：vuex有的时候进入页面点击刷新的时候很多东西没有了，因为存储的状态管理没有了，所以导致显示或者不显示的问题，等等，如果用户的话，这个还是判断浏览器中的token有没有，在使用浏览器的token获取用户信息，之后在进行判断，以防刷新之后不显示问题
 3：页面数据加载不出来：因为没有正确使用asyncData数据请求，或者axios写错了位置，应该在插件目录下
 4：vuex中nuxtServerInit的使用， mutations内使用大写TOKEN(){},之操作一件事情
+5：nuxt使用node_mode中的axios的时候会报错官方解释是，所以尽量使用自己带的axios
+如果您的项目中直接使用了node_modules中的axios，并且使用axios.interceptors添加拦截器对请求或响应数据进行了处理，确保使用 axios.create创建实例后再使用。否则多次刷新页面请求服务器，服务端渲染会重复添加拦截器，导致数据处理错误。
 <!-- more -->
 ##  一、为什么要用Nuxt.js
 原因其实不用多说，就是利用Nuxt.js的服务端渲染能力来解决Vue项目的SEO问题。
