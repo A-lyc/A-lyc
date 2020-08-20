@@ -5,6 +5,7 @@ tags: nuxt跳转手机端页面
 category: nuxt跳转手机端页面
 ---
 新建一个isMobile.js文件，路径自选，我的路径是/static/js/isMobile.js
+<!-- more -->
 ```js
 (function() {
     console.log("判断移动端");
