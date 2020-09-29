@@ -8,10 +8,13 @@ express官网：https://www.expressjs.com.cn/starter/installing.html
 <!-- more -->
 ###初始化
  - npm init
+ 
 ### 安装
  - npm install express --save
+ 
 ### 引入包
  - const express = require('express')
+ 
  
 ### 路由
 ```app.METHOD(PATH, HANDLER)```
@@ -20,11 +23,14 @@ express官网：https://www.expressjs.com.cn/starter/installing.html
  - PATH 是服务器上的路径
  - HANDLER 是当路由匹配时执行的功能
  
+ 
 ### 安装模板插件
  - npm install --save express-art-template art-template
  - 引入和使用
   ```js
-    // 后缀名为html 引入包
+    // 第一个参数：‘html’ 渲染以后缀名为html的文件 
+    // 引入包express-art-template,之前必须安装art-template
+    // 原因express-art-template依赖了art-template
     app.engine('html', require('express-art-template'));
     //必要的view options
     app.set('view options', {
@@ -42,12 +48,16 @@ express官网：https://www.expressjs.com.cn/starter/installing.html
         * res.render('./home/index.html',{comments})
         * */
     res.render('index.html',{comments})
+    // 数据重定向 - 不用使用原生复杂的重定向，express直接封装了函数
+    res.redirect('/')
+
 })
 ```
 
 ### 开放公共资源
  ```app.use('/public/', express.static('./public/'))```
  ```http://localhost:3000/public/images/kitten.jpg```
+ 
  
 ### 处理404和错误处理器
  - 在Express中，404响应不是错误的结果，因此错误处理程序中间件将不会捕获它们。此行为是因为404响应仅表明没有要做的其他工作。换句话说，Express已经执行了所有中间件功能和路由，但发现它们均未响应。您需要做的就是在堆栈的最底部添加一个中间件功能（在所有其他功能下方）以处理404响应：
@@ -156,11 +166,9 @@ app.get('/example/d', [cb0, cb1], function (req, res, next) {
   </tbody>
 </table>
 
-
-
-
-
 ### 输出请求url - get请求
+    - get请求可以通过req.query的方式来拿到数据 通过查询字符串开始的
+    - req.query只能拿到get请求的参数
  ```js
 
 //根据fs文件找查输出res.end(data)文档显示输出send，我输出结果是下载，之后输出的end
@@ -193,4 +201,45 @@ app.get('/post', function(req, res) {
 })
 ```
 
+### 输出请求url - post请求
+- 在Express获取post数据，需要结合插件，在Express没有POST获取请求体的，这里需要安装第三方包
+安装
+```js
+npm install body-parser --save
+```
+
+设置
+```js
+var express = require('express')
+
+// 0:引包
+var bodyParser = require('body-parser')
+
+var app = express()
+
+//配置 body-parser
+//只要加入这个配置，则在req请求对象上，多出一个body属性，
+// 也就是可以通过req.body获取数据了
+// parse application/x-www-form-urlencoded
+// 专门解决post请求的请求体
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
+// post请求
+app.post('/pinglun',(req,res)=>{
+    console.log(req.body)
+    let query = req.body
+    query.dateTime = "2020-10-01"
+    comments.unshift(query)
+    res.redirect('/')
+})
+
+app.use(function (req, res) {
+  res.setHeader('Content-Type', 'text/plain')
+  res.write('you posted:\n')
+  //可以通过req.body来获取POST来获取数据
+  res.end(JSON.stringify(req.body, null, 2))
+})
+```
 

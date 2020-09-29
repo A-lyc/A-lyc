@@ -63,6 +63,43 @@ node服务器语言
   · 可以结构url
  - art-template => npm i art-template -S
   · 模板引擎 在使用express的时候需要安装express-art-template
+ - node-xlsx => npm install node-xlsx -S
+  · 获取xlsx的数据 => parse
+  ```js
+//获取xlsx中的数据
+let xlsxData = xlsx.parse('./fenxi.xlsx')
+
+  ```
+
+  · 创建xlsx   => build
+  ```js
+//定义xlsx数据
+let data = [
+        [1, 2, 3],
+        [true, false, null, 'sheetjs'],
+        ['foo', 'bar', new Date(), '0.3'],
+        ['baz', null, 'qux']
+    ]
+//创建xlsx
+let buffer = xlsx.build([{name: "mySheetName", data: data}]);
+
+```
+
+  · 输出新建文件
+  ```js
+    fs.writeFile('./fenxi.xlsx', buffer,  function(err) {
+    if (err) {
+            return console.error(err);
+        }
+        console.log("数据写入成功！");
+        console.log("读取写入的数据！");
+        //打开获取数据
+        let testData = xlsx.parse("./fenxi.xlsx");
+        console.log(testData);
+    
+    })
+   ```
+
  -----
 * 导入导出
   - 内部时exports = module.exports 
