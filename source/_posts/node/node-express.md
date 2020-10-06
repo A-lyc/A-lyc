@@ -17,7 +17,7 @@ express官网：https://www.expressjs.com.cn/starter/installing.html
  
  
 ### 路由
-```app.METHOD(PATH, HANDLER)```
+ - app.METHOD(PATH, HANDLER)
  - app是的实例express
  - METHOD是一个HTTP请求方法（小写）
  - PATH 是服务器上的路径
@@ -55,6 +55,7 @@ express官网：https://www.expressjs.com.cn/starter/installing.html
 ```
 
 ### 开放公共资源
+
  ```app.use('/public/', express.static('./public/'))```
  ```http://localhost:3000/public/images/kitten.jpg```
  
@@ -169,8 +170,8 @@ app.get('/example/d', [cb0, cb1], function (req, res, next) {
 ### 输出请求url - get请求
     - get请求可以通过req.query的方式来拿到数据 通过查询字符串开始的
     - req.query只能拿到get请求的参数
+    
  ```js
-
 //根据fs文件找查输出res.end(data)文档显示输出send，我输出结果是下载，之后输出的end
 app.get('/', (req, res) => {
     fs.readFile('./views/index.html',(error,data)=>{
