@@ -13,8 +13,8 @@ node服务器语言
     //文件夹内的路径
     fs.readdri(‘路径’,(error,files)=>{})
     
-    //读取文件
-    fs.readFile(‘路径’,(error,data)=> {})
+    //读取文件 需要toSteing() error：错误信息 / data：文件内容
+    fs.readFile(‘路径’,'utf8',(error,data)=> {})
     
     //创建文件 - 第二个参数找官网
     fs.open(‘路径’,’’,(error,fd)=>{})
@@ -25,7 +25,7 @@ node服务器语言
     //追加文件
     fs.appendFile(‘追加文件’,’追加数据’,error=>{})
     
-    //写入文件
+    //写入文件 没有此文件直接创建，有的话直接覆盖 1:路径 2:内容 3:错误信息
     fs.writeFile(‘路径’,’内容’,reeoe=>{})
     
     //文件信息
@@ -59,52 +59,16 @@ node服务器语言
 * 自定义模块需要require('./XXX'),以路径的方式传入
 -----
 * 第三方模块需要require('fs')
- - url => npm i url --save 
+ - 开发人员发不上去的包，插件
+ - url => npm i 包 --save 
   · 可以结构url
  - art-template => npm i art-template -S
   · 模板引擎 在使用express的时候需要安装express-art-template
- - node-xlsx => npm install node-xlsx -S
-  · 获取xlsx的数据 => parse
-  ```js
-//获取xlsx中的数据
-let xlsxData = xlsx.parse('./fenxi.xlsx')
-
-  ```
-
-  · 创建xlsx   => build
-  ```js
-//定义xlsx数据
-let data = [
-        [1, 2, 3],
-        [true, false, null, 'sheetjs'],
-        ['foo', 'bar', new Date(), '0.3'],
-        ['baz', null, 'qux']
-    ]
-//创建xlsx
-let buffer = xlsx.build([{name: "mySheetName", data: data}]);
-
-```
-
-  · 输出新建文件
-  ```js
-    fs.writeFile('./fenxi.xlsx', buffer,  function(err) {
-    if (err) {
-            return console.error(err);
-        }
-        console.log("数据写入成功！");
-        console.log("读取写入的数据！");
-        //打开获取数据
-        let testData = xlsx.parse("./fenxi.xlsx");
-        console.log(testData);
-    
-    })
-   ```
-
  -----
 * 导入导出
   - 内部时exports = module.exports 
   - 导出多个，放在对象内 module.exports = {} 都是用这个
-  - 导出单个，放在对象内 exports.a = fu 不建议使用
+  - 导出单个，放在对象内 exports.a = fu / function (){return {}}
   - 导入自定义模块：require(‘./’)
   - 导入插件模块：require(‘fs’)
 -----
@@ -131,3 +95,11 @@ let buffer = xlsx.build([{name: "mySheetName", data: data}]);
   - md 新建
   - rd 删除
   - ipconfig 本机ip 
+ 
+ -----
+ ### 模块表示的‘/’和文件操作系统中的‘/’
+  - 如果只有 ‘/’ 两者都是找磁盘跟目录的下的文件
+  - 文件操作系统中 路径可以省略 ./
+  - 在模块加载中相对路径的 ./ 不可以省略
+ 
+ 

@@ -2,7 +2,7 @@
 uuid: eeeeca7d-eebe-298d-6254-2866e36ef1b0
 title: 个人简历
 date: 2020-03-21 23:49:57
-category:
+category: 
 layout: page      # 必须
 description: 欢迎大佬光顾      # 页面二级标题，描述性文字
 comments: false     # 禁用评论，可选，默认开启
