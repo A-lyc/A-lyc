@@ -1,7 +1,7 @@
 ---
 title: 原生封装ajax
 date: 2020-10-08 09:52:48
-tags: 原生ajax
+tags: [原生ajax]
 category: 原生ajax
 ---
 原生封装js 请求方式 原生，封装的Promise的方法，使用async/await 用try/catch捕捉错误
