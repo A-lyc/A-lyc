@@ -29,5 +29,6 @@ reward: false       # 禁用打赏，可选，默认开启
 | {% link 吉宝生物 http://keppelbio.com/ [吉宝生物] %} | （已上线）搜索地址即可 | 网址：http://keppelbio.com/ |
 | {% link 兴和石墨 http://www.qdxhsm.com/ [兴和石墨] %} | （已上线）搜索地址即可 | 网址：http://www.qdxhsm.com/ |
 | {% link 山东万得福 http://www.chinaprotein.com.cn/ [山东万得福] %} | （已上线）搜索地址即可 | 网址：http://www.chinaprotein.com.cn/ |
-| {% link 正爱 http://zhengai.leadto.cn/ [正爱] %} | （未上线） | 网址：http://zhengai.leadto.cn/ |
-| {% link 瑞林假发 http://ruilin.leadto.cn/ [瑞林假发] %}| （未上线） | 网址：http://ruilin.leadto.cn/ |
+| {% link 正爱 http://suppoly.com/ [正爱] %} | （已上线）搜索地址即可 | 网址：http://suppoly.com/ |
+| {% link 瑞林假发 https://www.ruilinhair.com/ [瑞林假发] %}| （已上线）搜索地址即可 | 网址：https://www.ruilinhair.com/ |
+| {% link IRIS官网 http://irisbrilliantco.com/ [IRIS官网] %}| （已上线）搜索地址即可 | 网址：http://irisbrilliantco.com/ |

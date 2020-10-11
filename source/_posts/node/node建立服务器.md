@@ -2,7 +2,7 @@
 title: node建立服务器-express-增删改查
 date: 2020-10-08 19:52:29
 tags: [node-express,node入门,node框架]
-category:
+category: node入门
 ---
 ### 首先启动项目安装必要的文件：express，fs，art-template,express-art-template,body-parser
 

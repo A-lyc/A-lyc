@@ -2,7 +2,7 @@
 title: node-express
 date: 2020-09-27 20:17:11
 tags: node-express node框架
-category: node-express
+category: node-express node入门
 ---
 express官网：https://www.expressjs.com.cn/starter/installing.html
 <!-- more -->
