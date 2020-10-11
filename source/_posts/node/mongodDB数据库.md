@@ -212,10 +212,22 @@ User.remove({_id:'5f82a84a875939195ceff0e3'}).then(ret=>{
     console.log('---- 2 ----')
     console.log(err)
 })
+//根据条件删除一个
+User.findOneAndRemove(conditions,[options],callback)
+// 根据id删除一个
+User.findByIdAndRemove(id,[options],callback)
+
 ```
 
 ### 更新数据
 ```js
+// 根据条件更新所有
+User.update(conditions,doc,[options],callback)
+
+// 根据条件更新一个
+User.findOneAndUpdate(conditions,doc,[options],callback)
+
+// 根据ID更新
 User.findByIdAndUpdate('5f82a8741c097b40345a29f6',{
     password: '1111'
 }).then(ret=>{
@@ -223,4 +235,5 @@ User.findByIdAndUpdate('5f82a8741c097b40345a29f6',{
 }).catch(err=>{
     console.log('shibai')
 })
+
 ```
