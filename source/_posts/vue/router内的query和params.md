@@ -2,7 +2,7 @@
 uuid: 3101d82a-9f9f-6476-2103-383b39819358
 title: router内的query和params
 date: 2020-04-30 10:38:30
-tags: vue 路由
+tags: [vue,路由]
 category: vue
 ---
 this.$route.query和this.$route.params的使用：this.$route.query根据path来找查在url上有显示的，params根据name来找查在url上没有显示

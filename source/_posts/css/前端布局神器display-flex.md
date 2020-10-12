@@ -28,7 +28,7 @@ category: css
 ### 二、基本概念
 
  > 采用Flex布局的元素，被称为Flex容器(flex container)，简称“容器”。其所有子元素自动成为容器成员，成为Flex项目(Flex item)，简称“项目”。
-![查入图片](/前端布局神器display-flex/image.png)
+![查入图片](./前端布局神器display-flex/image.png)
 
  *  结构示意图
   容器默认存在两根主轴：水平方向主轴(main axis)和垂直方向交叉轴(cross axis)，默认项目按主轴排列。

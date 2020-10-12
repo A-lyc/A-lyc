@@ -2,7 +2,7 @@
 uuid: be905f4a-5bef-cf9d-5ef6-928bbcb6f84b
 title: map导入点击地图出现
 date: 2020-03-23 09:54:48
-tags: 前端脚手架
+tags: [前端脚手架]
 category: 前端模块化脚手架
 ---
 需要引入js

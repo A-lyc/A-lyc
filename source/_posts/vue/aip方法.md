@@ -1,8 +1,8 @@
 ---
 title: vue-api
 date: 2020-08-19 20:07:03
-tags: vue
-category: vue-api
+tags: [vue,vue-api]
+category: vue-api vue
 ---
 集合了一些自己感觉常用的api，组件构造器，全局安装组件，除去计算属性和wacth的监听数据变化
 <!-- more -->

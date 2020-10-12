@@ -2,7 +2,7 @@
 uuid: 77af8edb-0772-de4b-9c28-5915c4fae616
 title: $router使用方法
 date: 2020-03-28 11:38:10
-tags: vue $router
+tags: [vue,$router]
 category: vue
 ---
 我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由：

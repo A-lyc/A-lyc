@@ -2,7 +2,7 @@
 uuid: 7bdf5bd1-ecac-fe95-a36b-e0a1f607d71f
 title: mixin什么是混入
 date: 2020-03-28 18:09:51
-tags: vue mixin混入
+tags: [vue,mixin混入]
 category: vue
 ---
 

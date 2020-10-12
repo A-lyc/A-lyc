@@ -2,7 +2,7 @@
 uuid: d624d0e9-d695-5cb6-373f-74d27dfa0727
 title: wxparse富文本插件
 date: 2020-05-18 20:41:46
-tags: 微信 wxparse富文本插件
+tags: [微信,wxparse富文本插件]
 category: 微信
 ---
 优点：目前已知唯一可以转化HTML到小程序识别的插件

@@ -2,7 +2,7 @@
 uuid: 5f500955-d32f-6e41-ee8f-6c2bb8e3c16b
 title: 微信小程序的异步请求-promise封装-async
 date: 2020-05-16 22:23:04
-tags: 微信 微信小程序的异步请求-promise封装-async
+tags: [微信,微信小程序的异步请求-promise封装-async]
 category: 微信
 ---
 1. 小程序原生发送异步请求: wx.request

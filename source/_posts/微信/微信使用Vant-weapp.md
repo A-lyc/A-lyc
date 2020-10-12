@@ -2,7 +2,7 @@
 uuid: 2b4490bb-2bee-1db6-43c0-6616792dffc4
 title: 微信使用Vant-weapp
 date: 2020-05-15 21:18:25
-tags: 微信 Vant-weapp
+tags: [微信,Vant-weapp]
 category: 微信
 ---
 ### 微信小程序引入Vant组件库

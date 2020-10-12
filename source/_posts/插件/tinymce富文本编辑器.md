@@ -2,8 +2,8 @@
 uuid: d69b4746-38f3-dc5c-a3c4-96db3edf927a
 title: tinymce富文本编辑器
 date: 2020-04-25 11:00:59
-tags: 资源 tinymce富文本编辑器
-category: 资源
+tags: [资源,tinymce富文本编辑器,插件]
+category: 资源,插件
 ---
 富文本编辑器的使用方法，官网参考：https://www.tiny.cloud/，在vue中使用，参考如下
 <!-- more -->
