@@ -2,12 +2,10 @@
 uuid: 9d3915ea-0ad1-a049-ce3c-c16dd67eae3b
 title: vue3.0解决跨域问题
 date: 2020-03-31 18:22:37
-tags:[ vue,跨域]
+tags: [vue,跨域]
 category: vue
 ---
-
 在vue的vue.config.js（自己创建的）里面进行添加
-
 ```js
 module.exports = {
     devServer: {
