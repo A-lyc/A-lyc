@@ -35,7 +35,8 @@ import axios from 'axios'
 export function request(config) {
   // 1.创建axios的实例
   const instance = axios.create({
-    '/api': 'https://www.XXXXXXXXX.com/',
+    baseURL: '/api',
+    // '/api': 'https://www.XXXXXXXXX.com/',
   })
 
   // 2.axios的拦截器
