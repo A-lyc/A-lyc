@@ -5,12 +5,15 @@ tags: [数据库,node,mongoDB,node入门]
 category: node入门
 ---
 
+
 ## 安装 
 - 网址：https://www.mongodb.com/try/download/community
 - 下载社区级别的，免费 也就是本地的第二个
 - 根绝菜鸟教程进行安装 网址：https://www.runoob.com/mongodb/mongodb-window-install.html
 - 环境变量配置，把mongod的路径给到path添加上即可 我的电脑右键属性。。。。。
 - mongod --version  => 查看是否安装很成功
+
+
 
 ## 启动
 - 打开控制台输入 mongod
@@ -23,6 +26,7 @@ category: node入门
     ```
   
   
+  
 ## 停止
 - 开启服务的控制台ctrl+c，或者直接关闭
 
@@ -32,6 +36,7 @@ category: node入门
  · 使用命令mongo 默认打开本机的数据库mongod服务
 - 退出
  · exit 在连接状态输入exit 就是退出连接
+ 
  
  
 ## 基本命令
@@ -53,6 +58,7 @@ category: node入门
  · 创建集合
 - db.名称.drop()
  · 删除集合 在show collections查看之后删出
+ 
  
 ## 在Node中操作mongod数据库
 - 使用官方的mongod包来操作
@@ -88,6 +94,7 @@ kitty.save().then(() => console.log('meow,成功')).catch(e=>{console.log(e)});
  · db.cats.find()
 - 问题 如何让在数据库中出来到最初始目录
 
+ 
  
  
 ## mongoDB的基本概念
@@ -219,7 +226,7 @@ User.findByIdAndRemove(id,[options],callback)
 
 ```
 
-### 更新数据
+### 修改数据
 ```js
 // 根据条件更新所有
 User.update(conditions,doc,[options],callback)
@@ -236,4 +243,37 @@ User.findByIdAndUpdate('5f82a8741c097b40345a29f6',{
     console.log('shibai')
 })
 
+```
+
+### express + mongoose 上传图片
+- 安装：npm i multer //express插件上有
+```shell
+/** 在路由文件内 **/
+// 初始化安装
+var multer = require('multer')
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+// 图片上传路径 根目录下的/../uploads 需要公开这个目录  返回路径：F:\ceshiXM\demo01\routes/../uploads
+        cb(null, __dirname + '/../uploads')
+    },
+    filename: function (req, file, cb) {
+// 图片默认上传没有后缀的，添加后缀名称
+        let mimetype = file.mimetype.split('/')[1]
+        cb(null, file.fieldname + '-' + Date.now() + '.' + mimetype)
+    }
+})
+// 上传 upload.single('files') 可以req结构出file
+router.post('/upImage',upload.single('files'),async (req,res)=>{
+    try{
+        let file = req.file
+        // 返回的线上地址
+        file.url = `http://localhost:3000/uploads/${file.filename}`
+        // 返回json数据
+        res.json({
+                    data: file,// 返回数据的名称
+                })
+    }catch(e){
+        console.log(e)
+    }
+})
 ```
