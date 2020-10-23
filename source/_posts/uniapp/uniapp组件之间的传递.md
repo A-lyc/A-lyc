@@ -5,10 +5,30 @@ date: 2020-04-04 13:25:06
 tags: uniapp
 category: uniapp
 ---
-uniapp里面的组件之间传递信息数据，如何接收数据
 
-####  父组件传递给子组件，使用popst：{}和vue一样传递方式
+###  uniapp监听事件
++ 原生导航搜索按钮点击事件,可以和data同级别
+
 <!-- more -->
+```
+onNavigationBarButtonTap() {
+			uni.navigateTo({
+				url:'../SearchList/SearchList'
+			})
+		}
+```
++ 点击搜索框事件，可以和data同级别
+```
+uni.onNavigationBarSearchInputClicked(() =>{
+				uni.navigateTo({
+					url:'../search/search'
+				})
+				console.log(123)
+			})
+```
+uniapp里面的组件之间传递信息数据，如何接收数据
+####  父组件传递给子组件，使用popst：{}和vue一样传递方式
+
 ```
 //父组件传递mag给子组件，mag定义到实例上的
 <view :magess="mag"></view>
