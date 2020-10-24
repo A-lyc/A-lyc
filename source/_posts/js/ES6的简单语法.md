@@ -45,6 +45,3 @@ category: ES6
     books.XXX
   }
 
-### 我们可以使用 JSON.parse() 方法将数据转换为 JavaScript 对象  接收的JSON转成JavaScript
-
-### 我们可以使用 JSON.stringify() 方法将 JavaScript 对象转换为字符串。 JavaScript转成JSON格式传给服务器

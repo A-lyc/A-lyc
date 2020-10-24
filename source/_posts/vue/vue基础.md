@@ -6,193 +6,179 @@ tags: vue 基本生命周期
 category: vue
 ---
 ### vue属性
-data(){return:{}}
 methods:{}//定义方法属性
 computed:{}//计算属性
+watch:{}//监听属性变化
 components:{}//模板注册
 props:{}//获取父组件的数据
 <!-- more -->
 生命周期 内可以传输参数created(abc) {}
+使用前导入：
+```vue
+import { ref, computed, watch, getCurrentInstance,
+onMounted,onRenderTracked,onRenderTriggered,
+onBeforeMount,onBeforeUpdate,onUpdated,onBeforeUnmount,onUnmounted,
+onErrorCaptured} from "vue";
+```
+### setup(){} ：生命周期函数需要在这个函数内执行
+两种形式的生命周期函数可以共存（当然实际使用的时候最好只选用一种），它们都会被执行。Composition API形式的生命周期函数都是在 setup 方法中被调用注册。
+最后，在实际的开发过程中，请注意一下Options API形式的组件生命周期钩子和Composition API之间的实际对应关系：
 
-### 1.new vue() : 这是new了一个vue的实例对象；此时就会进入组件的创建过程。
-
-### 2.Init Events & Lifecycle ：初始化组件的事件和生命周期函数；当执行完这一步之后，组件的生命周期函数就已经全部初始化好了，等待着依次去调用。
-
-### 3.beforeCreate ：
-
-官方说明：在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。
-
-解释：这是第一个生命周期函数；此时，组件的data和methods以及页面DOM结构，都还没有初始化；所以此阶段，什么都做不了。
-
-### 4.Init injections & reactivity ：这个阶段中，正在初始化data和methods中的数据以及方法。
-
-### 5.created ：
-
-官方说明：实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。
-
-解释：这个组件创建阶段第二个生命周期函数，此时，组件的data和methods已经可以用了；但是页面还没有渲染出来；在这个生命周期函数中，我们经常会发起Ajax请求；
-
-### 6.正在解析模板结构，把data上的数据拿到，并且解析执行模板结构汇总的指令；当所有指令被解析完毕，那么模板页面就被渲染到内存中了；当模板编译完成，我们的模板页面，还没有挂载到页面上，只是存在于内存中，用户看不到页面；
-
-### 7.beforeMount :
+### beforeMount  3.0=> onBeforeMount
 
 官方说明：在挂载开始之前被调用：相关的 render 函数首次被调用。
 
 解释：当模板在内存中编译完成，会立即执行实例创建阶段的第三个生命周期函数，这个函数就是beforeMount，此时内存中的模板结构，还没有真正渲染到页面上；此时，页面上看不到真实的数据，用户看到的只是一个模板页面而已；
-
-### 8.这一步把正在内存中渲染好的模板结构替换到页面上；
-
-### 9.mounted ：
+ 
+### mounted 3.0=> onMounted
 
 官方说明：el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。 
 
 解释：mounted是组件创建阶段最后的一个生命周期函数；此时，页面已经真正的渲染好了，用户可以看到真实的页面数据了；当这个生命周期函数执行完，组件就离开了创建阶段，进入到了运行中的阶段；如果大家使用到一些第三方的UI插件，而且这个插件还需要被初始化，那么，必须在mounted中来初始化插件；
 
-### 10.组件运行汇总的生命周期函数；组件运行中的生命周期函数，会根据data数据的变化，有选择性的被触发0次货N次；
-
-### 11.beforeUpdate ：
+### beforeUpdate 3.0=> onBeforeUpdate
 
 官方说明：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。
 
 解释：在执行beforeUpdate运行中的生命周期函数的时候，数据肯定是最新的；但是页面上呈现的数据还是旧的
 
-### 12.正在根据最新的data数据，重新渲染内存中的的模板结构；并把渲染好的模板结构替换到页面上
 
-### 13.updated ： 
+### updated 3.0=> onUpdated
 
 官方说明：由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。
 
 解释：页面也完成了更新，此时，data数据是最新的，同时，页面上呈现的数据也只最新的。
 
-### 14.beforeDestroy ：
+### beforeDestroy 3.0=> onBeforeUnmount
 
 官方说明：实例销毁之前调用。在这一步，实例仍然完全可用。
 
 解释：当执行beforeDestroy的时候，组件即将被销毁，但是还没有真正开始销毁，此时组件还是正常可用的；data、methods等数据或方法，依旧可以被正常访问
 
-### 15.销毁过程
-
-### 16.destroyed ：
+### destroyed 3.0=> onUnmounted
 
 官方说明：vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
 
 解释：组件已完成了销毁，组件无法使用，data和methods都不可使用。
 
+### errorCaptured 3.0=> onErrorCaptured
+
 ### 代码
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-</head>
-<body>
-<div id="app">
-    <input  v-model="message"/>
-    <p>{{message}}</p>
-    <button @click="clickfun">按钮</button>
-</div>
-</body>
+```vue
+<template>
+  <div class="about">
+    <h1>test count: {{ count }}</h1>
+    <h1>test: {{ test }}</h1>
+    <h1>computed: {{ doubleCount }}</h1>
+    <h1>vuex: {{ a }}</h1>
+    <h1 @click="getgreet">vue3.0的computed和watch，使用方式</h1>
+    <button @click="add('1123456465645465')">增加</button>
+    <button @click="update('1123456465645465')">更改</button>
+  </div>
+</template>
+
 <script>
-    var myVue = new Vue({
-        el: '#app',
-        data: function () {
-            return {
-                message: 'XXXX'
-            };
-        },
-        beforeCreate: function () {
-            console.group('beforeCreate 创建前状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(state);
-        },
-        created: function () {
-            console.group('created 创建完毕状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(state);
-        },
-        beforeMount: function () {
-            console.group('beforeMount 挂载前状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(this.$el);
-            console.log(state);
-        },
-        mounted: function () {
-            console.group('mounted 挂载结束状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(this.$el);
-            console.log(state);
-        },
-        beforeUpdate: function () {
-            console.group('beforeUpdate 更新前状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(this.$el);
-            console.log(state);
-            console.log('beforeUpdate == ' + document.getElementsByTagName('p')[0].innerHTML);
-        },
-        updated: function () {
-            console.group('updated 更新完成状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(this.$el);
-            console.log(state);
-            console.log('updated == ' + document.getElementsByTagName('p')[0].innerHTML);
-        },
-        beforeDestroy: function () {
-            console.group('beforeDestroy 销毁前状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(this.$el);
-            console.log(state);
-        },
-        destroyed: function () {
-            console.group('destroyed 销毁完成状态===============》');
-            var state = {
-                'el': this.$el,
-                'data': this.$data,
-                'message': this.message
-            }
-            console.log(this.$el);
-            console.log(state);
-        },
-        methods: {
-            clickfun() {
-                myVue.$destroy()
-            }
-        
-        }
-        
-        
+import { ref, computed, watch, getCurrentInstance,
+onMounted,onRenderTracked,onRenderTriggered,
+onBeforeMount,onBeforeUpdate,onUpdated,onBeforeUnmount,onUnmounted,
+onErrorCaptured} from "vue";
+
+export default {
+  setup() {
+       const { ctx } = getCurrentInstance(); // 获取当前实例
+    onBeforeMount(()=>{
+      console.log("在挂载开始之前被调用")
+    })
+    onBeforeUnmount(()=>{
+      console.log("实例销毁之前调用")
+    })
+    onBeforeUpdate(()=>{
+      console.log(ctx)
+      console.log("数据更新时调用")
+    })
+    onUnmounted(()=>{
+      console.log("组件已完成了销毁")
+    })
+    onErrorCaptured(()=>{
+      console.log("在错误捕获")
+    })
+    onUpdated(()=>{
+      console.log(ctx)
+      console.log("页面也完成了更新")
+    })
+    onMounted(() => {
+      console.log("挂载后 >>>>>>01");
     });
+    onRenderTracked((e) => {
+      console.log('渲染跟踪');
+      console.log(e);
+    });
+    onRenderTriggered((e) => {
+      console.log('渲染 - 触发')
+      console.log(e);
+    });
+    // 页面加载的时候触发
+    const count = ref(0);
+ 
+    console.log(getCurrentInstance());
+    console.log(ctx.$router.currentRoute.value); // 获取路由
+    const a = computed(() => ctx.$store.state.test.a); // 计算属性获取vuex上的属性
+    const update = () => {
+      // 修改vuex的信息
+      ctx.$store.commit("setTestA", count.value * 10);
+      console.log(ctx.$store.state.test.a);
+    };
+    let test = ref("我们都是好孩子"); // 定义test默认显示内容
+    const add = () => {
+      // 点击动作
+      test.value = "我是好人"; // 修改值
+      count.value++; // count加一
+    };
+    // function time() {
+    //   setInterval(()=>{
+    //     count.value++
+    //   },100)
+    // }
+    // time()
+    watch(
+      () => {
+        // 页面加载就读取这个信息 监听属性的变化
+        console.log("---- 1 ----");
+        console.log(count.value);
+        count.value;
+      },
+      (val) => {
+        console.log("---- 2 ----");
+        console.log(`count is ${val}`);
+      }
+    );
+    const doubleCount = computed(() => {
+      // 计算属性获取 count.value * 2
+      return count.value * 2;
+    });
+  
+    return {
+      // 返回定义的对象
+      count,
+      test,
+      doubleCount,
+      add,
+      a,
+      update,
+    };
+  },
+   mounted() {
+     // 这个比上面的on要晚
+        console.log('挂载后 >>>>>>02')
+    },
+  methods: {
+    getgreet() {
+      console.log("---- methods的点击动作 ----");
+      console.log(this.update);
+    },
+  },
+};
 </script>
-</html>
 ```
 
 ### 组件传递

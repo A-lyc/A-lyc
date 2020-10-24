@@ -246,14 +246,16 @@ User.findByIdAndUpdate('5f82a8741c097b40345a29f6',{
 ```
 
 ### express + mongoose 上传图片
-- 安装：npm i multer //express插件上有
-```shell
+
+```js
+// 安装：npm i multer //express插件上有
 /** 在路由文件内 **/
 // 初始化安装
 var multer = require('multer')
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-// 图片上传路径 根目录下的/../uploads 需要公开这个目录  返回路径：F:\ceshiXM\demo01\routes/../uploads
+// 图片上传路径 根目录下的/../uploads 需要公开这个目录  
+// 返回路径：F:\ceshiXM\demo01\routes/../uploads
         cb(null, __dirname + '/../uploads')
     },
     filename: function (req, file, cb) {
