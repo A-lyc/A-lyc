@@ -318,6 +318,8 @@ User.find().then(res=>{
 }).catch(err=> {
     console.log('失败')
 })
+```
+```js
 // 显示翻页
 // 根据query获取page后的参数为1，2.。。。。
  let page = req.query.page
