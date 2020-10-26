@@ -8,9 +8,53 @@ category: ES6
 
 使用方法:Promise需要接收两个函数作为参数，分别代表then（成功）和catch（失败）
 new Promise本身是一个对象，里面有个函数，函数内有两个返回值分是then（成功）和catch（失败）
-<!-- more -->
+jq使用promise多个请求嵌套，为了防止回调地狱
+```js
+let data = {}
+$.get('url').then( res => {
+    // 返回的第一个请求数据存到data中去名字data1
+    console.log(res)
+    data.data1 = res
+
+    // 在进行网络请求，
+    return $get('url')
+}).then(res => {
+    // 接受第二个请求的参数存储到data中去名字data2
+    data.data2 = res
+    console.log(res)
+
+    // 输出data
+    console.log(data) // data:{data1:res,data2:res}
+})
+
 ```
-new Promise((res,rej)=>{}.then(res =>{}).catch(rej =>{}))
+
+
+### Promise 
+- new Promise本身不是一个异步操作，但是内部是一个异步的函数传入
+- .then(res=>{return 12})当你return一个12的时候下一个then接受的参数就是12，当retuen一个Promise的时候接受的是res(data)的回调函数
+<!-- more -->
+```js
+// Promise一旦创建直接执行内部的函数代码内部是一个异步的代码
+new Promise((res,rej)=>{
+fs.readFile('./data/a.txt','utf8',(err,data)=> {
+    if(err){
+       // 把容器的pending的状态改为rejected状态 = 就是失败状态
+        rej(err)
+    }else{
+        // 把容器的pending的状态改为resolve状态 = 就是成功状态
+        res(data)
+    }
+})
+    }).then(res =>{
+    return 1
+    }).then(res =>{
+    // res就是上面return后的值
+      return res + 1 // 输出2
+    }).then(res =>{
+    // res就是上面return后的值
+          return res + 1 // 输出3
+      }).catch(rej =>{})
 ```
 
 ```
@@ -21,13 +65,15 @@ const pro = new Promise(res,rej =>{
         rej('rej')//失败的时候返回
         res('我没错')//成功的时候返回
     }, 200);
-}).then(res => {
-    console.log(res)//接收成功的值
+})
 
-}).catch(err => {
-    console.log(err)//接收失败的时候的值
-
-}) 
+pro.then(res => {
+       console.log(res)//接收成功的值
+   
+   }).catch(err => {
+       console.log(err)//接收失败的时候的值
+   
+   }) 
 ```
 
 

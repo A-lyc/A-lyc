@@ -10,6 +10,8 @@ category: ES6
 结构语法 let {data} = res;let [a,b,c] = arr
 函数默认语法 f function f( x = {}){return x} // 默认空对象
 遍历追加数组 arr.push(...array)
+
+throw err -> 阻止程序执行，打印到控制台
 <!-- more -->
 ### Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。
 // Number.isFinite(15); 

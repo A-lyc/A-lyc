@@ -12,7 +12,7 @@ category: node入门
 - 环境变量配置，把mongod的路径给到path添加上即可 我的电脑右键属性。。。。。
 - mongod --version  => 查看是否安装很成功
 
-## 启动
+## 启动数据库
 - 打开控制台输入 mongod
  · mongod 默认使用执行mongod命令所处盘符根目录下的/data/db作为自己的数据存储
  · 第一次执行mongod时候需要在根盘符创建/data/db文件夹
@@ -23,10 +23,10 @@ category: node入门
     ```
   
   
-## 停止
-- 开启服务的控制台ctrl+c，或者直接关闭
+## 停止数据库
+- 开启服务的控制台ctrl+c，或者直接关闭数据库
 
-## 连接数据库和退出
+## 连接数据库和退出数据库
 - 连接之前确保开启数据库
 - 重新打开控制台 
  · 使用命令mongo 默认打开本机的数据库mongod服务
@@ -63,6 +63,11 @@ category: node入门
    · 官网：http://www.mongoosejs.net/
  - 安装使用
   · npm i --save mongoose
+  · 引入mongoose
+  · 设计Schema
+  · 发布model（得到模型构造函数）
+   * 所有操作基于model操作
+   * 查询，增加，修改，删除
   ```js
 // 加载包
 const mongoose = require('mongoose');

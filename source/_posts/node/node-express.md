@@ -53,7 +53,7 @@ app.use('/public/', express.static('./public/'))
  - const express = require('express')
  
 ### 安装模板插件
- - npm install --save express-art-template art-template
+     - npm install --save express-art-template art-template
  - 引入和使用
   ```js
     // 后缀名为html 引入包
@@ -80,7 +80,7 @@ app.use('/public/', express.static('./public/'))
 ### 开放公共资源
  - app.use('/public/', express.static('./public/'))
 
-### 修改晚代码自动重启
+### 修改完代码自动重启
  - 使用一个第三方命令行工具nodemon来帮助我们解决频繁修改代码重启服务器问题
   · nodemon - 基于node.js开发的一个命令行工具，使用的时候需要独立安装
   ```
