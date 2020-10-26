@@ -8,6 +8,8 @@ category: vue
 
 下载安装vue - axios ，npm install vue-axios --save，，通过axios和后端链接，获取数据，
 <!-- more -->
+
+## 新建api文件夹内的index文件
 ```
 import axios from 'axios'
 
@@ -41,7 +43,7 @@ export function request(config) {
 
 ```
 
-如果后端需要获取数据可传输数据给后端：params:是传输数据的参数
+## 如果后端需要获取数据可传输数据给后端：params:是传输数据的参数 - api文件夹内新建文件导入request 即可使用axios
 ```
 import {request} from "./request";
 
@@ -70,7 +72,7 @@ export function getHomeGoods(type,page){
 
 ```
 
-应用：created生命周期内
+## 应用：created生命周期内
 
 ```
  created(){
@@ -80,7 +82,7 @@ export function getHomeGoods(type,page){
  }
 ```
 
-最好这样写：
+## 最好这样写：
 ```
 methods: {
   getHomeMultidata() {
@@ -97,7 +99,7 @@ methods: {
 
 ```
 
-### 可以封装一个class类来储存数据
+## 可以封装一个class类来储存数据
 ```
 export class Goods{
   constructor(itemInfo){//异步请求之后传来的值
@@ -105,13 +107,13 @@ export class Goods{
   }
 }
 ```
-使用：在总的数据请求中把数据给到data中的Goods
+## 使用：在总的数据请求中把数据给到data中的Goods
 ```
  this.Goods = new Goods(res.result.itemInfo}//把异步请求到的数据传输给Goods，之后Goods接收之后处理接收的信息
  // data中的this.Goods进行接收
 ```
 
-常识：
+## 常识：
 
 导入main.js：import axios from 'axios'
 使用：
@@ -136,18 +138,18 @@ axis请求方式
 常见的配置选项
 请求多个数据，一起返回结果使用axios.all([axios(),axios()]).then(()=>{})///all里面是数组
 全局配置axios.defaults.baseURL = "";
-创建实例的axios
+## 创建实例的axios
 ```
 	const app = axios.create({
- 公用的如：baseUrl：''
-  })
+        公用的如：baseUrl：''
+    })
 	使用：
-app({
-url:"",
-}).then(()=>{})
+    app({
+    u   rl:"",
+    }).then(()=>{})
 ```
 
-请求方式
+## 请求方式
 axios(config)
 
 axios.request(config)

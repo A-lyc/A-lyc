@@ -5,6 +5,7 @@ tags: [数据库,node,mongoDB,node入门]
 category: node入门
 ---
 
+
 ## 安装 
 - 网址：https://www.mongodb.com/try/download/community
 - 下载社区级别的，免费 也就是本地的第二个
@@ -12,7 +13,13 @@ category: node入门
 - 环境变量配置，把mongod的路径给到path添加上即可 我的电脑右键属性。。。。。
 - mongod --version  => 查看是否安装很成功
 
+<<<<<<< HEAD
 ## 启动数据库
+=======
+
+
+## 启动
+>>>>>>> fabd478e203fd48f341430ed53fd66eb0bba1af7
 - 打开控制台输入 mongod
  · mongod 默认使用执行mongod命令所处盘符根目录下的/data/db作为自己的数据存储
  · 第一次执行mongod时候需要在根盘符创建/data/db文件夹
@@ -23,8 +30,14 @@ category: node入门
     ```
   
   
+<<<<<<< HEAD
 ## 停止数据库
 - 开启服务的控制台ctrl+c，或者直接关闭数据库
+=======
+  
+## 停止
+- 开启服务的控制台ctrl+c，或者直接关闭
+>>>>>>> fabd478e203fd48f341430ed53fd66eb0bba1af7
 
 ## 连接数据库和退出数据库
 - 连接之前确保开启数据库
@@ -32,6 +45,7 @@ category: node入门
  · 使用命令mongo 默认打开本机的数据库mongod服务
 - 退出
  · exit 在连接状态输入exit 就是退出连接
+ 
  
  
 ## 基本命令
@@ -53,6 +67,7 @@ category: node入门
  · 创建集合
 - db.名称.drop()
  · 删除集合 在show collections查看之后删出
+ 
  
 ## 在Node中操作mongod数据库
 - 使用官方的mongod包来操作
@@ -95,6 +110,7 @@ kitty.save().then(() => console.log('meow,成功')).catch(e=>{console.log(e)});
 
  
  
+ 
 ## mongoDB的基本概念
 - 多个数据库 - 最外层的对象是数据库
 - 一个数据库中可以有多个集合 - 是里面对象中的数组（user:[]）
@@ -117,6 +133,122 @@ kitty.save().then(() => console.log('meow,成功')).catch(e=>{console.log(e)});
     
     },
 }
+```
+
+## mongoose router文件加内的路由
+```shell
+const express = require('express')
+// 引用数据模块
+const mongoose = require('mongoose')
+
+// 导入可接收图片的插件
+var multer = require('multer')
+
+// 使用Router
+const router = express.Router()
+
+// 定义图片中间件的内容
+var storage = multer.diskStorage({
+    // 定义保存图片的地址
+    destination: function (req, file, cb) {
+        cb(null, __dirname + '/../uploads')
+    },
+    // 定义保存图片的名称，默认没有后缀名，需要添加后缀名
+    filename: function (req, file, cb) {
+        let mimetype = file.mimetype.split('/')[1]
+        cb(null, file.fieldname + '-' + Date.now() + '.' + mimetype)
+    }
+})
+// 使用图片中间见
+var upload = multer({ storage })
+
+const Goods = require('../models/goods')
+
+// 连接数据库 数据库的表名叫shop 
+mongoose.connect('mongodb://localhost/shop', {useNewUrlParser: true})
+
+//下面就进行判断，（连接成功，连接失败，连接断开）
+mongoose.connection.on('connected', function () {
+    console.log("连接成功 - 1");
+})
+mongoose.connection.on('error', function () {
+    console.log("连接失败 - 2");
+})
+mongoose.connection.on('disconnected', function () {
+    console.log("断开连接 - 3");
+})
+
+//路由获取 列表
+router.get('/', function (req, res, next) {
+    //查询mongoDB的goods数据
+    Goods.find().then((doc) =>{
+        res.json({
+            data:doc,// 返回数据的名称
+            count:doc.length // 返回数据的长度
+        })
+    }).catch(err=>{
+        res.json({
+            status: '1',
+            msg: err.message
+        })
+    })
+});
+
+// 添加
+router.get('/add', function (req, res, next) {
+    //查询mongoDB的goods数据
+    let obj = new Goods({
+        name:'四叶草',
+        title:'这是内容信息'
+    })
+    obj.save().then(doc =>{
+        res.json({
+            data:doc,// 返回数据的名称
+            count:doc.length // 返回数据的长度
+        })
+    })
+});
+
+// 删除
+router.get('/del',(req, res, next) => {
+    let id = req.query.id
+    Goods.remove({_id: id}).then(data=>{
+        res.json({
+            data:data,// 返回数据的名称
+        })
+    })
+})
+
+// 修改
+router.post('/amend',(req,res)=>{
+    let data = req.body
+    Goods.findByIdAndUpdate(data.id,{
+        name: data.name,
+    }).then(data => {
+        res.json({
+            data: data,// 返回数据的名称
+        })
+    })
+})
+
+// 上传upload.single('files') files上传文件类型
+router.post('/upImage',upload.single('files'),async (req,res)=>{
+    try{
+        // 接收传来的信息 
+        let file = req.file
+        // 传来之后返回数据 定义返回数据的 url，方便线上访问
+        file.url = `http://localhost:3000/uploads/${file.filename}`
+        console.log('---- 1 ----')
+        console.log(file)
+        res.json({
+            data: file,// 返回数据的名称
+        })
+    }catch(e){
+        console.log(e)
+    }
+})
+
+module.exports = router; //暴露路由
 ```
 
 ## 官方指南
@@ -172,6 +304,10 @@ let admin = new User({
 
 admin.save().then((ret) => {
     console.log(ret)
+    res.json({
+            data:doc,// 返回数据的名称
+            count:doc.length // 返回数据的长度
+        })
 }).catch(err => {
     console.log(err)
 })
@@ -181,16 +317,19 @@ admin.save().then((ret) => {
 ### 查询数据
 ```js
 // 查询所有
-User.find().then(ret=>{
+User.find().then(res=>{
     console.log('查询')
-    console.log(ret)
+     res.json({
+                data:doc,// 返回数据的名称
+                count:doc.length // 返回数据的长度
+            })
 }).catch(err=> {
     console.log('失败')
 })
 ```
 ```js
 // 按条件查询 - 得到一个数组。查询多个
-User.find({userName:'admin'}).then(ret=>{
+User.find({userName:'admin'}).then(res=>{
     console.log('查询')
     console.log(ret)
 }).catch(err=> {
@@ -199,9 +338,12 @@ User.find({userName:'admin'}).then(ret=>{
 ```
 ```js
 // 得到一个对象。直接找到第一个直接返回，没有返回第一个
-User.findOne({userName:'张三'}).then(ret=>{
+User.findOne({userName:'张三'}).then(res=>{
     console.log('查询')
-    console.log(ret)
+     res.json({
+                data:doc,// 返回数据的名称
+                count:doc.length // 返回数据的长度
+            })
 }).catch(err=> {
     console.log('失败')
 })
@@ -210,9 +352,12 @@ User.findOne({userName:'张三'}).then(ret=>{
 ### 删除数据
 ```js
 // 删除数据
-User.remove({_id:'5f82a84a875939195ceff0e3'}).then(ret=>{
+User.remove({_id:'5f82a84a875939195ceff0e3'}).then(res=>{
     console.log('---- 1 ----')
-    console.log(ret)
+     res.json({
+                data:doc,// 返回数据的名称
+                count:doc.length // 返回数据的长度
+            })
 }).catch(err=>{
     console.log('---- 2 ----')
     console.log(err)
@@ -224,8 +369,9 @@ User.findByIdAndRemove(id,[options],callback)
 
 ```
 
-### 更新数据
+### 修改数据
 ```js
+// conditions:条件
 // 根据条件更新所有
 User.update(conditions,doc,[options],callback)
 
@@ -235,10 +381,48 @@ User.findOneAndUpdate(conditions,doc,[options],callback)
 // 根据ID更新
 User.findByIdAndUpdate('5f82a8741c097b40345a29f6',{
     password: '1111'
-}).then(ret=>{
-    console.log(ret)
+}).then(res=>{
+    res.json({
+                    data:doc,// 返回数据的名称
+                    count:doc.length // 返回数据的长度
+                })
 }).catch(err=>{
     console.log('shibai')
 })
 
+```
+
+### express + mongoose 上传图片
+
+```js
+// 安装：npm i multer //express插件上有
+/** 在路由文件内 **/
+// 初始化安装
+var multer = require('multer')
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+// 图片上传路径 根目录下的/../uploads 需要公开这个目录  
+// 返回路径：F:\ceshiXM\demo01\routes/../uploads
+        cb(null, __dirname + '/../uploads')
+    },
+    filename: function (req, file, cb) {
+// 图片默认上传没有后缀的，添加后缀名称
+        let mimetype = file.mimetype.split('/')[1]
+        cb(null, file.fieldname + '-' + Date.now() + '.' + mimetype)
+    }
+})
+// 上传 upload.single('files') 可以req结构出file
+router.post('/upImage',upload.single('files'),async (req,res)=>{
+    try{
+        let file = req.file
+        // 返回的线上地址
+        file.url = `http://localhost:3000/uploads/${file.filename}`
+        // 返回json数据
+        res.json({
+                    data: file,// 返回数据的名称
+                })
+    }catch(e){
+        console.log(e)
+    }
+})
 ```
