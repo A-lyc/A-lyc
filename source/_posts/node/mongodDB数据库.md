@@ -13,13 +13,8 @@ category: node入门
 - 环境变量配置，把mongod的路径给到path添加上即可 我的电脑右键属性。。。。。
 - mongod --version  => 查看是否安装很成功
 
-<<<<<<< HEAD
-## 启动数据库
-=======
-
-
 ## 启动
->>>>>>> fabd478e203fd48f341430ed53fd66eb0bba1af7
+
 - 打开控制台输入 mongod
  · mongod 默认使用执行mongod命令所处盘符根目录下的/data/db作为自己的数据存储
  · 第一次执行mongod时候需要在根盘符创建/data/db文件夹
@@ -28,16 +23,13 @@ category: node入门
     ```
     mongod --dbpath-数据存储目录路径
     ```
-  
-  
-<<<<<<< HEAD
+
 ## 停止数据库
 - 开启服务的控制台ctrl+c，或者直接关闭数据库
 =======
   
 ## 停止
 - 开启服务的控制台ctrl+c，或者直接关闭
->>>>>>> fabd478e203fd48f341430ed53fd66eb0bba1af7
 
 ## 连接数据库和退出数据库
 - 连接之前确保开启数据库
