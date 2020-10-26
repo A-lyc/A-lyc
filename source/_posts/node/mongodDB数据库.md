@@ -318,6 +318,22 @@ User.find().then(res=>{
 }).catch(err=> {
     console.log('失败')
 })
+// 显示翻页
+// 根据query获取page后的参数为1，2.。。。。
+ let page = req.query.page
+ let data = {}
+    // page*5 - 5 = 0   =>页码*也页显示条数 - 也页显示条数
+    // page为1的时候结果为0   page为2的时候结果为limit内的参数
+    // limit：一页显示多少个 skip跳过多少个显示  公式：(page-1)*5
+    User.find().limit(5).skip((page-1)*5).then(doc => {
+       data.doc = doc
+        return active.find()
+    }).then(doc =>{
+        data.doc2 = doc
+        res.json({
+            data,
+        })
+    })
 ```
 ```js
 // 按条件查询 - 得到一个数组。查询多个
