@@ -4,25 +4,27 @@ date: 2020-10-24 11:04:50
 tags: [vue3.0,vue]
 category: vue
 ---
-### Vue 3.0 项目初始化
- ## 第一步，安装 vue-cli：
+## Vue 3.0 项目初始化
+## 第一步，安装 vue-cli：
 ```shell
 npm install -g @vue/cli
 ```
 注意以下命令是错误的！
 npm install -g vue
 npm install -g vue-cli
- ## 安装成功后，我们即可使用 vue 命令，测试方法
+
+## 安装成功后，我们即可使用 vue 命令，测试方法
 ```shell
  $ vue -V
  @vue/cli 4.3.1
 ```
 
-### 第二步，初始化 vue 项目：
+## 第二步，初始化 vue 项目：
 ```shell
 vue create vue-next-test
 ```
-### 输入命令后，会出现命令行交互窗口，这里我们选择 Manually select features：
+
+## 输入命令后，会出现命令行交互窗口，这里我们选择 Manually select features：
 ```shell
  Vue CLI v4.3.1
  ? Please pick a preset: 
@@ -49,7 +51,8 @@ Vue CLI v4.3.1
 注意：Vue 3.0 项目目前需要从 Vue 2.0 项目升级而来，所以为了直接升级到 Vue 3.0 全家桶，
 我们需要在 Vue 项目创建过程中勾选 Router 和 Vuex，所以避免手动写初始化代码
 ```
-### 升级 Vue 3.0 项目
+
+## 升级 Vue 3.0 项目
 目前创建 Vue 3.0 项目需要通过插件升级的方式来实现，
 
 vue-cli 还没有直接支持，我们进入项目目录，并输入以下指令：
@@ -70,39 +73,33 @@ vue add vue-next
 注意该插件还不能支持 typescript，用 typescript 的同学还得再等等。（就是目前还不太支持TS）
 
 
-
-
-
-
-
-
- 
-### Vue 3.0 基本特性体验
-## 创建路由
+## 创建路由 router/index
 ```shell
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,// 父组件模板
+    redirect: '/dashboard', // 重定向
+    children:[{
+      path: 'dashboard',// 连接是/home/dashboard
+      name: 'Dashboard', // 和模板文件最好对应
+      component: () => import('@/views/dashboard/index'), // 模板文件路径
+      meta: { title: '标题', icon: 'dashboard' } // mate标签， 可做权限设置
+    }]
   },
   {
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
-    path: '/test',
-    name: 'Test',
-    component: () => import(/* webpackChunkName: "test" */ '../views/Test.vue')
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
@@ -110,24 +107,42 @@ export default router
 ```
 初始化 Vue Router 的过程与 3.0 版本变化不大，只是之前采用构造函数的方式，
 这里改为使用 createRouter 来创建 Vue Router 实例，
-配置的方法基本一致，配置完成后我们还需要在 App.vue 中增加链接到 Test.vue 的路由：
-
+建一个公共的layout文件是一个公共的文件header和footer公用 都是home的子文件所以改变的是router-view这个状态
+```shell
+<template>
+    <div>
+        <h1>header</h1>
+        <div class="nav">
+            <router-link to="/home/dashboard">首页</router-link> |
+            <router-link to="/home/index">关于我们</router-link> |
+            <router-link to="/home/Content">内容 - Content</router-link>
+        </div>
+        ==========================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        <router-view :key="key"/>
+        ==========================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        <h1>footer</h1>
+        <div class="nav">
+            <router-link to="/">首页</router-link> |
+            <router-link to="/about/index">关于我们</router-link> |
+            <router-link to="/about/Content">内容 - Content</router-link>
+        </div>
+    </div>
+</template>
+```
+app.vue
 ```shell
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/test">Test</router-link>
-    </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 ```
-启动项目：
+
+## 启动项目：
 ```shell script
 npm run serve
 ```
+
 ## 状态和事件绑定
 Vue 3.0 中定义状态的方法改为类似 React Hooks 的方法，下面我们在 Test.vue 中定义一个状态 count：
 
@@ -152,40 +167,151 @@ Vue 3.0 中定义状态的方法改为类似 React Hooks 的方法，下面我�
 </script>
 ```
 
-Vue 3.0 中初始化状态通过 setup 方法，
+## Vue 3.0 中初始化状态通过 setup 方法，
 定义状态需要调用 ref 方法。接下来我们定义一个事件，用来更新 count 状态：
-
 ```shell
 <template>
-  <div class="test">
-    <h1>test count: {{count}}</h1>
-    <button @click="add">add</button>
+  <div class="about">
+<input type="text" v-model="text">
+        <h3>{{text}}</h3>
+    <h1>{{count02}}</h1>
+    <h1> 关于我们 {{count}}</h1>
+    <div>count,
+      test： {{test}},
+      doubleCount：{{doubleCount}},
+      a：{{a}}
+    </div>
+    <h1 @click="add">add</h1>
+    <h1 @click="update">update</h1>
+    <h1 @click="getgreet">methods ====>>>> getgreet</h1>
   </div>
 </template>
-
 <script>
-  import { ref } from 'vue'
+
+  import { ref, computed, watch, getCurrentInstance,
+    onMounted,onRenderTracked,onRenderTriggered,
+    onBeforeMount,onBeforeUpdate,onUpdated,onBeforeUnmount,onUnmounted,
+    onErrorCaptured
+  } from "vue";
 
   export default {
-    setup () {
-      const count = ref(0)
+    name:'about',
+    // 初始化数据使用，生命周期使用 需要在里面定义请求函数，来请求初始化数据
+    // 监听不到data和methods内的数据
+    setup() {
+      // 方法获取当前组件的实例
+      console.log(getCurrentInstance());
+      const { ctx } = getCurrentInstance(); // 获取当前实例
+      onBeforeMount(()=>{
+        console.log("在挂载开始之前被调用")
+      })
+      onRenderTracked(() => {
+        console.log('渲染跟踪');
+      });
+      onBeforeUnmount(()=>{
+        console.log("实例销毁之前调用")
+      })
+      onBeforeUpdate(()=>{
+        console.log("数据更新时调用")
+      })
+      onUnmounted(()=>{
+        console.log("组件已完成了销毁")
+      })
+      onErrorCaptured(()=>{
+        console.log("在错误捕获")
+      })
+      onUpdated(()=>{
+        console.log("页面也完成了更新")
+      })
+      onMounted(() => {
+        console.log("挂载后 >>>>>>01");
+      });
+      onRenderTriggered(() => {
+        console.log('渲染 - 触发')
+      });
+
+      // 页面加载的时候触发
+      const count = ref(0);
+      const count02 = ref('文字');
+      const text = ref('文字');
+      let test = ref("我们都是好孩子"); // 定义test默认显示内容
+      // 获取当前路由
+      console.log(ctx.$router.currentRoute.value);
+      // 页面加载前计算属性获取vuex上的属性
+      const a = computed(() => ctx.$store.state.test.a);
+      const update = () => {
+        // 修改vuex的信息
+        ctx.$store.commit("setTestA", count.value * 10);
+        count.value = count.value*10
+        console.log(ctx.$store.state.test.a);
+      };
       const add = () => {
-        count.value++
-      }
+        // 点击动作
+        test.value = "我是好人"; // 修改值
+        count.value++; // count加一
+      };
+      watch(() => {
+                // 页面加载就读取这个信息 监听属性的变化
+                console.log("---- 页面加载就读取这个信息 监听属性的变化 ----");
+                console.log(count);
+                count.value;
+              },(val) => {
+                console.log("---- 页面加载就读取这个信息 ----");
+                console.log(`count is ${val}`);
+              }
+      );
+      // 计算属性获取和写入
+      const doubleCount = computed(()=>{
+        // 计算属性获取 count.value * 2
+        return count.value * 2;
+      });
+
       return {
+        // 和vue2的data 默认在上面ref('')定义 返回定义的对象
         count,
-        add
+        count02,
+        test,
+        doubleCount,
+        add,
+        a,
+        update,
+        text
+      };
+    },
+    // 数据改变的时候使用，事件数据，表单数据 - 和原先的data一样
+    data(){
+      return {
+
+      }
+    },
+    mounted() {
+      // 这个比上面的on要晚
+      console.log('挂载后 >>>>>>02')
+    },
+    methods: {
+      getgreet() {
+        console.log("---- methods的点击动作 ----");
+        this.count02 = "四叶草02"
+        console.log(this.doubleCount)
+        this.count = 10
+        console.log("---- end methods的点击动作 ----");
+      },
+    },
+    watch:{
+      count(old,newVal){
+        console.log(old,newVal)
       }
     }
-  }
+  };
 </script>
+
 ```
 
 这里的 add 方法不再需要定义在 methods 中，
 但注意更新 count 值的时候不能直接使用 count++，而应使用 count.value++，
 更新代码后，点击按钮，count 的值就会更新了：
 
-### 计算属性和监听器
+## 计算属性和监听器
 Vue 3.0 中计算属性和监听器的实现依赖 computed 和 watch 方法：
 
 ```shell
@@ -247,7 +373,7 @@ watch(
 )
  ```
 
-获取路由
+## 获取路由
 Vue 3.0 中通过 getCurrentInstance 方法获取当前组件的实例，然后通过 ctx 属性获得当前上下文，
 
 ctx.$router 是 Vue Router 实例，里面包含了 currentRoute 可以获取到当前的路由信息
@@ -264,7 +390,106 @@ ctx.$router 是 Vue Router 实例，里面包含了 currentRoute 可以获取到
   }
 </script>
 ```
-### Vuex 集成
+
+## axios
+配置axios
+```js
+const axios = require('axios')
+
+//git请求
+export function request(config) {
+    // 1.创建axios的实例
+    const instance = axios.create({
+        baseURL: '/api',
+    })
+
+    // 2.axios的拦截器
+    // 2.1.请求拦截的作用
+    instance.interceptors.request.use(config => {
+        console.log("请求拦截器")
+        return config
+    },err => {
+        return err.data
+    })
+
+    // 2.2.响应拦截
+    instance.interceptors.response.use(res => {
+        console.log("响应拦截")
+        return res.data
+    },err => {
+        return err.data
+    })
+
+    // 3.发送真正的网络请求
+    return instance(config)
+}
+```
+vue.confing.js - 跨域配置
+```js
+
+module.exports = {
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000/', //接口域名
+                changeOrigin: true,             //是否跨域
+                ws: true,                       //是否代理 websockets
+                secure: true,                   //是否https接口
+                pathRewrite: {                  //路径重置
+                    '^/api': ''
+                }
+            }
+        }
+    }
+};
+```
+配置请求方式
+```js
+import {request} from "./index";
+
+export function query(){
+    return request({
+        url: '/goods',
+        method:'get'
+    })
+}
+export function add(){
+    return request({
+        url: '/goods/add',
+        method:'get'
+    })
+}
+export function del(id){
+    return request({
+        url: `/goods/del?id=${id}`,
+        method:'get'
+    })
+}
+export function amend(data){
+    return request({
+        url: `/goods/amend`,
+        data:data,
+        method:'post'
+    })
+}
+
+export function upImage(data){
+    return request({
+        url: `/goods/upImage`,
+        data:data,
+        method:'post'
+    })
+}
+
+```
+组件中使用
+```js
+ const $api = require('@/api/ceshi.js')
+ $api.getHomeMultidata().then(res=>{
+   message.value = res.data
+ })
+```
+
 ## Vuex 的集成方法如下：
 
 定义 Vuex 状态
