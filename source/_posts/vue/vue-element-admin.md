@@ -1,7 +1,7 @@
 ---
 uuid: bea548e6-eb93-0eb2-d70a-a0b89753cfdd
 title: vue-element-admin
-date: 2020-03-28 21:00:25
+date: 2020-11-12 21:00:25
 tags: [vue-element-admin,]
 category: vue
 ---
@@ -255,6 +255,27 @@ import Layout from '@/layout'
     console.log(from)
     next()
   },
+```
+
+## element上传图片 
+上传插件：:before-upload='beforeUpload'
+```shell
+   beforeUpload(file) {
+      console.log('用户上传之前')
+      let param = new FormData()
+      param.append('files', file)
+      getUpImage(param).then(res => {
+        this.tempUrl = res.data.url
+        this.dataObj = {
+          url: res.data.url,
+          name: res.data.originalname,
+          filename: res.data.filename,
+          uid: file.uid
+        }
+        this.emitInput(res.data.url)
+      })
+      return true
+    }
 ```
 
 ## 例子template
