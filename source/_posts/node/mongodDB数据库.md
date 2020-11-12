@@ -36,9 +36,7 @@ category: node入门
  · 使用命令mongo 默认打开本机的数据库mongod服务
 - 退出
  · exit 在连接状态输入exit 就是退出连接
- 
- 
- 
+
 ## 基本命令
 - show dbs
  · 查看当前数据库列表
@@ -244,13 +242,39 @@ module.exports = router; //暴露路由
 
 ## 官方指南
 ### 设计Scheme，发布model
+- Schema({opstion})：
+· required: 布尔值或函数 如果值为真，为此属性添加 required 验证器
+· default: 任何值或函数 设置此路径默认值。如果是函数，函数返回值为默认值
+· select: 布尔值 指定 query 的默认 projections
+· validate: 函数 adds a validator function for this property
+· get: 函数 使用 Object.defineProperty() 定义自定义 getter
+· set: 函数 使用 Object.defineProperty() 定义自定义 setter
+· alias: 字符串 仅mongoose >= 4.10.0。 为该字段路径定义虚拟值 gets/sets
+
+- 索引
+· index: 布尔值 是否对这个属性创建索引
+· unique: 布尔值 是否对这个属性创建唯一索引
+· sparse: 布尔值 是否对这个属性创建稀疏索引
+- String
+lowercase: 布尔值 是否在保存前对此值调用 .toLowerCase()
+uppercase: 布尔值 是否在保存前对此值调用 .toUpperCase()
+trim: 布尔值 是否在保存前对此值调用 .trim()
+match: 正则表达式 创建验证器检查这个值是否匹配给定正则表达式
+enum: 数组 创建验证器检查这个值是否包含于给定数组
+- Number
+min: 数值 创建验证器检查属性是否大于或等于该值
+max: 数值 创建验证器检查属性是否小于或等于该值
+- Date
+min: Date
+max: Date
+网址：http://www.mongoosejs.net/docs/schematypes.html
 ```js
 const mongoose = require('mongoose');
 //拿到mongoose的架构
 const { Schema } = mongoose;
 
 // 1 连接mongoDB数据库
-mongoose.connect('mongodb://localhost/test');
+mongoose.createConnection('mongodb://localhost/test');
 
 // 2 设计文档结构 （表结构）
 // 就是常见的js数据类型 就是属性名称
@@ -272,8 +296,19 @@ const userSchema = new Schema({
           }
     },
     password:{
-        type:String,// 类型
-        required:true // 必选项
+        type:String,// 类型String,Number,Date,Buffer,Boolean,Mixed,Obj,Array
+        required:true, // 必选项required required: [true, 'Why no bacon?']
+        binary:  Buffer, //binary = new Buffer(0);
+        default:'12', // 默认default
+        date: Date.now,
+        enum: ['Coffee', 'Tea'],// 可选项
+        age:{ // 最大值最小值
+        type:String,
+        min:18,
+        max:60
+        },
+        stuff: { type: String, lowercase: true, trim: true } // lowercase：小写字体，trim：修剪
+        
     }
 });
 
