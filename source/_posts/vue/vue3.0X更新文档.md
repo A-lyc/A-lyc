@@ -70,13 +70,6 @@ vue add vue-next
 注意该插件还不能支持 typescript，用 typescript 的同学还得再等等。（就是目前还不太支持TS）
 
 
-
-
-
-
-
-
- 
 ### Vue 3.0 基本特性体验
 ## 创建路由
 ```shell
