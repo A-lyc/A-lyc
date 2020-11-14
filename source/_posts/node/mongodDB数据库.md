@@ -286,7 +286,14 @@ const userSchema = new Schema({
     },// 名字是title，类型String 可以不填写
     userName:{
         type:String,// 类型
-        required:true // 必选项
+        default:true, // 默认值
+        age:{ type: Number, min: 18, max: 65 },//最大最小值
+        test: {
+            type: String,
+            index: true, // 索引值
+            unique: true // Unique index. If you specify `unique: true`
+            // specifying `index: true` is optional if you do `unique: true`
+          }
     },
     password:{
         type:String,// 类型String,Number,Date,Buffer,Boolean,Mixed,Obj,Array
@@ -312,7 +319,7 @@ const userSchema = new Schema({
 //            举例：这里的User会变成users集合名称
 // 第二个参数：是架构 Schema
 // 返回值：模型构造函数
-const User = mongoose.model('User', userSchema);
+module.exports =  mongoose.model('User', userSchema);
 
 // 4 当有了模型构造函数之后，就可以使用这个构造函数对users集合中的数据操作了（增删改查）
 ```
@@ -437,7 +444,6 @@ User.findByIdAndUpdate('5f82a8741c097b40345a29f6',{
 ```
 
 ### express + mongoose 上传图片
-
 ```js
 // 安装：npm i multer //express插件上有
 /** 在路由文件内 **/
@@ -455,6 +461,7 @@ var storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now() + '.' + mimetype)
     }
 })
+// 导出storage 为upload
 // 上传 upload.single('files') 可以req结构出file
 router.post('/upImage',upload.single('files'),async (req,res)=>{
     try{

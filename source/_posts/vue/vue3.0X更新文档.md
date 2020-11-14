@@ -73,7 +73,12 @@ vue add vue-next
 注意该插件还不能支持 typescript，用 typescript 的同学还得再等等。（就是目前还不太支持TS）
 
 
+<<<<<<< HEAD
+### Vue 3.0 基本特性体验
+## 创建路由
+=======
 ## 创建路由 router/index
+>>>>>>> 86d49123e88fdffd9804e8f809b7e1a169d6cef4
 ```shell
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
