@@ -36,6 +36,82 @@ npm i --save body-parser
 npm i --save mongoose
 ```
 
+## 处理excel文件的读写
+### 一、读取
+#### 1. 安装 node-xlsx
+```shell
+   npm install node-xlsx --save
+```
+
+#### 2. 解析代码
+```shell
+const xlsx = require('node-xlsx');
+ 
+// 解析得到文档中的所有 sheet
+let sheets = xlsx.parse('xxx.xls');
+ 
+// 遍历 sheet
+sheets.forEach(function(sheet){
+    console.log(sheet['name']);
+    // 读取每行内容
+    for(let rowId in sheet['data']){
+        console.log(rowId);
+        let row=sheet['data'][rowId];
+        console.log(row);
+    }
+});
+```
+### 二、写入
+```shell
+var data = [
+    {
+        name: 'sheet1',
+        data: [
+            [
+                'ID',
+                'Name',
+                'Score'
+            ],
+            [
+                '1',
+                'Michael',
+                '99'
+
+            ],
+            [
+                '2',
+                'Jordan',
+                '98'
+            ]
+        ]
+    },
+    {
+        name: 'sheet2',
+        data: [
+            [
+                'AA',
+                'BB'
+            ],
+            [
+                '23',
+                '24'
+            ]
+        ]
+    }
+]
+var buffer = xlsx.build(data);
+
+// 写入文件
+fs.writeFile('a.xlsx', buffer, function(err) {
+    if (err) {
+        console.log("Write failed: " + err);
+        return;
+    }
+
+    console.log("Write completed.");
+});
+```
+
 ## 图片批处理插件 images
 首先先安装npm install images 
 - 文件夹：models内建立一个上传图片插件文件夹例如名字：uploadimg
@@ -43,16 +119,40 @@ npm i --save mongoose
 ```shell
 // 导入可接收图片的插件
 const multer = require('multer')
+
+const fs = require('fs')
+
+// 插件字写 格式化时间
+const { getNowFormatDate } = require('../common/dateTime')
+let time = getNowFormatDate('')
+
 // 定义图片中间件的内容
 const storage = multer.diskStorage({
   // 定义保存图片的地址
   destination: function (req, file, cb) {
-    cb(null, __dirname + '/../uploads')
+    // 某个文件夹下的日期文件下的图片目录
+    let path = __dirname + '/../uploads/' + time
+    // 返回这个目录
+    file.time = time
+    let ifFile = fs.existsSync(path)
+    
+    if (ifFile){
+      cb(null, path)
+    }else{
+      fs.mkdirSync(path)
+      cb(null, path)
+    }
   },
+
   // 定义保存图片的名称，默认没有后缀名，需要添加后缀名
   filename: function (req, file, cb) {
-    let mimetype = file.mimetype.split('/')[1]
-    cb(null, file.fieldname + '-' + Date.now() + '.' + mimetype)
+    let suffix = file.originalname.split('.')
+    suffix = suffix[suffix.length - 1]
+    // console.log(suffix)
+
+    // 图片使用
+    // let mimetype = file.mimetype.split('/')[1]
+    cb(null, file.fieldname + '-' + Date.now() + time + '.' + suffix)
   }
 })
 module.exports = multer({ storage })
@@ -143,7 +243,7 @@ router.get('/compress',async (req,res)=>{
 // 导出这个路由
 module.exports = router;
 ```
-批量压缩图片
+批量压缩图片 - img.js
 ```shell
 const images = require("images");
 const fs = require("fs");
@@ -259,3 +359,6 @@ Get used memory (in bytes)
 images.gc()
 Forced garbage collection
 强制调用V8的垃圾回收机制
+
+
+
