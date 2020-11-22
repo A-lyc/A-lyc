@@ -9,16 +9,19 @@ category: node
 ```shell
 npm i --save express
 ```
+
 ## art-template 模板插件
 - 官网：https://aui.github.io/art-template/zh-cn/index.html
 ```shell
 npm install --save art-template express-art-template
 ```
+
 ## nodemon 修改自动更新代码
 - node自带应该 最好全局安装
 ```shell
 npm i nodemon -g
 ```
+
 ## 解析post请求体的插件
 ```shell
 npm i --save body-parser
@@ -110,6 +113,106 @@ fs.writeFile('a.xlsx', buffer, function(err) {
 
     console.log("Write completed.");
 });
+```
+
+## 文件解压
+### 安装node-stream-zip
+```shell
+npm i --save node-stream-zip
+```
+新建文件夹为fileType内有files-1605681955440.zip文件  
+同级别的新建unapi.js,代码如下，
+这个是导出了一个Promise
+```shell
+// 导入压缩包
+const StreamZip = require('node-stream-zip');
+
+// 导入文件模块
+const fs = require('fs');
+
+
+// 插件字写 格式化时间
+const { getNowFormatDate } = require('./common/dateTime')
+let time = getNowFormatDate('')
+
+// 手动删除压缩包
+
+/**
+ * path:传入路径压缩包的路径，包括文件夹和文件名
+ * 
+ */
+module.exports = function unzipCompress(path,) {
+  // 文件路径，固定的
+  let filesType = './fileType/'
+
+  // 根据路径裁切出文件名
+  // let name = path.split(filesType)[1]
+
+  // 查找 某个文件 测试使用
+  const zip = new StreamZip({
+    file: './fileType/files-1605681955440.zip',
+    storeEntries: true
+  });
+  // 返回一个promise
+  return new Promise((res,rej)=> {
+    // 错误的时候
+    zip.on('error', err => {
+      rej(err)
+    });
+    // 返回一个数组，但是会少去一个文件
+    let arr = []
+
+    // 在解压文件夹时，您可以侦听解压事件 - 图片重命名
+    zip.on('extract', (entry, file) => {
+      console.log(`Extracted ${entry.name} to ${file}`);
+      let name = file.split('.')[1]
+      /**
+       * 1：旧文件所在的目录，包括文件名，2：新文件所在的目录，包括文件名，3：回调
+       */
+      fs.rename(`${file}`, `./fileType/files-${Date.now()}${time}.${name}`, err => {
+        if (err) throw err;
+        console.log('重命名完成')
+        arr.push(`./fileType/files-${Date.now()}${time}.${name}`)
+      })
+    });
+
+    // 提取所有
+    zip.on('ready', () => {
+      // 创建目录
+      // fs.mkdirSync('extracted');
+      // 1：unll ，2：文件路径， 3：回调函数
+      zip.extract(null, './fileType', (err, count) => {
+        console.log(err ? 'Extract error' : `Extracted ${count} entries`);
+        res(arr)
+        zip.close();
+      });
+    });
+
+    // 在加载期间为每个条目生成条目事件
+    zip.on('entry', entry => {
+      console.log('在加载期间为每个条目生成条目事件')
+      // you can already stream this entry,
+      // without waiting until all entry descriptions are read (suitable for very large archives)
+      console.log(`XXX ：  ${entry.name.split('.')[1]} + ./fileType/${entry.name}`);
+    });
+  })
+}
+
+
+
+```
+新建文件使用
+```shell
+const xlsxCompress = require('./xlsx');
+async function name(params) {
+  xlsxCompress().then(res => {
+   console.log('---- 1 ----')
+   console.log(res)
+   console.log('---- 2 ----')
+ })
+  
+} 
+name()
 ```
 
 ## 图片批处理插件 images
@@ -359,6 +462,15 @@ Get used memory (in bytes)
 images.gc()
 Forced garbage collection
 强制调用V8的垃圾回收机制
+
+## node的实时通讯socket.io
+```shell
+npm i --save socket.io
+```
+需要研究一下 。。。。。。
+
+
+
 
 
 
