@@ -201,7 +201,7 @@ module.exports = function unzipCompress(path,) {
 
 
 ```
-新建文件使用
+### 新建文件使用
 ```shell
 const xlsxCompress = require('./xlsx');
 async function name(params) {
@@ -216,9 +216,9 @@ name()
 ```
 
 ## 图片批处理插件 images
-首先先安装npm install images 
-- 文件夹：models内建立一个上传图片插件文件夹例如名字：uploadimg
-- uploadimg.js
+### 首先先安装npm install images 
+文件夹：models内建立一个上传图片插件文件夹例如名字：uploadimg
+uploadimg.js
 ```shell
 // 导入可接收图片的插件
 const multer = require('multer')
@@ -260,6 +260,7 @@ const storage = multer.diskStorage({
 })
 module.exports = multer({ storage })
 ```
+### router
 之后在router路由文件内写上传的图片批处理的过程
 内有一个批量压缩的文件，可以直接去除
 ```shell
@@ -346,7 +347,7 @@ router.get('/compress',async (req,res)=>{
 // 导出这个路由
 module.exports = router;
 ```
-批量压缩图片 - img.js
+### 批量压缩图片 - img.js
 ```shell
 const images = require("images");
 const fs = require("fs");
@@ -393,7 +394,7 @@ module.exports = function compress(path) {
   });
 }
 ```
-附注：api接口
+### 附注：api接口
 images(file)
 Load and decode image from file
 从指定文件加载并解码图像
