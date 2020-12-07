@@ -293,6 +293,42 @@ async fetch ({ store, params }){
 ```
 
 ### 网络请求 - 中间件 - 用户管理，获取token - 可以不进行使用
+```shell
+npm install js-cookie --save
+```
+保存token的插件，可以使用中间件来使用，使用方法：
+```js
+const Cookies = require("js-cookie")  
+// 创建一个在整个网站上有效的cookie
+Cookies.set('name', 'value');
+
+// 创建一个从现在起7天到期的cookie，该cookie在整个网站上均有效：
+Cookies.set('name', 'value', { expires: 7 });
+
+// 创建一个有效的cookie，该cookie对当前页面的路径有效：
+Cookies.set('name', 'value', { expires: 7, path: '' });
+```
+#### 封装
+```js
+import Cookies from 'js-cookie'
+const TokenKey = 'token'
+// 获取
+export function getToken() {
+  return Cookies.get(TokenKey)
+}
+// 写入
+export function setToken(token) {
+  return Cookies.set(TokenKey, token)
+}
+// 删除
+export function removeToken() {
+  return Cookies.remove(TokenKey)
+}
+```
+--------------------------------------------------
+```shell script
+npm install cookie-parser
+```
 首先获取中间件，就是用户登录的时候会把token保存到cookies这里面，之后要获取token活得用户的信息，登录状态等等，
 安装一个cookies格式化工具方便操作 ：npm i serve cookie-parser 之后在middleware（中间件）这个文件夹内新建文件进行导入
 我新建的cokie.js 内容是：

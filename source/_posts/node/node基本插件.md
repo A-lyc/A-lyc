@@ -470,8 +470,13 @@ npm i --save socket.io
 ```
 需要研究一下 。。。。。。
 
+## pdf-lib 模块可让你处理PDF，
+后台文件的functionLife中的psfLid.js中
 
+## sharp 可让您处理几乎所有带有图像的东西，
+暂时为使用。。。。。。
 
-
+## pkg 将Node项目捆绑到独立的可执行文件中
+暂时为使用。。。。。。
 
 
