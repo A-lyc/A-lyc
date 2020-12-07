@@ -1,9 +1,17 @@
 ---
 title: node基本插件
-date: 2020-10-19 21:35:13
+date: 2099-10-19 21:35:13
 tags: [node,node服务器，node插件]
 category: node
 ---
+
+## 后端：Strapi 非常好的后端框架
+官网：https://strapi.io/
+- 使用npm
+```shell
+npx create-strapi-app my-project --quickstart
+```
+
 ## express node框架可查官网
 - 官网：https://www.expressjs.com.cn/starter/installing.html
 ```shell
@@ -479,4 +487,61 @@ npm i --save socket.io
 ## pkg 将Node项目捆绑到独立的可执行文件中
 暂时为使用。。。。。。
 
+## qrcode生成二维码
+前端直接使用，之后把图传给后端，或者前端把需要生成的东西传给后端后端进行生成之后返回图片
+```shell
+let canvas = this.$refs['canvas']
+  QRCode.toCanvas(canvas, 'sample text', function (error) {
+    if (error) console.error(error)
+    console.log('success!')
+})
+```
+
+## 百度图表
+安装
+```shell
+npm install echarts --save
+```
+简单使用：
+```shell
+// 此方法是挂载dom之后
+ mounted() {
+    // 图表 - 需要页面挂在之后完成
+    let echart = this.$refs['echarts']
+    var myChart = echarts.init(echart)
+    var option = {
+      legend: {},
+      tooltip: {},
+      dataset: {
+        // 提供一份数据。
+        source: [
+          ['product', '2015', '2016', '2017', '2018'],
+          ['Matcha', 43.3, 85.8, 93.7],
+          ['Milk', 83.1, 73.4, 55.1],
+          ['Cheese', 86.4, 65.2, 82.5],
+          ['W', 72.4, 53.9, 39.1],
+          ['Wal=', 70, 1, 90,100],
+          ['Waln', 70, 1, 90,100],
+          ['Walnu', 70, 1, 90,100],
+          ['Walnut', 70, 1, 90,100],
+        ]
+      },
+      // 声明一个 X 轴，类目轴（category）。默认情况下，
+      // 类目轴对应到 dataset 第一列。
+      xAxis: {type: 'category'},
+      // 声明一个 Y 轴，数值轴。
+      yAxis: {},
+      // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+      series: [
+        {type: 'bar'},
+        {type: 'bar'},
+        {type: 'bar'},
+        {type: 'bar'},
+      ]
+    }
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option)
+  }
+}
+```
 
