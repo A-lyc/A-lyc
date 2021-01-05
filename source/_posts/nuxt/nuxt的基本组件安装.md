@@ -344,11 +344,16 @@ npm install cookie-parser
 安装一个cookies格式化工具方便操作 ：npm i serve cookie-parser 之后在middleware（中间件）这个文件夹内新建文件进行导入
 我新建的cokie.js 内容是：
 ```js
-module.exports = require('cookie-parser')()
+module.exports =  function (req, res, next) {
+  console.log('-**--*-*-*-*-*-*-*-*')
+  console.log('-**--*-*- cookies *-*-*-*-*-*')
+  next()
+
+}
 ```
 导入npm的之后在nuxt.confige.js中进行导入中间件
 ```js
- // 中间件
+ // 服务器中间件
   serverMiddleware: [
     '~/middleware/cookie.js'
   ]
