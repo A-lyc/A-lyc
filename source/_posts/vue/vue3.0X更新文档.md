@@ -1,6 +1,6 @@
 ---
 title: vue3.0X更新文档
-date: 2020-10-24 11:04:50
+date: 2099-10-24 11:04:50
 tags: [vue3.0,vue]
 category: vue
 ---
@@ -78,7 +78,6 @@ vue add vue-next
 ## 创建路由
 =======
 ## 创建路由 router/index
->>>>>>> 86d49123e88fdffd9804e8f809b7e1a169d6cef4
 ```shell
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
@@ -614,3 +613,54 @@ ctx 是上节中我们提到的当前组件实例
 
 总的效果呢是这样的
 文章来源于：https://www.cnblogs.com/yf-html/p/12753540.html
+
+## render函数
+新建一个js文件之后直接写js即可
+```shell script
+// 基础写法，不完全，需要查询官网所给出的api
+ export default {
+     data(){
+         return {
+             red:'red',
+             cont:1
+         }
+     },
+     render() {
+         return ('div',{
+             'class': {
+                 'isRed':this.red
+             },
+         },[
+             ('p','我是p标签' + this.cont)
+         ])
+     },
+     methods: {
+     },
+ }
+// jsx 写法，很多需要自己去查写法，比如文字在div中显示不出来，在span标签中显示出来
+export default {
+    data(){
+        return {
+            red:'red',
+            cont:1
+        }
+    },
+    render() {
+        return (
+            <div class="works-wrapper">
+                <span>Hello</span>
+            </div>
+        )
+    },
+    methods: {
+    },
+}
+```
+### 使用方法
+```shell script
+import 命名的名称 from "@/components/render的js文件.js";
+```
+在模板中导入直接使用 - 和模板一个使用方式
+
+### 在render中使用
+

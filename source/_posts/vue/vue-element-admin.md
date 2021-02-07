@@ -1,7 +1,7 @@
 ---
 uuid: bea548e6-eb93-0eb2-d70a-a0b89753cfdd
 title: vue-element-admin
-date: 2020-11-12 21:00:25
+date: 2099-11-12 21:00:25
 tags: [vue-element-admin,]
 category: vue
 ---
@@ -283,16 +283,4 @@ template自己定义模板这个需要有后端的支持
 <a href="./newAdmin.zip" target="_blank"> template自己定义模板 </a>
 选要后端支持 npm i
 <a href="./demo01.zip" target="_blank"> node+express+mongoose后端模板 </a>
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -13,6 +13,29 @@ category: ES6
 
 throw err -> 阻止程序执行，打印到控制台
 <!-- more -->
+### 深拷贝，原数组不变
+```shell
+let target = { a: 1, b: 2 };
+let source = { b: 4, c: 5 };
+/**
+const returnedTarget = Object.assign(target,source);
+target
+目标对象-将源属性应用到的对象，修改后将返回该对象。
+
+sources
+源对象—包含要应用的属性的对象。
+*/
+
+const returnedTarget = Object.assign(source);
+target.a = 10
+console.log(target);
+// expected output: Object { a: 10, b: 2 }
+
+console.log(returnedTarget);
+// expected output: Object { b: 4, c: 5 };
+
+```
+
 ### Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。
 // Number.isFinite(15); 
 // trueNumber.isFinite(0.8); 
