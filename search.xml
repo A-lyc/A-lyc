@@ -214,6 +214,31 @@
     
     
     <entry>
+      <title>如何使用实时通讯</title>
+      <link href="/A-lyc/2021/02/07/vue/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF/"/>
+      <url>/A-lyc/2021/02/07/vue/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF/</url>
+      
+        <content type="html"><![CDATA[<p>如何在uniapp中使用实时通讯uni.connectSocket<br>地址：<a href="https://uniapp.dcloud.io/api/request/websocket?id=connectsocket" target="_blank" rel="noopener">https://uniapp.dcloud.io/api/request/websocket?id=connectsocket</a><br>首先知道只要打开页面就需要开始实时通讯，所以要在vue的页面加载的时候可在app.vue中直接声明<br>使用uni.connectSocket方法：<br>    必穿参数：url:ws:/wss<br>    返回参数：complete: () =&gt; {}</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">            /**</span><br><span class="line">             *  在 App.vue 初始化 ws 对象</span><br><span class="line">             *  这里仅仅初始化，不做任何操作</span><br><span class="line">             *  将 ws 挂到 Vue 原型链上</span><br><span class="line">             *  方便子组件中使用</span><br><span class="line">             **/</span><br><span class="line">            init() &#123;</span><br><span class="line">                // 全局暴漏$ws</span><br><span class="line">                Vue.prototype.$ws = uni.connectSocket(&#123;</span><br><span class="line">                    url: 'ws:', //链接成功</span><br><span class="line">                    complete: () =&gt; &#123;&#125; // 需要一个成功失败或者都执行的参数</span><br><span class="line">                &#125;);</span><br><span class="line">                // 初始化之后进行 验证链接</span><br><span class="line">                socket()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure><p>新建一个函数socket：对应socket()</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">let getSocket =  function ()&#123;</span><br><span class="line">    // 链接成功 一开始第一次握手</span><br><span class="line">    uni.onSocketOpen(function (res) &#123;</span><br><span class="line">        console.log('WebSocket连接已打开！');</span><br><span class="line">    &#125;);</span><br><span class="line">    // WebSocket连接打开失败，请检查！</span><br><span class="line">    uni.onSocketError(function (res) &#123;</span><br><span class="line">        console.log('WebSocket连接打开失败，请检查！');</span><br><span class="line">    &#125;);</span><br><span class="line">    uni.onSocketMessage(function (res) &#123;</span><br><span class="line">        // 传来的数据进行结构</span><br><span class="line">        let &#123;Data, MsgType&#125; = JSON.parse(res.data)</span><br><span class="line">        // 链接验证使用 每个一段时间发送一个p   uni.sendSocketMessage的方法 为字符串</span><br><span class="line">            setInterval(() =&gt; &#123;</span><br><span class="line">                uni.sendSocketMessage(&#123;</span><br><span class="line">                    data: 'p'</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;, 20000)</span><br><span class="line">            // 直接跳出</span><br><span class="line">             uni.closeSocket(&#123;code: 1000&#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">// 导出去</span><br><span class="line">export default getSocket</span><br></pre></td></tr></table></figure><p>页面中使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 使用方式 可见官网onMessage 接收数据给服务器</span><br><span class="line"> this.$ws.onMessage(async res =&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue 实时通讯 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>鲁班h5</title>
       <link href="/A-lyc/2020/12/01/%E9%B2%81%E7%8F%ADh5/"/>
       <url>/A-lyc/2020/12/01/%E9%B2%81%E7%8F%ADh5/</url>
