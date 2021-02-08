@@ -72,8 +72,8 @@ npm uninstall 插件名
 --------------
 
 在你的文章的front-matter中提供缩略图的路径或URL地址：
-post.md
-title: Icarus快速上手
-thumbnail: /gallery/thumbnails/desert.jpg
+- post.md
+- title: Icarus快速上手
+- thumbnail: /gallery/thumbnails/desert.jpg
 ---
 文章内容...
