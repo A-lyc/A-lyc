@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>前端布局神器display:flex | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Flex布局">
+    <meta name="description" content="一、Flex不仅可以水平方向布局也可以垂直方向布局 Flex是Flexible Box的缩写，翻译成中文就是“弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端布局神器display:flex">
+<meta property="og:url" content="https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="一、Flex不仅可以水平方向布局也可以垂直方向布局 Flex是Flexible Box的缩写，翻译成中文就是“弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/20.png">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/21.png">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/22.png">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/22.png">
+<meta property="article:published_time" content="2099-03-20T12:13:53.000Z">
+<meta property="article:modified_time" content="2020-12-07T07:08:39.250Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="Flex布局">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a-lyc.github.io/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/20.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前端布局神器display:flex</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前端布局神器display:flex</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2099-03-20T12:13:53.000Z" itemprop="datePublished" class="page-time">
+  2099-03-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/css/">css</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、Flex不仅可以水平方向布局也可以垂直方向布局"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、Flex不仅可以水平方向布局也可以垂直方向布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、基本概念"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、基本概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、容器属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、容器属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#flex-direction属性：决定主轴的方向（即项目的排列方向）"><span class="post-toc-number">4.</span> <span class="post-toc-text">flex-direction属性：决定主轴的方向（即项目的排列方向）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flex-wrap属性：定义换行情况-默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。"><span class="post-toc-number"></span> <span class="post-toc-text">flex-wrap属性：定义换行情况 默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flex-flow属性：flex-direction和flex-wrap的简写，默认row-nowrap"><span class="post-toc-number"></span> <span class="post-toc-text">flex-flow属性：flex-direction和flex-wrap的简写，默认row nowrap</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#align-items属性：定义在交叉轴上的对齐方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">align-items属性：定义在交叉轴上的对齐方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#align-content属性：定义多根轴线的对齐方式"><span class="post-toc-number">2.</span> <span class="post-toc-text">align-content属性：定义多根轴线的对齐方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、项目的属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">四、项目的属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#默认值为auto，浏览器根据此属性检查主轴是否有多余空间。"><span class="post-toc-number">4.</span> <span class="post-toc-text">默认值为auto，浏览器根据此属性检查主轴是否有多余空间。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#align-self属性：允许单个项目与其他项目有不一样的对齐方式"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">align-self属性：允许单个项目与其他项目有不一样的对齐方式</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-css/前端布局神器display-flex"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前端布局神器display:flex</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2099-03-20 20:13:53" datetime="2099-03-20T12:13:53.000Z"  itemprop="datePublished">2099-03-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/css/">css</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="一、Flex不仅可以水平方向布局也可以垂直方向布局"><a href="#一、Flex不仅可以水平方向布局也可以垂直方向布局" class="headerlink" title="一、Flex不仅可以水平方向布局也可以垂直方向布局"></a>一、Flex不仅可以水平方向布局也可以垂直方向布局</h3><ul>
+<li><p>Flex是Flexible Box的缩写，翻译成中文就是“弹性盒子”，用来为盒装模型提供最大的灵活性。任何一个容器都可以指定为Flex布局。</p>
+<a id="more"></a></li>
+<li><p>.box{<br>  display: -webkit-flex; /<em>在webkit内核的浏览器上使用要加前缀</em>/<br>  display: flex; //将对象作为弹性伸缩盒显示<br>  }</p>
+</li>
+<li><p>当然，行内元素也可以使用Flex布局。<br>.box {</p>
+<pre><code>display: inline-flex; //将对象作为内联块级弹性伸缩盒显示
+}</code></pre></li>
+<li><p>兼容性写法<br>.box {</p>
+<pre><code>display: flex || inline-flex;</code></pre><p>}</p>
+</li>
+</ul>
+<h3 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h3><blockquote>
+<p>采用Flex布局的元素，被称为Flex容器(flex container)，简称“容器”。其所有子元素自动成为容器成员，成为Flex项目(Flex item)，简称“项目”。</p>
+</blockquote>
+{% image ./前端布局神器display-flex/image.png '查入图片' '' %}
+
+<ul>
+<li>结构示意图<br>容器默认存在两根主轴：水平方向主轴(main axis)和垂直方向交叉轴(cross axis)，默认项目按主轴排列。<br>• main start/main end：主轴开始位置/结束位置；<br>• cross start/cross end：交叉轴开始位置/结束位置；<br>• main size/cross size：单个项目占据主轴/交叉轴的空间；</li>
+</ul>
+<h3 id="三、容器属性"><a href="#三、容器属性" class="headerlink" title="三、容器属性"></a>三、容器属性</h3><ul>
+<li><p>设置在容器上的属性有6种。</p>
+<p>flex-direction<br>flex-wrap<br>flex-flow<br>justify-content<br>align-item<br>align-content</p>
+</li>
+</ul>
+<h3 id="flex-direction属性：决定主轴的方向（即项目的排列方向）"><a href="#flex-direction属性：决定主轴的方向（即项目的排列方向）" class="headerlink" title="flex-direction属性：决定主轴的方向（即项目的排列方向）"></a>flex-direction属性：决定主轴的方向（即项目的排列方向）</h3><ul>
+<li><p>.box {<br>flex-direction: row | row-reverse | column | column-reverse;<br>}</p>
+<p>row（默认）：主轴水平方向，起点在左端；<br>row-reverse：主轴水平方向，起点在右端；<br>column：主轴垂直方向，起点在上边沿；<br>column-reserve：主轴垂直方向，起点在下边沿。</p>
+</li>
+</ul>
+{% image /前端布局神器display-flex/02.png '查入图片' '' %}
+
+<h2 id="flex-wrap属性：定义换行情况-默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。"><a href="#flex-wrap属性：定义换行情况-默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。" class="headerlink" title="flex-wrap属性：定义换行情况 默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。"></a>flex-wrap属性：定义换行情况 默认情况下，项目都排列在一条轴线上，但有可能一条轴线排不下。</h2><ul>
+<li>.box{<br>flex-wrap: nowrap | wrap | wrap-reverse;<br>}<br>nowrap（默认）：不换行；<br>wrap：换行，第一行在上方；<br>wrap-reverse：换行，第一行在下方。</li>
+</ul>
+<h2 id="flex-flow属性：flex-direction和flex-wrap的简写，默认row-nowrap"><a href="#flex-flow属性：flex-direction和flex-wrap的简写，默认row-nowrap" class="headerlink" title="flex-flow属性：flex-direction和flex-wrap的简写，默认row nowrap"></a>flex-flow属性：flex-direction和flex-wrap的简写，默认row nowrap</h2><ul>
+<li><p>.box{<br>  flex-flow: <flex-direction> || <flex-wrap>;<br>}</flex-wrap></flex-direction></p>
+<p>justify-content属性：定义项目在主轴上的对齐方式。<br>对齐方式与轴的方向有关，本文中假设主轴从左到右。</p>
+<p>.box {<br>justify-content: start | end | flex-start | flex-end | center | left | right | space-between | space-around | space-evenly | stretch | safe | unsafe | baseline | first baseline | last baseline;<br>}</p>
+</li>
+<li><p>flex-start（默认值）：左对齐；</p>
+{% image /前端布局神器display-flex/03.png '查入图片' '' %}
+</li>
+<li><p>flex-end：右对齐；</p>
+{% image /前端布局神器display-flex/04.png '查入图片' '' %}
+</li>
+<li><p>center：居中；</p>
+{% image /前端布局神器display-flex/05.png '查入图片' '' %}
+</li>
+<li><p>space-between：两端对齐，项目之间间隔相等；</p>
+{% image /前端布局神器display-flex/06.png '查入图片' '' %}
+</li>
+<li><p>space-around：每个项目两侧的间隔相等，即项目之间的间隔比项目与边框的间隔大一倍。</p>
+{% image /前端布局神器display-flex/07.png '查入图片' '' %}
+
+</li>
+</ul>
+<h3 id="align-items属性：定义在交叉轴上的对齐方式"><a href="#align-items属性：定义在交叉轴上的对齐方式" class="headerlink" title="align-items属性：定义在交叉轴上的对齐方式"></a>align-items属性：定义在交叉轴上的对齐方式</h3><ul>
+<li><p>对齐方式与交叉轴的方向有关，假设交叉轴从下到上。</p>
+<p>.box{<br>  align-items: flex-start | flex-end | center | baseline | stretch;<br>}</p>
+<p>flex-start：起点对齐；</p>
+{% image /前端布局神器display-flex/08.png '查入图片' '' %}</li>
+<li><p>flex-end：终点对齐；</p>
+{% image /前端布局神器display-flex/09.png '查入图片' '' %}</li>
+<li><p>center：中点对齐；</p>
+{% image /前端布局神器display-flex/10.png '查入图片' '' %}</li>
+<li><p>baseline：项目的第一行文字的基线对齐；</p>
+{% image /前端布局神器display-flex/11.png '查入图片' '' %}</li>
+<li><p>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+{% image /前端布局神器display-flex/12.png '查入图片' '' %}
+
+</li>
+</ul>
+<h3 id="align-content属性：定义多根轴线的对齐方式"><a href="#align-content属性：定义多根轴线的对齐方式" class="headerlink" title="align-content属性：定义多根轴线的对齐方式"></a>align-content属性：定义多根轴线的对齐方式</h3><ul>
+<li><p>如果项目只有一根轴线，该属性不起作用。<br>所以，容器必须设置flex-wrap：···；</p>
+<p>.box{<br>  align-content: flex-start | flex-end | center | space-between | space-around | stretch;<br>}</p>
+</li>
+<li><p>flex-start：与交叉轴的起点对齐；</p>
+{% image /前端布局神器display-flex/13.png '查入图片' '' %}
+</li>
+<li><p>flex-end：与交叉轴的终点对齐；</p>
+{% image /前端布局神器display-flex/14.png '查入图片' '' %}
+</li>
+<li><p>center：与交叉轴的中点对齐；</p>
+{% image /前端布局神器display-flex/15.png '查入图片' '' %}
+</li>
+<li><p>space-between：与交叉轴的两端对齐，轴线之间的间隔平均分布；</p>
+{% image /前端布局神器display-flex/16.png '查入图片' '' %}
+</li>
+<li><p>space-around：每根轴线两侧的间隔相等，即轴线之间的间隔比轴线与边框的间隔大一倍；</p>
+{% image /前端布局神器display-flex/17.png '查入图片' '' %}
+</li>
+<li><p>stretch（默认值）：轴线占满整个交叉轴。</p>
+{% image /前端布局神器display-flex/18.png '查入图片' '' %}
+</li>
+<li><p>有意思的是，当你不给项目设置高度但是给容器设置align-content不为stretch时，同一轴线上的项目的高度将等于项目中高度最高的项目。</p>
+{% image /前端布局神器display-flex/19.png '查入图片' '' %}
+
+
+</li>
+</ul>
+<h3 id="四、项目的属性"><a href="#四、项目的属性" class="headerlink" title="四、项目的属性"></a>四、项目的属性</h3><ul>
+<li><p>设置在项目上的属性也有6个。</p>
+<ul>
+<li>order<br>flex-grow<br>flex-shrink<br>flex-basis<br>flex<br>align-self<br>order属性：定义项目的排列顺序。</li>
+</ul>
+<p>数值越小，排列越靠前，默认为0，可以是负值。</p>
+<p>.item {</p>
+<pre><code>order: &lt;整数&gt;;</code></pre><p>}</p>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/20.png" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure>
+
+<ul>
+<li><p>展示效果不明显，直接盗图</p>
+<p>flex-grow属性：定义项目的放大比例</p>
+<p>默认值为0，即如果空间有剩余，也不放大。<br>可以是小数，按比例占据剩余空间。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/21.png" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure>
+</li>
+<li><p>.item{<br>  flex-grow: &lt;数字&gt;;<br>}<br>若所有项目的flex-grow的数值都相同，则等分剩余空间<br>等分剩余空间</p>
+<img src="/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/22.png" class>
+</li>
+<li><p>若果有一个项目flex-grow为2，其余都为1，则该项目占据剩余空间是其余的2倍</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/22.png" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure>
+
+</li>
+</ul>
+<ul>
+<li><p>flex-shrink属性：定义项目的缩小比例</p>
+<ul>
+<li>默认值都为1，即如果空间不足将等比例缩小。<br>如果有一个项目的值为0，其他项目为1，当空间不足时，该项目不缩小。<br>负值对该属性无效，容器不应该设置flex-wrap。</li>
+</ul>
+<p>.item{</p>
+<pre><code>flex-shrink: &lt;非负整数&gt;;</code></pre><p>}<br>如果一个项目设置flex-shrink为0；而其他项目都为1，则空间不足时，该项目不缩小。</p>
+{% image /前端布局神器display-flex/23.png '查入图片' '' %}
+
+<ul>
+<li><p>如果所有项目都为0，则当空间不足时，项目撑破容器而溢出。</p>
+{% image /前端布局神器display-flex/24.png '查入图片' '' %}
+</li>
+<li><p>如果设置项目的flex-shrink不为0的非负数效果同设置为1。</p>
+{% image /前端布局神器display-flex/25.png '查入图片' '' %}
+</li>
+<li><p>flex-basis属性：定义在分配多余空间之前，项目占据的主轴空间。</p>
+{% image /前端布局神器display-flex/26.png '查入图片' '' %}
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="默认值为auto，浏览器根据此属性检查主轴是否有多余空间。"><a href="#默认值为auto，浏览器根据此属性检查主轴是否有多余空间。" class="headerlink" title="默认值为auto，浏览器根据此属性检查主轴是否有多余空间。"></a>默认值为auto，浏览器根据此属性检查主轴是否有多余空间。</h3><ul>
+<li><p>.item{<br>  flex-basis:  &lt;auto或者px&gt;;<br>}</p>
+<p>注意设置的flex-basis是分配多余空间之前项目占据的主轴空间，如果空间不足则默认情况下该项目也会缩小。</p>
+{% image /前端布局神器display-flex/27.png '查入图片' '' %}
+
+</li>
+</ul>
+<ul>
+<li><p>设置flex-basis为350px，但空间充足</p>
+{% image /前端布局神器display-flex/28.png '查入图片' '' %}
+
+<ul>
+<li>空间不足，项目缩小，小于设定值<br>flex属性是flex-grow，flex-shrink和flex-basis的简写<br>默认值为0 1 auto，第一个属性必须，后两个属性可选。</li>
+</ul>
+<p>.item{</p>
+<pre><code>flex: none | [&lt;flex-grow&gt;&lt;flex-shrink&gt;&lt;flex-basis&gt;];</code></pre><p>}</p>
+<p>可以用 flex:auto; 代替 flex: 1 1 auto;；<br>可以用 flex: none;代替 flex: 0 0 auto；</p>
+</li>
+</ul>
+<h4 id="align-self属性：允许单个项目与其他项目有不一样的对齐方式"><a href="#align-self属性：允许单个项目与其他项目有不一样的对齐方式" class="headerlink" title="align-self属性：允许单个项目与其他项目有不一样的对齐方式"></a>align-self属性：允许单个项目与其他项目有不一样的对齐方式</h4><ul>
+<li>默认值为auto，表示继承父元素的align-items属性，并可以覆盖align-items属性。<br>.item{<br>align-self: auto | flex-start | flex-end | center | baseline | stretch;<br>}</li>
+</ul>
+<p>内容以共享、参考、研究为目的,不存在任何商业目的。其版权属原作者所有,如有侵权,请与小编联系!情况属实本人将予以删除!</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-12-07T07:08:39.250Z" itemprop="dateUpdated">2020-12-07 15:08:39</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/" target="_blank" rel="external">https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/Flex%E5%B8%83%E5%B1%80/" rel="tag">Flex布局</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/&title=《前端布局神器display:flex》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/&title=《前端布局神器display:flex》 — 四叶草的个人博客&source=一、Flex不仅可以水平方向布局也可以垂直方向布局
+Flex是Flexible Box的缩写，翻译成中文就是“弹性盒子”，用来为盒装模型提供最大的灵活性。..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端布局神器display:flex》 — 四叶草的个人博客&url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2099/04/07/vue/%E5%85%A8%E5%B1%80%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">全局导航守卫</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2099/01/01/nuxt/nuxt%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6%E5%AE%89%E8%A3%85/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">nuxt的基本组件安装</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/&title=《前端布局神器display:flex》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/&title=《前端布局神器display:flex》 — 四叶草的个人博客&source=一、Flex不仅可以水平方向布局也可以垂直方向布局
+Flex是Flexible Box的缩写，翻译成中文就是“弹性盒子”，用来为盒装模型提供最大的灵活性。..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端布局神器display:flex》 — 四叶草的个人博客&url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKklEQVR42u3a0Y7bQAgF0Pz/T6evXalOLjBbxeT4KXKm9hwiLQXm8Yiv58X1euXVnb/vXz3h9dOS5xy4sLGxsW/Cfr68rtZMwldd83onybf/eC82Njb2OvY8kSRbzxPba1h1V9jY2NjY+SbyhJeEJnk7NjY2NvbvJbD5FqtlBjY2NvY3syePy1NRtW3UC+XhXho2Njb2x7Orbf1P/vwr821sbGzsD2Y/x9f8mE61dTVXYGNjY29i5+2eallSHc0mYcq/xcbGxv4edvLK6sg2Wdk7uNNb/8h/H2xsbOwbsntNpeTATS+N5QOGamupGQ5sbGzsj2eXGzHFAzqnhriTb7GxsbF3s5MjmL1NnJo899pMhT1gY2Nj35xdbdxXwdWhQj76rT7zx3psbGzsRey8sZ6T8sD1hrvVUudNEYKNjY29iJ03/X9xCtEaA/QCh42Njb2D3SskqumqusW85GgWM9jY2NhL2dUkVC0kquPe3tGfqKWFjY2NvYg9n35Wi4Ec06sakiYUNjY29j52b8iaDwB6Sas6HqgmOWxsbOwd7Mkxmt7xx2qamRzluQwoNjY29jp2npx64+E8a1QB+b9qdsuwsbGxb8XOk9Ypat7Amie/H3ewsbGx17Grhx3PHtysDgCqhdMjH5FgY2Nj35DdS07VIiQ/Rpn/JHnT6rIswcbGxl7NnvydT/DV1v/8ABA2Njb2VnbSas+3mB/N6bWcqgXSm98ZGxsbewW7147vBajXtMqP8pRHwtjY2Ngr2KeGqaeKimpyyhtJ2NjY2LvZ1cKj+rmQS4Oi4kBDChsbG3sRuzfEnQxfzwYrCeJlWLGxsbFXsJPCo9psyge9SfjOtpmwsbGx97GrySYvIfIg9oa1vbdjY2Nj72P3/otfHSecbSdVV0aTbWxsbOzbsudFQnVAeypxTgYV2NjY2PvY86Q1Tx6TFlVzvIGNjY29jp0c3JkPCV6HprcyCeWbXho2Njb217Ann/9nEA8nMGxsbOxF7HlBkhc5k/VJnsLGxsbex05elo9d5/dPpbrLlIaNjY29iJ0PepOt9A7H5Md6CimqGGJsbGzsG7L/ALRp84dCLqHFAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

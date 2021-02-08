@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>vue axios的get请求接收，传递 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="axios基础使用">
+    <meta name="description" content="上次文章有封装好的axios 使用vue封装好的网络请求，可以通过引入的方式进行网络请求，就是引用：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue axios的get请求接收，传递">
+<meta property="og:url" content="https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="上次文章有封装好的axios 使用vue封装好的网络请求，可以通过引入的方式进行网络请求，就是引用：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-11T12:11:28.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:27.014Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="axios基础使用">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue axios的get请求接收，传递</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue axios的get请求接收，传递</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-11T12:11:28.000Z" itemprop="datePublished" class="page-time">
+  2020-04-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-vue/vue的get请求接收，传递"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue axios的get请求接收，传递</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-11 20:11:28" datetime="2020-04-11T12:11:28.000Z"  itemprop="datePublished">2020-04-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>上次文章有封装好的axios 使用vue封装好的网络请求，可以通过引入的方式进行网络请求，就是引用：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; getDetail, Goods, DetailActive, DetailInfo &#125; from &quot;@&#x2F;network&#x2F;detail&quot;;</span><br></pre></td></tr></table></figure>
+<p>在methods里面处理好之后，在页面加载完成发出网络请求，<br>如何接收网络请求，上次封装有的<br>使用promise.then(()=&gt;{}).catch(()=&gt;{})的方式。之后使用this保存值</p>
+<p>如何返回值传入的时候有变动的参数进行拼接，使用params：{type，page….}等进行拼接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export function getDetail(iid)&#123;</span><br><span class="line">  return request(&#123;</span><br><span class="line">    url: &#39;&#x2F;detail&#39;,</span><br><span class="line">    params:&#123;</span><br><span class="line">      iid</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>GET：在methods里面处理的时候可以：异步函数（参数1，参数2）进行传输参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getHomeGoods(type) &#123;</span><br><span class="line">      let page &#x3D; 1</span><br><span class="line">      getHomeGoods(type, page).then(res &#x3D;&gt; &#123;</span><br><span class="line">        this.goods[type].list.push(...res.data.list);</span><br><span class="line">        this.goods[type].page +&#x3D; 1;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>结合router使用，比如点击进入详情页，可以通过改变router的值改变你url</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;点击传入</span><br><span class="line">this.$router.push(&#39;&#x2F;detail&#x2F;&#39;+this.goodsItem.iid)</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;router接收</span><br><span class="line">  path: &#39;&#x2F;detail&#x2F;:iid&#39;,</span><br><span class="line">  name: &#39;Detail&#39;,</span><br><span class="line">  component: Detail</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;打开页面找到url上拼接的id</span><br><span class="line"> this.iid &#x3D; this.$route.params.iid;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;发出网络请求，把iid传入，请求iid的数据</span><br><span class="line">getDetail(this.iid).then(res &#x3D;&gt; &#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>之后页面加载前取到url上的iid，获取方法：this.iid = this.$route.params.iid;（当前页面：route）之后使用把值代入函数的参数内传输给后端，（获取的时候要有一个params：{type，page….}）拼接的值，然后后端返回这个链接随对应的数据</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:27.014Z" itemprop="dateUpdated">2020-07-24 08:16:27</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/" target="_blank" rel="external">https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/axios%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" rel="tag">axios基础使用</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/&title=《vue axios的get请求接收，传递》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/&title=《vue axios的get请求接收，传递》 — 四叶草的个人博客&source=上次文章有封装好的axios 使用vue封装好的网络请求，可以通过引入的方式进行网络请求，就是引用：" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue axios的get请求接收，传递》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/04/11/uniapp/uniapp%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82%E5%B0%81%E8%A3%85%E5%BA%94%E7%94%A8/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">uniapp数据请求封装应用</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/04/11/uniapp/uniapp%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">uniapp请求数据的方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/&title=《vue axios的get请求接收，传递》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/&title=《vue axios的get请求接收，传递》 — 四叶草的个人博客&source=上次文章有封装好的axios 使用vue封装好的网络请求，可以通过引入的方式进行网络请求，就是引用：" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue axios的get请求接收，传递》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/11/vue/vue%E7%9A%84get%E8%AF%B7%E6%B1%82%E6%8E%A5%E6%94%B6%EF%BC%8C%E4%BC%A0%E9%80%92/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD3ElEQVR42u3awXLiQAwEUP7/p8k1VYlJSz0mHJ5PFGzsmcdWNdLo8Yiv57fr5ztXn/58ffW3r+95dYdkhY87Lhw4cODAEW81WejVsvKlTCkTmterzaFx4MCBA8cpjqtFvw6218tKlpJA5ME/DV0cOHDgwPEJHLuCbfpp8zoPfhw4cODA8QkcSaGVtAJ3jcgk2nHgwIEDxydw7I6Rdih3MOXNzWO9Uhw4cODAkT73MS3nPv/1LfMdOHDgwIFjOBWWD6tNQy5/P/l6kmOwaHc4cODAgaPmyANp2p7bbTIfa8i/gPG+cODAgQNHzTENzumR0m4ALm9W7pqPf2DhwIEDB44VR3KAlC86KczyO+zG8qoWJw4cOHDgeAvHtFjKi67pEFvy9eRjEL98igMHDhw4ao48uvIN5xvbRe+OYPBjAgcOHDhwFBzJ0MAUqC/t8gZl377EgQMHDhz3cSQ00/js23anIj/6enDgwIEDx1GO3bBCXjjtmoN5WZjjXn6KAwcOHDhu4NgdGk0Ls3744NQgxeVAAw4cOHDgqDl2Db7dSFyzvbzInH4BOHDgwIHjLEcetLtiqRk1yEf38q/hl2fhwIEDB44bOKZl265I6++W8w1iGAcOHDhw1By7UmdamO2GG5II3z0x+iscOHDgwLHiSIYGpv+maR1OC7AcaPC7AwcOHDhwFBy7oYRT4ZeXWLvjqHzA4vL/CA4cOHDgKDjyIGwGEZognB59TX8o4MCBAweOnmNaJjUjd6fudt9TcODAgQNHz9FE4x/pPTxY6gu86TVuDuLAgQMHjpgjf3weXUkDcXq8lN+/oceBAwcOHD1HUyA1w2p583FXKO6O03DgwIEDx90ceWTmQwyDxcWl47RUi5qDOHDgwIFjyLELqj4+8yVOV5gE82CgAQcOHDhwrDimwdZvPg/pPj7zIMeBAwcOHD1HU3Q17bm76fN3cODAgQPHWY78+H96+JQvK2Gajjgs14MDBw4cOGqOZHRsV57dPe4wLQvzAzYcOHDgwNFw7I5tki1NW3V5wJ+K3migAQcOHDhwrDjywGvCuI/kZ3Adbg7iwIEDB46jx07T1uGONT/oaoq9ARMOHDhw4Cg4nsOrOTqatvNOxfyg7MSBAwcOHDVHfjXLyluHBxp8h8pFHDhw4MDRcCTh2hdpSaAmz9o9MV8VDhw4cOA4xZEH4dnDoX7DOWJ0fxw4cODA8U8cuyJtF7cN/TjIceDAgQPH2zmScm66pRwxbxFWo3I4cODAgaPmyB+8W1aDPj3umoYuDhw4cOA4y9EUY6eWPm0OTpuPVVGHAwcOHDhSji+00e3QHkeXJgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

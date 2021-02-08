@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>父子之间传递信息和ref，$el | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ref refs 组件传递">
+    <meta name="description" content="父子之间传递信息和ref，$el $emit子组件定义事件，父组件接收&#x2F;&#x2F;父组件访问子组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="父子之间传递信息和ref，$el">
+<meta property="og:url" content="https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="父子之间传递信息和ref，$el $emit子组件定义事件，父组件接收&#x2F;&#x2F;父组件访问子组件">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-28T02:53:02.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:27.036Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="ref refs 组件传递">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">父子之间传递信息和ref，$el</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">父子之间传递信息和ref，$el</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-28T02:53:02.000Z" itemprop="datePublished" class="page-time">
+  2020-03-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#emit子组件定义事件，父组件接收-父组件访问子组件"><span class="post-toc-number">1.</span> <span class="post-toc-text">$emit子组件定义事件，父组件接收&#x2F;&#x2F;父组件访问子组件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#popst父组件传数据，子组件接收-父组件传输给子组件的信息，子组件是不可以进行修改的，需要传入data中另存一份进行修改，这个数据和父组件的数据是没有双向绑定的，如果需要子组件修改后的数据需要通过子组件传输的方式进行传输"><span class="post-toc-number">2.</span> <span class="post-toc-text">popst父组件传数据，子组件接收,父组件传输给子组件的信息，子组件是不可以进行修改的，需要传入data中另存一份进行修改，这个数据和父组件的数据是没有双向绑定的，如果需要子组件修改后的数据需要通过子组件传输的方式进行传输</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ref"><span class="post-toc-number">3.</span> <span class="post-toc-text">ref</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#el-自行打印看看"><span class="post-toc-number">4.</span> <span class="post-toc-text">$el &#x2F;&#x2F;自行打印看看</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#补充："><span class="post-toc-number">5.</span> <span class="post-toc-text">补充：</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue/父子之间传递信息"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">父子之间传递信息和ref，$el</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-28 10:53:02" datetime="2020-03-28T02:53:02.000Z"  itemprop="datePublished">2020-03-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>父子之间传递信息和ref，$el</p>
+<h2 id="emit子组件定义事件，父组件接收-父组件访问子组件"><a href="#emit子组件定义事件，父组件接收-父组件访问子组件" class="headerlink" title="$emit子组件定义事件，父组件接收//父组件访问子组件"></a>$emit子组件定义事件，父组件接收//父组件访问子组件</h2><a id="more"></a>
+<ul>
+<li>子组件：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">  addToCart(index)&#123;</span><br><span class="line">    this.$emit(&#39;addCart&#39;,index)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>父组件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;addToCart:可以自己定义事件内容,还可以取到传来的参数</span><br><span class="line"> &lt;detail-bottom-bar @addCart&#x3D;&quot;addToCart&quot;&gt;&lt;&#x2F;detail-bottom-bar&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="popst父组件传数据，子组件接收-父组件传输给子组件的信息，子组件是不可以进行修改的，需要传入data中另存一份进行修改，这个数据和父组件的数据是没有双向绑定的，如果需要子组件修改后的数据需要通过子组件传输的方式进行传输"><a href="#popst父组件传数据，子组件接收-父组件传输给子组件的信息，子组件是不可以进行修改的，需要传入data中另存一份进行修改，这个数据和父组件的数据是没有双向绑定的，如果需要子组件修改后的数据需要通过子组件传输的方式进行传输" class="headerlink" title="popst父组件传数据，子组件接收,父组件传输给子组件的信息，子组件是不可以进行修改的，需要传入data中另存一份进行修改，这个数据和父组件的数据是没有双向绑定的，如果需要子组件修改后的数据需要通过子组件传输的方式进行传输"></a>popst父组件传数据，子组件接收,父组件传输给子组件的信息，子组件是不可以进行修改的，需要传入data中另存一份进行修改，这个数据和父组件的数据是没有双向绑定的，如果需要子组件修改后的数据需要通过子组件传输的方式进行传输</h2><ul>
+<li>父组件：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;父组件把goods传入子组件</span><br><span class="line">:good&#x3D;&quot;goods&quot;</span><br><span class="line">&#x2F;&#x2F;good和子组件关联的</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>子组件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  &#x2F;&#x2F;子组件的good是父组件传来的goods  是数组或对象可以循环遍历，别的值可用&#123;&#123;&#125;&#125;</span><br><span class="line">    good:&#123;</span><br><span class="line">        type:Array,</span><br><span class="line">        &#x2F;&#x2F;数组和对象默认值是一个函数</span><br><span class="line">        default()&#123;</span><br><span class="line">            return []</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;scroll ref&#x3D;&quot;scroll&quot;&gt;&lt;&#x2F;scroll&gt;</span><br></pre></td></tr></table></figure>
+<p>获取scroll对象的Vue Component里面的组件</p>
+<p>使用//自行打印看看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$refs.scroll</span><br></pre></td></tr></table></figure>
+
+<h2 id="el-自行打印看看"><a href="#el-自行打印看看" class="headerlink" title="$el //自行打印看看"></a>$el //自行打印看看</h2><p>$el获取整个页面的DOM就是整个页面的HTML</p>
+<h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><p>有时候我们需要父组件直接访问子组件，子组件直接访问父组件，或者是子组件访问跟组件。<br>父组件访问子组件：使用$children或$refs<br>子组件访问父组件：使用$parent</p>
+<p>$children<br>我们先来看下$children的访问<br>this.$children是一个数组类型，它包含所有子组件对象。<br>我们这里通过一个遍历，取出所有子组件的message状态。</p>
+<p>$children的缺陷：<br>通过$children访问子组件时，是一个数组类型，访问其中的子组件必须通过索引值。<br>但是当子组件过多，我们需要拿到其中一个时，往往不能确定它的索引值，甚至还可能会发生变化。<br>有时候，我们想明确获取其中一个特定的组件，这个时候就可以使用$refs</p>
+<p>$refs的使用：<br>$refs和ref指令通常是一起使用的。<br>首先，我们通过ref给某一个子组件绑定一个特定的ID。<br>其次，通过this.$refs.ID就可以访问到该组件了。</p>
+<p>如果我们想在子组件中直接访问父组件，可以通过$parent<br>注意事项：<br>尽管在Vue开发中，我们允许通过$parent来访问父组件，但是在真实开发中尽量不要这样做。<br>子组件应该尽量避免直接访问父组件的数据，因为这样耦合度太高了。<br>如果我们将子组件放在另外一个组件之内，很可能该父组件没有对应的属性，往往会引起问题。<br>另外，更不好做的是通过$parent直接修改父组件的状态，那么父组件中的状态将变得飘忽不定，很不利于我的调试和维护。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:27.036Z" itemprop="dateUpdated">2020-07-24 08:16:27</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/ref-refs-%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92/" rel="tag">ref refs 组件传递</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/&title=《父子之间传递信息和ref，$el》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/&title=《父子之间传递信息和ref，$el》 — 四叶草的个人博客&source=父子之间传递信息和ref，$el
+$emit子组件定义事件，父组件接收//父组件访问子组件" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《父子之间传递信息和ref，$el》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">$router使用方法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/28/js/sceoll%E5%BA%94%E7%94%A8/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">sceoll插件应用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/&title=《父子之间传递信息和ref，$el》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/&title=《父子之间传递信息和ref，$el》 — 四叶草的个人博客&source=父子之间传递信息和ref，$el
+$emit子组件定义事件，父组件接收//父组件访问子组件" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《父子之间传递信息和ref，$el》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD4klEQVR42u3aS27bQBAFQN3/0s42gUD6ve6h7ADFlSBIw5niotmf1yu+vv663r9//3y/wvt1/5ur1e53eL+f1YUDBw4cOOKjJhvNye4R7+91//v2vskZceDAgQPHWY77YJYEsCQYtyvnjyThSAI2Dhw4cOD4WY72lvnhZ6G0TS9x4MCBA8dv4JgV8pIksE232tCLAwcOHDg+yTEr2M347pm+guvsL3HgwIEDx1mOvMv//35+ZL4DBw4cOHCUydJsjKAdXNgMT7SB/JvT4cCBAweONUcekO4Pf2rYLh9iOHsvHDhw4MDxHEfbTJoh5iG8DfNJIP9m/zhw4MCB4yjHEyGwRT9wpEWJEwcOHDhwbDhmzZtkc20pcFb+mw3MXX6DAwcOHDgOceQLfb77v28p5SkfDhw4cODYcySJUJ5EzQ7QJod5oyuHw4EDBw4cpziSA7SFv/01C5CbtPMyo8WBAwcOHKNKWhuo8qJeO2TQHm//38v3Dhw4cODAMeJoN9eW/GaZUfIY2rJglPjhwIEDB441xzAyjwp2pwJ5spPNOB0OHDhw4Nhw5JvLGznJHZ8YX5gRX9ZKceDAgQPHiKONNflCs/A8exXIQ34dhnHgwIEDx4gjD5OzlGmz8mwAbrU+Dhw4cOBYcLThaj+U0K6TpHz79YfRGwcOHDhwXHDct/9nCVK7lXrsYJQoRoEWBw4cOHAsOGYBNfk8G4CYjSPkrEUGiQMHDhw4Rhxni2v3oJ8pDrZ3uXzvwIEDBw4cRznyEJuUF/OSX1tYzFO+aHgOBw4cOHB8hCNPmWaJ4qyVdaod9c+/cODAgQPHmuNUEtXW2dqW0mboYfa6gAMHDhw4TnHkCdjZgba2abRJPovQjgMHDhw4So78DwnWvnR4NhgfeL/AgQMHDhwjjjxAzhD3lLOBiTbc4sCBAweOUxybhO1UAyk/do5SPyocOHDgwLHmmAXCTfDLBxTy0YrZsMKqSooDBw4cOEqOOiytE7+kmZQPXuwTThw4cODAMeNohwDaFtF+zmJWEByOaODAgQMHjkMceXKVp22zkt8mwLfjEThw4MCB4wmOJybENo2oTSDfr48DBw4cOPYcp25zKvHbDCgceAw4cODAgeNMRHvlYSk/9r5s17aRNq8FNRYOHDhw4LjlaNtFs9bObAQhf0XY/wYHDhw4cJzlmCVmp7aep5ezx1DsCgcOHDhw/BDHZhiuLQXm5b/ZaEX0hHHgwIEDx2Mcs2SvHbybUbYP43K+AwcOHDhwrDnyG++bPUlDq71Le4oDtVIcOHDgwLEeaGgPthmMSELj7DD74QwcOHDgwHGxhz+0TqYYj9e0SQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

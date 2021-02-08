@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>nuxt使用富文本图片裁切以及element | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="nuxt vue 使用富文本图片裁切以及element">
+    <meta name="description" content="问题点 - 为解决待测试把后台接收的THML重新渲染到富文本上，做到一个重新修改的作用，思路：ref直接父组件修改子组件的值问题，id需要传入之后提前渲染页面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuxt使用富文本图片裁切以及element">
+<meta property="og:url" content="https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="问题点 - 为解决待测试把后台接收的THML重新渲染到富文本上，做到一个重新修改的作用，思路：ref直接父组件修改子组件的值问题，id需要传入之后提前渲染页面">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-24T01:49:59.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:26.895Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="nuxt vue 使用富文本图片裁切以及element">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">nuxt使用富文本图片裁切以及element</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">nuxt使用富文本图片裁切以及element</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-06-24T01:49:59.000Z" itemprop="datePublished" class="page-time">
+  2020-06-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/Nuxt/">Nuxt</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-nuxt/nuxt使用富文本图片裁切以及element"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">nuxt使用富文本图片裁切以及element</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-06-24 09:49:59" datetime="2020-06-24T01:49:59.000Z"  itemprop="datePublished">2020-06-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/Nuxt/">Nuxt</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>问题点 - 为解决待测试<br>把后台接收的THML重新渲染到富文本上，做到一个重新修改的作用，思路：ref直接父组件修改子组件的值<br>问题，id需要传入之后提前渲染页面 </p>
+<a id="more"></a>
+<p>父组件使用 @change - &lt;editor @change=”contentEdit” ref=”edit” id=”quill-input-all”&gt;</p>
+<p>之前默认安装element<br>安装方法安装富文本图片裁切：npm install -d vue-quill-editor quill vue-cropper<br>官网：<br>vue-quill-editor：<a href="https://quilljs.com/" target="_blank" rel="noopener">https://quilljs.com/</a><br>git：<a href="https://github.com/surmon-china/vue-quill-editor" target="_blank" rel="noopener">https://github.com/surmon-china/vue-quill-editor</a><br>vue-cropper：<a href="https://github.com/xyxiao001/vue-cropper" target="_blank" rel="noopener">https://github.com/xyxiao001/vue-cropper</a></p>
+<p>nuxt制作服务器端渲染造成的找不到window和document的问题，是由于有些插件是获取window和document的，在vue中是没有window和document的，所以官方给出了解决方案，<br>解决方案1：（局部使用（局部获取浏览器的token） 使用插件的时候不要使用，）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (process.client) &#123;</span><br><span class="line">  <span class="built_in">require</span>(<span class="string">'external_library'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解决方案2：（使用插件的时候全局注册一下）<br>注册插件：plugins文件夹内 新建js文件 - 例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> VueQuillEditor <span class="keyword">from</span> <span class="string">'vue-quill-editor'</span></span><br><span class="line">Vue.use(VueQuillEditor)</span><br></pre></td></tr></table></figure>
+<p>全局引用：nuxt.config.js配置 ssr:false  服务器端加载</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="string">'@/plugins/element-ui'</span>,</span><br><span class="line">  <span class="string">'@/plugins/bootstrap-vue'</span>,</span><br><span class="line">  &#123; <span class="attr">src</span>: <span class="string">'@/plugins/map'</span>, <span class="attr">ssr</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">src</span>: <span class="string">'@/plugins/vue-quill-editor'</span>, <span class="attr">ssr</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">src</span>: <span class="string">'@/plugins/vue-cropper'</span>, <span class="attr">ssr</span>: <span class="literal">false</span> &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>使用：（不需要引入了，就像element一样，按照官网直接写标签，）<br>–  在使用上传的时候action是传输一个链接地址，如果想根据自己定义的axios上传需要添加一个auto-upload=”false”意思不取消自动上传更据:on-change=”onChange”(文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用)动作进行上传<br> :before-upload=”beforeUpload” - 建议使用后这个返回一个false （官网介绍上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传。类型函数 function(file){}:可取到上传的url 下面代码有介绍）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 500px"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 图片上传组件</span></span><br><span class="line"><span class="comment">        before-upload：禁止自动上传</span></span><br><span class="line"><span class="comment">        show-file-list是否显示上传列表</span></span><br><span class="line"><span class="comment">        其余属性能加就加     </span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-upload</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:before-upload</span>=<span class="string">"beforeUpload"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:show-file-list</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">accept</span>=<span class="string">"image/*"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">action</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"avatar-uploader"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">hidden</span></span></span><br><span class="line"><span class="tag">      <span class="attr">name</span>=<span class="string">"file"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">type</span>=<span class="string">'file'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">size</span>=<span class="string">"small"</span> <span class="attr">type</span>=<span class="string">"primary"</span>&gt;</span>点击上传图片 到 文本编辑器<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-upload</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 编辑器组件 @change="onEditorChange($event)" 给父组件发出信息 :options="editorOption" - 传数据给这个组件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">quill-editor</span></span></span><br><span class="line"><span class="tag">      <span class="attr">style</span>=<span class="string">"height: 400px"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:options</span>=<span class="string">"editorOption"</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">change</span>=<span class="string">"onEditorChange($event)"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"editor"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">ref</span>=<span class="string">"myQuillEditor"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-model</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">quill-editor</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 图片裁剪组件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">:visible.sync</span>=<span class="string">"isShowCropper"</span> <span class="attr">top</span>=<span class="string">"5vh"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">VueCropper</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:autoCrop</span>=<span class="string">"option.autoCrop"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:autoCropHeight</span>=<span class="string">"option.autoCropHeight"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:autoCropWidth</span>=<span class="string">"option.autoCropWidth"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:canScale</span>=<span class="string">"option.canScale"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:fixed</span>=<span class="string">"option.fixed"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:fixedNumber</span>=<span class="string">"option.fixedNumber"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:img</span>=<span class="string">"option.img"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:info</span>=<span class="string">"option.info"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:outputSize</span>=<span class="string">"option.outputSize"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:outputType</span>=<span class="string">"option.outputType"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ref</span>=<span class="string">"cropper"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">"height:600px;margin:20px 0"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">VueCropper</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"onCubeImg"</span> <span class="attr">type</span>=<span class="string">"primary"</span>&gt;</span>生成图片<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"isShowCropper = false"</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 富文本工具栏配置</span></span></span><br><span class="line"><span class="actionscript">  <span class="keyword">const</span> toolbarOptions = [</span></span><br><span class="line"><span class="actionscript">    [<span class="string">'bold'</span>, <span class="string">'italic'</span>, <span class="string">'underline'</span>, <span class="string">'strike'</span>], <span class="comment">// 加粗 斜体 下划线 删除线</span></span></span><br><span class="line"><span class="actionscript">    [<span class="string">'blockquote'</span>, <span class="string">'code-block'</span>], <span class="comment">// 引用  代码块</span></span></span><br><span class="line"><span class="actionscript">    [&#123; header: <span class="number">1</span> &#125;, &#123; header: <span class="number">2</span> &#125;], <span class="comment">// 1、2 级标题</span></span></span><br><span class="line"><span class="actionscript">    [&#123; list: <span class="string">'ordered'</span> &#125;, &#123; list: <span class="string">'bullet'</span> &#125;], <span class="comment">// 有序、无序列表</span></span></span><br><span class="line"><span class="actionscript">    [&#123; script: <span class="string">'sub'</span> &#125;, &#123; script: <span class="string">'super'</span> &#125;], <span class="comment">// 上标/下标</span></span></span><br><span class="line"><span class="actionscript">    [&#123; indent: <span class="string">'-1'</span> &#125;, &#123; indent: <span class="string">'+1'</span> &#125;], <span class="comment">// 缩进</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// [&#123;'direction': 'rtl'&#125;],                         // 文本方向</span></span></span><br><span class="line"><span class="actionscript">    [&#123; size: [<span class="string">'small'</span>, <span class="literal">false</span>, <span class="string">'large'</span>, <span class="string">'huge'</span>] &#125;], <span class="comment">// 字体大小</span></span></span><br><span class="line"><span class="actionscript">    [&#123; header: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="literal">false</span>] &#125;], <span class="comment">// 标题</span></span></span><br><span class="line"><span class="actionscript">    [&#123; color: [] &#125;, &#123; background: [] &#125;], <span class="comment">// 字体颜色、字体背景颜色</span></span></span><br><span class="line"><span class="actionscript">    [&#123; font: [] &#125;], <span class="comment">// 字体种类</span></span></span><br><span class="line"><span class="actionscript">    [&#123; align: [] &#125;], <span class="comment">// 对齐方式</span></span></span><br><span class="line"><span class="actionscript">    [<span class="string">'clean'</span>], <span class="comment">// 清除文本格式</span></span></span><br><span class="line"><span class="actionscript">    [<span class="string">'link'</span>, <span class="string">'image'</span>, <span class="string">'video'</span>] <span class="comment">// 链接、图片、视频</span></span></span><br><span class="line">  ]</span><br><span class="line"><span class="actionscript">  <span class="comment">//导入的css - 必须 - 最好组件单独导入，不然会乱样式</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> <span class="string">'quill/dist/quill.core.css'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> <span class="string">'quill/dist/quill.snow.css'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> <span class="string">'quill/dist/quill.bubble.css'</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">//导入上传图片的api</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> &#123; uImage &#125; <span class="keyword">from</span> <span class="string">'@/api/uploadImage.js'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">    name: <span class="string">'textEditor'</span>,</span></span><br><span class="line">    components: &#123;&#125;,</span><br><span class="line">    props: &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">/*编辑器的内容*/</span></span></span><br><span class="line">      value: &#123;</span><br><span class="line"><span class="javascript">        type: <span class="built_in">String</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript">      <span class="comment">/*图片大小*/</span></span></span><br><span class="line">      maxSize: &#123;</span><br><span class="line"><span class="javascript">        type: <span class="built_in">Number</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">default</span>: <span class="number">4000</span> <span class="comment">//kb</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 富文本数据</span></span></span><br><span class="line"><span class="actionscript">        content: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">        quillUpdateImg: <span class="literal">false</span>, <span class="comment">// 根据图片上传状态来确定是否显示loading动画，刚开始是false,不显示</span></span></span><br><span class="line">        editorOption: &#123;</span><br><span class="line"><span class="actionscript">          theme: <span class="string">'snow'</span>, <span class="comment">// or 'bubble'</span></span></span><br><span class="line"><span class="actionscript">          placeholder: <span class="string">'请输入您想输入的内容'</span>,</span></span><br><span class="line">          modules: &#123;</span><br><span class="line">            toolbar: &#123;</span><br><span class="line">              container: toolbarOptions,</span><br><span class="line"><span class="actionscript">              <span class="comment">// 和上传按钮进行绑定</span></span></span><br><span class="line">              handlers: &#123;</span><br><span class="line"><span class="actionscript">                image: <span class="function"><span class="keyword">function</span><span class="params">(value)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">                  <span class="built_in">console</span>.log(value)</span></span><br><span class="line">                  if (value) &#123;</span><br><span class="line"><span class="actionscript">                    <span class="comment">// 触发input框选择图片文件 = 这个位置最好在外面设置一个id之后修改这个的值 #id</span></span></span><br><span class="line"><span class="javascript">                    <span class="built_in">document</span>.querySelector(<span class="string">'#id input'</span>).click()</span></span><br><span class="line"><span class="actionscript">                  &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.quill.format(<span class="string">'image'</span>, <span class="literal">false</span>)</span></span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">// 切图器数据</span></span></span><br><span class="line">        option: &#123;</span><br><span class="line"><span class="actionscript">          img: <span class="string">''</span>,                         <span class="comment">// 裁剪图片的地址</span></span></span><br><span class="line"><span class="actionscript">          info: <span class="literal">true</span>,                      <span class="comment">// 裁剪框的大小信息</span></span></span><br><span class="line"><span class="actionscript">          outputSize: <span class="number">1</span>,                   <span class="comment">// 裁剪生成图片的质量</span></span></span><br><span class="line"><span class="actionscript">          outputType: <span class="string">'png'</span>,               <span class="comment">// 裁剪生成图片的格式</span></span></span><br><span class="line"><span class="actionscript">          canScale: <span class="literal">true</span>,                 <span class="comment">// 图片是否允许滚轮缩放</span></span></span><br><span class="line"><span class="actionscript">          autoCrop: <span class="literal">true</span>,                  <span class="comment">// 是否默认生成截图框</span></span></span><br><span class="line"><span class="actionscript">          autoCropWidth: <span class="number">150</span>,              <span class="comment">// 默认生成截图框宽度</span></span></span><br><span class="line"><span class="actionscript">          autoCropHeight: <span class="number">150</span>,             <span class="comment">// 默认生成截图框高度</span></span></span><br><span class="line"><span class="actionscript">          fixed: <span class="literal">true</span>,                    <span class="comment">// 是否开启截图框宽高固定比例</span></span></span><br><span class="line"><span class="actionscript">          fixedNumber: [<span class="number">4</span>, <span class="number">4</span>]             <span class="comment">// 截图框的宽高比例 - 可以使用父组件传来的值 props</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        isShowCropper: <span class="literal">false</span>,</span></span><br><span class="line"><span class="actionscript">        isClient: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">        width: <span class="string">'150px'</span>,</span></span><br><span class="line"><span class="actionscript">        height: <span class="string">'150px'</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 上传切图前调用</span></span></span><br><span class="line">      beforeUpload(file) &#123;</span><br><span class="line">        /**</span><br><span class="line">         * URL.createObjectURL(file)生成本地的url</span><br><span class="line"><span class="actionscript">         * 返回<span class="literal">false</span>终止了自动上传</span></span><br><span class="line">         * */</span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.option.img = URL.createObjectURL(file)</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.option.autoCropWidth = <span class="keyword">this</span>.width</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.option.autoCropHeight = <span class="keyword">this</span>.height</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.isShowCropper = <span class="literal">true</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">return</span> <span class="literal">false</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 确定裁剪图片</span></span></span><br><span class="line">      onCubeImg() &#123;</span><br><span class="line"><span class="actionscript">        <span class="comment">// 获取cropper的截图的base64 data == base64</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.$refs.cropper.getCropData(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//截取bas64 截取base64的格式 和 图片的后缀名</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">let</span> baseSplit= data.split(<span class="string">','</span>)</span></span><br><span class="line"><span class="javascript">          <span class="keyword">let</span> format = baseSplit[<span class="number">0</span>].split(<span class="string">'/'</span>)[<span class="number">1</span>].split(<span class="string">';'</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//获取base64格式的信息</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">let</span> base = <span class="string">''</span></span></span><br><span class="line">          if (process.client) &#123;</span><br><span class="line"><span class="javascript">            base = <span class="built_in">window</span>.atob(baseSplit[<span class="number">1</span>])</span></span><br><span class="line">          &#125;</span><br><span class="line"><span class="actionscript">          <span class="comment">//转格式：base64转图片</span></span></span><br><span class="line">          /**</span><br><span class="line">           *格式为：File</span><br><span class="line">           * lastModified: 1593134876792</span><br><span class="line">           * lastModifiedDate: Fri Jun 26 2020 09:27:56 GMT+0800 (中国标准时间) &#123;&#125;</span><br><span class="line"><span class="actionscript">           * name: <span class="string">"img.png"</span></span></span><br><span class="line">           * size: 15407</span><br><span class="line"><span class="actionscript">           * type: <span class="string">"image/png"</span></span></span><br><span class="line"><span class="actionscript">           * webkitRelativePath: <span class="string">""</span></span></span><br><span class="line">           * */</span><br><span class="line"><span class="javascript">          <span class="keyword">let</span> index = base.length</span></span><br><span class="line"><span class="javascript">          <span class="keyword">let</span> u8arr = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(index)</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">while</span> (index--) &#123;</span></span><br><span class="line">            u8arr[index] = base.charCodeAt(index)</span><br><span class="line">          &#125;</span><br><span class="line"><span class="javascript">          <span class="keyword">let</span> blods = <span class="keyword">new</span> File([u8arr],<span class="string">'img.'</span> + format,&#123;<span class="attr">type</span>: <span class="string">'image/'</span> + format &#125;)</span></span><br><span class="line">          /**</span><br><span class="line">           * 建立一个formData表单，之后把上面的base64转换后的格式使用append传递给FormData</span><br><span class="line">           * */</span><br><span class="line"><span class="javascript">          <span class="keyword">let</span> fromData = <span class="keyword">new</span> FormData()</span></span><br><span class="line"><span class="actionscript">          fromData.append(<span class="string">'file'</span>,blods)</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.$notify(&#123;</span></span><br><span class="line"><span class="actionscript">            title: <span class="string">'成功'</span>,</span></span><br><span class="line"><span class="actionscript">            message: <span class="string">'正在上传中'</span>,</span></span><br><span class="line"><span class="actionscript">            type: <span class="string">'success'</span></span></span><br><span class="line">          &#125;);</span><br><span class="line"><span class="actionscript">          <span class="comment">//发出网络请求</span></span></span><br><span class="line"><span class="javascript">          uImage(fromData).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.$notify(&#123;</span></span><br><span class="line"><span class="actionscript">              title: <span class="string">'成功'</span>,</span></span><br><span class="line"><span class="actionscript">              message: <span class="string">'图片上传成功'</span>,</span></span><br><span class="line"><span class="actionscript">              type: <span class="string">'success'</span></span></span><br><span class="line">            &#125;);</span><br><span class="line"><span class="actionscript">            <span class="comment">// 获取富文本组件实例</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> quill = <span class="keyword">this</span>.$refs.myQuillEditor.quill</span></span><br><span class="line">            if(res.code === 200)&#123;</span><br><span class="line"><span class="actionscript">              <span class="comment">// 获取光标所在位置</span></span></span><br><span class="line">              /**</span><br><span class="line"><span class="actionscript">               *  quill.insertEmbed(length, <span class="string">'image'</span>, res.data.url)</span></span><br><span class="line">               *  图片显示的位置，根据length后的位置显示</span><br><span class="line">               * */</span><br><span class="line">              if (quill.getSelection() &amp;&amp; quill.getSelection().index) &#123;</span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> length = quill.getSelection().index</span></span><br><span class="line"><span class="actionscript">                quill.insertEmbed(length, <span class="string">'image'</span>, res.data.url)</span></span><br><span class="line"><span class="actionscript">              &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> length = <span class="number">0</span></span></span><br><span class="line"><span class="actionscript">                quill.insertEmbed(length, <span class="string">'image'</span>, res.data.url)</span></span><br><span class="line">              &#125;</span><br><span class="line"><span class="actionscript">              <span class="comment">// 调整光标到最后</span></span></span><br><span class="line">              quill.setSelection(length + 1)</span><br><span class="line"><span class="actionscript">            &#125;<span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">              <span class="built_in">console</span>.log(res.data.code)</span></span><br><span class="line"><span class="actionscript">              <span class="keyword">this</span>.$notify(&#123;</span></span><br><span class="line"><span class="actionscript">                title: <span class="string">'警告'</span>,</span></span><br><span class="line"><span class="actionscript">                message: <span class="string">'图片上传失败'</span>,</span></span><br><span class="line"><span class="actionscript">                type: <span class="string">'warning'</span></span></span><br><span class="line">              &#125;);</span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.isShowCropper = <span class="literal">false</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">// 先将显示图片地址清空，防止重复显示</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.option.img = <span class="string">''</span></span></span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      onEditorChange() &#123;</span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.content)</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//富文本内容改变事件 发送给父级元素 @change事件</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.$emit(<span class="string">'change'</span>, <span class="keyword">this</span>.content)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line"><span class="javascript">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.content = <span class="keyword">this</span>.value</span></span><br><span class="line">      &#125;, 500)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">"scss"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:26.895Z" itemprop="dateUpdated">2020-07-24 08:16:26</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/" target="_blank" rel="external">https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/nuxt-vue-%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/" rel="tag">nuxt vue 使用富文本图片裁切以及element</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/&title=《nuxt使用富文本图片裁切以及element》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/&title=《nuxt使用富文本图片裁切以及element》 — 四叶草的个人博客&source=问题点 - 为解决待测试把后台接收的THML重新渲染到富文本上，做到一个重新修改的作用，思路：ref直接父组件修改子组件的值问题，id需要传入之后提前渲染..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nuxt使用富文本图片裁切以及element》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/07/01/nuxt/nuxt-asyncData%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">nuxt-asyncData异步数据</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/06/20/nuxt/nuxt-js%E5%85%A8%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">nuxt.js全局方法的使用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/&title=《nuxt使用富文本图片裁切以及element》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/&title=《nuxt使用富文本图片裁切以及element》 — 四叶草的个人博客&source=问题点 - 为解决待测试把后台接收的THML重新渲染到富文本上，做到一个重新修改的作用，思路：ref直接父组件修改子组件的值问题，id需要传入之后提前渲染..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nuxt使用富文本图片裁切以及element》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/06/24/nuxt/nuxt%E4%BD%BF%E7%94%A8%E5%AF%8C%E6%96%87%E6%9C%AC%E5%9B%BE%E7%89%87%E8%A3%81%E5%88%87%E4%BB%A5%E5%8F%8Aelement/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEc0lEQVR42u3a0W7bMAwF0P7/T2fAXtc4l6Tahc7xU5CltnQ8QOKlvr7i6/H3evY5/+bZlf/tv2NIfnn9t8cuTJgwYcL0lkxnJ/Ds99WXkXBUKa9f8/WMMGHChAnTdqb8dpN/rULkryH55npz88IEEyZMmDB9AFO1yExAz9L0CnVMmDBhwoSpGqrmSWmerM5HiAkTJkyYPpkpv12vZThH7wXH+SbmWBaOCRMmTJjejGl+cGfv518934QJEyZMmH6d6VG8kqK0UEzGJXGvfO3N8ZunYMKECROmtUyn4tpeu3Ee8ibjmRTJheoZEyZMmDCtYspDzzzq7W0Uqr/Jw9xq3IwJEyZMmDYy5UtmvrRXBzT/qxyrek9MmDBhwrSdqXp8Z94Qze+cb1Cutxo5a7QRwYQJEyZMq5jyB1SX20ktnsfEyTdzbkyYMGHCdA+m6rLai4AnLcnJK8nv/yIhwIQJEyZMq5jyic1RqiFvteRuLvbFI0eYMGHChGkXU95Q7LUAe6wJ3+TO+WvAhAkTJkz3YMqbfL2FtrpgT15SL0R+8VxMmDBhwnRTph5E8suoCh+EszlZNCNMmDBhwrSc6dSxm/nRnJ/bcOQv70VCgAkTJkyYVjEl0+5Ndb4kJ09PNjS9choTJkyYMN2bqRqYTo7sVEPe8lmkYOFPim1MmDBhwrSRKQ95q4PLF+BqCT2hb84CEyZMmDCtZZosmb24Ng9w5yFvdXbRCDFhwoQJ042YTj04H9DZ0vpUkxUTJkyYMN2baY7Ya47mAW7vlTSfiwkTJkyYljNVj+Mk5Wg+3F7Ie/aYUVT6YsKECROmJUzVyLXahsxLzR56/oJ7z8KECRMmTNuZkgKyuqxOhpjfLeduhrnXd8aECRMmTEuYJkt7/k2vnTlZzidF+NN9EyZMmDBhuhFTPvRkStVdyaSorrZLo60JJkyYMGFay5RHnKeA8rblKZp5TIwJEyZMmO7BlC/J1QGNGofxeHohb2/8mDBhwoRpC1NkVmw3VkvcfAORjzApdwuzwIQJEyZMy5kmrcTeL5NCNP88Z3rRBMWECRMmTMuZ8nJ03iZMthfVkrVXJOebDEyYMGHCtJfp7GSSBuQklu2RnXoiJkyYMGHayzQJbatHcCbfVw8DJUx5iIwJEyZMmDYyVQ/lVJuLkxZptf3ZO0gUleuYMGHChGk5U68xWT1qk9ffvZK7d/+oaYoJEyZMmG7BVC1ce+FpFTe58ldS3UBgwoQJE6btTPNytMqRF8anEHtPLAwIEyZMmDC9MdOjeOVl5ySW7R2NzSHy/wrfZOGYMGHChGkV06nyMo9Wc7JCu3Hw8g6ce8KECRMmTG/PVN0EVKvCavGcTL762nrHcDFhwoQJ052YkuU2D2F/okytbkd+JP/GhAkTJky3ZpoPuvdNLz7ulbgvDutgwoQJE6YPYOo1GhPianOxesR2dDAIEyZMmDAtZ6qGvMmtq4XovHA9S3kgC8eECRMmTG/ANEk459FtvlH4X0EzJkyYMGFay/QHKYsay1uT/RgAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

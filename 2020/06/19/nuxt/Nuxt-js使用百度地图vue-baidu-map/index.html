@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>Nuxt.js使用百度地图vue-baidu-map | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Nuxt">
+    <meta name="description" content="vue-baidu-map文档：https:&#x2F;&#x2F;dafrok.github.io&#x2F;vue-baidu-map&#x2F;#&#x2F;zh&#x2F;start&#x2F;usage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nuxt.js使用百度地图vue-baidu-map">
+<meta property="og:url" content="https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="vue-baidu-map文档：https:&#x2F;&#x2F;dafrok.github.io&#x2F;vue-baidu-map&#x2F;#&#x2F;zh&#x2F;start&#x2F;usage">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-19T05:48:48.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:26.887Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="Nuxt">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Nuxt.js使用百度地图vue-baidu-map</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Nuxt.js使用百度地图vue-baidu-map</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-06-19T05:48:48.000Z" itemprop="datePublished" class="page-time">
+  2020-06-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/Nuxt/">Nuxt</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vue-baidu-map文档：https-dafrok-github-io-vue-baidu-map-zh-start-usage"><span class="post-toc-number">1.</span> <span class="post-toc-text">vue-baidu-map文档：https:&#x2F;&#x2F;dafrok.github.io&#x2F;vue-baidu-map&#x2F;#&#x2F;zh&#x2F;start&#x2F;usage</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自动获取地理位置-此地图修改性比较大，-后续需要修改"><span class="post-toc-number">2.</span> <span class="post-toc-text">自动获取地理位置 - 此地图修改性比较大， - 后续需要修改</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-nuxt/Nuxt-js使用百度地图vue-baidu-map"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Nuxt.js使用百度地图vue-baidu-map</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-06-19 13:48:48" datetime="2020-06-19T05:48:48.000Z"  itemprop="datePublished">2020-06-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/Nuxt/">Nuxt</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="vue-baidu-map文档：https-dafrok-github-io-vue-baidu-map-zh-start-usage"><a href="#vue-baidu-map文档：https-dafrok-github-io-vue-baidu-map-zh-start-usage" class="headerlink" title="vue-baidu-map文档：https://dafrok.github.io/vue-baidu-map/#/zh/start/usage"></a>vue-baidu-map文档：<a href="https://dafrok.github.io/vue-baidu-map/#/zh/start/usage" target="_blank" rel="noopener">https://dafrok.github.io/vue-baidu-map/#/zh/start/usage</a></h2><a id="more"></a>
+<p>安装vue-baidu-map</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i vue-baidu-map -D</span><br></pre></td></tr></table></figure>
+<p>在plugins新建map.js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import BaiduMap from &#39;vue-baidu-map&#39;</span><br><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">Vue.use(BaiduMap, &#123;</span><br><span class="line">  ak: &#39;申请的百度地图密匙&#39;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在nuxt.config.js中引入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  &#123; src: &quot;~plugins&#x2F;map.js&quot;, ssr: false &#125;,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>在页面中使用：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">baidu-map</span> <span class="attr">class</span>=<span class="string">"bdwindow"</span> <span class="attr">:dragging</span>=<span class="string">"dragging"</span> <span class="attr">:center</span>=<span class="string">"center"</span> <span class="attr">:zoom</span>=<span class="string">"zoom"</span> <span class="attr">style</span>=<span class="string">"height:500px"</span> <span class="attr">:scroll-wheel-zoom</span>=<span class="string">'scroll'</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">bm-info-window</span> <span class="attr">:position</span>=<span class="string">"center"</span> <span class="attr">:title</span>=<span class="string">"title"</span> <span class="attr">:show</span>=<span class="string">"show"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"bdwtext"</span> <span class="attr">v-html</span>=<span class="string">"contents"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">bm-info-window</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">baidu-map</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  data () &#123;</span><br><span class="line"><span class="actionscript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">            jump_path:<span class="string">""</span>,</span></span><br><span class="line">            center: &#123;lng: 120.4373010751, lat: 23.1095638170&#125;,</span><br><span class="line"><span class="actionscript">            zoom: <span class="number">15</span>,  <span class="comment">//缩放级别</span></span></span><br><span class="line"><span class="actionscript">            title:<span class="string">"标题"</span>,</span></span><br><span class="line"><span class="actionscript">            contents: <span class="string">'地址：具体地址信息'</span>,  <span class="comment">//标签内容</span></span></span><br><span class="line"><span class="actionscript">            show: <span class="literal">true</span>,  <span class="comment">//显示标签</span></span></span><br><span class="line"><span class="actionscript">            scroll:<span class="literal">true</span>,  <span class="comment">//地图缩放</span></span></span><br><span class="line"><span class="actionscript">            dragging:<span class="literal">true</span>,  <span class="comment">//地图拖拽</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自动获取地理位置-此地图修改性比较大，-后续需要修改"><a href="#自动获取地理位置-此地图修改性比较大，-后续需要修改" class="headerlink" title="自动获取地理位置 - 此地图修改性比较大， - 后续需要修改"></a>自动获取地理位置 - 此地图修改性比较大， - 后续需要修改</h2><p>问题点：keyword使用props传一个值过来，或者使用ref，来解决修改的问题</p>
+<p>父组件使用： &lt;vue-map-baidu-key @mapMessage=”mapMessage”&gt;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--地图模块--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">class</span>=<span class="string">"col-6"</span> <span class="attr">v-model</span>=<span class="string">"keyword"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"centerDialogVisibleClick"</span> <span class="attr">plain</span>&gt;</span>查找位置<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-dialog</span></span></span><br><span class="line"><span class="tag">      <span class="attr">title</span>=<span class="string">"点击查看学校地址"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:visible.sync</span>=<span class="string">"centerDialogVisible"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">width</span>=<span class="string">"1000px"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">top</span>=<span class="string">"2vh"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">center</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- getPoint方法，给地图加点击事件，点击地图获取所需要的信息，--&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--scroll-wheel-zoom属性是否可以用鼠标滚轮控制地图缩放--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">baidu-map</span> <span class="attr">:scroll-wheel-zoom</span>=<span class="string">"true"</span> <span class="attr">:zoom</span>=<span class="string">"zoom"</span> </span></span><br><span class="line"><span class="tag">@<span class="attr">click</span>=<span class="string">"getPoint"</span> <span class="attr">center</span>=<span class="string">"滨州市"</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 400px"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">class</span>=<span class="string">"map"</span> <span class="attr">id</span>=<span class="string">"mapID"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--地图类型，两种：一种是路线一种是绿的那种 :showAddressBar="true"是否显示默认的弹窗--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bm-map-type</span> <span class="attr">:map-types</span>=<span class="string">"['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP']"</span></span></span><br><span class="line"><span class="tag">                     <span class="attr">anchor</span>=<span class="string">"BMAP_ANCHOR_TOP_LEFT"</span>&gt;</span><span class="tag">&lt;/<span class="name">bm-map-type</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--地图搜索功能，绑定上面的input，--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--display: none样式很关键，因为下面默认会有地址提示信息很长，很烦，这样搜索会很舒服，--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--zoom是搜索结果的视图比例，个人觉得12.8很舒服显示--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bm-local-search</span> <span class="attr">:auto-viewport</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">                         <span class="attr">:keyword</span>=<span class="string">"keyword"</span></span></span><br><span class="line"><span class="tag">                         <span class="attr">:location</span>=<span class="string">"location"</span> <span class="attr">style</span>=<span class="string">"display: none"</span></span></span><br><span class="line"><span class="tag">                         <span class="attr">zoom</span>=<span class="string">"12.8"</span>&gt;</span><span class="tag">&lt;/<span class="name">bm-local-search</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bm-navigation</span> <span class="attr">anchor</span>=<span class="string">"BMAP_ANCHOR_TOP_RIGHT"</span>&gt;</span><span class="tag">&lt;/<span class="name">bm-navigation</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--      信息窗口，show属性是控制显示隐藏，infoWindowClose和infoWindowOpen是控制信息窗口关闭隐藏的方法--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bm-marker</span> <span class="attr">:position</span>=<span class="string">"postionMap"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">bm-info-window</span> <span class="attr">:show</span>=<span class="string">"show"</span> @<span class="attr">close</span>=<span class="string">"infoWindowClose"</span> @<span class="attr">open</span>=<span class="string">"infoWindowOpen"</span> <span class="attr">style</span>=<span class="string">"font-size: 14px"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>学校名称：&#123;&#123; add.jgName &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>当前地址：&#123;&#123; add.site &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">bm-info-window</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">bm-marker</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">baidu-map</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--      //显示数据--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span>=<span class="string">"footer"</span> <span class="attr">class</span>=<span class="string">"dialog-footer row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list-group-flush col-10 row text-left"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"map-baidu-xinxi col-6 pr-1"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control col-10 border-0 "</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">placeholder</span>=<span class="string">"输入学校位置"</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">aria-label</span>=<span class="string">"Example text with button addon"</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">aria-describedby</span>=<span class="string">"button-addon1"</span></span></span><br><span class="line"><span class="tag">                   <span class="attr">v-model</span>=<span class="string">"keyword"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"map-baidu-xinxi col-3 pr-1"</span>&gt;</span>经度：&#123;&#123;add.postionMap.lng&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"map-baidu-xinxi col-3 pr-1"</span>&gt;</span>维度：&#123;&#123;add.postionMap.lat&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"map-baidu-xinxi col-3 pr-1"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>省：<span class="tag">&lt;/<span class="name">b</span>&gt;</span>&#123;&#123;add.province&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"map-baidu-xinxi col-3 pr-1"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>市：<span class="tag">&lt;/<span class="name">b</span>&gt;</span>&#123;&#123;add.city&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"map-baidu-xinxi col-3 pr-1"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>区：<span class="tag">&lt;/<span class="name">b</span>&gt;</span>&#123;&#123;add.district&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"map-baidu-xinxi col-3 pr-1"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>街：<span class="tag">&lt;/<span class="name">b</span>&gt;</span>&#123;&#123;add.street&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-2"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">class</span>=<span class="string">"col-10 ml-0 mb-1"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"centerDialogVisibleOK"</span>&gt;</span>确 定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">class</span>=<span class="string">"col-10 ml-0"</span> @<span class="attr">click</span>=<span class="string">"centerDialogVisible = false"</span>&gt;</span>取 消<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    data() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//显示地图红点上的信息</span></span></span><br><span class="line"><span class="actionscript">        show: <span class="literal">false</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//地图坐标</span></span></span><br><span class="line">        postionMap: &#123;</span><br><span class="line"><span class="actionscript">          lng: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          lat: <span class="string">''</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">//搜索框关键词 - 重要</span></span></span><br><span class="line"><span class="actionscript">        keyword: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//位置</span></span></span><br><span class="line"><span class="actionscript">        location: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//放大比例</span></span></span><br><span class="line">        zoom: 12.8,</span><br><span class="line"><span class="actionscript">        <span class="comment">//位置详细信息</span></span></span><br><span class="line"><span class="actionscript">        address: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 返回父组件的东西 -</span></span></span><br><span class="line">        add: &#123;</span><br><span class="line"><span class="actionscript">          <span class="comment">//站点名称 - 可不要 - 换成学校名</span></span></span><br><span class="line"><span class="actionscript">          siteName: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//地址</span></span></span><br><span class="line"><span class="actionscript">          site: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//经纬度</span></span></span><br><span class="line">          postionMap: &#123;</span><br><span class="line"><span class="actionscript">            lng: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">            lat: <span class="string">''</span></span></span><br><span class="line">          &#125;,</span><br><span class="line"><span class="actionscript">          <span class="comment">//备注说明</span></span></span><br><span class="line"><span class="actionscript">          desce: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//类型</span></span></span><br><span class="line"><span class="actionscript">          type: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//省</span></span></span><br><span class="line"><span class="actionscript">          province:<span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//城市</span></span></span><br><span class="line"><span class="actionscript">          city:<span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//区县</span></span></span><br><span class="line"><span class="actionscript">          district:<span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">          <span class="comment">//街道</span></span></span><br><span class="line"><span class="actionscript">          street:<span class="string">''</span>,</span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        centerDialogVisible: <span class="literal">false</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">//点击选取地图 打开弹窗</span></span></span><br><span class="line">      centerDialogVisibleClick() &#123;</span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.centerDialogVisible = <span class="literal">true</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript"><span class="comment">//点击确认之后关闭弹窗传出this.add</span></span></span><br><span class="line">      centerDialogVisibleOK()&#123;</span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.add.address = <span class="keyword">this</span>.keyword</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.centerDialogVisible = <span class="literal">false</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.$emit(<span class="string">'mapMessage'</span>,<span class="keyword">this</span>.add)</span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="actionscript">      <span class="comment">//点击地图获取一些信息，</span></span></span><br><span class="line">      getPoint(e) &#123;</span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.show = <span class="literal">true</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.postionMap.lng = e.point.lng     <span class="comment">//通过  e.point.lng获取经度</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.postionMap.lat = e.point.lat     <span class="comment">//通过  e.point.lat获取纬度</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.add.postionMap.lng = e.point.lng</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.add.postionMap.lat = e.point.lat</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//创建地址解析器的实例</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> geocoder = <span class="keyword">new</span> BMap.Geocoder()</span></span><br><span class="line">        geocoder.getLocation(e.point, rs =&gt; &#123;</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.add.site = rs.address</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.add.province = rs.addressComponents.province</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.add.city = rs.addressComponents.city</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.add.district = rs.addressComponents.district</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.add.street = rs.addressComponents.street</span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 地址描述(string)=</span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(rs) <span class="comment">//用什么可以在这里面找</span></span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(rs.address)    <span class="comment">//这里打印可以看到里面的详细地址信息，可以根据需求选择想要的</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.point) //获取坐标</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.addressComponents)//结构化的地址描述(object)</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.addressComponents.province) //省</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.addressComponents.city) //城市</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.addressComponents.district) //区县</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.addressComponents.street) //街道</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.addressComponents.streetNumber) //门牌号</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.surroundingPois) //附近的POI点(array)</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// console.log(rs.business) //商圈字段，代表此点所属的商圈(string)</span></span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      infoWindowClose() &#123;</span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.show = <span class="literal">false</span></span></span><br><span class="line">      &#125;,</span><br><span class="line">      infoWindowOpen() &#123;</span><br><span class="line"><span class="actionscript">        <span class="comment">//这里有个问题纠结了很久，百度的信息窗口默认有个点击其他地方就消失的事件，我没有找到</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//并且信息窗口点击一次显示，一次消失</span></span></span><br><span class="line"><span class="actionscript">        <span class="comment">//于是我加了一个100毫秒的定时器，保证每次点击地图都可以展示信息窗口</span></span></span><br><span class="line"><span class="javascript">        setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.show = <span class="literal">true</span></span></span><br><span class="line">        &#125;, 100)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.map-baidu-xinxi</span>&#123;</span></span><br><span class="line">    display: block;</span><br><span class="line"><span class="css">    <span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.125</span>);</span></span><br><span class="line"><span class="css">    <span class="selector-tag">line-height</span>: 2<span class="selector-class">.5</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-tag">input</span><span class="selector-pseudo">:focus</span>&#123; <span class="attribute">box-shadow</span>: none &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:26.887Z" itemprop="dateUpdated">2020-07-24 08:16:26</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/" target="_blank" rel="external">https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/Nuxt/" rel="tag">Nuxt</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/&title=《Nuxt.js使用百度地图vue-baidu-map》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/&title=《Nuxt.js使用百度地图vue-baidu-map》 — 四叶草的个人博客&source=vue-baidu-map文档：https://dafrok.github.io/vue-baidu-map/#/zh/start/usage" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nuxt.js使用百度地图vue-baidu-map》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/06/20/nuxt/nuxt-js%E5%85%A8%E5%B1%80%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">nuxt.js全局方法的使用</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/05/19/uniapp/uniapp%E6%89%B9%E9%87%8F%E5%AF%BC%E5%85%A5%E7%BB%84%E4%BB%B6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">uniapp批量导入组件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/&title=《Nuxt.js使用百度地图vue-baidu-map》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/&title=《Nuxt.js使用百度地图vue-baidu-map》 — 四叶草的个人博客&source=vue-baidu-map文档：https://dafrok.github.io/vue-baidu-map/#/zh/start/usage" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nuxt.js使用百度地图vue-baidu-map》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/06/19/nuxt/Nuxt-js%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEvue-baidu-map/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD8UlEQVR42u3awY7aQBAE0P3/nyZSTomCoap78K6U5xOywIwfSOXu6a+v+Hj8Pv59/eeZ9nh95av3J2u4es+xAwcOHDhwBLc6W3Ry5upqyS29vrGEMr9HHDhw4MBxliP5suRyr0EvFxFTvk7GNnRx4MCBA8f3ciSfaiMzL+eSaitfPw4cOHDg+AkcmwZcEpltp64NbBw4cODAcSdH0hxsF5G3AhOmvAV5U68UBw4cOHBMkm5YaP201zfNd+DAgQPHf8+xGW57HVR5+bcfnnscOnDgwIEDx56j3VKaFT+rYmmxhtmIAw4cOHDg2HAkH8ijNx8yONXIa9df7L/hwIEDB45DHPkGUt6GS74lv7FZoEbxjAMHDhw41hxtmdS28zbbV+0IwqzJGG1Q4cCBAweOkiMPtjaY91h5KZiffxPeOHDgwIFjwZE34PKsTt7ZllWzRmF9HRw4cODAseZoy6o2htuIbYuuU0H75D+CAwcOHDiOcrQQ+WBcG8NJsZfsGeVFJg4cOHDgOMvR1jKb4Nw3AVug6C5w4MCBA8eaI1/ibFQuxzrbfCzCFQcOHDhwHOJoi7djMxTlMRubS8rCv87jwIEDB46jHO1mz36h7Wc3UR0B4cCBAweONUfSnvt0+y+J1bOU0X8EBw4cOHAsOGbLOjUM1244JaVde4VhHYkDBw4cOEYceQnUNgfbraNkiOFACYcDBw4cOA5xtGNq+bBaHpP7AYU2yKP/Ag4cOHDgGHHkb8qXPiuWcvpNczAqPnHgwIEDR3kX7ZfNYnLWOkw2t1qgNzGMAwcOHDg+zJFHbD6yNovnzYgeDhw4cOC4n2M2gjCLzP0m09kfb/UsgAMHDhw4Fh3E2Xhccp02RGchXXdJceDAgQPHiGNW9szGDtpRg/2AXfsogAMHDhw49hxny7B2NGETtPkDQcIXPX3gwIEDB46Yo23VtU23fTzngw4tzeXTBw4cOHDgWHAkAwR5NO6LtLyeaof86jE+HDhw4MBRcuRjBLNNqVl7McfajMrVFScOHDhw4Ig58qZbntibLaVPDD1EfDhw4MCB4xBHWyxtNn6SK+ftv9nIwuUKceDAgQPHmiMv3vJYzT+1qaTaiC0KRRw4cODAseB4lEfeFtx/tm3wtWt4ck0cOHDgwLHmaMNvX1wNN4QWhWI7/IcDBw4cOPYcbbjWNeKo+biqSkfvwYEDBw4cZzn24doG3qZduPkx3qwHBw4cOHDcyJEPNOSjBpvCLN+yKkIdBw4cOHDczrFBbK/cbmvlEXt5HgcOHDhwHOJoB9T2lJtmYhvSxVYZDhw4cOBYc2wGGmZfMxtfSwq89gcYouDAgQMHjuff+wsInklLmlyDsQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

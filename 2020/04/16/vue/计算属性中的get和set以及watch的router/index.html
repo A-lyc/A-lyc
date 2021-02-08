@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>计算属性中的get和set以及watch的router，本地缓存问题 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue get和set以及watch的router 本地缓存问题">
+    <meta name="description" content="在vue中计算属性有两个值，一个是获取，一个是写入，大部分使用的都是计算属性中的获取功能，少部分使用写入这个功能，这个本人不太懂，知道有这个东西，它可以改变获取的值，不走data的逻辑，set可以间接修改get里面的值，页面直接修改get内的值是修改不了的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算属性中的get和set以及watch的router，本地缓存问题">
+<meta property="og:url" content="https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="在vue中计算属性有两个值，一个是获取，一个是写入，大部分使用的都是计算属性中的获取功能，少部分使用写入这个功能，这个本人不太懂，知道有这个东西，它可以改变获取的值，不走data的逻辑，set可以间接修改get里面的值，页面直接修改get内的值是修改不了的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-16T12:38:15.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:27.039Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="vue get和set以及watch的router 本地缓存问题">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">计算属性中的get和set以及watch的router，本地缓存问题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">计算属性中的get和set以及watch的router，本地缓存问题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-16T12:38:15.000Z" itemprop="datePublished" class="page-time">
+  2020-04-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-vue/计算属性中的get和set以及watch的router"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">计算属性中的get和set以及watch的router，本地缓存问题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-16 20:38:15" datetime="2020-04-16T12:38:15.000Z"  itemprop="datePublished">2020-04-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>在vue中计算属性有两个值，一个是获取，一个是写入，大部分使用的都是计算属性中的获取功能，少部分使用写入这个功能，这个本人不太懂，知道有这个东西，它可以改变获取的值，不走data的逻辑，set可以间接修改get里面的值，页面直接修改get内的值是修改不了的</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">    slideMenusActive: &#123;</span><br><span class="line">      get() &#123;</span><br><span class="line">        return this.tabBars.list[this.tabBars.active].submenuActive || &quot;0&quot;;</span><br><span class="line">      &#125;,&#x2F;&#x2F;获取</span><br><span class="line">      set(val) &#123;</span><br><span class="line">        console.log(val)</span><br><span class="line">        this.tabBars.list[this.tabBars.active].submenuActive &#x3D; val;</span><br><span class="line">      &#125;&#x2F;&#x2F;写入</span><br><span class="line">    &#125;,</span><br><span class="line">    slideMenus() &#123;</span><br><span class="line">      return this.tabBars.list[this.tabBars.active].submenu || [];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在watch中使用router的时候需要</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  &#x2F;&#x2F;获取$route的路由，to是当前from是最后</span><br><span class="line">     &#39;$route&#39;(to,from)&#123;</span><br><span class="line">        &#x2F;&#x2F;下面方法是本地存储--刷新之后还是当前页面 localStorage.setItem(&#39;navActive&#39;,JSON.stringify(&#123;to:&#39;&#39;,from:&#39;&#39;&#125;)</span><br><span class="line">        localStorage.setItem(&#39;navActive&#39;,JSON.stringify(&#123;</span><br><span class="line">           top:this.tabBars.active,</span><br><span class="line">           left:this.slideMenusActive</span><br><span class="line">           </span><br><span class="line">        &#125;))</span><br><span class="line">        console.log(to,from)</span><br><span class="line">      this.getRouterBran()</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面有本地存储，就要有获取才对</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;初始化</span><br><span class="line">__initNavBar()&#123;</span><br><span class="line">  &#x2F;&#x2F;获取本地存储   自定义的值要一样navActive</span><br><span class="line">  let r &#x3D;  localStorage.getItem(&#39;navActive&#39;)</span><br><span class="line">  if(r)&#123;</span><br><span class="line">    r &#x3D; JSON.parse(r)</span><br><span class="line">    this.tabBars.active &#x3D; r.top</span><br><span class="line">    this.slideMenusActive &#x3D; r.left</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:27.039Z" itemprop="dateUpdated">2020-07-24 08:16:27</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/" target="_blank" rel="external">https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/vue-get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router-%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" rel="tag">vue get和set以及watch的router 本地缓存问题</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/&title=《计算属性中的get和set以及watch的router，本地缓存问题》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/&title=《计算属性中的get和set以及watch的router，本地缓存问题》 — 四叶草的个人博客&source=在vue中计算属性有两个值，一个是获取，一个是写入，大部分使用的都是计算属性中的获取功能，少部分使用写入这个功能，这个本人不太懂，知道有这个东西，它可以改..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算属性中的get和set以及watch的router，本地缓存问题》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/04/17/vue/vue%E8%BF%87%E6%BB%A4%E5%99%A8%E8%AF%AD%E6%B3%95/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue过滤器语法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/04/12/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8E%88%E6%9D%83%E7%99%BB%E5%BD%95/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">微信小程序授权登录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/&title=《计算属性中的get和set以及watch的router，本地缓存问题》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/&title=《计算属性中的get和set以及watch的router，本地缓存问题》 — 四叶草的个人博客&source=在vue中计算属性有两个值，一个是获取，一个是写入，大部分使用的都是计算属性中的获取功能，少部分使用写入这个功能，这个本人不太懂，知道有这个东西，它可以改..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算属性中的get和set以及watch的router，本地缓存问题》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/16/vue/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%B8%AD%E7%9A%84get%E5%92%8Cset%E4%BB%A5%E5%8F%8Awatch%E7%9A%84router/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEd0lEQVR42u3aS27jQAwFwNz/0h5g1rHzHikHbqW0CgRH6i4t+Gl+fcXX4//17P6z6/VvXj8nuf/s7+TO1zsuTJgwYcL0kUztVp+9LCeYLTQne/385BN+8wRMmDBhwnQ4U/K410tvUZ6BJs+fIbb7woQJEyZMf40pL2LbbSRXXvS2hTEmTJgwYcL0vgCfN5dnf+fomDBhwoTp3kxtGE4SgmufOUs+NukIJkyYMGG6B9PvBObP/PuN802YMGHChOkDmB6jKx/KyRe3GRiataGL/WLChAkTpmOZNiVoOyITNVIXw0Ozhm/xMTBhwoQJ042Y2tZqvqB8mGbWor1qGAgTJkyYMN2JKQ+K+bFfzjRrK2+ONtuiGhMmTJgwnct01ThLXkbOnplvb5Z8RBkTJkyYMGE6lmk22pL/Jk8yZs3c9jd1uoMJEyZMmA5nyg/52iPDvBBtDx3zdW6av/WyMGHChAnThzHlW436xOtFzwJ2y9qWxJgwYcKE6R5MV72s3VLetJ2tYQb9zbswYcKECdOxTPnATd6ojcY94/Ri33rOP0n0RkyYMGHCdBTTVc3QWWiflcr5gNEm7cCECRMmTHdiagP8+xCvaiLniUJ0HxMmTJgwHciUt0TzwnjTbN1sO/l98mG++Q0mTJgwYTqcaVNk5iG2BcpTgbZl3DaCMWHChAnT6UztgeLmzuzD5ANGedO2wMKECRMmTIczzZqtCWWeRuyDelJgD4eEMGHChAnT4Ux5mbrhy4vt2ao2ZXzRC8eECRMmTIcz7YvJ9k5y/NmubfacaHAHEyZMmDAdxZQsPW+n5seWFwTpcoXtuzBhwoQJ0z2YNgVtDld8sXgMaFY2r/rKmDBhwoTpQKZZyMxDfsuUw82e+Yiv4uwXEyZMmDAdyJSH9lmKkHBvEGdwqw4BJkyYMGH6eKZNi3ZTAM9WkiQEbUKDCRMmTJjux9SWr21zdhaSN23fH8rX0TAQJkyYMGE6l6ndah7y28B8VZM3L8jzj4oJEyZMmE5nmgX+9shzVnbmm2x/XycQmDBhwoTpdkztoMzmTjtk02K1B7E/9MIxYcKECdMhTK9/1DZ863PUX2w0zxrHmDBhwoTpTkyz8jVPKfJxnM0BZ849TAgwYcKECdNRTJvAOUsX8lRgE5fzA876OBMTJkyYMB3F1I7jtK/Mw3ZbHs8+2+xIFRMmTJgwnc40a6FuWrTtwE3ylnZ8p2j1YsKECROmWzDlpeAmPM/K49l782cWk02YMGHChOkoplmRuSlo24Qjic7J2mbJDSZMmDBhOp3pUV75Vmdl8Oy4cXM/+i9MmDBhwnQs01VhuMXNy9H2AHJTKs9aw5gwYcKE6fOZNklAHnRnDdxrB4ZWHwwTJkyYMB3OlDdw80CeYM2Skv3a6iEeTJgwYcL0x5jy0veqwD8b2UlW9caEABMmTJgwHcWUN3/bBut+/igvcVtoTJgwYcJ0D6ZZIG+Tic2T983fzSEoJkyYMGE6l2nTYG03kL8+X2Le/J09ExMmTJgwHcv0D0NdIRnulSEZAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

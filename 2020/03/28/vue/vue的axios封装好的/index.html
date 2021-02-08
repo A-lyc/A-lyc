@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>vue的axios封装好的 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue axios封装基础">
+    <meta name="description" content="下载安装vue - axios ，npm install vue-axios –save，，通过axios和后端链接，获取数据，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue的axios封装好的">
+<meta property="og:url" content="https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="下载安装vue - axios ，npm install vue-axios –save，，通过axios和后端链接，获取数据，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-28T09:17:43.000Z">
+<meta property="article:modified_time" content="2020-10-24T00:49:22.032Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="vue axios封装基础">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue的axios封装好的</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue的axios封装好的</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-28T09:17:43.000Z" itemprop="datePublished" class="page-time">
+  2020-03-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#新建api文件夹内的index文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">新建api文件夹内的index文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如果后端需要获取数据可传输数据给后端：params-是传输数据的参数-api文件夹内新建文件导入request-即可使用axios"><span class="post-toc-number">2.</span> <span class="post-toc-text">如果后端需要获取数据可传输数据给后端：params:是传输数据的参数 - api文件夹内新建文件导入request 即可使用axios</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用：created生命周期内"><span class="post-toc-number">3.</span> <span class="post-toc-text">应用：created生命周期内</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最好这样写："><span class="post-toc-number">4.</span> <span class="post-toc-text">最好这样写：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可以封装一个class类来储存数据"><span class="post-toc-number">5.</span> <span class="post-toc-text">可以封装一个class类来储存数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用：在总的数据请求中把数据给到data中的Goods"><span class="post-toc-number">6.</span> <span class="post-toc-text">使用：在总的数据请求中把数据给到data中的Goods</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常识："><span class="post-toc-number">7.</span> <span class="post-toc-text">常识：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建实例的axios"><span class="post-toc-number">8.</span> <span class="post-toc-text">创建实例的axios</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#请求方式"><span class="post-toc-number">9.</span> <span class="post-toc-text">请求方式</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue/vue的axios封装好的"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue的axios封装好的</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-28 17:17:43" datetime="2020-03-28T09:17:43.000Z"  itemprop="datePublished">2020-03-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>下载安装vue - axios ，npm install vue-axios –save，，通过axios和后端链接，获取数据，</p>
+<a id="more"></a>
+
+<h2 id="新建api文件夹内的index文件"><a href="#新建api文件夹内的index文件" class="headerlink" title="新建api文件夹内的index文件"></a>新建api文件夹内的index文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import axios from &#39;axios&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;git请求</span><br><span class="line">export function request(config) &#123;</span><br><span class="line">  &#x2F;&#x2F; 1.创建axios的实例</span><br><span class="line">  const instance &#x3D; axios.create(&#123;</span><br><span class="line">    baseURL: &#39;网址链接&#39;,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 2.axios的拦截器</span><br><span class="line">  &#x2F;&#x2F; 2.1.请求拦截的作用</span><br><span class="line">  instance.interceptors.request.use(config &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&quot;请求拦截器&quot;)</span><br><span class="line">    return config</span><br><span class="line">  &#125;,err &#x3D;&gt; &#123;</span><br><span class="line">    return err.data</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 2.2.响应拦截</span><br><span class="line">  instance.interceptors.response.use(res &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&quot;响应拦截&quot;)</span><br><span class="line">    return res.data</span><br><span class="line">  &#125;,err &#x3D;&gt; &#123;</span><br><span class="line">    return err.data</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 3.发送真正的网络请求</span><br><span class="line">  return instance(config)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果后端需要获取数据可传输数据给后端：params-是传输数据的参数-api文件夹内新建文件导入request-即可使用axios"><a href="#如果后端需要获取数据可传输数据给后端：params-是传输数据的参数-api文件夹内新建文件导入request-即可使用axios" class="headerlink" title="如果后端需要获取数据可传输数据给后端：params:是传输数据的参数 - api文件夹内新建文件导入request 即可使用axios"></a>如果后端需要获取数据可传输数据给后端：params:是传输数据的参数 - api文件夹内新建文件导入request 即可使用axios</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import &#123;request&#125; from &quot;.&#x2F;request&quot;;</span><br><span class="line"></span><br><span class="line">export function getHomeMultidata()&#123;</span><br><span class="line">  return request(&#123;</span><br><span class="line">    url: &#39;XXX&#39;,</span><br><span class="line">    method:&#39;post&#39;,</span><br><span class="line">    data: &#123;</span><br><span class="line">    firstName: &#39;Fred&#39;,</span><br><span class="line">    lastName: &#39;Flintstone&#39;</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; get请求传值</span><br><span class="line">export function getHomeGoods(type,page)&#123;</span><br><span class="line">  return request(&#123;</span><br><span class="line">    url: &#39;XXX&#39;,&#x2F;&#x2F;&#96;XXX&gt;?data&#x3D;$&#123;data&#125;&amp;page&#x3D;$&#123;page&#125;&#96;</span><br><span class="line">    &#x2F;&#x2F;传到后端一个type和page获取相应的数据</span><br><span class="line">    params:&#123;</span><br><span class="line">      type,</span><br><span class="line">      page</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="应用：created生命周期内"><a href="#应用：created生命周期内" class="headerlink" title="应用：created生命周期内"></a>应用：created生命周期内</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> created()&#123;</span><br><span class="line">  this.getHomeMultidata().then(res &#x3D;&gt; &#123;</span><br><span class="line">  console.log(res)</span><br><span class="line">&#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="最好这样写："><a href="#最好这样写：" class="headerlink" title="最好这样写："></a>最好这样写：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  getHomeMultidata() &#123;</span><br><span class="line">    getHomeMultidata().then(res &#x3D;&gt; &#123;</span><br><span class="line">      console.log(res);</span><br><span class="line">    &#125;).catch(() &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;请求失败&#39;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line"> &#125;,</span><br><span class="line"> created()&#123;</span><br><span class="line">   this.getHomeMultidata()</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="可以封装一个class类来储存数据"><a href="#可以封装一个class类来储存数据" class="headerlink" title="可以封装一个class类来储存数据"></a>可以封装一个class类来储存数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export class Goods&#123;</span><br><span class="line">  constructor(itemInfo)&#123;&#x2F;&#x2F;异步请求之后传来的值</span><br><span class="line">    this.title &#x3D; itemInfo.title&#x2F;&#x2F;this指向当前实例对象</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用：在总的数据请求中把数据给到data中的Goods"><a href="#使用：在总的数据请求中把数据给到data中的Goods" class="headerlink" title="使用：在总的数据请求中把数据给到data中的Goods"></a>使用：在总的数据请求中把数据给到data中的Goods</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.Goods &#x3D; new Goods(res.result.itemInfo&#125;&#x2F;&#x2F;把异步请求到的数据传输给Goods，之后Goods接收之后处理接收的信息</span><br><span class="line">&#x2F;&#x2F; data中的this.Goods进行接收</span><br></pre></td></tr></table></figure>
+
+<h2 id="常识："><a href="#常识：" class="headerlink" title="常识："></a>常识：</h2><p>导入main.js：import axios from ‘axios’<br>使用：<br>导出：export class Goods{}//导出一个类名为Goods的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">url:&#39;&#39;,</span><br><span class="line">method:&#39;&#39;&#x2F;&#x2F;修改请求方式（个get等）</span><br><span class="line">params:&#123;&#x2F;&#x2F;针对get请求参数拼接</span><br><span class="line">  type:&quot;pop&quot;,</span><br><span class="line">  page:1</span><br><span class="line">&#125;</span><br><span class="line">&#125;).then( res &#x3D;&gt; &#123;</span><br><span class="line">console.log(res)</span><br><span class="line">&#125;).catch(()&#x3D;&gt;&#123;</span><br><span class="line">  console.log(&#39;失败&#39;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>params：{}  get参数拼接的<br>服务器真实返回的是data的数据<br>axis请求方式<br>常见的配置选项<br>请求多个数据，一起返回结果使用axios.all([axios(),axios()]).then(()=&gt;{})///all里面是数组<br>全局配置axios.defaults.baseURL = “”;</p>
+<h2 id="创建实例的axios"><a href="#创建实例的axios" class="headerlink" title="创建实例的axios"></a>创建实例的axios</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const app &#x3D; axios.create(&#123;</span><br><span class="line">       公用的如：baseUrl：&#39;&#39;</span><br><span class="line">   &#125;)</span><br><span class="line">使用：</span><br><span class="line">   app(&#123;</span><br><span class="line">   u   rl:&quot;&quot;,</span><br><span class="line">   &#125;).then(()&#x3D;&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式"></a>请求方式</h2><p>axios(config)</p>
+<p>axios.request(config)</p>
+<p>axios.get(url[, config])</p>
+<p>axios.delete(url[, config])</p>
+<p>axios.head(url[, config])</p>
+<p>axios.post(url[, data[, config]])</p>
+<p>axios.put(url[, data[, config]])</p>
+<p>axios.patch(url[, data[, config]])</p>
+<p>常见的配置<br>请求地址<br>url: ‘/user’,</p>
+<p>请求类型<br>method: ‘get’,</p>
+<p>请根路径<br>baseURL: ‘<a href="http://www.baidu.com/api&#39;" target="_blank" rel="noopener">http://www.baidu.com/api&#39;</a>,</p>
+<p>请求前的数据处理<br>transformRequest:[function(data){}],</p>
+<p>请求后的数据处理<br>transformResponse: [function(data){}],</p>
+<p>自定义的请求头<br>headers:{‘x-Requested-With’:’XMLHttpRequest’},</p>
+<p>URL查询对象<br>params:{ id: 12 },</p>
+<p>查询对象序列化函数<br>paramsSerializer: function(params){ }<br>request body<br>data: { key: ‘aa’},</p>
+<p>超时设置s<br>timeout: 1000,</p>
+<p>跨域是否带Token<br>withCredentials: false,</p>
+<p>自定义请求处理<br>adapter: function(resolve, reject, config){},</p>
+<p>身份验证信息<br>auth: { uname: ‘’, pwd: ‘12’},</p>
+<p>响应的数据格式 json / blob /document /arraybuffer / text / stream<br>responseType: ‘json’,</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-24T00:49:22.032Z" itemprop="dateUpdated">2020-10-24 08:49:22</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/vue-axios%E5%B0%81%E8%A3%85%E5%9F%BA%E7%A1%80/" rel="tag">vue axios封装基础</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/&title=《vue的axios封装好的》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/&title=《vue的axios封装好的》 — 四叶草的个人博客&source=下载安装vue - axios ，npm install vue-axios –save，，通过axios和后端链接，获取数据，" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue的axios封装好的》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/03/28/vue/vue%E5%9F%BA%E7%A1%80/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue基础</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">$router使用方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/&title=《vue的axios封装好的》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/&title=《vue的axios封装好的》 — 四叶草的个人博客&source=下载安装vue - axios ，npm install vue-axios –save，，通过axios和后端链接，获取数据，" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue的axios封装好的》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADK0lEQVR42u3ay24iQQwF0Pz/TzPSrEbKpLnXBildnF4hAt0+xcLx4+srvh5/r39ff3+n/eT1Z76/fx3P1zsubGxs7JuwH5fX9WeuA/0JueHN4vzP/bGxsbGPY+dJ4vp2ySPzhJekqySZYWNjY2O3mNnxbUoXbGxsbOyWnTR0XsVI0iQ2NjY2dptIrkPPe/JJuHlsb+mlYWNjY/969mzQ+ztfv32+jY2Njf3L2I/1lS/ftMPdtmlVxIyNjY19EHszxJ21hDaHMrtP1EvDxsbGPoLdpp9ZGbM/3Ly99SRybGxs7OPYs2KgXbWZLdm0P8xwvo2NjY19Q/a+VZQElJcW7YLOcICBjY2NfRB7s1IzW5pp125afH7o2NjY2GewX5U22vvMipy85MDGxsb+TPasnZSktPavszKjiB8bGxv7IHabPNoD2jSb2jvXaQ8bGxv7IHa+jjNrHs2WMtuFy/bO2NjY2Gew2+Frm5Be1RJqC5hoBoKNjY19HDsPLv98zmsXMfPS5Uk7CRsbG/vm7BaTDH33qz/tMCBfFcXGxsY+j113nhaFxGxwW6eiPG9jY2NjH8Fu+y15c6rdjZnx9j8ANjY29hnsdsiar+Ns2kCzgmTVUcPGxsa+OTsZ67YJKU9XsyHBZukHGxsb+wx228SZAfbNqeRwiwYTNjY29kHspAWTp7FZg36zgpPEVpci2NjY2Ddkb8a0+bB2dmTJ6/bp2NjY2OexZ02i5AiuA21hswHwk14aNjY29kHsJJR8DLA5xFfFEK3sYGNjY9+cPft3P2/9zxiz9Fa0wLCxsbEPYu/bPfvHR2VDWXLUZQw2Njb2bdmzNNOGkowZNpHUSREbGxv7IHaShDZJLi8qZoOHdmEIGxsb+zz2o7z2Sz/tMGA/PI7mIdjY2Ni3ZbfJIOHlLadZ2msXdLCxsbE/gZ2PWpNwZ/XQ9RPbNZ0ooWJjY2Mfx94krXwYPEuZszs8+RY2Njb2B7Pb9DNr/W9Kl+g+2NjY2B/J3gx9N82jpCjK8djY2NinstumUtvoyQfJbbt/OK7GxsbGPog9G/S2380HwO0RbxIbNjY29s3ZfwAhMBxfrG/dqwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

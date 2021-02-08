@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>微信使用Vant-weapp | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="微信,Vant-weapp">
+    <meta name="description" content="微信小程序引入Vant组件库Vant Weapp组件库：https:&#x2F;&#x2F;youzan.github.io&#x2F;vant-weapp&#x2F;#&#x2F;intro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信使用Vant-weapp">
+<meta property="og:url" content="https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="微信小程序引入Vant组件库Vant Weapp组件库：https:&#x2F;&#x2F;youzan.github.io&#x2F;vant-weapp&#x2F;#&#x2F;intro">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/01.webp">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/02.webp">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/03.webp">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/04.webp">
+<meta property="article:published_time" content="2020-05-15T13:18:25.000Z">
+<meta property="article:modified_time" content="2020-10-11T08:28:52.294Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="微信">
+<meta property="article:tag" content="Vant-weapp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a-lyc.github.io/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/01.webp">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">微信使用Vant-weapp</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">微信使用Vant-weapp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-15T13:18:25.000Z" itemprop="datePublished" class="page-time">
+  2020-05-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%BE%AE%E4%BF%A1/">微信</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#微信小程序引入Vant组件库"><span class="post-toc-number">1.</span> <span class="post-toc-text">微信小程序引入Vant组件库</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-微信/微信使用Vant-weapp"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">微信使用Vant-weapp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-15 21:18:25" datetime="2020-05-15T13:18:25.000Z"  itemprop="datePublished">2020-05-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%BE%AE%E4%BF%A1/">微信</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="微信小程序引入Vant组件库"><a href="#微信小程序引入Vant组件库" class="headerlink" title="微信小程序引入Vant组件库"></a>微信小程序引入Vant组件库</h3><p>Vant Weapp组件库：<a href="https://youzan.github.io/vant-weapp/#/intro" target="_blank" rel="noopener">https://youzan.github.io/vant-weapp/#/intro</a></p>
+<a id="more"></a>
+<p>说说我在引入vant组件库的时候的操作方法吧：</p>
+<p>1.先在微信开发者工具中打开项目的终端：</p>
+<p>2.然后初始化一个package.json文件：输入命令：npm init  =&gt; 一定是npm init</p>
+<p>然后一路回车</p>
+<p>项目就回产生一个package.json文件：</p>
+<p>3.接着在vant组件库的官网上找到安装语句：npm i vant-weapp -S –production，在终端输入安装命令，点击回车：</p>
+<p>官网安装：<a href="https://youzan.github.io/vant-weapp/#/quickstart" target="_blank" rel="noopener">https://youzan.github.io/vant-weapp/#/quickstart</a></p>
+<p>4.构建npm：在微信开发者工具的菜单栏中找到工具栏的选项“构建npm”，等待构建完成</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/01.webp" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure>
+
+<p>其中miniprogram_npm下就是vant-weapp组件库；</p>
+<p>5.最后，在微信开发者工具的详情里面将“使用npm模块”勾选上，如下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/02.webp" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure>
+
+<p>6.引用和使用vant组件：（关于如何引用和使用组件可以参考官方文档噢，很齐全）</p>
+<p>以引用button按钮为例，官网文档中都写的特别详细了：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/03.webp" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/04.webp" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-11T08:28:52.294Z" itemprop="dateUpdated">2020-10-11 16:28:52</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/" target="_blank" rel="external">https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/Vant-weapp/" rel="tag">Vant-weapp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E5%BE%AE%E4%BF%A1/" rel="tag">微信</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/&title=《微信使用Vant-weapp》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/&title=《微信使用Vant-weapp》 — 四叶草的个人博客&source=微信小程序引入Vant组件库Vant Weapp组件库：https://youzan.github.io/vant-weapp/#/intro" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信使用Vant-weapp》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/05/16/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82-promise%E5%B0%81%E8%A3%85-async/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">微信小程序的异步请求-promise封装-async</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/05/02/vue/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%8C%87/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">自定义的指令</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/&title=《微信使用Vant-weapp》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/&title=《微信使用Vant-weapp》 — 四叶草的个人博客&source=微信小程序引入Vant组件库Vant Weapp组件库：https://youzan.github.io/vant-weapp/#/intro" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信使用Vant-weapp》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/05/15/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BD%BF%E7%94%A8Vant-weapp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADIklEQVR42u3aQW7jQAwEQP//015gTwtsrDTJcWAxpZMhONLU+MCQPY9HfD3/Xtd3/r3//9V7Wv6uxzsubGxs7Juwn5fXqxckC33FS9716nPy/WTrsbGxsfexr8tG8uj8byflM3/XN0ZsbGzsX8nOW4vkOdcFLymleVnFxsbGxk6ak96y8mcmTRE2Njb2b2ZXBz35+On6Xb2w4UdnadjY2Ngfz56MdT7t8xvzbWxsbOyPZD9bVz4GSorZpO3pKbCxsbE3sScxwKmR/dm3Fw4YYWNjY69gV0tLdVh/fWce+mJjY2NjJ//oJ6FpL9CdHP0s8JLREjY2NvYidg7IR0jVI0HJtk5GVNjY2Nhb2b0ANS8nedhQbX6qtQkbGxt7H/tUi3I2AK6OonrvwsbGxt7HrpaQ6sGaZtvQii4ek98KGxsb+ybsXojbCwOqrUgeMCRlDBsbG3s3O49dk7FR3ja8I8SNfipsbGzspexqCzGPgaubeKpdwcbGxt7E/sni1DvEk5er8oAJGxsbewV7svSkgFW3r3rop9qKYGNjY+9j9xqM3jerZaxa/A7HvdjY2Ng3YZ8tLacCgN6Ty3UbGxsbewW7GhXkG9QbLfXGW9UnYGNjY29i54d1ep+TojKJe5NW6ovP2NjY2KvZZ2GTuHc+2Hp5BxsbG3sRu4rP/yof9Fd5veFXNFHDxsbGviE7j1RH+xq3N/MWKCqW2NjY2OvYvTh2suizBy7L24GNjY29lF0d9OQFbHLQp7fd32wWNjY29jr2JKbND+LMR1H5nSgVwcbGxl7BrhaM6oJyZK8E9rYAGxsbexM7GdmcDQPeN3hKWpEvgl5sbGzsm7N7yMflVR1LTZqZZCXR97GxsbFvy34Wr16okCy9GjxM2iRsbGzsTez8ykPZ6sg+HyqdDZKxsbGxN7HzojUpVL3l9jYlOr6DjY2NvY6dYPKhUmE0Hw+DCrOx5PvY2NjY2MWF9hqVXkkrhATY2NjYv4zdO3YzL3LJk/NWBxsbG3sr+1SYWh0/VUf/eZk8PEvDxsbG/mB2L+jN77wj6K0W0WbWjY2Njf3p7D8riU8CM3//sQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

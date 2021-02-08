@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>js基础 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="jsES5-js单词">
+    <meta name="description" content="运算符操符： 算数运算符：    +、-、、&#x2F;、%    +：特殊是连接作用，两个都是数字运算，一个数字一个字符串拼接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js基础">
+<meta property="og:url" content="https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="运算符操符： 算数运算符：    +、-、、&#x2F;、%    +：特殊是连接作用，两个都是数字运算，一个数字一个字符串拼接">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-22T13:39:43.000Z">
+<meta property="article:modified_time" content="2020-10-24T02:48:57.369Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="jsES5-js单词">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">js基础</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">js基础</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-22T13:39:43.000Z" itemprop="datePublished" class="page-time">
+  2020-03-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%AD%A6%E4%B9%A0%E6%95%B4%E7%90%86%E7%9A%84%E5%89%8D%E7%AB%AF/">学习整理的前端</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运算符操符："><span class="post-toc-number">1.</span> <span class="post-toc-text">运算符操符：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运算符的优先级别："><span class="post-toc-number">2.</span> <span class="post-toc-text">运算符的优先级别：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取值的相关信息"><span class="post-toc-number">3.</span> <span class="post-toc-text">获取值的相关信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符转换"><span class="post-toc-number">4.</span> <span class="post-toc-text">字符转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关键字："><span class="post-toc-number">5.</span> <span class="post-toc-text">关键字：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Maht方法："><span class="post-toc-number">6.</span> <span class="post-toc-text">Maht方法：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结date方法"><span class="post-toc-number">7.</span> <span class="post-toc-text">&#x2F;&#x2F;总结date方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取文档中的标签"><span class="post-toc-number">8.</span> <span class="post-toc-text">获取文档中的标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据标签-名称获取"><span class="post-toc-number">9.</span> <span class="post-toc-text">&#x2F;&#x2F;根据标签 名称获取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#根据类样式获取元素，"><span class="post-toc-number">10.</span> <span class="post-toc-text">&#x2F;&#x2F;根据类样式获取元素，</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取一个属性"><span class="post-toc-number">11.</span> <span class="post-toc-text">&#x2F;&#x2F;获取一个属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义属性"><span class="post-toc-number">12.</span> <span class="post-toc-text">&#x2F;&#x2F;自定义属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建一个元素标签"><span class="post-toc-number">13.</span> <span class="post-toc-text">&#x2F;&#x2F;创建一个元素标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件"><span class="post-toc-number">14.</span> <span class="post-toc-text">事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对象点添加属性"><span class="post-toc-number">15.</span> <span class="post-toc-text">对象点添加属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#节点元素获取"><span class="post-toc-number">16.</span> <span class="post-toc-text">节点元素获取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为元素绑定事件"><span class="post-toc-number">17.</span> <span class="post-toc-text">为元素绑定事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取元素-根据-介绍"><span class="post-toc-number">18.</span> <span class="post-toc-text">获取元素    根据    介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件-1"><span class="post-toc-number">19.</span> <span class="post-toc-text">事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM方法"><span class="post-toc-number">20.</span> <span class="post-toc-text">DOM方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#offset系列"><span class="post-toc-number"></span> <span class="post-toc-text">offset系列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#scroll系列"><span class="post-toc-number"></span> <span class="post-toc-text">scroll系列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#client系列-可视区域"><span class="post-toc-number"></span> <span class="post-toc-text">client系列    可视区域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#节点属性"><span class="post-toc-number">1.</span> <span class="post-toc-text">节点属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#功能"><span class="post-toc-number">2.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#排他功能"><span class="post-toc-number">3.</span> <span class="post-toc-text">排他功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#location对象"><span class="post-toc-number">4.</span> <span class="post-toc-text">location对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#userAgent"><span class="post-toc-number">5.</span> <span class="post-toc-text">userAgent</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#client系列-可视区域-1"><span class="post-toc-number">6.</span> <span class="post-toc-text">client系列    可视区域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定时器"><span class="post-toc-number">7.</span> <span class="post-toc-text">定时器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件冒泡"><span class="post-toc-number">8.</span> <span class="post-toc-text">事件冒泡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重点"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">重点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数中的继承问题-Proson-call-this-父级形参-没有继承方法-构造函数-call（当前对象this）"><span class="post-toc-number">9.</span> <span class="post-toc-text">函数中的继承问题     Proson.call(this,父级形参)没有继承方法    构造函数.call（当前对象this）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#改变this的指向-当前对象就是想让这个this指向谁-调用的时候改变this的指向"><span class="post-toc-number">10.</span> <span class="post-toc-text">改变this的指向     当前对象就是想让这个this指向谁    调用的时候改变this的指向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数内的几个属性"><span class="post-toc-number">11.</span> <span class="post-toc-text">函数内的几个属性</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-js/运算使用到的数组，字符串"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">js基础</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-22 21:39:43" datetime="2020-03-22T13:39:43.000Z"  itemprop="datePublished">2020-03-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%AD%A6%E4%B9%A0%E6%95%B4%E7%90%86%E7%9A%84%E5%89%8D%E7%AB%AF/">学习整理的前端</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="运算符操符："><a href="#运算符操符：" class="headerlink" title="运算符操符："></a>运算符操符：</h3><ul>
+<li>算数运算符：</li>
+</ul>
+<p>  +、-、<em>、/、%    +：特殊是连接作用，两个都是数字运算，一个数字一个字符串拼接<br>  <a id="more"></a><br>  一元运算符：<br>  ++、–    ++：累加        –：累减<br>  （如果++在前面先自身+1，之后和后面的值进行运算，<br>  如果++在后面，先运算完成之后在自身+1）<br>  二元运算符（符合运算符）：<br>  +=、-=、</em>=、/=、 例子：var a += b；//var a = a+b<br>  关系运算符：<br>  &lt;、 &lt;=、 &gt; 、&gt;=、==(不严格)、 ===（类型和值都要一样）、 !=(不严格) 、!==（严格）：返回的值是一个boolean类型的<br>  逻辑运算符：<br>  &amp;&amp;、||、！    ：&amp;&amp;如果有一个为false结果为flase        ||:有一个为true返回true<br>  赋值运算符：<br>  =</p>
+<h3 id="运算符的优先级别："><a href="#运算符的优先级别：" class="headerlink" title="运算符的优先级别："></a>运算符的优先级别：</h3><ul>
+<li>1：（）<br>2：++  –  ！<br>3：+ - * / %<br>4：&gt; &gt;= &lt; &lt;=<br>5：== === != ！==<br>6:先&amp;&amp; 后||<br>7：=</li>
+</ul>
+<h3 id="获取值的相关信息"><a href="#获取值的相关信息" class="headerlink" title="获取值的相关信息"></a>获取值的相关信息</h3><p>.length        获取任何值的长度；用法（变量.length）<br>this            这个元素本身</p>
+<h3 id="字符转换"><a href="#字符转换" class="headerlink" title="字符转换"></a>字符转换</h3><p>.toString()    转字符串<br>.parseInt()    转整数（遇到字符会转字符之前的数字）<br>.parseFloat()    转小数（遇到字符会转字符之前的数字）<br>.Number()    转数字（严格模式）<br>Boolean()        转布尔值（0、“”、null、undefined、为false其他为ture）</p>
+<h3 id="关键字："><a href="#关键字：" class="headerlink" title="关键字："></a>关键字：</h3><p>continue        循环中使用，遇到直接进行下一个循环<br>brack        跳出循环<br>return        函数中使用，返回值，遇到直接跳出函数</p>
+<h3 id="Maht方法："><a href="#Maht方法：" class="headerlink" title="Maht方法："></a>Maht方法：</h3><pre><code>//静态对象：不需要创建，直接就是一个对象，方法（静态方法）直接通过这个对象名字调用的</code></pre><p>静态必须通过大写的名称调用<br>Math.PI                是3.1415926<br>Math.E                    自然数的2底数2.17<br>Math.abc(值)           数字的绝对值<br>Math.ceil(值)           想上取余<br>Math.floor(值)            向下取余<br>Math.max()                最大值<br>Math.max.apply(null,arr)      数组中最大值<br>Math.min()                最大值<br>Math.pow(x,y)             x的y次方<br>Math.sqrt()<br>Math.random()             返回一个伪随机数</p>
+<h3 id="总结date方法"><a href="#总结date方法" class="headerlink" title="//总结date方法"></a>//总结date方法</h3><p>dt.getFullYear();//年<br>dt.getMonth();//月<br>dt.getDay();//日<br>dt.getDate();//周<br>dt.getHours();//时<br>dt.getMinutes();//分<br>dt.getSeconds();//秒<br>dt.getDay();///日<br>dt.toDateString();//英文时间<br>dt.toLocaleDateString();//正常时间<br>dt.toTimeString();//24小时制时间<br>dt.toLocaleTimeString();//12小时制时间<br>dt.valueOf()//毫秒</p>
+<p>//<em>DOM</em>//<br>docnment        文档<br>element            元素<br>node            节点<br>root                根</p>
+<h3 id="获取文档中的标签"><a href="#获取文档中的标签" class="headerlink" title="获取文档中的标签"></a>获取文档中的标签</h3><p>//根据id获取<br>getElementById(‘id属性’)//找到这个id的元素属性，返回这个属性</p>
+<h3 id="根据标签-名称获取"><a href="#根据标签-名称获取" class="headerlink" title="//根据标签 名称获取"></a>//根据标签 名称获取</h3><p>getElementByTagName(‘标签名称’)//返回这个标签名称的伪数组，不管是一个还是多个标签返回值就是一个数组,需要循环遍历出来</p>
+<h3 id="根据类样式获取元素，"><a href="#根据类样式获取元素，" class="headerlink" title="//根据类样式获取元素，"></a>//根据类样式获取元素，</h3><p> document.getElementsByClassName(‘class标签名称’)反回的是是一个数组，一个伪数组，只要有这个calss的值，都会读取得到//–ie8以下不支持</p>
+<h3 id="获取一个属性"><a href="#获取一个属性" class="headerlink" title="//获取一个属性"></a>//获取一个属性</h3><p>querySelector(“标签名，#1 #2 cls”)<br>document.querySelectorAll(‘选择器名称’)//返回多个值，形成一个为数组</p>
+<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="//自定义属性"></a>//自定义属性</h3><p>获取自定义属性的值getAttribute(‘自定义属性’)//需要在html上设置之后获取<br>设置自定义属性的值setAttribute(“自定义属性”,“值”)//设置完之后需要上面方法获取<br>移除自定义属性的值.removeAttribute(‘自定义属性’)//html中有自定义属性输入属性值可以</p>
+<h3 id="创建一个元素标签"><a href="#创建一个元素标签" class="headerlink" title="//创建一个元素标签"></a>//创建一个元素标签</h3><p>docnment.wirte(‘标签的额代码内容’);创建元素有缺陷，如果加载完毕之后，此时通过这个方式创建元素，此时页面上创建的内容全部不存在了<br>对象.innerHTML = “标签机代码内容”;</p>
+<p>document.createElement(“标签名字”);//创建之后需要追加父级元素.appendChild(标签名所对应的变量)<br>appendChild(变量)        从前向后添加这个标签<br>insertBefore(变量,参照的参数)    在参照参数后面添加<br>replaceChild(变量，元素)    第一个变量/元素替换第二个元素/变量<br>cloneNode(true/false)    true：全部复制，包括标签属性，值。False：只复制标签</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>.onclick                //点击事件<br>.onmouseover            //鼠标经过事件<br>.onmouseout             //鼠标移出事件<br>.onfocus                 //获取焦点事件<br> .onblur                 //失去焦点事件<br>.onkeyup                //键盘抬起事件<br>.onmousemove        //鼠标移动事件（使用方法：.onmousemove = function(e){<br>元素.offsetLeft = e.clientX+”px”;        元素.offsetLeft = e.clientY+”px”;<br>可视区域的横纵坐标<br>}）<br>.onscroll        //元素的滚动事件获取滚动的距离</p>
+<h3 id="对象点添加属性"><a href="#对象点添加属性" class="headerlink" title="对象点添加属性"></a>对象点添加属性</h3><p>.innerHTML        //带标签的文档（可不带）<br>.innerText        //不带标签<br>.style.color        //style样式<br>classList.add(标签名称)        //添加class类<br>classList.remove(标签名称)    //删除class类<br>className        //添加class类（有弊端，添加可能会把别的删除）<br>addClass            //添加class类（有弊端，添加可能会把别的删除）<br>removeClass        //删除class类（有弊端，删除可能会把别的删除）<br>//设置元素样式的方式<br>对象.style.属性 = 值;<br>对象.calss.属性 = 值;</p>
+<h3 id="节点元素获取"><a href="#节点元素获取" class="headerlink" title="节点元素获取"></a>节点元素获取</h3><p>//获取父级节点<br>console.log(ulObj.parentNode);//找到父级所有的节点</p>
+<p>//获取父级元素<br>console.log(ulObj.parentElement);//找到父级所有的标签</p>
+<p>//获取子节点<br>console.log(ulObj.childNodes);//找到子级标签和文本（空格换行算是文本）</p>
+<p>//获取子元素<br>console.log(ulObj.children)//找到子级标签</p>
+<p>//获取第一个子节点<br>console.log(ulObj.firstChild)//可能是字或者空格换行，不是标签</p>
+<p>//获取第一个子元素<br>console.log(ulObj.firstElementChild)//是第一个标签</p>
+<p> //获取最后一个子节点<br>console.log(ulObj.lastChild)//最后一个文本空格换行。。。。。。</p>
+<p>//获取最后一个子元素<br>console.log(ulObj.lastElementChild)//是最后一个标签</p>
+<p>//获取某个元素的前一个节点<br>console.log(threebj.previousSibling)//前一个文本空格换行。。。。。。</p>
+<p> //获取某个元素的前一个元素<br>console.log(threebj.previousElementSibling)//前一个标签</p>
+<p>//获取某个元素的后一个节点<br>console.log(threebj.nextSibling)//后一个文本空格换行。。。。。。</p>
+<p>//获取某个元素的后一个元素<br>console.log(threebj.nextElementSibling)//后一个标签</p>
+<p>节点属性：（可以使用标签–元素.出来；属性节点.出来，文本节点.出来）(下面是相互对应的)<br> nodeType:   节点类型    标签；1，                   属性；2：                 3：文本<br>nodeName:   节点名字    标签节点：大写的表标签名     属性节点：小写的属性名     文本节点：#text<br>nodeValue:  节点的值    标签节点–null              属性节点：属性的值         文本节点：文本内容</p>
+<h3 id="为元素绑定事件"><a href="#为元素绑定事件" class="headerlink" title="为元素绑定事件"></a>为元素绑定事件</h3><p>1：addEventListener()<br>    //参数1：事件的类型，事件名称,没有on<br>    //参数2：是一个函数<br>    //参数3：布尔类型<br>对象.addEventListener(“事件类型”,事件处理函数,false)谷歌火狐ie11支持，ie8不支持<br>对象.attachEvent(“事件类型”,事件处理函数）有on谷歌火狐不支持ie11不支持，ie8支持<br>解绑事件<br> 注意：用什么事件绑定事件就用对应的方式解绑事件<br> 1：<br>先绑定,后解除<br>对象.on事件名称 = function(){}<br>解绑<br>对象.on事件名称 = null</p>
+<p> 2：<br>绑定事件<br>对象.addEventListener(“没有on的click”,命名函数,false)//ie8不支持<br>解绑事件<br>对象.removeEventListener(“click”,解绑的命名函数,flase)</p>
+<p>3:<br> 绑定事件<br>对象.attachEvent(“on事件名称”,函数名称)//火狐谷歌不支持<br>解绑事件<br>对象.detachEvent(“on事件名称”,函数名称)</p>
+<p>//事件的三个阶段<br>1.事件捕获阶段：从外向内<br>2.事件目标阶段<br>3.事件冒泡阶段：从里向外<br>//为元素绑定事件<br>addEventListener(“没有on的事件”,事件处理函数,控制事件阶段（布尔值）);<br>事件触发过程中，会出现事件冒泡效果，如何阻止冒泡<br>控制:addEventListener中的第三个参数是控制事件阶段的，<br>获取:e.eventPhase 这个属性可以知道这个属性是当前的那个阶段，<br>值1是捕获阶段 从外向内<br>值2是目标阶段 唯一的<br>值3是冒泡阶段 从里向外，一般是冒泡阶段</p>
+<p>定时器：<br>//参数1：函数    参数2：时间毫秒数1000毫秒就是1秒<br>        //timeSet是定时器的id，不点击停止会一直执行<br>       var timeSet =  setInterval(函数,毫秒时间)<br>//停止定时器<br>clearInterval(timeSet);//定时器的id</p>
+<h3 id="获取元素-根据-介绍"><a href="#获取元素-根据-介绍" class="headerlink" title="获取元素    根据    介绍"></a>获取元素    根据    介绍</h3><p>.getElementById(“btn”)    根据id获取这个标签(元素)    从文档中找到id值为btn的这个标签(元素)，document.getElementById(“id属性的值”);======&gt;返回的是一个元素对象<br>.getElementsByTagName(“p”);    .getElementsByTagName(“标签的名字”);返回的是一个伪数组,    无论获取的是一个标签,还是多个标签,最终都是在数组中存储的,这行代码的返回值就是一个数组<br>.getElementsByClassName(“cls”);    根据类样式的名字来获取元素，返回的是一个伪数组,    无论获取的是一个标签,还是多个标签,最终都是在数组中存储的,这行代码的返回值就是一个数组<br>.querySelectorAll(“.cls”)    根据选择器的方式获取元素    </p>
+<!-- more -->    
+<hr>
+<h3 id="事件-1"><a href="#事件-1" class="headerlink" title="事件"></a>事件</h3><p>.onclick          注册鼠标点击事件<br>.onmouseover      注册鼠标进入事件<br>.onmouseout        注册鼠标离开事件<br>.onfocus          注册获取焦点的事件<br>.onblur            注册失去焦点的事件<br>.onkeydow         注册键盘按下事件<br>.onkeyup          注册键盘抬起事件<br>.onload            页面加载完毕,这个事件就会触发<br>.onmousemove      注册鼠标拖动事件    clientX，clientY，pageX，pageY   坐标轴<br>.onscroll          注册滚动事件<br>.onmousedown      注册鼠标按下<br>.onmouseup        注册鼠标抬起<br>document.onkeydown = function(e){console.log(e.keyCode);}    查看键盘按下的是哪个键，对应着数字        </p>
+<hr>
+<p>对象.addEventListener(“事件类型”,事件处理函数,false)    为元素绑定事件谷歌和火狐支持,IE8不支持<br>my$(“btn”).removeEventListener(“click”,f1,false);    解绑事件的时候,需要在绑定事件的时候,使用命名函数<br>对象.attachEvent(“有on的事件类型”,事件处理函数)    谷歌不支持,火狐不支持,IE8支持<br>my$(“btn”).detachEvent(“onclick”,f1);    解绑事件的时候,需要在绑定事件的时候,使用命名函数    </p>
+<hr>
+<h3 id="DOM方法"><a href="#DOM方法" class="headerlink" title="DOM方法"></a>DOM方法</h3><p>.innerText    innerHTML才是真正的获取标签中间的所有内容<br>.textContent    设置标签中的文本内容<br>.innerText    凡是成对的标签,中间的文本内容,设置的时候,都使用innerText这个属性的方式    document.getElementById(“p1”).innerText=”这是一个p”<br>.style.width     凡是css中这个属性是多个单词的写法,在js代码中DOM操作的时候.把-干掉,后面的单词的首字母大写即可<br>.className=”cls”    在js代码中DOM操作的时候,设置元素的类样式,不用class关键字,应该使用,className<br>.removeAttribute(“class”)    删除calss<br>.classList.add(“类名称”)    添加css类<br>.classList.remove(“类名称”)    删除css类        </p>
+<h2 id="offset系列"><a href="#offset系列" class="headerlink" title="offset系列"></a>offset系列</h2><p>元素.offsetLeft（宽高上下左右）    样式在style标签中获取方法    :父级元素margin+父级元素padding+父级元素的border+自己的margin<br>.offsetWidth:    获取元素的宽<br>.offsetHeight:    获取元素的高<br>.offsetLeft:    获取元素距离左边位置的值<br>.offsetTop:    获取元素距离上面位置的值</p>
+<h2 id="scroll系列"><a href="#scroll系列" class="headerlink" title="scroll系列"></a>scroll系列</h2><p>.scrollWidth    元素中内容的实际的宽<br>.scrollHeight    元素中内容的实际的高<br>.scrollTop    向上卷曲出去的距离<br>.scrollLeft    向左卷曲出去的距离    </p>
+<h2 id="client系列-可视区域"><a href="#client系列-可视区域" class="headerlink" title="client系列    可视区域"></a>client系列    可视区域</h2><p>.clientHeight    可视区域的高(没有边框),边框内部的高度<br>.clientWidth    可视区域的宽(没有边框),边框内部的宽度<br>.clientLeft    左边边框的宽度<br>.clientTop    上面的边框的宽度<br>.clientX    可视区域的横坐标（单机的位置距离X轴开始位置的坐标）<br>.clientY    可视区域的纵坐标（单机的位置距离Y轴开始位置的坐标）        </p>
+<hr>
+<h3 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h3><p>getAttribute(“score”)    在html标签中添加的自定义属性,如果想要获取这个属性的值,需要使用getAttribute(“自定义属性的名字”)才能获取这个属性的值    获取自定义属性的值<br>setAttribute(“属性的名字”,”属性的值”)    设置自定义属性:setAttribute(“属性的名字”,”属性的值”);    设置自定义属性<br>removeAttribute(“属性的名字”)    移除自定义属性:removeAttribute(“属性的名字”)    移除自定义属性<br>nodeType:    节点的类型:1—-标签,2—属性,3—文本<br>nodeName    节点的名字:标签节点—大写的标签名字,属性节点—小写的属性名字,文本节点—-#text<br>nodeValue    节点的值:标签节点—null,属性节点—属性值,文本节点—文本内容<br>parentNode    父级节点<br>parentElement    父级元素<br>childNodes    子节点<br>children    子元素<br>firstChild    第一个子节点<br>firstElementChild    第一个子元素<br>lastChild    最后一个子节点    IE8中是第一个子元素<br>lastElementChild    最后一个子元素    IE8中不支持<br>previousSibling    某个元素的前一个兄弟节点    IE8中是第一个子元素<br>previousElementSibling    某个元素的前一个兄弟元素    IE8中不支持<br>nextSibling    某个元素的后一个兄弟节点<br>nextElementSibling    某个元素的后一个兄弟元素</p>
+<hr>
+<p>.write(“标签的代码及内容”)    创建元素,缺陷:如果是在页面加载完毕后,此时通过这种方式创建元素,那么页面上存在的所有的内容全部被干掉<br>对象.innerHTML=”标签及代码”    对象.innerHTML=”标签代码及内容”<br>document.createElement(“标签的名字”)    document.createElement(“标签名字”);对象    “//把创建后的子元素追加到父级元素中<br>    父级对象.appendChild(pObj);”<br>父级元素.appendChild(子级元素对象)    追加元素<br>父级元素.inerstBefore(新的子级对象,参照的子级对象)    把新的子元素插入到参考子元素的前面<br>父级元素.removeChild(要干掉的子级元素对象)    移除父级元素中子级元素<br>getComputedStyle    获取任意一个元素的任意一个样式属性的值    “兼容代码：function getStyle(element,attr) {<br>    //判断浏览器是否支持这个方法<br>   return window.getComputedStyle? window.getComputedStyle(element,null)[attr]:element.currentStyle[attr];<br>  }”    使用方法： console.log(getStyle(my$(“dv”),”top”))<br>getComputedStyle(elenent,null)    传入一个对象和一个空值        </p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><h3 id="排他功能"><a href="#排他功能" class="headerlink" title="排他功能"></a>排他功能</h3><p>阻止a跳转    阻止超链接的默认的跳转:return false        </p>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>console.log(window.location.hash)    地址栏上#及后面的内容<br>console.log(window.location.host)    主机名及端口号<br>console.log(window.location.hostname)    主机名<br>console.log(window.location.pathname)    文件的路径—相对路径<br>console.log(window.location.port)    端口号<br>console.log(window.location.protocol)    协议<br>console.log(window.location.search)    搜索的内容<br>location.href=”<a href="http://www.jd.com&quot;" target="_blank" rel="noopener">http://www.jd.com&quot;</a>    设置跳转的页面的地址<br>location.assign(“<a href="http://www.jd.com&quot;" target="_blank" rel="noopener">http://www.jd.com&quot;</a>)    设置跳转的页面的地址<br>location.reload()    重新加载–刷新<br>location.replace(“<a href="http://www.jd.com&quot;" target="_blank" rel="noopener">http://www.jd.com&quot;</a>)    没有历史记录        </p>
+<hr>
+<h3 id="userAgent"><a href="#userAgent" class="headerlink" title="userAgent"></a>userAgent</h3><p>console.log(window.navigator.userAgent)     通过userAgent可以判断用户浏览器的类型<br>console.log(window.navigator.platform)    通过platform可以判断浏览器所在的系统平台类型.        </p>
+<hr>
+<h3 id="client系列-可视区域-1"><a href="#client系列-可视区域-1" class="headerlink" title="client系列    可视区域"></a>client系列    可视区域</h3><p>.clientHeight    可视区域的高(没有边框),边框内部的高度<br>.clientWidth    可视区域的宽(没有边框),边框内部的宽度<br>.clientLeft    左边边框的宽度<br>.clientTop    上面的边框的宽度        </p>
+<hr>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><p>var timeId = setInterval(function () {}, 1000);    “参数1:函数<br>参数2:时间—毫秒—1000毫秒–1秒<br>执行过程:页面加载完毕后,过了1秒,执行一次函数的代码,又过了1秒再执行函数…..<br>返回值就是定时器的id值”<br>clearInterval(timeId);    参数:要清理的定时的id的值<br>window.setTimeout(函数,时间);    另一个定时器——-一次性的定时<br>clearTimeout(timeId);    参数:要清理的定时的id的值        </p>
+<hr>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>控制:addEventListener中的第三个参数是控制事件阶段的，    事件触发过程中，会出现事件冒泡效果，如何阻止冒泡<br>获取:e.eventPhase 这个属性可以知道这个属性是当前的那个阶段，    window.enent.cancelBubble = true;//谷歌，ie支持，火狐不支持<br>1是捕获阶段 从外向内    事件处理函数中的参数（e）.stopPropagation()//阻止事件冒泡//ie不支持，这是火狐的标准<br>2是目标阶段 唯一的    事件参数e 在ie的浏览器不存在可以使用 window.enent来代替<br>3是冒泡阶段 从里向外，一般是冒泡阶段            </p>
+<hr>
+<p>window.setSelection().removeAllRanges()||docnment.selection.empty()            </p>
+<p>知道三个值可根据比例来的出第四个值<br>公式<br>x/y = a/b   移项  ay = bx   求y = bx/a            </p>
+<hr>
+<p>不占空间的原型prototype    使用方法：自定义对象名称.prototype.自定义方法名称 = function(){}   或者一个值<br>创建实例化对象    prototype使用这个创建里面的this认清    使用，举例子<br>“ function 实例化对象名（首字母大写）(btnObj,dvObj,json) {<br>        this.btnObj = btnObj;<br>        this.dvObj = dvObj;<br>        this.json = json;<br>    }<br>    实例化对象名.prototype.init = function(){<br>        var  than = this;<br>        this.btnObj.onclick = function(){<br>            for(var key in json){<br>                than.dvObj.style[key] = than.json[key];<br>        };<br>        };<br>    };<br>“    “ var json = {<br>        “”width””:””100px””,<br>        “”height””:””500px””,<br>        “”backgroundColor””:””yellow””,<br>        “”border””:””1px solid red””<br>    }<br>    var sc = new Person(my$(“”btn””),my$(“”dv””),json);<br>    sc.init();”        </p>
+<hr>
+<h4 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h4><p>function(){this}.bind(than)//函数中的this就是bind中的than（变量对象）<br>比如定时器中的this是window，然后在函数中.bind(构造函数顶级this的变量名)，定时器中的this就是bind出来的变量名，bind改变了里面this的指向            </p>
+<hr>
+<h3 id="函数中的继承问题-Proson-call-this-父级形参-没有继承方法-构造函数-call（当前对象this）"><a href="#函数中的继承问题-Proson-call-this-父级形参-没有继承方法-构造函数-call（当前对象this）" class="headerlink" title="函数中的继承问题     Proson.call(this,父级形参)没有继承方法    构造函数.call（当前对象this）"></a>函数中的继承问题     Proson.call(this,父级形参)没有继承方法    构造函数.call（当前对象this）</h3><p>function Person(name){this.name = name}<br>function Student(name,exe){proson.call(this,name);this.exe = exe;}<br>var stu = new Student(“小明”,10)            </p>
+<hr>
+<h3 id="改变this的指向-当前对象就是想让这个this指向谁-调用的时候改变this的指向"><a href="#改变this的指向-当前对象就是想让这个this指向谁-调用的时候改变this的指向" class="headerlink" title="改变this的指向     当前对象就是想让这个this指向谁    调用的时候改变this的指向"></a>改变this的指向     当前对象就是想让这个this指向谁    调用的时候改变this的指向</h3><p>函数名/方法名.prototype/方法.call(当前对象,值，值…)    f1.call(当前对象,值，值…)<br>函数名/方法名.prototype/方法.apply(当前对象,[值，值，值，..])    f1.apply(当前对象,[值，值，值，..])<br>改变this的指向，使用方法<br>函数名.apply(对象,[参数1，参数2，参数3.。。。。])；<br>函数名.call(对象,参数1,参数2,……)<br>我想要使用其他对象的某个方法，其他对象.方法名.apply（当前对象，参数1…..）/call(当前对象，参数……)<br>这个方法就会被当前的对象所用，同时这个方法中的this就是当前对象，在调用方法的时候改变了this的指向            </p>
+<hr>
+<p>复制一份的时候，把参数传入到函数中，第一个参数默认为window    可以穿this   是复制的时候改变了this的指向<br>.bind();这个方法是复制的意思，参数可以在复制的时候传进去，也可以在复制之后调用的时候传进去            </p>
+<hr>
+<h3 id="函数内的几个属性"><a href="#函数内的几个属性" class="headerlink" title="函数内的几个属性"></a>函数内的几个属性</h3><p>函数.name   返回值是函数的名字<br>函数名.arguments   返回值是一个伪数组<br>函数名.length   返回形参的个数<br>函数名.caller   返回有谁调用了这个函数            </p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-24T02:48:57.369Z" itemprop="dateUpdated">2020-10-24 10:48:57</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/jsES5-js%E5%8D%95%E8%AF%8D/" rel="tag">jsES5-js单词</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/&title=《js基础》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/&title=《js基础》 — 四叶草的个人博客&source=运算符操符：
+算数运算符：
+
+  +、-、、/、%    +：特殊是连接作用，两个都是数字运算，一个数字一个字符串拼接" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js基础》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/03/23/vue/map%E5%AF%BC%E5%85%A5%E7%82%B9%E5%87%BB%E5%9C%B0%E5%9B%BE%E5%87%BA%E7%8E%B0/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">map导入点击地图出现</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/21/css/css3%E5%8A%A8%E7%94%BB/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">css3动画</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/&title=《js基础》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/&title=《js基础》 — 四叶草的个人博客&source=运算符操符：
+算数运算符：
+
+  +、-、、/、%    +：特殊是连接作用，两个都是数字运算，一个数字一个字符串拼接" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js基础》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/22/js/%E8%BF%90%E7%AE%97%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEl0lEQVR42u3ay24aQRAFUP//TztSVpESxvdWDQoNhxXCMNN9xlK9+usrfn3/fv35/u9PHn3/0a+ur5xfM7nj9Tdve2HChAkTppdk+r585RAJaPIYrleV3P36jtcP5uEVMGHChAnT4Uyzy21+lYf/a6Z8PUka8fBzTJgwYcL0AUyzAJyE3llpnTy89sqYMGHChOmTmfKtXkPnuEnqkN8LEyZMmDB9MtMsSLdYs0FmMoZMfrvZBSZMmDBhOpdpdnDnPd4//XwTJkyYMGH6r0zf5Wvfcs2vcFcRe8OuMWHChAnTsUzJ0Za82fqMfKQ9dtM+5oIbEyZMmDC9EdN12zRPEW4LxsHaZo82STUwYcKECdO5TO3BmnYQuAnPsxbt7CDRD1fAhAkTJkzHMuWHWtp0od1GXo4m18/vVewFEyZMmDAdyNSWmsmC2lbsrJl7F1/UnsaECRMmTIcztU3PtrhN0ov28TxjbFkc2cGECRMmTIcw5TPPvACepQJJ4X3D4ZtNKoMJEyZMmA5kyoeRedl5V5HcBu8kEWkfW5EfYcKECROmF2baB/62L7ohS0rluo17/R1MmDBhwnQ406Yc3TeF8/FkmwQUIf/63wITJkyYMB3LtPpSnDTc1YTdJyXtELTeMCZMmDBhejGmzWGXZLmzoHtX4M8fFSZMmDBh+hymWQt4drW72rJ5odty/6NDgAkTJkyYjmLaF5+bwJxvaXYoJ1/bbGSLCRMmTJhOYZo1c9tUYNN1njWF97vDhAkTJkynMz0j3LaFa9uKnaURsyErJkyYMGE6nSkpVtv3s4ZpTpMXxsnm634AJkyYMGE6imm2yeST2WNoDxK17ePk4T08uIMJEyZMmA5k2rRBNyPPTcu1LYDv2iMmTJgwYTqdaRP420M2bRKw55sNWTFhwoQJ0+lMOVC+6FlTuC1o2+HrKn3BhAkTJkyHM907sMyHizccpokfWJt2YMKECROmd2Jqf9wG1LYtOyvC23K3+CsmTJgwYTqcKQ/byc02h2NmyUebKNSlOCZMmDBhOpxpFrzbAjJfXJtqbFrD0QPGhAkTJkyHM20Cc34ANB9k5qVsG6+HoJgwYcKE6Vim2UVbrGccA2pL4qSAj/6nMGHChAnTsUybcNsWvbOSe9ZQTh5D9E1MmDBhwvSmTBuyWUN2D52jFMSYMGHChOlApnys2BaZs43NCtT8qFB7nOgf40xMmDBhwvRGTMlyc+J7S9nZCHO2WkyYMGHC9B5MyUKTAWQ+emyTgM1W2zZ01BvAhAkTJkwvz7TpDbe3aYeOyb1mB4zyu/zQ9sWECRMmTC/P9F2+8sXd26IdlqxxMvHDGjBhwoQJ07FMs5CcM20K5vZwz+b6bRsaEyZMmDCdxZQf2RnW02XzdzbsbNu79RowYcKECdPhTPnG2uC6KSzzQWmSQOR3fNgnwIQJEyZMb810HR9nIX+Gvi9ub6v+MWHChAnTmzJt2qz70WMe1K8/KbrgmDBhwoTpcKakyZsclJmNP/MW8+z4aXL3H8gwYcKECdOxTLO6L99qQtwG77yl265qWBhjwoQJE6ZXZPoFOcWMrT4grggAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

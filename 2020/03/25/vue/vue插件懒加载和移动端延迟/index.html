@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>vue插件懒加载和移动端延迟 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue插件 懒加载 移动端延迟">
+    <meta name="description" content="在移动端会使用fastClick插件   安装npm i fastclick">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue插件懒加载和移动端延迟">
+<meta property="og:url" content="https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="在移动端会使用fastClick插件   安装npm i fastclick">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-25T12:27:58.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:27.003Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="vue插件 懒加载 移动端延迟">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue插件懒加载和移动端延迟</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue插件懒加载和移动端延迟</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-25T12:27:58.000Z" itemprop="datePublished" class="page-time">
+  2020-03-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-vue/vue插件懒加载和移动端延迟"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue插件懒加载和移动端延迟</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-25 20:27:58" datetime="2020-03-25T12:27:58.000Z"  itemprop="datePublished">2020-03-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>在移动端会使用fastClick插件</p>
+</blockquote>
+<ul>
+<li><p>安装npm i fastclick</p>
+<a id="more"></a>
+<p>导入：min.js中：import FastClick from ‘fastclick’</p>
+<p>调用：//解决移动端的300ms延迟<br>FastClick.attach(document.body)</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>图片懒加载</p>
+</blockquote>
+<ul>
+<li><p>安装npm i vue-lazyload -save </p>
+<p>导入:min.js:<br>import VuelazyLoad from ‘vue-lazyload’<br>//使用图片懒加载插件<br>Vue.use(VuelazyLoad)</p>
+<p>使用:<br>img :src=“./img.jpg”修改成v-lazy=“./img.jpg”</p>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:27.003Z" itemprop="dateUpdated">2020-07-24 08:16:27</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/vue%E6%8F%92%E4%BB%B6-%E6%87%92%E5%8A%A0%E8%BD%BD-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/" rel="tag">vue插件 懒加载 移动端延迟</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/&title=《vue插件懒加载和移动端延迟》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/&title=《vue插件懒加载和移动端延迟》 — 四叶草的个人博客&source=
+在移动端会使用fastClick插件
+
+
+安装npm i fastclick" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue插件懒加载和移动端延迟》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/03/25/vue/px%E8%BD%AC%E6%8D%A2%E5%8D%95%E4%BD%8D%E4%B8%BArpx/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">px转换单位为vw和rpx的插件</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/24/vsCoods%E5%BF%AB%E6%8D%B7%E5%88%9B%E5%BB%BA%E6%A8%A1%E6%9D%BF/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vsCoods快捷创建模板</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/&title=《vue插件懒加载和移动端延迟》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/&title=《vue插件懒加载和移动端延迟》 — 四叶草的个人博客&source=
+在移动端会使用fastClick插件
+
+
+安装npm i fastclick" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue插件懒加载和移动端延迟》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/25/vue/vue%E6%8F%92%E4%BB%B6%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BB%B6%E8%BF%9F/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEk0lEQVR42u3aS27bQBAFQN//0g6QVQLHzHvddKKhiyvBkkacooHp39tbfL3/vD6+Tt799e/Jdz9e13d1vfLHd6/XXF2YMGHChOklmd4vrxlEe4v5NhKOfIXknjFhwoQJ0zOY2uXa7V2HBde/mAPlrPneMWHChAnT92FqE8vr19cr5ARJApzTY8KECROm78w0S4bbW2yLuclj26TimDBhwoTpGUz5IT1LZfN1vuKxtYiYMGHChOlJTJvBndNf/6P5JkyYMGHC9J+Y3ssrP7zbY7tNbpMQ4bZdY8KECROmY5mS0ZY8+bxraGbWUk1S61XpGRMmTJgwHcjUllyTH8hHZ/LCcbKZZBftOn+ImzBhwoQJ04FMSSgwCwI2Tcr2W7MxnehfBBMmTJgwHcvUDtlshlryde4aytkk9tE2MGHChAnTIUwJ0F0pcb6ZfGMtUNS8/LgCJkyYMGE6kGmfym621z6A2VbboOTTkR1MmDBhwnQgU5sc3lYqXTQp25Ggdnd13IQJEyZMmF6YKU9xZ2M094Yas1LvfkgIEyZMmDCdzrQJC5Kt7svBM7L8wdedWEyYMGHCdBRTfuuzFmNyPOfBwSw0acl++zsmTJgwYTqWaZO4ts3FfDOb1dpku1gBEyZMmDAdy9QSzEKH9mHsQ4E2b80bsZgwYcKE6Vym2dHYfqttN95VfW0DAkyYMGHC9Aymdum8bJp/Pk+JE6zZI/xLKIAJEyZMmB7B1JY4k2/lKEkAkRzhd4U1nwYEmDBhwoTpEKa8zNomk8lW89O2bYvOhoc+vWdMmDBhwnQs06wM2jYj2xvKS73J+hv0Oq7BhAkTJkwvxtQerpsmYnK7bVE4fzCbEjYmTJgwYTqXqU1Q25R4VmzNfzdh3Y8TYcKECROm05nyg3NWNm3/skloZw9vlQBjwoQJE6YXZmqT1VlReMbXprIzrOieMWHChAnTsUz74Zh2FGY/ppN/fga6ip4wYcKECdNLMiXp5ayoukmq2+M8GSpqP48JEyZMmJ7H1N7QZp087JglwG3Dsuj0YsKECROmQ5hmR34Cd29J994WZj3ThAkTJkyYjmWaNSnbw7u+lRHcJj0uvosJEyZMmI5lumvIpg0I8uS2DT424UXU+8WECRMmTIcwtU3Ktsibp9mbNmQCOgtxMGHChAnT6UzXS+Q/PCuzztLvdsM5GSZMmDBhehJTfmDnZC3l1xWa85DiL5/EhAkTJkwPYhqmgmVp9bYxmjiUmQ0JfRoQYMKECROmA5nyg7kdl9nf9L6F2e7ibVNjxoQJEyZML8PUNghzlLxQ297PZkhoRo8JEyZMmM5lei+vWZK8x80P7JwsT8IxYcKECdO5TG0zclPebYdm2jS1LR/vy8qYMGHChOkUpk16mZdT92XW9g7vqtBiwoQJE6ZnMLVjNPc2FDdty31oEqXNmDBhwoTpGzC1786S4a9InvP0eDjlhAkTJkyYHsTUtj9zuLw5mnPvx3cwYcKECdMzmDaDNTOIPLVOXreBSL4OJkyYMGE6naktgOYp8exUTX6lbYImbdS2LYoJEyZMmF6e6QeItpaHsiIZngAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>uniapp组件之间的传递 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="uniapp">
+    <meta name="description" content="uniapp监听事件 原生导航搜索按钮点击事件,可以和data同级别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uniapp组件之间的传递">
+<meta property="og:url" content="https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="uniapp监听事件 原生导航搜索按钮点击事件,可以和data同级别">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-04T05:25:06.000Z">
+<meta property="article:modified_time" content="2020-10-23T08:30:39.406Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="uniapp">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">uniapp组件之间的传递</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">uniapp组件之间的传递</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-04T05:25:06.000Z" itemprop="datePublished" class="page-time">
+  2020-04-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/uniapp/">uniapp</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#uniapp监听事件"><span class="post-toc-number">1.</span> <span class="post-toc-text">uniapp监听事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#父组件传递给子组件，使用popst：-和vue一样传递方式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">父组件传递给子组件，使用popst：{}和vue一样传递方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#子组件传递给父组件this-emit"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">子组件传递给父组件this.$emit</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#uni-emit和uni-on页面之间传递应该是可以传输vue之间的页面，保证传输tab的页面"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">uni.$emit和uni.$on页面之间传递应该是可以传输vue之间的页面，保证传输tab的页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局事件总件"><span class="post-toc-number">2.</span> <span class="post-toc-text">全局事件总件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局变量globalData"><span class="post-toc-number">3.</span> <span class="post-toc-text">全局变量globalData</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-uniapp/uniapp组件之间的传递"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">uniapp组件之间的传递</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-04 13:25:06" datetime="2020-04-04T05:25:06.000Z"  itemprop="datePublished">2020-04-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/uniapp/">uniapp</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="uniapp监听事件"><a href="#uniapp监听事件" class="headerlink" title="uniapp监听事件"></a>uniapp监听事件</h3><ul>
+<li>原生导航搜索按钮点击事件,可以和data同级别</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">onNavigationBarButtonTap() &#123;</span><br><span class="line">			uni.navigateTo(&#123;</span><br><span class="line">				url:&#39;..&#x2F;SearchList&#x2F;SearchList&#39;</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>点击搜索框事件，可以和data同级别<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">uni.onNavigationBarSearchInputClicked(() &#x3D;&gt;&#123;</span><br><span class="line">				uni.navigateTo(&#123;</span><br><span class="line">					url:&#39;..&#x2F;search&#x2F;search&#39;</span><br><span class="line">				&#125;)</span><br><span class="line">				console.log(123)</span><br><span class="line">			&#125;)</span><br></pre></td></tr></table></figure>
+uniapp里面的组件之间传递信息数据，如何接收数据<h4 id="父组件传递给子组件，使用popst：-和vue一样传递方式"><a href="#父组件传递给子组件，使用popst：-和vue一样传递方式" class="headerlink" title="父组件传递给子组件，使用popst：{}和vue一样传递方式"></a>父组件传递给子组件，使用popst：{}和vue一样传递方式</h4></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;父组件传递mag给子组件，mag定义到实例上的</span><br><span class="line">&lt;view :magess&#x3D;&quot;mag&quot;&gt;&lt;&#x2F;view&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;子组件接收，实例上接收,和定义在data中的方法一样使用</span><br><span class="line">popst:&#123;</span><br><span class="line">  magess:&#123;</span><br><span class="line">    type:Objest,</span><br><span class="line">    default()&#123;</span><br><span class="line">      return &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="子组件传递给父组件this-emit"><a href="#子组件传递给父组件this-emit" class="headerlink" title="子组件传递给父组件this.$emit"></a>子组件传递给父组件this.$emit</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;z子组件定义事件$emit()发出事件</span><br><span class="line">this.$emit(&#39;magess&#39;,&#123;name:name,aeg:age&#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;父组件接收事件</span><br><span class="line">&lt;view @magess&#x3D;&quot;mag&quot;&gt;&lt;&#x2F;view&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;操作传来的事件信息</span><br><span class="line">mag(e)&#123;</span><br><span class="line">console.log(e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="uni-emit和uni-on页面之间传递应该是可以传输vue之间的页面，保证传输tab的页面"><a href="#uni-emit和uni-on页面之间传递应该是可以传输vue之间的页面，保证传输tab的页面" class="headerlink" title="uni.$emit和uni.$on页面之间传递应该是可以传输vue之间的页面，保证传输tab的页面"></a>uni.$emit和uni.$on页面之间传递应该是可以传输vue之间的页面，保证传输tab的页面</h4><p>uni.$off 销毁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;页面上定义事件</span><br><span class="line">uni.$emit(&#39;magess&#39;,&#123;name:name,aeg:age&#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;另外的页面进行接收，最好使用箭头函数</span><br><span class="line">uni.$on(&#39;magess&#39;,(e) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(e)</span><br><span class="line">  &#x2F;&#x2F;这里的this可以直接访问data</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="全局事件总件"><a href="#全局事件总件" class="headerlink" title="全局事件总件"></a>全局事件总件</h3><p>定义一个js文件，文件内是全局事件触发存储的，类似于vuex</p>
+<blockquote>
+<p>实例<br>在 uni-app 项目根目录下创建 common 目录，然后在 common 目录下新建 helper.js 用于定义公用的方法。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const now &#x3D; Date.now || function () &#123;  </span><br><span class="line">    return new Date().getTime();  </span><br><span class="line">&#125;;  </span><br><span class="line">const isArray &#x3D; Array.isArray || function (obj) &#123;  </span><br><span class="line">    return obj instanceof Array;  </span><br><span class="line">&#125;;  </span><br><span class="line"></span><br><span class="line">export default &#123;  </span><br><span class="line">    websiteUrl,  </span><br><span class="line">    now,  </span><br><span class="line">    isArray  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来在 pages/index/index.vue 中引用该模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">    import helper from &#39;..&#x2F;..&#x2F;common&#x2F;helper.js&#39;;  </span><br><span class="line"></span><br><span class="line">    export default &#123;  </span><br><span class="line">        data() &#123;  </span><br><span class="line">            return &#123;&#125;;  </span><br><span class="line">        &#125;,  </span><br><span class="line">        onLoad()&#123;  </span><br><span class="line">            console.log(&#39;now:&#39; + helper.now());  </span><br><span class="line">        &#125;,  </span><br><span class="line">        methods: &#123;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>这种方式维护起来比较方便，但是缺点就是每次都需要引入。</p>
+<h3 id="全局变量globalData"><a href="#全局变量globalData" class="headerlink" title="全局变量globalData"></a>全局变量globalData</h3><p>小程序中有个globalData概念，可以在 App 上声明全局变量。 Vue 之前是没有这类概念的，但 uni-app 引入了globalData概念，并且在包括H5、App等平台都实现了。<br>在 App.vue 可以定义 globalData ，也可以使用 API 读写这个值。<br>globalData支持vue和nvue共享数据。<br>globalData是一种比较简单的全局变量使用方式。<br>定义：App.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;  </span><br><span class="line">    export default &#123;  </span><br><span class="line">        globalData: &#123;  </span><br><span class="line">            text: &#39;text&#39;  </span><br><span class="line">        &#125;,  </span><br><span class="line">        onLaunch: function() &#123;  </span><br><span class="line">            console.log(&#39;App Launch&#39;)  </span><br><span class="line">        &#125;,  </span><br><span class="line">        onShow: function() &#123;  </span><br><span class="line">            console.log(&#39;App Show&#39;)  </span><br><span class="line">        &#125;,  </span><br><span class="line">        onHide: function() &#123;  </span><br><span class="line">            console.log(&#39;App Hide&#39;)  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&lt;&#x2F;script&gt;  </span><br><span class="line"></span><br><span class="line">&lt;style&gt;  </span><br><span class="line">    &#x2F;*每个页面公共css *&#x2F;  </span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>js中操作globalData的方式如下：<br>赋值：getApp().globalData.text = ‘test’<br>取值：console.log(getApp().globalData.text) // ‘test’</p>
+<p>修改上一个页面的数据<br>getCurrentPages() 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。（首页点击之后进入一个页面，这个页面点击之后进入下一个，这个函数会生成三个，以此类推），当点击底部的时候是一底部的为首页进入的 </p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-23T08:30:39.406Z" itemprop="dateUpdated">2020-10-23 16:30:39</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/" target="_blank" rel="external">https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/uniapp/" rel="tag">uniapp</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/&title=《uniapp组件之间的传递》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/&title=《uniapp组件之间的传递》 — 四叶草的个人博客&source=uniapp监听事件
+原生导航搜索按钮点击事件,可以和data同级别
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《uniapp组件之间的传递》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/04/07/vue/vue-router%E5%AE%98%E6%96%B9%E8%AF%B4%E6%98%8E/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-router官方说明</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/04/03/js/Promise/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Promise</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/&title=《uniapp组件之间的传递》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/&title=《uniapp组件之间的传递》 — 四叶草的个人博客&source=uniapp监听事件
+原生导航搜索按钮点击事件,可以和data同级别
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《uniapp组件之间的传递》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/04/uniapp/uniapp%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BC%A0%E9%80%92/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD6klEQVR42u3aS27bQBAFQN//0gqQrSL6ve4hbSA1K8GiyZniotWfr694vf6u98/X375//rSur7nez/v/frrm2MKBAwcOHMFRk43mj78mu6bMD5bQ52fEgQMHDhxnOfKN7rd4NoheHz7fLQ4cOHDgeJ6jDYd3BOP8wDhw4MCB4/dz5IcvHl8ePi/54cCBAweOn+XYNIRmzZ7rQyaBs93h4VopDhw4cODo4lSRzv3+zw/Nd+DAgQPHf8/xKtcs7G3GF/Jg2V75j//FgQMHDhxrjln7p235PBPykx1GYRgHDhw4cCw4klCahLEkJ0pKeO01m2YVDhw4cOC4jyMfO5gBJWRtUtd+G71CHDhw4MBxiCPfbtu7aa9pC5R5iI1AceDAgQPHmmO23TYYX283D8b5fvLgHb1sHDhw4MAx4mgHBZKb7o99tmRZXI8DBw4cOBYc7YBCu+lZEbAtX7boH/+CAwcOHDgWHLPxgln6dKqAmL+A+tXiwIEDB441Rx7M8kPmIfOOl7FphuHAgQMHjrMcsxZRO1S34d4UEItT4MCBAweOBUf+yE1Umo0mzA7ZXokDBw4cOJ7kaEcKNpvOoV/Ban8E4MCBAweO+zii8lk+dhanc/lqRyuKJBAHDhw4cBzlONvyuQ6QbQEx/0Ewu//q9wUOHDhw4LhsOG2GBpKyYN52ynHbAb6P0Dhw4MCB4xDHrKWUl/A2gTw/ZBtoi4EGHDhw4MBRcmwC6qmCXTvcsC874sCBAweOuzn2q0iWysQvH6SL2kufKHHgwIEDx5pjVshrRweSADlrO13frR2zw4EDBw4ce46kZJYPE7SjDEngbNtIs4EMHDhw4MBximOWFG1C6X5UbjPuEA1q4MCBAweOoxxJcnVHOpe/nrY0mSR+OHDgwIHjFEd+4P0h8+LgLKmbjVZ87MLhwIEDB455vlMX3WYo7THyMJmPLETtLhw4cODAseZo06p2+CBBmSV47bNqCBw4cODAUXK0YwFJspQPt82aVfuE7ZuMFgcOHDhwrDnyFs4myLVw+fhdW1is+284cODAgWORsyRtnjz1ykt+yYH3gfwbGhw4cODAcWZ+YDiEPSv5zUYlWqzZ/XHgwIEDx57jVa7NKEObhs1SvlmahwMHDhw4TnHkK79dUp5rC4j5qFw73IADBw4cOO7gSILrrAm0D7TtaMWB8T4cOHDgwHGI41R5rh4jiMN8y1pXSXHgwIEDx+Mc++C3aSPlL2CTauLAgQMHjuc52qSrLf/lBMlO8sIlDhw4cOA4y9E+uE2x2nJhHp7bYb4o0OLAgQMHjgVHO9BwdgAuecrsue3wBA4cOHDgWHP8ASeq96q20kBMAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

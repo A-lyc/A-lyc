@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>ES6 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ES6">
+    <meta name="description" content="定义变量 let定义常量 const魔法字符串 ${}结构语法 let {data} &#x3D; res;let [a,b,c] &#x3D; arr函数默认语法 f function f( x &#x3D; {}){return x} &#x2F;&#x2F; 默认空对象遍历追加数组 arr.push(…array) throw err -&gt; 阻止程序执行，打印到控制台">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="https://a-lyc.github.io/2020/08/19/js/ES6/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="定义变量 let定义常量 const魔法字符串 ${}结构语法 let {data} &#x3D; res;let [a,b,c] &#x3D; arr函数默认语法 f function f( x &#x3D; {}){return x} &#x2F;&#x2F; 默认空对象遍历追加数组 arr.push(…array) throw err -&gt; 阻止程序执行，打印到控制台">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-19T12:14:36.000Z">
+<meta property="article:modified_time" content="2020-12-08T05:58:57.077Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="ES6">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ES6</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ES6</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-08-19T12:14:36.000Z" itemprop="datePublished" class="page-time">
+  2020-08-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/ES6/">ES6</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#深拷贝，原数组不变"><span class="post-toc-number">1.</span> <span class="post-toc-text">深拷贝，原数组不变</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Number-isFinite-用来检查一个数值是否为有限的（finite），即不是Infinity。"><span class="post-toc-number">2.</span> <span class="post-toc-text">Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Number-isNaN-用来检查一个值是否为NaN。"><span class="post-toc-number">3.</span> <span class="post-toc-text">Number.isNaN()用来检查一个值是否为NaN。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Json传值的几个方法可以试试"><span class="post-toc-number">4.</span> <span class="post-toc-text">Json传值的几个方法可以试试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#catch-命令的参数省略"><span class="post-toc-number">5.</span> <span class="post-toc-text">catch 命令的参数省略</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ES6-提供三个新的方法——entries-，keys-和values-——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for…of循环进行遍历，唯一的区别是keys-是对键名的遍历、values-是对键值的遍历，entries-是对键值对的遍历。"><span class="post-toc-number">6.</span> <span class="post-toc-text">ES6 提供三个新的方法——entries()，keys()和values()——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for…of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#另外，Map-和-Set-数据结构有一个has方法，需要注意与includes区分。"><span class="post-toc-number">7.</span> <span class="post-toc-text">另外，Map 和 Set 数据结构有一个has方法，需要注意与includes区分。</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-js/ES6"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ES6</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-08-19 20:14:36" datetime="2020-08-19T12:14:36.000Z"  itemprop="datePublished">2020-08-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/ES6/">ES6</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>定义变量 let<br>定义常量 const<br>魔法字符串 <code>${}</code><br>结构语法 let {data} = res;let [a,b,c] = arr<br>函数默认语法 f function f( x = {}){return x} // 默认空对象<br>遍历追加数组 arr.push(…array)</p>
+<p>throw err -&gt; 阻止程序执行，打印到控制台</p>
+<a id="more"></a>
+<h3 id="深拷贝，原数组不变"><a href="#深拷贝，原数组不变" class="headerlink" title="深拷贝，原数组不变"></a>深拷贝，原数组不变</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">let target = &#123; a: 1, b: 2 &#125;;</span><br><span class="line">let source = &#123; b: 4, c: 5 &#125;;</span><br><span class="line">/**</span><br><span class="line">const returnedTarget = Object.assign(target,source);</span><br><span class="line">target</span><br><span class="line">目标对象-将源属性应用到的对象，修改后将返回该对象。</span><br><span class="line"></span><br><span class="line">sources</span><br><span class="line">源对象—包含要应用的属性的对象。</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">const returnedTarget = Object.assign(source);</span><br><span class="line">target.a = 10</span><br><span class="line">console.log(target);</span><br><span class="line">// expected output: Object &#123; a: 10, b: 2 &#125;</span><br><span class="line"></span><br><span class="line">console.log(returnedTarget);</span><br><span class="line">// expected output: Object &#123; b: 4, c: 5 &#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Number-isFinite-用来检查一个数值是否为有限的（finite），即不是Infinity。"><a href="#Number-isFinite-用来检查一个数值是否为有限的（finite），即不是Infinity。" class="headerlink" title="Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。"></a>Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。</h3><p>// Number.isFinite(15);<br>// trueNumber.isFinite(0.8);<br>// trueNumber.isFinite(NaN);<br>// falseNumber.isFinite(Infinity);<br>// falseNumber.isFinite(-Infinity);<br>// falseNumber.isFinite(‘foo’);<br>// falseNumber.isFinite(‘15’);<br>// falseNumber.isFinite(true);<br>// false</p>
+<h3 id="Number-isNaN-用来检查一个值是否为NaN。"><a href="#Number-isNaN-用来检查一个值是否为NaN。" class="headerlink" title="Number.isNaN()用来检查一个值是否为NaN。"></a>Number.isNaN()用来检查一个值是否为NaN。</h3><p>// Number.isNaN(NaN)<br>// trueNumber.isNaN(15)<br>// falseNumber.isNaN(‘15’)<br>// falseNumber.isNaN(true)<br>// falseNumber.isNaN(9/NaN)<br>// trueNumber.isNaN(‘true’ / 0)<br>// trueNumber.isNaN(‘true’ / ‘true’)<br>// true</p>
+<h3 id="Json传值的几个方法可以试试"><a href="#Json传值的几个方法可以试试" class="headerlink" title="Json传值的几个方法可以试试"></a>Json传值的几个方法可以试试</h3><p>1.json.dumps()函数是将字典转化为字符串<br>import json<br>dict1 = {“age”: “12”}<br>json_info = json.dumps(dict1)  json_info此时就被转换成一个字符串了<br> 2.json.loads()函数是将字符串转化为字典<br>json_info = ‘{“age”: “12”}’<br>dict1 = json.loads(json_info)  dict1由字符串被转换为一个字典<br> 3.json.dump()函数的使用，将json信息写进文件<br>import json<br>json_msg = {“install”: {“install_date”: “2018/09/26”,”install_result”: “success”}}<br>file = open(‘1.json’, ‘w’)<br>json.dump(json_msg, file)<br> 4.json.load()函数的使用，将读取json信息<br>file = open(‘1.json’,’r’,encoding=’utf-8’)<br>info = json.load(file)<br>with open(‘1.json’, ‘r’) as f:<br>    data = json.load(f)<br>还是用第二种比较好，不用手动去关文件了</p>
+<h3 id="catch-命令的参数省略"><a href="#catch-命令的参数省略" class="headerlink" title="catch 命令的参数省略"></a>catch 命令的参数省略</h3><p>JavaScript 语言的try…catch结构，以前明确要求catch命令后面必须跟参数，接受try代码块抛出的错误对象。<br>try {<br>  代码块 - 这里面有错误的时候执行到错误的位置直接跳转到catch这个内，把错误抛出，之后在执行后徐的代码，没有错误的时候全部执行，之后跳过catch这个继续执行下面的程序<br>  } catch (err) {<br>  // 处理错误}<br>  Error.name的六种值对应的信息：<br>  EvalError: eval()的使用与定义不一致<br>  RangeError: 数值越界<br>  ReferenceError: 非法或不能识别的引用数值<br>  eg：函数未被定义直接调用<br>  SyntaxError：发生语法解析错误<br>  eg：出现中文冒号：<br>  TypeError：操作数类型错误<br>  URIError: URI处理函数使用不当<br>上面代码中，catc</p>
+<h3 id="ES6-提供三个新的方法——entries-，keys-和values-——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for…of循环进行遍历，唯一的区别是keys-是对键名的遍历、values-是对键值的遍历，entries-是对键值对的遍历。"><a href="#ES6-提供三个新的方法——entries-，keys-和values-——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for…of循环进行遍历，唯一的区别是keys-是对键名的遍历、values-是对键值的遍历，entries-是对键值对的遍历。" class="headerlink" title="ES6 提供三个新的方法——entries()，keys()和values()——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for…of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。"></a>ES6 提供三个新的方法——entries()，keys()和values()——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for…of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。</h3><p>for (let index of [‘a’, ‘b’].keys()) {<br>  console.log(index);}<br>// 0// 1for (let elem of [‘a’, ‘b’].values()) {<br>  console.log(elem);}<br>// ‘a’// ‘b’for (let [index, elem] of [‘a’, ‘b’].entries()) {<br>  console.log(index, elem);}<br>// 0 “a”// 1 “b”<br>如果不使用for…of循环，可以手动调用遍历器对象的next方法，进行遍历。<br>let letter = [‘a’, ‘b’, ‘c’];let entries = letter.entries();<br>console.log(entries.next().value); // [0, ‘a’]console.log(entries.next().value); // [1, ‘b’]console.log(entries.next().value); // [2, ‘c’]<br>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。ES2016 引入了该方法。<br>[1, 2, 3].includes(2)     // true[1, 2, 3].includes(4)     // false[1, 2, NaN].includes(NaN) // true<br>该方法的第二个参数表示搜索的起始位置，默认为0。如果第二个参数为负数，则表示倒数的位置，如果这时它大于数组长度（比如第二个参数为-4，但数组长度为3），则会重置为从0开始。</p>
+<h3 id="另外，Map-和-Set-数据结构有一个has方法，需要注意与includes区分。"><a href="#另外，Map-和-Set-数据结构有一个has方法，需要注意与includes区分。" class="headerlink" title="另外，Map 和 Set 数据结构有一个has方法，需要注意与includes区分。"></a>另外，Map 和 Set 数据结构有一个has方法，需要注意与includes区分。</h3><p>Map 结构的has方法，是用来查找键名的，比如Map.prototype.has(key)、WeakMap.prototype.has(key)、Reflect.has(target, propertyKey)。<br>Set 结构的has方法，是用来查找值的，比如Set.prototype.has(value)、WeakSet.prototype.has(value)<br>数组的成员有时还是数组，Array.prototype.flat()用于将嵌套的数组“拉平”，变成一维的数组。该方法返回一个新数组，对原数据没有影响。<br>[1, 2, [3, 4]].flat()<br>// [1, 2, 3, 4]<br>上面代码中，原数组的成员里面有一个数组，flat()方法将子数组的成员取出来，添加在原来的位置。<br>flat()默认只会“拉平”一层，如果想要“拉平”多层的嵌套数组，可以将flat()方法的参数写成一个整数，表示想要拉平的层数，默认为1。<br>[1, 2, [3, [4, 5]]].flat()<br>// [1, 2, 3, [4, 5]][1, 2, [3, [4, 5]]].flat(2)<br>// [1, 2, 3, 4, 5]<br>flatMap()方法对原数组的每个成员执行一个函数（相当于执行Array.prototype.map()），然后对返回值组成的数组执行flat()方法。该方法返回一个新数组，不改变原数组。展开数组，每个数组执行方法，之后追加到原数组后面形成新的数组<br>// 相当于 [[2, 4], [3, 6], [4, 8]].flat()<br>[2, 3, 4].flatMap((x) =&gt; [x, x * 2])<br>// [2, 4, 3, 6, 4, 8]</p>
+<p>ES5 对空位的处理，已经很不一致了，大多数情况下会忽略空位。<br>forEach(), filter(), reduce(), every() 和some()都会跳过空位。<br>map()会跳过空位，但会保留这个值<br>join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-12-08T05:58:57.077Z" itemprop="dateUpdated">2020-12-08 13:58:57</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/08/19/js/ES6/" target="_blank" rel="external">https://a-lyc.github.io/2020/08/19/js/ES6/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/ES6/" rel="tag">ES6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/08/19/js/ES6/&title=《ES6》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/08/19/js/ES6/&title=《ES6》 — 四叶草的个人博客&source=定义变量 let定义常量 const魔法字符串 ${}结构语法 let {data} = res;let [a,b,c] = arr函数默认语法 f fu..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/08/19/js/ES6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/08/19/js/ES6/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/08/19/js/ES6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/09/05/nuxt/nuxt%E4%BD%BF%E7%94%A8layui/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">nuxt使用layui</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/08/19/vue/aip%E6%96%B9%E6%B3%95/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-api</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/08/19/js/ES6/&title=《ES6》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/08/19/js/ES6/&title=《ES6》 — 四叶草的个人博客&source=定义变量 let定义常量 const魔法字符串 ${}结构语法 let {data} = res;let [a,b,c] = arr函数默认语法 f fu..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/08/19/js/ES6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/08/19/js/ES6/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/08/19/js/ES6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByElEQVR42u3aQY7CMAwFUO5/aUaaFRLT8m2nmQq9rBCU5MHCSr7zeMTj+TteX7+Oo2fyORcPXFzcMfd5OhLK0TtH8yTvvz+Di4u7nzspXucl6fzH5AZcXNx7cs/pyae4uLjfx01KUo7DxcW9Pzc5/ORL9grZ4rMaLi7ugNsLTNe+vjzfxcXFXdSVqBaU3pOF1XFxcbdw89bIvCT1tlCF/BUXF3cptzppEqHm8yQGXFzcndzeNYtqnDG/cvHHjgwXF3cLtxeb5jFKL4o9LGS4uLiXcattkqRBkhyfJqUTFxd3J7fXCp1ct6r+Hbi4uPu557FpstHpNWPKbRtcXNzt3PzAk8cZ86g0OrHh4uIu4vYapfnC1fbMh7VwcXE3cnvNjzxCzbdKH+i4uLhbuNUle9cpehujQr6Li4u7lFstZJM4o9eGwcXF/S/u2gi1Omde+HBxcXdye9ezqiHIqLFavUeGi4s74FYLSi8ezX9kL5zFxcW9gtsrXtXNULWQHX6Ki4u7kTtvlOZHoEnRxMXFvRu32mqtNk6iGAUXF/eW3OpWphfEHK6Li4u7kZtvYpIyN49EF8QiuLi4A27vy70IdVXYiouLexn3B+z1Q/qixCJxAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

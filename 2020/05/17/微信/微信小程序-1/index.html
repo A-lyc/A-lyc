@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>微信小程序 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="微信,微信小程序基础">
+    <meta name="description" content="最近总结微信的常用的语法：点击阻止冒泡事件bilnd 会有冒泡事件catch 会阻止事件向上冒泡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序">
+<meta property="og:url" content="https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="最近总结微信的常用的语法：点击阻止冒泡事件bilnd 会有冒泡事件catch 会阻止事件向上冒泡">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-17T05:23:17.000Z">
+<meta property="article:modified_time" content="2020-10-11T08:29:08.169Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="微信">
+<meta property="article:tag" content="微信小程序基础">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">微信小程序</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">微信小程序</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-17T05:23:17.000Z" itemprop="datePublished" class="page-time">
+  2020-05-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%BE%AE%E4%BF%A1/">微信</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最近总结微信的常用的语法："><span class="post-toc-number">1.</span> <span class="post-toc-text">最近总结微信的常用的语法：</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-微信/微信小程序-1"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">微信小程序</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-17 13:23:17" datetime="2020-05-17T05:23:17.000Z"  itemprop="datePublished">2020-05-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%BE%AE%E4%BF%A1/">微信</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="最近总结微信的常用的语法："><a href="#最近总结微信的常用的语法：" class="headerlink" title="最近总结微信的常用的语法："></a>最近总结微信的常用的语法：</h3><p>点击阻止冒泡事件<br>bilnd 会有冒泡事件<br>catch 会阻止事件向上冒泡</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wx:for&#x3D;&quot;&#123;&#123;&#125;&#125;&quot;:</span><br><span class="line">wx:for-item：for循环键值对的方式，item点什么，如果不需要索引的话，可以直接使用wx:for&#x3D;&#39;&#123;&#123;data上的值&#125;&#125;&#39;</span><br><span class="line">wx:for-index：for循环索引值，获取这个元素在那一个索引的位置</span><br><span class="line"></span><br><span class="line">wx:if&#x3D;&quot;&#123;&#123;&#125;&#125;&quot;</span><br><span class="line">wx:if:可以是一个三元表达式，也可以是一个布尔值，</span><br><span class="line">wx:elif:如果上个条件不成立的话，直接走这个条件</span><br><span class="line">wx:if:同第一个</span><br></pre></td></tr></table></figure>
+<p>this.setData({})和this.data<br>setData可以写入改变data中某一个的值，<br>data可以获取data中的值，应该是不能修改的，（当前理解）</p>
+<p>自定义属性：data-重命名=”传递到js的参数” =&gt; 举例：data-hi=”WeChat”<br>例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">id</span>=<span class="string">"tapTest"</span> <span class="attr">data-hi</span>=<span class="string">"WeChat"</span> <span class="attr">bindtap</span>=<span class="string">"tapName"</span>&gt;</span> Click me! <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  tapName: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>控制台打印的值</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"type"</span>:<span class="string">"tap"</span>,</span><br><span class="line">  <span class="attr">"timeStamp"</span>:<span class="number">895</span>,</span><br><span class="line">  <span class="attr">"target"</span>: &#123;</span><br><span class="line">    <span class="attr">"id"</span>: <span class="string">"tapTest"</span>,</span><br><span class="line">    <span class="attr">"dataset"</span>:  &#123;</span><br><span class="line">      <span class="attr">"hi"</span>:<span class="string">"WeChat"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"currentTarget"</span>:  &#123;<span class="comment">//重点在这</span></span><br><span class="line">    <span class="attr">"id"</span>: <span class="string">"tapTest"</span>,</span><br><span class="line">    <span class="attr">"dataset"</span>: &#123;</span><br><span class="line">      <span class="attr">"hi"</span>:<span class="string">"WeChat"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"detail"</span>: &#123;</span><br><span class="line">    <span class="attr">"x"</span>:<span class="number">53</span>,</span><br><span class="line">    <span class="attr">"y"</span>:<span class="number">14</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"touches"</span>:[&#123;</span><br><span class="line">    <span class="attr">"identifier"</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="attr">"pageX"</span>:<span class="number">53</span>,</span><br><span class="line">    <span class="attr">"pageY"</span>:<span class="number">14</span>,</span><br><span class="line">    <span class="attr">"clientX"</span>:<span class="number">53</span>,</span><br><span class="line">    <span class="attr">"clientY"</span>:<span class="number">14</span></span><br><span class="line">  &#125;],</span><br><span class="line">  <span class="attr">"changedTouches"</span>:[&#123;</span><br><span class="line">    <span class="attr">"identifier"</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="attr">"pageX"</span>:<span class="number">53</span>,</span><br><span class="line">    <span class="attr">"pageY"</span>:<span class="number">14</span>,</span><br><span class="line">    <span class="attr">"clientX"</span>:<span class="number">53</span>,</span><br><span class="line">    <span class="attr">"clientY"</span>:<span class="number">14</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>input value=”“<br>可实现数据的单项绑定，通过bindinput实现双向绑定，同data-XX用法取到用户输入的值</p>
+<p>给下一个页面传输数据<br>当前页面：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  wx.navigateTo(&#123;</span><br><span class="line">    url: <span class="string">'../list/list?id=1&amp;d=2'</span>,<span class="comment">//拼接传输</span></span><br><span class="line">    events: &#123;</span><br><span class="line">      <span class="comment">// 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据</span></span><br><span class="line">      acceptDataFromOpenedPage: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data)</span><br><span class="line">      &#125;,</span><br><span class="line">      someEvent: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data)</span><br><span class="line">      &#125;</span><br><span class="line">&#125;,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 通过eventChannel向被打开页面传送数据</span></span><br><span class="line">      res.eventChannel.emit(<span class="string">'acceptDataFromOpenerPage'</span>, &#123; <span class="attr">data</span>: <span class="string">'test'</span> &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>点击之后打开的页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">onLoad: <span class="function"><span class="keyword">function</span>(<span class="params">option</span>) </span>&#123;<span class="comment">//在onload的时候接收</span></span><br><span class="line">  <span class="built_in">console</span>.log(option)<span class="comment">//接收拼接的数据</span></span><br><span class="line">  <span class="keyword">const</span> eventChannel = <span class="keyword">this</span>.getOpenerEventChannel()</span><br><span class="line">  eventChannel.emit(<span class="string">'acceptDataFromOpenedPage'</span>, &#123;</span><br><span class="line">    data: <span class="string">'test'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  eventChannel.emit(<span class="string">'someEvent'</span>, &#123;</span><br><span class="line">    data: <span class="string">'test'</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据</span></span><br><span class="line">  eventChannel.on(<span class="string">'acceptDataFromOpenerPage'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>动态修改class和style</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class&#x3D;&quot;page &#123;&#123;typeIndex &#x3D;&#x3D;&#x3D; index ? &#39;active&#39; : &#39;&#39;&#125;&#125;&quot;  如果是true的话添加active，如果是flase的话，不添加。通常用于点击事件等</span><br><span class="line">style同理</span><br></pre></td></tr></table></figure>
+
+<p>hidden：根据官网解释是是否显示这个组件，默认是显示的  布尔值</p>
+<p>模板语法：<br>创建模板四个文件（js,json,wxml,wxss）可以缺少json，js，wxss，模板wxml上书写模板页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">  我是一个模板</span><br><span class="line">  &#123;&#123;add&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>name的值和is的值要对应，，之后data的值是传输到模板中的data，所以说最好模板内的也是和传来的这个值是相对应的，传输对象可用…,多个值应该使用逗号隔开</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 首先顶部引用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">import</span> <span class="attr">src</span>=<span class="string">"../../template/add.wxml"</span> /&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用模板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"add"</span> <span class="attr">data</span>=<span class="string">"&#123;&#123;add&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>父子组件传递，父传子，通过事件的方式进行传递<br>在子组件中注册点击事件或者其他事件，之后使用this.triggerEvent(“定义的时间名”,发出信息)<br>父组件接收事件使用binld定义的时间名=”事件”<br>比如：<br>子组件发出this.triggerEvent(‘add’, old)<br>父组件接收bilndadd=”add”进行接收处理</p>
+<p>混入：类似于vue中的mixin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myBehavior &#x3D; require(&#39;my-behavior&#39;)&#x2F;&#x2F;js引入</span><br><span class="line">behaviors: [myBehavior]&#x2F;&#x2F;调用</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-11T08:29:08.169Z" itemprop="dateUpdated">2020-10-11 16:29:08</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/" target="_blank" rel="external">https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E5%BE%AE%E4%BF%A1/" rel="tag">微信</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80/" rel="tag">微信小程序基础</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/&title=《微信小程序》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/&title=《微信小程序》 — 四叶草的个人博客&source=最近总结微信的常用的语法：点击阻止冒泡事件bilnd 会有冒泡事件catch 会阻止事件向上冒泡" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/05/18/%E5%BE%AE%E4%BF%A1/wxparse%E5%AF%8C%E6%96%87%E6%9C%AC%E6%8F%92%E4%BB%B6/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">wxparse富文本插件</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/05/16/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82-promise%E5%B0%81%E8%A3%85-async/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">微信小程序的异步请求-promise封装-async</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/&title=《微信小程序》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/&title=《微信小程序》 — 四叶草的个人博客&source=最近总结微信的常用的语法：点击阻止冒泡事件bilnd 会有冒泡事件catch 会阻止事件向上冒泡" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《微信小程序》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/05/17/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJ0lEQVR42u3aQW4jMQwEwPz/09lrLuN0U1ogpksnw54Zq2ggjEh+fcXr+8f6+c7T66f1+t6n73raz9MTri1sbGzsN2HnG339Th6g1097YtwKOjY2NvZW9uxrkk3ngWj3M7sXGxsbGzsPTZKokq1/BwsbGxsb++6//idPeI3PUyM2Njb2p7FvJYbkQNK2BO42J7CxsbH3sfOu6N9//V/629jY2Nh/mP1drvODyv/bSXEvNjY29iJ2ngDasZ72QJIP67Rjmo9XYmNjY69gt0klbwnkQzl5SSjZbRIsbGxs7N3sWTF91gaejQflye8x3NjY2NgfwE5SUdsMztPPyfFmOKOEjY2N/ebsBJCP1CTtgVlKa9sDvxSVsLGxsVew7w7lJEHMAzdrNuctB2xsbOxN7Hy7J6Rb7yQhSNoS2NjY2DvYeUpo/8VPwpGnorYW9EuYsLGxsRex2+Zu3VKNx2vyIOZjQL/sBxsbG3sROy/x5GWmu4lqdgSqh5CwsbGx35adF9ZnDdq2VZzAzq/ExsbG3sduG6j50aK9si1UzfaGjY2NvYM9G7I8H+XJjxltUSl6MjY2NvYi9iwJ5UWoWZn+pF1R5G1sbGzsReykqPSakVzZBqgdwWnHRrGxsbF3sNtyf97EbctD+U7y/UQzStjY2Nhvzm5hOWZ2aGkHfWYLGxsbeyu7TTZtUb5t8bYFo/aIgo2Njb2JfTdpzdoD+TW3doKNjY29iT1rlJ6P7OS/Sf5pEVBsbGzsReyTQn9dlL864pOEvs7S2NjY2G/IPtlim2DyUtGsXFX8ztjY2NhL2bcGYtqGbt7ubUtLj59iY2Njr2bfbbjeJc3a0lF7ABsbG/vN2Xc7xvmns2//Gi1sbGzsfezvcp3gzwtJeTv5l2BhY2NjL2K3f/qTm+82A5I9tMckbGxs7H3sWcLIQ3OS6vJ0WLeBsbGxsdex85mWPBPmx5ijQv9JLQ0bGxv7I9mz5kFbnMpT2vCHwcbGxv5gdl6sz5sEs6LSrMiFjY2NvZV90tw9L+7nRavZseeoloaNjY3959ltOeakAJQfVNpGchsUbGxs7BXsfxkYh/OHD1BJAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>node-express | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="node-express node框架">
+    <meta name="description" content="express官网：https:&#x2F;&#x2F;www.expressjs.com.cn&#x2F;starter&#x2F;installing.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-express">
+<meta property="og:url" content="https://a-lyc.github.io/2020/09/27/node/node-express/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="express官网：https:&#x2F;&#x2F;www.expressjs.com.cn&#x2F;starter&#x2F;installing.html">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-27T12:17:11.000Z">
+<meta property="article:modified_time" content="2020-10-27T00:24:32.947Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="node-express node框架">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">node-express</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">node-express</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-09-27T12:17:11.000Z" itemprop="datePublished" class="page-time">
+  2020-09-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/node-express-node%E5%85%A5%E9%97%A8/">node-express node入门</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hello-world"><span class="post-toc-number">2.</span> <span class="post-toc-text">hello world</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本路由"><span class="post-toc-number">3.</span> <span class="post-toc-text">基本路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#静态服务"><span class="post-toc-number">4.</span> <span class="post-toc-text">静态服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引入包"><span class="post-toc-number">5.</span> <span class="post-toc-text">引入包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装模板插件"><span class="post-toc-number">6.</span> <span class="post-toc-text">安装模板插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开放公共资源"><span class="post-toc-number">7.</span> <span class="post-toc-text">开放公共资源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改完代码自动重启"><span class="post-toc-number">8.</span> <span class="post-toc-text">修改完代码自动重启</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出请求url-get请求"><span class="post-toc-number">9.</span> <span class="post-toc-text">输出请求url - get请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#首先启动项目安装必要的文件：express，fs，art-template-express-art-template-body-parser"><span class="post-toc-number">10.</span> <span class="post-toc-text">首先启动项目安装必要的文件：express，fs，art-template,express-art-template,body-parser</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装："><span class="post-toc-number"></span> <span class="post-toc-text">安装：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number"></span> <span class="post-toc-text">文件目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#express"><span class="post-toc-number"></span> <span class="post-toc-text">express</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#express-art-template-实例化之后"><span class="post-toc-number"></span> <span class="post-toc-text">express-art-template 实例化之后</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#body-parser-实例化之后"><span class="post-toc-number"></span> <span class="post-toc-text">body-parser 实例化之后</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#router路由，只关注请求和渲染页面"><span class="post-toc-number"></span> <span class="post-toc-text">router路由，只关注请求和渲染页面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#crud-增删改查，只关注处理文件数据"><span class="post-toc-number"></span> <span class="post-toc-text">crud 增删改查，只关注处理文件数据</span></a>
+        </nav>
+    </aside>
+
+
+<article id="post-node/node-express"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">node-express</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-09-27 20:17:11" datetime="2020-09-27T12:17:11.000Z"  itemprop="datePublished">2020-09-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/node-express-node%E5%85%A5%E9%97%A8/">node-express node入门</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>express官网：<a href="https://www.expressjs.com.cn/starter/installing.html" target="_blank" rel="noopener">https://www.expressjs.com.cn/starter/installing.html</a></p>
+<a id="more"></a>
+<p>###初始化</p>
+<ul>
+<li>npm init</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>npm install express –save</li>
+<li>npm install –save art-template express-art-template</li>
+<li></li>
+</ul>
+<h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="comment">//创建app</span></span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>,(req,res)=&gt;&#123;</span><br><span class="line">    res.send(<span class="string">'你好a '</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器启动成功'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本路由"><a href="#基本路由" class="headerlink" title="基本路由"></a>基本路由</h3><ul>
+<li>请求方法，路径，处理函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// get 当以get请求的'/'的时候执行后面的函数</span></span><br><span class="line">app.get(<span class="string">'/'</span>,(req,res)=&gt;&#123;res.send(<span class="string">'hello world get'</span>)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// post 当以post请求的'/'的时候执行后面的函数</span></span><br><span class="line">app.post(<span class="string">'/'</span>,(req,res)=&gt;&#123;res.send(<span class="string">'hello world post'</span>)&#125;)</span><br><span class="line"><span class="comment">// .....</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="静态服务"><a href="#静态服务" class="headerlink" title="静态服务"></a>静态服务</h3><ul>
+<li>开放公共资源<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当以'/public/'开头的时候，去'./public/'这个目录下找文件</span></span><br><span class="line"><span class="comment">// 当没有第一个参数的时候，写的时候直接去除public就好，比如./public/index.js可写index.js</span></span><br><span class="line">app.use(<span class="string">'/public/'</span>, express.static(<span class="string">'./public/'</span>))</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="引入包"><a href="#引入包" class="headerlink" title="引入包"></a>引入包</h3><ul>
+<li>const express = require(‘express’)</li>
+</ul>
+<h3 id="安装模板插件"><a href="#安装模板插件" class="headerlink" title="安装模板插件"></a>安装模板插件</h3><pre><code>- npm install --save express-art-template art-template</code></pre><ul>
+<li>引入和使用<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 后缀名为html 引入包</span></span><br><span class="line">    app.engine(<span class="string">'html'</span>, <span class="built_in">require</span>(<span class="string">'express-art-template'</span>));</span><br><span class="line">    <span class="comment">//必要的view options</span></span><br><span class="line">    app.set(<span class="string">'view options'</span>, &#123;</span><br><span class="line">    debug: process.env.NODE_ENV !== <span class="string">'production'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">//重新定义路径 可以不写但是文件要是views下的 - 第一个参数不能变 第二个参数事定义的路径</span></span><br><span class="line">    app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));</span><br><span class="line">    <span class="comment">//官网有，不知道啥意思</span></span><br><span class="line">    app.set(<span class="string">'view engine'</span>, <span class="string">'art'</span>);  </span><br><span class="line">    <span class="comment">//使用</span></span><br><span class="line">    app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * 当‘/’时直接输出views中的index.html,</span></span><br><span class="line"><span class="comment">        * 有文件夹的时候直接写文件夹名称 + 文件名称</span></span><br><span class="line"><span class="comment">        * res.render('./home/index.html',&#123;comments&#125;)</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">    res.render(<span class="string">'index.html'</span>,&#123;comments&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="开放公共资源"><a href="#开放公共资源" class="headerlink" title="开放公共资源"></a>开放公共资源</h3><ul>
+<li>app.use(‘/public/‘, express.static(‘./public/‘))</li>
+</ul>
+<h3 id="修改完代码自动重启"><a href="#修改完代码自动重启" class="headerlink" title="修改完代码自动重启"></a>修改完代码自动重启</h3><ul>
+<li>使用一个第三方命令行工具nodemon来帮助我们解决频繁修改代码重启服务器问题<br>· nodemon - 基于node.js开发的一个命令行工具，使用的时候需要独立安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 全局安装，在任意目录执行</span><br><span class="line">  npm i -global nodemon</span><br></pre></td></tr></table></figure>
+· 安装完毕后，使用：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原来是 </span></span><br><span class="line">node app.js </span><br><span class="line"><span class="comment">//# 使用nodemon</span></span><br><span class="line">nodemon app.js</span><br></pre></td></tr></table></figure>
+· 只要通过nodemon app.js 启动的时候会自动监听文件的变化</li>
+</ul>
+<h3 id="输出请求url-get请求"><a href="#输出请求url-get请求" class="headerlink" title="输出请求url - get请求"></a>输出请求url - get请求</h3> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//根据fs文件找查输出res.end(data)文档显示输出send，我输出结果是下载（更改html上的Content-Type: text/html; charset=utf-8）或者重新打包输出</span></span><br><span class="line"><span class="comment">//最好使用send(),框架自带的应用</span></span><br><span class="line">app.get(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    fs.readFile(<span class="string">'./views/index.html'</span>,(error,data)=&gt;&#123;</span><br><span class="line">        <span class="keyword">if</span>(error) <span class="keyword">return</span> res.send(<span class="string">'404'</span>);</span><br><span class="line">        res.end(data)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//根据点击动作输出</span></span><br><span class="line">app.get(<span class="string">'/pinglun'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> query = req.query</span><br><span class="line">    query.dateTime =<span class="string">' 2020-09-31'</span></span><br><span class="line">    comments.unshift(query)</span><br><span class="line">    <span class="comment">//重定向</span></span><br><span class="line">    res.statusCode = <span class="number">302</span></span><br><span class="line">    <span class="comment">//跳转    </span></span><br><span class="line">    res.setHeader(<span class="string">'Location'</span>, <span class="string">'/'</span>)</span><br><span class="line">    <span class="comment">//结束输出    </span></span><br><span class="line">    res.end()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用模板解析插件输出</span></span><br><span class="line">app.get(<span class="string">'/post'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 内有模板的标识符</span></span><br><span class="line"><span class="comment">    * res.render('index.html',&#123;comments&#125;)</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    res.render(<span class="string">'post.html'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="首先启动项目安装必要的文件：express，fs，art-template-express-art-template-body-parser"><a href="#首先启动项目安装必要的文件：express，fs，art-template-express-art-template-body-parser" class="headerlink" title="首先启动项目安装必要的文件：express，fs，art-template,express-art-template,body-parser"></a>首先启动项目安装必要的文件：express，fs，art-template,express-art-template,body-parser</h3><h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save express express-art-template art-template body-parser</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><ul>
+<li>views =&gt; html文件的 定义那个访问那个，非公开</li>
+<li>public =&gt; 公开的静态文件</li>
+</ul>
+<h2 id="express"><a href="#express" class="headerlink" title="express"></a>express</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入</span></span><br><span class="line"><span class="keyword">const</span>  express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="comment">// 实例化</span></span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="comment">// 公开目录</span></span><br><span class="line">app.use(<span class="string">"/public/"</span>,express.static(<span class="string">'./public/'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 最后</span></span><br><span class="line">app.listen(<span class="number">3000</span>,()=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'......'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="express-art-template-实例化之后"><a href="#express-art-template-实例化之后" class="headerlink" title="express-art-template 实例化之后"></a>express-art-template 实例化之后</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模板引擎</span></span><br><span class="line">app.engine(<span class="string">'html'</span>, <span class="built_in">require</span>(<span class="string">'express-art-template'</span>));</span><br></pre></td></tr></table></figure>
+
+<h2 id="body-parser-实例化之后"><a href="#body-parser-实例化之后" class="headerlink" title="body-parser 实例化之后"></a>body-parser 实例化之后</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 解析post * 挂载路之前配置</span></span><br><span class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br><span class="line"><span class="comment">// parse application/json</span></span><br><span class="line">app.use(bodyParser.json())</span><br></pre></td></tr></table></figure>
+
+<h2 id="router路由，只关注请求和渲染页面"><a href="#router路由，只关注请求和渲染页面" class="headerlink" title="router路由，只关注请求和渲染页面"></a>router路由，只关注请求和渲染页面</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入只关注处理数据模块 - 增删改查</span></span><br><span class="line"><span class="keyword">const</span> zsgc = <span class="built_in">require</span>(<span class="string">'./zsgc'</span>)</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = express.Router()</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看</span></span><br><span class="line">router.get(<span class="string">'/'</span>,(req,res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> students = zsgc.find()</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回的是json的接口信息，</span></span><br><span class="line"><span class="comment">     * http://localhost:3000/可以直接进行调用</span></span><br><span class="line"><span class="comment">     * res.send(students)</span></span><br><span class="line"><span class="comment">     * return</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    res.render(<span class="string">'index.html'</span>,&#123;students&#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//增加 - 页面</span></span><br><span class="line">router.get(<span class="string">'/students/new'</span>,(req,res)=&gt;&#123;</span><br><span class="line">    res.render(<span class="string">'new.html'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//增加功能</span></span><br><span class="line">router.post(<span class="string">'/students/new'</span>,(req,res)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> students = zsgc.find()</span><br><span class="line">    <span class="keyword">let</span> max = students[<span class="number">0</span>].id</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;students.length;i++)&#123;</span><br><span class="line">        students[i].id &gt; max ? max = students[i] : max</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> id = max*<span class="number">1</span> + <span class="number">1</span></span><br><span class="line">    <span class="keyword">let</span> body = req.body</span><br><span class="line">    body.id = id</span><br><span class="line">    zsgc.save(body)</span><br><span class="line">    res.redirect(<span class="string">'/'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改 - 页面</span></span><br><span class="line">router.get(<span class="string">'/students/edit'</span>,(req,res)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> students = zsgc.find()</span><br><span class="line">    <span class="keyword">let</span> id = req.query.id</span><br><span class="line">    <span class="keyword">let</span> obj = students.find(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> item.id == id</span><br><span class="line">    &#125;)</span><br><span class="line">    res.render(<span class="string">'edit.html'</span>,&#123;<span class="attr">student</span>:obj&#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改功能</span></span><br><span class="line">router.post(<span class="string">'/students/edit'</span>,(req,res)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> body = req.body</span><br><span class="line">    body.id = body.id*<span class="number">1</span></span><br><span class="line">    <span class="built_in">console</span>.log(body)</span><br><span class="line">    <span class="keyword">let</span> data = zsgc.updata(body)</span><br><span class="line">    res.redirect(<span class="string">'/'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">router.get(<span class="string">'/students/delete'</span>,(req,res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> id = req.query.id</span><br><span class="line">    zsgc.delete(id*<span class="number">1</span>)</span><br><span class="line">    res.redirect(<span class="string">'/'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router</span><br></pre></td></tr></table></figure>
+
+<h2 id="crud-增删改查，只关注处理文件数据"><a href="#crud-增删改查，只关注处理文件数据" class="headerlink" title="crud 增删改查，只关注处理文件数据"></a>crud 增删改查，只关注处理文件数据</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> dbPath = <span class="string">'./db.json'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 读出文件 格式化读出的文件</span></span><br><span class="line"><span class="keyword">let</span> data = fs.readFileSync(dbPath,<span class="string">'utf8'</span>)</span><br><span class="line"><span class="keyword">let</span> student = <span class="built_in">JSON</span>.parse(data)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存写入文件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">write</span>(<span class="params">student</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = <span class="built_in">JSON</span>.stringify(student)</span><br><span class="line">    fs.writeFileSync(dbPath,obj)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查看</span></span><br><span class="line">exports.find = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> student.students</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//增加</span></span><br><span class="line">exports.save = <span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span><br><span class="line">    student.students.unshift(data)</span><br><span class="line">    write(student)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line">exports.updata = <span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> index = student.students.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> item.id == data.id</span><br><span class="line">    &#125;)</span><br><span class="line">    student.students[index] = data</span><br><span class="line">    write(student)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line">exports.delete = <span class="function">(<span class="params">id</span>) =&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> index =  student.students.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span>  item.id == id</span><br><span class="line">    &#125;)</span><br><span class="line">    student.students.splice(index,<span class="number">1</span>)</span><br><span class="line">    write(student)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-27T00:24:32.947Z" itemprop="dateUpdated">2020-10-27 08:24:32</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/09/27/node/node-express/" target="_blank" rel="external">https://a-lyc.github.io/2020/09/27/node/node-express/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/node-express-node%E6%A1%86%E6%9E%B6/" rel="tag">node-express node框架</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/09/27/node/node-express/&title=《node-express》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/09/27/node/node-express/&title=《node-express》 — 四叶草的个人博客&source=express官网：https://www.expressjs.com.cn/starter/installing.html" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/09/27/node/node-express/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node-express》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/09/27/node/node-express/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/09/27/node/node-express/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/10/08/js/%E5%8E%9F%E7%94%9F%E5%B0%81%E8%A3%85ajax/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">原生封装ajax</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/09/27/node/node/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">node</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/09/27/node/node-express/&title=《node-express》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/09/27/node/node-express/&title=《node-express》 — 四叶草的个人博客&source=express官网：https://www.expressjs.com.cn/starter/installing.html" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/09/27/node/node-express/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node-express》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/09/27/node/node-express/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/09/27/node/node-express/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3aS27CQBAFQO5/aXIAZPLeNCTyTHmFsLCnWLT693jE1/Pier179c37Z75+//jGhYGBcVvG8+01P9bVW5K7ydkwMDDOYVy9+Opzws7/guS9v5wZAwMDI0jg8uCYsDEwMDDmjOjRcb35bwEXAwPjVow81WuTxTyw/lEtjoGBcUPGpLD89uevzDcwMDBuxXiWV1u+5iXr5MLAwNib0Rao7RggOe6kYMbAwDiZMSk788WLfNgZJYsYGBhbM9rH5Q2vCXtxgQMDA+MwxqeO3ob4NmRjYGCcxmjbavkrk+dPnoaBgbE3Iz/6ZLWinUUmpCLSY2BgbMFoV7ja4nYyDIh+hYGBsTWjHT2uBes2rC8moxgYGJsyJgsQbTq4tjpWV+EYGBjbMdqSMm/oryWLo2ULDAyM7Rhrg8l2PWItKcxXNzAwMPZmtMdtxwNJ8F1M+Cb/OgYGxq0YybEmTbdPDQN++R4DA2NrxtrLktCZh/J5uomBgXEOI294JXfbVlqbSl7ujGBgYBzA+OyiWFumFg01DAyMIxn56HFtDNkWsfVIFQMDY1PGvKHfpoZrvf0oKcTAwNiUMQ92LbVdNctHDhgYGHszkiC71lDLW/9r6xcYGBinMfKCMwmva4PJtdCPgYGBMQ+4k7Za/mdhYGBgtEsSdbgcLGRgYGCcw0iK2LxNlieRa+EVAwPjNEaeriUjgTzgJoF+MhbFwMDYgvEDVO9Bzyo2EmEAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

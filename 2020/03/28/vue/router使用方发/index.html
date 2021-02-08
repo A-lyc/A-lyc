@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>$router使用方法 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue,$router">
+    <meta name="description" content="我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由：当vue打包的时候打包生成的路由路径打不开，调整router中的&#x2F;&#x2F;mode: “history”,，将他注释，是不让url指向发生改变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$router使用方法">
+<meta property="og:url" content="https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由：当vue打包的时候打包生成的路由路径打不开，调整router中的&#x2F;&#x2F;mode: “history”,，将他注释，是不让url指向发生改变">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-28T03:38:10.000Z">
+<meta property="article:modified_time" content="2020-10-11T08:30:17.291Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="$router">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">$router使用方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">$router使用方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-28T03:38:10.000Z" itemprop="datePublished" class="page-time">
+  2020-03-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常识："><span class="post-toc-number">1.</span> <span class="post-toc-text">常识：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#拿到路由对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">拿到路由对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导航守卫："><span class="post-toc-number">3.</span> <span class="post-toc-text">导航守卫：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓存数据"><span class="post-toc-number">4.</span> <span class="post-toc-text">缓存数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#router："><span class="post-toc-number">4.1.</span> <span class="post-toc-text">router：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue/router使用方发"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">$router使用方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-28 11:38:10" datetime="2020-03-28T03:38:10.000Z"  itemprop="datePublished">2020-03-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由：<br>当vue打包的时候打包生成的路由路径打不开，调整router中的//mode: “history”,，将他注释，是不让url指向发生改变</p>
+<a id="more"></a>
+<h2 id="常识："><a href="#常识：" class="headerlink" title="常识："></a>常识：</h2><p>返回上一层：<br>this.$router.go(-1)</p>
+<p>tag=“渲染的标签名”<br>to=“模板名字”<br>linkActiveClasss：“active”    //修改点击切换的时候的class<br>active-class=“active”   //默认选中的class修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to&#x3D;&quot;&#x2F;home&quot;&gt;首页&lt;&#x2F;router-link&gt;&#x2F;&#x2F;防止模板的标签，to&#x3D;“模板名字”</span><br><span class="line">&lt;router-link to&#x3D;&quot;&#x2F;About&quot;&gt;关于&lt;&#x2F;router-link&gt;&#x2F;&#x2F;防止模板的标签，to&#x3D;“模板名字”</span><br><span class="line">&lt;router-view&gt;&lt;&#x2F;router-view&gt;&#x2F;&#x2F;模板里面内容显示的区域</span><br></pre></td></tr></table></figure>
+
+<h2 id="拿到路由对象"><a href="#拿到路由对象" class="headerlink" title="拿到路由对象"></a>拿到路由对象</h2><p>$router拿到最大的路由<br>this.$router.方法如：replaceStateurl监听<br>$route拿到当前路由的数据</p>
+<h2 id="导航守卫："><a href="#导航守卫：" class="headerlink" title="导航守卫："></a>导航守卫：</h2><p>前置钩子（守卫guard）：beforeEach<br>    函数类型，函数内包含三个参数to,from,next,next()是必须有的router.beforeEach((to,from,next) =&gt;{})<br>后置的钩子（钩子hook）：afterEach<br>    函数类型，函数内有两个参数，to,from；router.beforeEach((to,from) =&gt;{})</p>
+<h2 id="缓存数据"><a href="#缓存数据" class="headerlink" title="缓存数据"></a>缓存数据</h2><p>keep-ailve–清除缓存每次点击重新创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive exclude&#x3D;&quot;创建模板的name,name2,name3&quot;&gt;&#x2F;&#x2F;那些不缓存</span><br></pre></td></tr></table></figure>
+
+<h3 id="router："><a href="#router：" class="headerlink" title="router："></a>router：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;创建导入，总结整合目录这个是起一个项目的基本</span><br><span class="line">&#x2F;*</span><br><span class="line">*找到对应的vue文件命名一下，之后使用</span><br><span class="line">*&#x2F;</span><br><span class="line">const Home &#x3D; () &#x3D;&gt; import(&#39;views&#x2F;home&#x2F;Home&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;创建与个router</span><br><span class="line">const routes &#x3D; [</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;默认的路径，打开直接是&#x2F;home</span><br><span class="line">  &#123;</span><br><span class="line">    path:&#39;&#x2F;&#39;,</span><br><span class="line">    redirect:&#39;&#x2F;home&#39;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;导入的目录</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;home&#39;,</span><br><span class="line">    name: &#39;Home&#39;,</span><br><span class="line">    component: Home</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;详情页传递，因为:iid可以传来参数更改url的请求，可以通过vue axios来更改这个值</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#39;&#x2F;detail&#x2F;:iid&#39;,</span><br><span class="line">    name: &#39;Detail&#39;,</span><br><span class="line">    component: Detail</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;实例化</span><br><span class="line">const router &#x3D; new VueRouter(&#123;</span><br><span class="line">  mode: &#39;history&#39;,</span><br><span class="line">  base: process.env.BASE_URL,</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;导出</span><br><span class="line">export default router</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>vue axios接收参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &#123; request &#125; from &quot;.&#x2F;request&quot;;</span><br><span class="line"></span><br><span class="line">export function getDetailActive(iid) &#123;</span><br><span class="line">  return request(&#123;</span><br><span class="line">    url: &#39;&#x2F;detail&#39;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;拼接的参数</span><br><span class="line">    params: &#123;</span><br><span class="line">      iid</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如何传入axios接收参数：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;生命周期 - 创建完成（可以访问当前this实例）</span><br><span class="line">created() &#123;</span><br><span class="line">  &#x2F;&#x2F;获取route中的iid，注意是当前路由的iid</span><br><span class="line">  const iid &#x3D; this.$route.params.iid</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;axios发来的getDetailActive需要传参</span><br><span class="line">    getDetailActive(iid).then(res &#x3D;&gt; &#123;</span><br><span class="line">      console.log(res)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如何改变url路径</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;监听事件····detail在router中定义过后缀名一定同一（iid）</span><br><span class="line"> this.$router.push(&#39;&#x2F;detail&#x2F;&#39; + &#39;找到iid，或者唯一的id&#39;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-11T08:30:17.291Z" itemprop="dateUpdated">2020-10-11 16:30:17</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/router/" rel="tag">$router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/vue/" rel="tag">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/&title=《$router使用方法》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/&title=《$router使用方法》 — 四叶草的个人博客&source=我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由：当vue打包的时候打包生成的路由路径打不..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《$router使用方法》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/03/28/vue/vue%E7%9A%84axios%E5%B0%81%E8%A3%85%E5%A5%BD%E7%9A%84/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue的axios封装好的</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/28/vue/%E7%88%B6%E5%AD%90%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">父子之间传递信息和ref，$el</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/&title=《$router使用方法》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/&title=《$router使用方法》 — 四叶草的个人博客&source=我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由：当vue打包的时候打包生成的路由路径打不..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《$router使用方法》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/28/vue/router%E4%BD%BF%E7%94%A8%E6%96%B9%E5%8F%91/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3a0W7bQAwEwPz/T7dAnwK0VnbJu8QFRk+Gc5JuFECkSX58xMevP8fnz5+P5zWv/prf9++rHT7w8PDwRlt/dSQbShj5lWdXe/kI8PDw8K7x8mDwfIPk3DxUtI8bDw8P7914szV5ap4g8fDw8P4vXrKJPDC0ADw8PLx34yUpcrvp/NxXmGQ/x2oteHh4eDFv1gD72c/X+3t4eHh4o6765oW7b3TloeLlbvHw8PAu8JIbP2/63vrNUNcX9Qk8PDy8BW9fwD1WbC2bZAkeDw8P7wYvuUG7Jn+ht4Nc7fXx8PDwbvCSADAbvboRHtoHhIeHh3eDNyu5tgl0MkCwH8k6VlHGw8PDG/GeS6t5IGnHETaDU9FMGR4eHt6aN2vn5y/x2TBrUiaOwhgeHh7eZV7S4sqHsdpUu71+EfHw8PDwjvJa6qkgUXfk4vuu/pN4eHh4I96suPCc+CYjUwlgFjbw8PDwbvCiBny5vv2mTdaL0IKHh4d3lLcZqJoNZuXhoS0l/+MsPDw8vGu8DbItKOQpeNL9/+Lh4uHh4V3g5d2i9mbJ42jT5eegUhQp8PDw8A7xkpNz8KxQO0udo0IGHh4e3iHepoiQt+33pdtZyQMPDw/vHm+T8iYJcX6FWeIedfbw8PDwjvLyMax8EKpdnweApNCMh4eH9/28/PtZm3+YIpchCg8PD+8GbzMmtWlibYodeZkDDw8P7wavHZbK8e3AVrKy3RseHh7ebV473jQbOGjbXUmAKarUeHh4eGte/aodlVnbKbD94BceHh7ebd4mGLTpb87IxwW+CDl4eHh413jtVjZNqbZwvAldeHh4eD/La8cC2ld/XswtwhIeHh7eG/BmRYp6WCq+/rGUGg8PD+9CMaIdn3re9L6YGwUJPDw8vAu89qf+PpxsEushAA8PD+8M7zfVspxx+7CxTgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

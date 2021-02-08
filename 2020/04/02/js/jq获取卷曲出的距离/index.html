@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>jq获取卷曲出的距离 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端脚手架">
+    <meta name="description" content="使用jq获取卷曲的距离，秦哥脚手架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jq获取卷曲出的距离">
+<meta property="og:url" content="https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="使用jq获取卷曲的距离，秦哥脚手架">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-02T02:14:04.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:26.875Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="前端脚手架">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">jq获取卷曲出的距离</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">jq获取卷曲出的距离</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-02T02:14:04.000Z" itemprop="datePublished" class="page-time">
+  2020-04-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E8%84%9A%E6%89%8B%E6%9E%B6/">前端模块化脚手架</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-js/jq获取卷曲出的距离"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">jq获取卷曲出的距离</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-02 10:14:04" datetime="2020-04-02T02:14:04.000Z"  itemprop="datePublished">2020-04-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E8%84%9A%E6%89%8B%E6%9E%B6/">前端模块化脚手架</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>使用jq获取卷曲的距离，秦哥脚手架</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let $headerEl &#x3D; $(&#39;.comp-header&#39;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;获取window的卷曲函数</span><br><span class="line">$(window).on(&#39;scroll&#39;, function () &#123;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;判断卷曲距离window.pageYOffset获取卷曲的距离</span><br><span class="line">  if (window.pageYOffset !&#x3D;&#x3D; 0) &#123;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F;使用添加类删除类的方式</span><br><span class="line">    $headerEl.addClass(&#39;active&#39;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    $headerEl.removeClass(&#39;active&#39;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:26.875Z" itemprop="dateUpdated">2020-07-24 08:16:26</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/" target="_blank" rel="external">https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/" rel="tag">前端脚手架</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/&title=《jq获取卷曲出的距离》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/&title=《jq获取卷曲出的距离》 — 四叶草的个人博客&source=使用jq获取卷曲的距离，秦哥脚手架" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jq获取卷曲出的距离》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/04/02/vue/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%BC%95%E5%85%A5vant/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-cli3.0脚手架搭建项目vant</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/31/vue/vue%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue3.0解决跨域问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/&title=《jq获取卷曲出的距离》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/&title=《jq获取卷曲出的距离》 — 四叶草的个人博客&source=使用jq获取卷曲的距离，秦哥脚手架" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jq获取卷曲出的距离》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/02/js/jq%E8%8E%B7%E5%8F%96%E5%8D%B7%E6%9B%B2%E5%87%BA%E7%9A%84%E8%B7%9D%E7%A6%BB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD6ElEQVR42u3aSW7jQBAEQP//0zIwpzFgUplVTWEGCJ4ELc3u0KFYy9dXfL3+XFfv/30l3796ffWrqzXvV7hfbXXhwIEDB47gqFfX/THajSZr3n8/Xy357S9kOHDgwIHjEEceFJNAmATmdoX2t23gx4EDBw4cn+c4lXTloXST/uHAgQMHjn+fIwm6+ZHygH2/2uZBAQcOHDhwPMcxC4H7YLlpF7Wlw8O1Uhw4cODA8T7nqgt//8vrB+c7cODAgQNHHGJPhd5ZstcOPeSFyMvf4sCBAweONUd7gPZgp1bOW1/5O9FhcODAgQNHyTEbZchD3eaOs3ZUMmx3+RoHDhw4cBzimB3jtbg2KVY7ope3xHDgwIEDx55jNnDWJkgz9Dz1yltQ0d5w4MCBA8eaI0mx9p+2YXuf2uV/Dw4cOHDgOMWRhNjZITcJ29lOUH53HDhw4MCx59inT/mG2nTrFPdsnzhw4MCBY8YxK7flCdhscKFN+WY9o1/ewYEDBw4ca47iS/uk6NDkQNv6qltiOHDgwIFjwZEcoN1WcuxZUXLzWFAPyeHAgQMHjhFHHgLzA+xH4mYFx/ZPwoEDBw4cT3DMbjYL0jlivnJOGSV1OHDgwIFjzZFvfTOm0Eb+didtWK1H5XDgwIEDR8yRHCwfYtgMrtW9shIrKkTiwIEDB44HOJLwmad8eZkvD9WzMbjoVzhw4MCB4xDHvpk0C5b79fM7Rtw4cODAgWPNsRlHyBFnY2qz1tGsOHhgOgMHDhw4cIwGDtr0rE3AZulf3u56sxoOHDhw4FhztO2ZTWtnVkBsU7j8WqVwOHDgwIEj4Gg30YbAvMWVt6baNaM0EgcOHDhwLHbSHmyW7LUBct86asf4cODAgQPHKY5T3ZZZkD67fvtp/dyBAwcOHDjKiHnfHJqV4fK20KyAmD8K1BcOHDhw4HjsyoNfXZUMDpmnau2fNwTFgQMHDhwBR9ueyROzJGzPKDfFxzePBThw4MCBY8FRj5GNOE6F5E06GpURceDAgQPHRzhOpUZ5Y6kNk3kq+GafOHDgwIHjEMesLDjb0KzsuHkISAYafgRaHDhw4MCx4MiX3hQN92lYftT9XXDgwIEDx+Yur/LKi3Ft2S55v6XP13lTHMSBAwcOHDHHppGzT+TaoYf8Lvt74cCBAweOzb3yps5miCEPqEmYnzW66owWBw4cOHAsOE4F11lK1ra+2sJlwYQDBw4cOD7Ocaok16Lne141wHDgwIEDxwc58vCZJ4SzlK8dyCgCMw4cOHDgOMSRp2GzsYDZXWYBtYXDgQMHDhxnOWZ5zWyQbjasMBue2MDhwIEDB44RxzfRklz/Q7nulQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

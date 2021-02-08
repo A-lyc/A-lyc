@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>数组字符串方法 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js 数组字符串方法 常用数组字符串api  ES6">
+    <meta name="description" content="总结的数组字符串的基本应用 数组：.concat(数组名称)—–拼接数组 .filter(函数三个参数)—–返回满足函数的新数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。不会改变原始数组 .forEach(函数三个参数) ———–遍历数组数组中都是执行个函数，返回这个数组 .every(函数三个参数)—– 如果数组中检测到有一个元素不满足，则整个表达式返回 false ，且剩余的元素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组字符串方法">
+<meta property="og:url" content="https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="总结的数组字符串的基本应用 数组：.concat(数组名称)—–拼接数组 .filter(函数三个参数)—–返回满足函数的新数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。不会改变原始数组 .forEach(函数三个参数) ———–遍历数组数组中都是执行个函数，返回这个数组 .every(函数三个参数)—– 如果数组中检测到有一个元素不满足，则整个表达式返回 false ，且剩余的元素">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2099-05-18T13:56:36.000Z">
+<meta property="article:modified_time" content="2021-02-08T08:17:24.698Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="js 数组字符串方法 常用数组字符串api  ES6">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数组字符串方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">数组字符串方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2099-05-18T13:56:36.000Z" itemprop="datePublished" class="page-time">
+  2099-05-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/js%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/">js数组字符串方法</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数组："><span class="post-toc-number">1.</span> <span class="post-toc-text">数组：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串"><span class="post-toc-number">2.</span> <span class="post-toc-text">字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对象的方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">对象的方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数组的set方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">数组的set方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定时器"><span class="post-toc-number">5.</span> <span class="post-toc-text">定时器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSON转格式"><span class="post-toc-number">6.</span> <span class="post-toc-text">JSON转格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#回到顶部"><span class="post-toc-number">7.</span> <span class="post-toc-text">回到顶部</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-js/数组字符串方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数组字符串方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2099-05-18 21:56:36" datetime="2099-05-18T13:56:36.000Z"  itemprop="datePublished">2099-05-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/js%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/">js数组字符串方法</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>总结的数组字符串的基本应用</p>
+<h3 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h3><p>.concat(数组名称)—–拼接数组</p>
+<p>.filter(函数三个参数)—–返回满足函数的新数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。不会改变原始数组</p>
+<p>.forEach(函数三个参数) ———–遍历数组数组中都是执行个函数，返回这个数组</p>
+<p>.every(函数三个参数)—– 如果数组中检测到有一个元素不满足，则整个表达式返回 false ，且剩余的元素不会再进行检测</p>
+<p>.some() 方法用于检测数组中的元素是否满足指定条件（函数提供）如果有一个元素满足条件，则表达式返回true , 剩余的元素不会再执行检测。</p>
+<p>.map(函数三个参数) 数组中的值都执行这个函数，执行后的结果，返回新的数组</p>
+<p>.find(item =&gt; !ture)—-找到一个元素之后停止掉。方法返回数组中符合测试函数条件的第一个元素。否则返回undefined </p>
+<p>.findIndex()找到一个元素之后停止掉。方法返回数组中符合测试函数条件的第一个索引。否则返回-1</p>
+<p>.push(值) ————— 把值追加到数组中最后一个，返回值是追加后的数组 arr.push(…arr),返回数组   let a = arr.push(…arr)返回数组长度</p>
+<p>.pop() ————— 删除最后一个元素，并且返回删除的这个值</p>
+<p>.shift() ———–删除数组中第一个元素的 返回值是删除的这个值</p>
+<p>.unshift() —————像数组的前面第一个元素插入值，返回值是追加后的数组</p>
+<p>.indexOf(元素值,开始位置) —-有这个元素值，返回的是这个元素值所在的索引，没有返回-1</p>
+<p>.slice(x,y) 前拷贝，在x的位置开始到y的位置结束，截取后的值放置新的数组中，不包含结束索引包含的值。返回一个新数组</p>
+<p>.splice(开始的位置，删除的个数，替换元素的值)； 一般用于删除数组中的元素或者替换元素，或者替换元素</p>
+<p>.reduce((a,b)=&gt;{return a + b})：计算这个数组中所有数字的和，如果有字符串后面的将进行拼接</p>
+<p>.from属性可以把对象键是索引的的对象转换成数组，可以把字符传转成数组</p>
+<p>.includes();传入一个数组内有的值，返回true，反之返回false</p>
+<p>Array.of(3, 11, 8) // [3,11,8]将一组值转化为数组</p>
+<p>Array.prototype.copyWithin(target, start = 0, end = this.length)它接受三个参数。<br>target（必需）：从该位置开始替换数据。如果为负值，表示倒数。<br>start（可选）：从该位置开始读取数据，默认为 0。如果为负值，表示从末尾开始计算。<br>end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示从末尾开始计算。<br>这三个参数都应该是数值，如果不是，会自动转为数值。[1, 2, 3, 4, 5].copyWithin(0, 3)// [4, 5, 3, 4, 5]<br>会修改当前数组</p>
+<p>fill方法使用给定值，填充一个数组。fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。</p>
+<p>// 过滤重复的数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">          [<span class="string">'asdasdasdas'</span>,<span class="string">'adsdasdasd'</span>,<span class="string">'gggg'</span>,<span class="string">'aaaa'</span>,<span class="string">'gggg'</span>].forEach(<span class="function"><span class="params">x</span> =&gt;</span> s.add(x));</span><br><span class="line">          <span class="built_in">console</span>.log(s)</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> s) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(i);</span><br><span class="line">          &#125;</span><br><span class="line"><span class="comment">// Set转数组</span></span><br><span class="line"><span class="keyword">let</span> set4 = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"><span class="comment">//方法一   es6的...解构</span></span><br><span class="line"><span class="keyword">let</span> arr1 =  [...set4];</span><br><span class="line"><span class="comment">//方法二  Array.from()解析类数组为数组</span></span><br><span class="line"><span class="keyword">let</span> arr2 = <span class="built_in">Array</span>.from(set4)</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>.charAt(索引) //返回值是指定索引的字符串，超出索引结果是空字符串</p>
+<p>.formCharCode(数值，可以是多个)；//返回的是ascii码对应的值</p>
+<p>.concat(字符串数值可以添加多个：’nihao’,’我好’,) //拼接字符串，返回新的字符串</p>
+<p>.indexOf(“字符串中的值”,5：从某个位置的索引) //调用这个值在字符串中的位置,是字符串‘’，没有则返回-1</p>
+<p>.lastIndexOf(“字符串中的值”) ///从后向前找</p>
+<p>.replace(源字符串的值,替换的值) //提花九年第一个，第一个是 被替换的，第二个是替换的，下面例子</p>
+<p>.slice(开始，结束) //开始的数字，到结束的数字内得字符串的值如：5-10提取的是5-9的字符串，返回截取的字符串</p>
+<p>.split(“相同的分割符”,分割多少个数组) //在一个字符传中有相同的符号，提取出来作为分割符使用，形成一个数组类型，后面传入数字，分割多少个数组，</p>
+<p>.substr(开始的位置，截取的个数) //在一个字符串中截取从开开始的索引截取，到截取多长结束</p>
+<p>.substring(开始位置，结束位置) //在开始位置开始截取，到结束位置-1结束（不包含结束字符串）</p>
+<p>.toLocaleLowerCase() //转小写</p>
+<p>.toLocaleUpperCase() //转大写</p>
+<p>.trim() //去掉两端的空格</p>
+<p>.includes()// 返回布尔值，表示是否找到了参数字符串</p>
+<p>.startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。</p>
+<p>.endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部<br>这三个方法(endsWith,startsWith,includes)都支持第二个参数，表示开始搜索的位置 例子：s.startsWith(‘world’, 6) </p>
+<p>repeat方法返回一个新字符串，表示将原字符串重复n次。 例子：’x’.repeat(3) // “xxx”</p>
+<p>padStart()用于头部补全，一共接受两个参数，第一个参数是字符串补全生效的最大长度，第二个参数是用来补全的字符串’x’.padStart(4, ‘ab’) // ‘abax’’x’.padEnd(5, ‘ab’) // ‘xabab’</p>
+<p>padEnd()用于尾部补全,一共接受两个参数，第一个参数是字符串补全生效的最大长度，第二个参数是用来补全的字符串’x’.padStart(4, ‘ab’) // ‘abax’’x’.padEnd(5, ‘ab’) // ‘xabab’</p>
+<p>trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格 - 它们返回的都是新字符串</p>
+<p>Number.isInteger()用来判断一个数值是否为整数。如果参数不是数值，Number.isInteger返回false</p>
+<p>Math.trunc方法用于去除一个数的小数部分，返回整数部分。</p>
+<p>Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。<br>它会返回五种值。<br>参数为正数，返回+1；<br>参数为负数，返回-1；<br>参数为 0，返回0；<br>参数为-0，返回-0;<br>其他值，返回NaN。</p>
+<hr>
+<h3 id="对象的方法"><a href="#对象的方法" class="headerlink" title="对象的方法"></a>对象的方法</h3><p>1：深拷贝对象，保持源对象不变</p>
+<ul>
+<li>let obj = Object.assign(target = {},source)</li>
+<li>target // 目标对象 - 将源属性应用到的对象，修改后将返回该对象。</li>
+<li>sources // 源对象—包含要应用的属性的对象。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> target = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> source = &#123; <span class="attr">b</span>: <span class="number">4</span>, <span class="attr">c</span>: <span class="number">5</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> returnedTarget = <span class="built_in">Object</span>.assign(&#123;&#125;,source);</span><br><span class="line"><span class="built_in">console</span>.log(target);<span class="comment">// expected output: Object &#123; a: 1, b: 2&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(returnedTarget);<span class="comment">// expected output: Object &#123; b: 4, c: 5 &#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>2：使用现有对象作为新创建的对象的原型来创建新对象 - 创建对象的原型 <strong>proto</strong></p>
+<ul>
+<li>let obj = Object.create(proto, [propertiesObject])</li>
+<li>方法使用现有person对象作为新创建的对象的原型来创建新对象。创建对象的原型</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  isHuman: <span class="literal">false</span>, <span class="comment">// 出现在原型上的</span></span><br><span class="line">  printIntroduction: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`我叫<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>. 你好 <span class="subst">$&#123;<span class="keyword">this</span>.isHuman&#125;</span>`</span>);</span><br><span class="line">  &#125;<span class="comment">// 出现在原型上的</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> me = <span class="built_in">Object</span>.create(person);</span><br><span class="line">me.name = <span class="string">'Matthew'</span>; <span class="comment">// 出现原型之外的</span></span><br><span class="line">me.isHuman = <span class="literal">true</span>; <span class="comment">// 出现原型之外的</span></span><br><span class="line">me.printIntroduction(); <span class="comment">// 使用原型上的方法</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>3 方法直接在对象上定义新属性或修改现有属性，并返回该对象。- 几乎用不到</p>
+<ul>
+<li>Object.defineProperties(obj, props)</li>
+<li>obj:在其上定义或修改属性的对象。</li>
+<li>props:一个对象，其键表示要定义或修改的属性的名称，其值是描述这些属性的对象。中的每个值都props必须是数据描述符或访问器描述符；不能同时使用两者</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperties(object1, &#123;</span><br><span class="line">  property1: &#123;<span class="comment">//set，get，enumerable.....</span></span><br><span class="line">    value: <span class="number">42</span>,<span class="comment">// 与属性关联的值。可以是任何有效的JavaScript值（数字，对象，函数等）。</span></span><br><span class="line">    writable: <span class="literal">true</span>, <span class="comment">// true当且仅当与属性关联的值可以使用赋值运算符更改时</span></span><br><span class="line">    configurable:<span class="literal">false</span>, <span class="comment">// 默认false  true当且仅当此属性描述符的类型可以更改并且该属性可以从相应对象中删除时</span></span><br><span class="line">  &#125;,</span><br><span class="line">  property2: &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(object1.property1);</span><br><span class="line"><span class="comment">// expected output: 42</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>4 冻结对象。冻结的对象无法再更改</p>
+<ul>
+<li>Object.freeze(obj)</li>
+<li>obj - 冻结的对象</li>
+<li>方法冻结对象。冻结的对象无法再更改；冻结对象可防止向其添加新属性，删除现有属性，防止更改现有属性的可枚举性，可配置性或可写性，并防止更改现有属性的值。此外，冻结对象还可以防止更改其原型。freeze()返回传入的相同对象。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  prop: <span class="number">42</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.freeze(obj);</span><br><span class="line">obj.prop = <span class="number">33</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.prop); <span class="comment">// 不可修改</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>5 方法将键值对列表转换为对象</p>
+<ul>
+<li>Object.fromEntries(iterable);</li>
+<li>iterable - 可迭代如Array或Map或其他物体执行迭代协议</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> entries = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">  [<span class="string">'foo'</span>, <span class="string">'bar'</span>],<span class="comment">// 多个数组无效[建,值]</span></span><br><span class="line">  [<span class="string">'baz'</span>, <span class="number">42</span>]</span><br><span class="line">]);</span><br><span class="line"><span class="keyword">const</span> obj = <span class="built_in">Object</span>.fromEntries(entries);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="comment">// 结果: Object &#123; foo: "bar", baz: 42 &#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>6 方法返回给定对象的所有自己的属性描述符。</p>
+<ul>
+<li>Object.getOwnPropertyDescriptors(obj)</li>
+<li>iterable - 可迭代如Array或Map或其他物体执行迭代协议</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;</span><br><span class="line">  property1: <span class="number">42</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> descriptors1 = <span class="built_in">Object</span>.getOwnPropertyDescriptors(object1);</span><br><span class="line"><span class="built_in">console</span>.log(descriptors1.property1);</span><br><span class="line"><span class="comment">// 参考原型的参数value，writable，enumerable</span></span><br><span class="line"><span class="comment">// 结果: Object &#123; value: 42, writable: true, enumerable: true, configurable: true &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(descriptors1.property1.value);</span><br><span class="line"><span class="comment">// 结果 : 42</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>7 方法确定两个值是否相同。</p>
+<ul>
+<li>Object.is(value1, value2);</li>
+<li>value1 - 要比较的第一个值。</li>
+<li>value2 - 要比较的第二个值</li>
+</ul>
+<hr>
+<p>8 方法返回给定对象自己的可枚举属性名称的数组，并以与普通循环相同的顺序进行迭代。。</p>
+<ul>
+<li>Object.keys(obj)</li>
+<li>obj - 要枚举其自身属性的对象。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;</span><br><span class="line">  a: <span class="string">'somestring'</span>,</span><br><span class="line">  b: <span class="number">42</span>,</span><br><span class="line">  c: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(object1));</span><br></pre></td></tr></table></figure>
+<hr>
+<p>9 循环提供的顺序返回给定对象自己的可枚举属性值的数组</p>
+<ul>
+<li>Object.values(obj)</li>
+<li>obj - 要枚举其自身属性的对象。</li>
+<li>方法以for…in循环提供的顺序返回给定对象自己的可枚举属性值的数组。（唯一的区别是for…in循环还枚举了原型链中的属性。）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> object1 = &#123;</span><br><span class="line">  a: <span class="string">'somestring'</span>,</span><br><span class="line">  b: <span class="number">42</span>,</span><br><span class="line">  c: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.values(object1));</span><br><span class="line"><span class="comment">// expected output: Array ["somestring", 42, false]</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="数组的set方法"><a href="#数组的set方法" class="headerlink" title="数组的set方法"></a>数组的set方法</h3><p>1 添加元素 add</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let list &#x3D; new Set();</span><br><span class="line">list.add(1)</span><br></pre></td></tr></table></figure>
+
+<p>2 删除元素 delete</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let list &#x3D; new Set([1,20,30,40])</span><br><span class="line">list.delete(30)      &#x2F;&#x2F;删除值为30的元素，这里的30并非下标</span><br></pre></td></tr></table></figure>
+
+<p>3 判断某元素是否存在 has</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let list &#x3D; new Set([1,2,3,4])</span><br><span class="line">list.has(2)&#x2F;&#x2F;true</span><br></pre></td></tr></table></figure>
+
+<p>4 清除所有元素 clear</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let list &#x3D; new Set([1,2,3,4])</span><br><span class="line">list.clear()</span><br></pre></td></tr></table></figure>
+
+<p>5 遍历 keys()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let list2 &#x3D; new Set([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])</span><br><span class="line">for(let key of list2.keys())&#123;</span><br><span class="line">   console.log(key)&#x2F;&#x2F;a,b,c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>6 遍历 values()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let list &#x3D; new Set([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;])</span><br><span class="line">for(let value of list.values())&#123;</span><br><span class="line">console.log(value)&#x2F;&#x2F;a,b,c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>7 遍历 forEach()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let list &#x3D; new Set([&#39;4&#39;,&#39;5&#39;,&#39;hello&#39;])</span><br><span class="line">list.forEach(function(item)&#123;</span><br><span class="line">  console.log(item)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>8 数组转Set (用于数组去重)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let set2 &#x3D; new Set([4,5,6])</span><br></pre></td></tr></table></figure>
+
+<p>9 Set转数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let set4 &#x3D; new Set([4, 5, 6])</span><br><span class="line">&#x2F;&#x2F;方法一   es6的...解构</span><br><span class="line">let arr1 &#x3D;  [...set4];</span><br><span class="line">&#x2F;&#x2F;方法二  Array.from()解析类数组为数组</span><br><span class="line">let arr2 &#x3D; Array.from(set4)</span><br></pre></td></tr></table></figure>
+
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><p>setInterval() ：按照指定的周期（以毫秒计）来调用函数或计算表达式。方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。<br>setTimeout() ：在指定的毫秒数后调用函数或计算表达式。停止定时器clearTimeout() </p>
+<h3 id="JSON转格式"><a href="#JSON转格式" class="headerlink" title="JSON转格式"></a>JSON转格式</h3><p> 我们可以使用 JSON.parse() 方法将数据转换为 JavaScript 对象  接收的JSON转成JavaScript<br> 我们可以使用 JSON.stringify() 方法将 JavaScript 对象转换为字符串。 JavaScript转成JSON格式传给服务器</p>
+<h3 id="回到顶部"><a href="#回到顶部" class="headerlink" title="回到顶部"></a>回到顶部</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.body.scrollTop = 0</span><br><span class="line">document.documentElement.scrollTop = 0</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-02-08T08:17:24.698Z" itemprop="dateUpdated">2021-02-08 16:17:24</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" target="_blank" rel="external">https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/js-%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95-%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2api-ES6/" rel="tag">js 数组字符串方法 常用数组字符串api  ES6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/&title=《数组字符串方法》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/&title=《数组字符串方法》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数组字符串方法》 — 四叶草的个人博客&url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2099/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">mongodDB数据库</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2099/05/01/vue/%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E5%99%A8%E5%92%8C%E5%93%8D%E5%BA%94%E5%BC%8F%E6%8B%A6%E6%88%AA/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">请求拦截器和响应式拦截</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/&title=《数组字符串方法》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/&title=《数组字符串方法》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数组字符串方法》 — 四叶草的个人博客&url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKklEQVR42u3aQU7EMBAEwP3/p+GKBBu6x0ZKTOWEsiFJGWmbmfHrFR8fl8fXa9797rszyT2/n//+6esvDmxsbOyHsHPSynH9ote85G1zCzY2Nvap7OvgyV89iagE075PG6LY2NjY2EmZkRceyX2SZcLGxsbGbtkJL1+sWYmCjY2Njb3S+m+jJSlFru/clj0bemnY2NjYt2fnmPv//CfzbWxsbOwbs2fD2rx4aMNp/YmRAhsbG/sgdh4As9fKm0R526gtYN5eiY2NjX0cu731yobLvS2h4RAaGxsb+zj2Smy0S5MPcXNq+3RsbGzs89grmLbNlC9ivmUn+RQbGxv7VHYSCW27P1+gJD6Tse5stICNjY19BnsWUSvlR93Kj0ugYrGwsbGxj2Ynr5gHSR6H7baeVrHUS8PGxsa+Jbt9TP7IWemyvqBRlGJjY2MfxN5VHuSbb2aBNGs8/bL02NjY2Aex66/+oNEzW8SVAXNRe2FjY2Mfx24Ht7MVncVYy86HB9jY2NhnsGfbFncVD+sL1A4esLGxsc9jz6qW/PHtNcmAof1jRAc2Njb2Y9nXyCTekjP59ppZadQ2p7CxsbFPYq/cbiUd6lIhiLEN24awsbGxj2DPNtbky5S3inax6+IEGxsb+zj2rDU/C6E2FPOIqgMMGxsb+yHs2T/xexv3eXHSNqfeXoONjY19EHvXf+Zt6XK99C0mL0WiXho2Njb2o9hJVOSvnodfOyTIi5aojMHGxsY+iL2rxZ/ExkoBM4u0YoMONjY29sPZbTjlMZMvwWyrzazNhI2NjX0ee1cTZ7aIefy01/zyKTY2NvbR7PWgyheoHSHMxsbFg7GxsbEfy27HAHnDqB0Y50PcpUILGxsb+wj2R3nkY+Bdraj1QcIP57GxsbEPYrdf/e0tkmHA3rFuO4rAxsbGPoO9Hlp5dLWt/5Ulw8bGxv5v7PVXmZUl+ZhhZb8NNjY2Nnb+mLy5044QZkVIMd/GxsbG/jfslYFB/qL5wuWNpw25jY2NjX1jdjtMzQuMZPPNSlMpD0hsbGzsU9nFtsU4zFa21yRn2lbUcOMONjY29t3ZnyLmct7e85PqAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

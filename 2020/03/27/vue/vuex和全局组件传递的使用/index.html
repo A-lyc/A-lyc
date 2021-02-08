@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>vuex和全局组件传递的使用 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue 全局组件传递">
+    <meta name="description" content="使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state &#x3D;&gt; state.XX.XXX.XXX})，使用方法的时候可以直接this.$store.commit(“logout”);就是调用mutations上的方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex和全局组件传递的使用">
+<meta property="og:url" content="https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state &#x3D;&gt; state.XX.XXX.XXX})，使用方法的时候可以直接this.$store.commit(“logout”);就是调用mutations上的方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-27T13:14:50.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:26.986Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="vue 全局组件传递">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vuex和全局组件传递的使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vuex和全局组件传递的使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-27T13:14:50.000Z" itemprop="datePublished" class="page-time">
+  2020-03-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vuex"><span class="post-toc-number">1.</span> <span class="post-toc-text">vuex</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bus-自定义后缀"><span class="post-toc-number">2.</span> <span class="post-toc-text">$bus  自定义后缀</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue/vuex和全局组件传递的使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vuex和全局组件传递的使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-27 21:14:50" datetime="2020-03-27T13:14:50.000Z"  itemprop="datePublished">2020-03-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state =&gt; state.XX.XXX.XXX})，使用方法的时候可以直接this.$store.commit(“logout”);就是调用mutations上的方法</p>
+<a id="more"></a>
+<p>vuex和全局组件传递的使用，传给vuex的时候是一个确切的值，页面通过this.$store.dispatch(“”,{})的属性给Action值进行整合，Action之后通过commit属性给mutations值，之后mutations直接把值给state</p>
+<h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><ul>
+<li>向vuex中传递参数</li>
+<li>执行一个动作或者一个事件如：页面加载，点击。处于活跃状态等生命周期</li>
+<li>vuex的目录结构：<br>//保存状态的：state<br>/保存方法的：mutations：//单独页面，统一导入<br>//计算属性：Getters；//单独页面，统一导入<br>//处理异步的操作：Action；//单独页面，统一导入-Action 提交的是 mutation，而不是直接变更状态-<br>//划分模块，Module</li>
+</ul>
+<ul>
+<li>页面使用使用this.$store.dispatch传输给VUEX中的actions—–1：Action 提交的是 mutation，而不是直接变更状态；2：Action 可以包含任意异步操作。<br>Action返回值可以是一个Promise通过.then可以调用返回值—–id=”0”</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">*引号内是发出的事件，vuex actions中接收，</span><br><span class="line">*this.index是data或者其他地方的参数。可以是任何形式的，如&#123;&#125;，[]</span><br><span class="line">*&#x2F;</span><br><span class="line">this.$store.dispatch(&#39;addClick&#39;,this.index)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;Promise   -----id&#x3D;&quot;0&quot;</span><br><span class="line">this.$store.dispatch(&#39;addClick&#39;,this.index).then(res &#x3D;&gt; &#123;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;打印的是在vuex中的actions里面的resolve()  id：01</span><br><span class="line">  console.log(res)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>actions接收页面传来的数据<br>你可以调用 context.commit 提交一个 mutation，或者通过 context.state 和 context.getters 来获取 state 和 getters</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;传入的方法，之后给到mutations</span><br><span class="line">  actions: &#123;</span><br><span class="line">    &#x2F;&#x2F;事件名称接收addClick  &#x2F;&#x2F;第一个参数是固定的，第二个payLoad传来的参数</span><br><span class="line">    addClick(context, payLoad) &#123;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F;返回的是上一级调用Promise的res（使用dispatch传输给VUEX中的actions）id：01</span><br><span class="line">      resolve(&#39;当前数量+1&#39;)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>actions使用commit传输给VUEX中的mutations</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;接收到参数通过commit给mutations  getTabControl()&#123;&#125;</span><br><span class="line">actions&#123;</span><br><span class="line">   context.commit(&#39;getTabControl&#39;,payLoad)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>也可以在页面直接传递</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;getTabControl&#39;,this.index)</span><br><span class="line">&#x2F;*</span><br><span class="line">*引号内是发出的事件，vuex mutations中接收，</span><br><span class="line">*this.index是data或者其他地方的参数。可以是任何形式的，如&#123;&#125;，[]</span><br><span class="line">*payLoad接收，可以其他名字，但不建议</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>mutations接收actions和页面传来的参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;传入的方法最好是是单一的 getTabControl</span><br><span class="line">mutations: &#123;</span><br><span class="line">  &#x2F;&#x2F;需要通过state.tabcontrol赋值给state</span><br><span class="line">  &#x2F;*</span><br><span class="line">  *参数：</span><br><span class="line">  *payLoad--传输来的值</span><br><span class="line">  *state----state系统定义的第一个参数</span><br><span class="line">  *</span><br><span class="line">  *&#x2F;</span><br><span class="line">    getTabControl(state, payLoad)&#123;</span><br><span class="line">      state.tabcontrol &#x3D; payLoad</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>vuex页面上的应用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;导入vuex会找到Actions内定义的方法进行传入</span><br><span class="line">&#x2F;*</span><br><span class="line">*mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性</span><br><span class="line">*mapActions 辅助函数仅仅是将 store 中的 actions 映射到methods ......</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">import &#123;mapActions&#125; from &#39;vuex&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;使用vuex</span><br><span class="line">  methods : &#123;</span><br><span class="line">    &#x2F;&#x2F;数组方式使用，还可以对象方式等</span><br><span class="line">    ...mapActions([</span><br><span class="line">      &#x2F;&#x2F;tabcontrol是Actions内的一个方法，进行导入的是在计算属性内，</span><br><span class="line">          &#39;tabcontrol&#39;</span><br><span class="line">      ]),</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;调用vuex的数据，由于此步骤的上一步进行了导入，所以这里可以直接操作</span><br><span class="line">this.tabcontrol&#x2F;&#x2F;可以直接达到</span><br></pre></td></tr></table></figure>
+
+<p>async/await</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 假设 getData() 和 getOtherData() 返回的是 Promise</span><br><span class="line"></span><br><span class="line">actions: &#123;</span><br><span class="line">  async actionA (&#123; commit &#125;) &#123;</span><br><span class="line">    commit(&#39;gotData&#39;, await getData())</span><br><span class="line">  &#125;,</span><br><span class="line">  async actionB (&#123; dispatch, commit &#125;) &#123;</span><br><span class="line">    await dispatch(&#39;actionA&#39;) &#x2F;&#x2F; 等待 actionA 完成后执行下面的</span><br><span class="line">    commit(&#39;gotOtherData&#39;, await getOtherData())</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>vuex中接收传来的参数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;不可以直接修改state内的值</span><br><span class="line">  state: &#123;</span><br><span class="line">    tabcontrol:&#39;pop&#39;,&#x2F;&#x2F;接收到的实际参数,其他页面可应用的参数</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;传入的方法最好是是单一的</span><br><span class="line">mutations: &#123;</span><br><span class="line">    getTabControl(state, payLoad)&#123;</span><br><span class="line">      state.tabcontrol &#x3D; payLoad</span><br><span class="line">    &#125;&#x2F;&#x2F;需要通过state.tabcontrol赋值给state</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;传入的方法，之后给到mutations</span><br><span class="line">  actions: &#123;</span><br><span class="line">    tabcontrols(context, payLoad) &#123;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F;返回的是上一级调用Promise的res（使用dispatch传输给VUEX中的actions）</span><br><span class="line">      resolve(&#39;当前数量+1&#39;)</span><br><span class="line">      </span><br><span class="line">      &#x2F;&#x2F;接收到参数通过commit给mutations</span><br><span class="line">      context.commit(&#39;getTabControl&#39;,payLoad)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  modules: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="bus-自定义后缀"><a href="#bus-自定义后缀" class="headerlink" title="$bus  自定义后缀"></a>$bus  自定义后缀</h2><p>min.js定义一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.$bus &#x3D; new Vue()</span><br></pre></td></tr></table></figure>
+
+<p>传出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;使用$bus.$emit传出</span><br><span class="line">this.$bus.$emit(&#39;itemImages&#39;,parameter)</span><br></pre></td></tr></table></figure>
+
+<p>接收：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">接收</span><br><span class="line">  this.$bus.$on(&quot;itemImages&quot;, () &#x3D;&gt; &#123;&#125;);</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:26.986Z" itemprop="dateUpdated">2020-07-24 08:16:26</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/vue-%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92/" rel="tag">vue 全局组件传递</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&source=使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state =&gt; state.XX.XXX.XXX})，..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和全局组件传递的使用》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/03/28/js/sceoll%E5%BA%94%E7%94%A8/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">sceoll插件应用</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/27/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">如何创建一个博客网站</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&source=使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state =&gt; state.XX.XXX.XXX})，..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和全局组件传递的使用》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEnUlEQVR42u3aW27bMBQFwOx/0+5vi1b2Obw0KtqjryCJJXJkgPf18xNfj9+uv3+/9vPVX59fyWev7na1hm0XJkyYMGG6JVOyrKuFJogTsuf/ubbh/MVgwoQJE6ZPYkpu156YyWdzghfbeLrtdl+YMGHChOmbmYpbx3dLftMGMfmzMGHChAkTpqR4mqe7bco6Z2qDFUyYMGHC9HlM+e3ycnBySLf0UUE2frVvqYVjwoQJE6abMa21AD/j57fMN2HChAkTptswPcprEka0B3OSTrdBzOKuMWHChAnTsUyToZz5cEx7FuejQkmaXT8XEyZMmDAdy7R2eLeNxrYEPH8ZeYBSjPVgwoQJE6ZjmXaloJOxm3bpa63H9rVhwoQJE6bTmdZo2mO4hZgM5UxGcy53hwkTJkyYjmVqD9r2P3cFEHuLvG1qjQkTJkyYTmRKUse1xmSy1Ry3fVVtqvwiCceECRMmTMcy5Ufs3gR17/hOnoRP9oIJEyZMmE5kmh+9820kwUdbtG1L0i+wMGHChAnTsUx5orv24LX2Z94WXWvHboihMGHChAnTIUz5obuWjs6T6nZjbZH6EVyYMGHChOl0pskS60cuhQVJM/VRXsVKMGHChAnTsUx5SXdSZm3vtlYanm9+VOTFhAkTJky3Z3q+7XyhE6xJ07EtCm+bbMKECRMmTDdmagujE8Q11kkjMx88evFFwYQJEyZMH8GUNybzkZc8oV1riLbN1PZZdaUZEyZMmDDdjCk/hvOt5snnZFQofz2TcvPldwoTJkyYMB3C1CaNeVhQDMHERd55SzVJ7C/jJkyYMGHCdCDTWgl10vhsA4I8KGk/lQcfmDBhwoTpdKa1Ymh7DM9Lyflg0K5S8oaaMSZMmDBh+q9Mk7JpnqDmh3d7YCeg+X9GSS8mTJgwYTqKqY0a2lJsW7TNw4gkumlXUgQQmDBhwoTpWKb2Ye0G9haF2/ClDRHq7xcmTJgwYboZU5KCvqOt2G4mv2fLHYUFmDBhwoTpWKZ5A/IdBG0ZOi8oj74QmDBhwoTpQKa1Y7VNcdvmZT6gk6e1ecJcfBcwYcKECdMhTO0G1oZykm3n4zWTUZ56nZgwYcKE6VimfDQnOW53LbFYbvDXdrQo6vdiwoQJE6ajmPLmX3uot43GSdl3kuhGwQcmTJgwYTqcKU818wN+3mhs0+x5uHC5EkyYMGHCdCzTJGVtj/88hc5blclLzVPiokKACRMmTJhuz5S09CaH6ISsLRC3Dc6CGxMmTJgwfQTT/DBeG7KZtyrzdeZfkT8+hQkTJkyYjmXKH5m3CfNNroUdbU6fP6X4FCZMmDBhOoTpUV7J0teAkpGapKWavMJ6fAcTJkyYMB3L1B6Q+SjP3nGctQClfdYkgMCECRMmTHdmSoKA9ghvW6Tzu+UhxWK6jgkTJkyYDmdqm45rBdy1lDK/W37wL8ZEmDBhwoTpC5jWUtC8TDwvK+dhTf50TJgwYcL0bUy7kuS1EdIJXLLTf/w/JkyYMGE6nCnZfEKwl29tw2ul4Rf3x4QJEyZMxzLtqnC2ZeL8BeSBSPKUbSiYMGHChOnuTL8A2mKWh7qGqAgAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>基于秦哥脚手架创建项目 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="前端脚手架">
+    <meta name="description" content="前后端分离项目，但是不使用 vue，react，angular（也就是说没有现成的脚手架） generator-jason 前端模块化脚手架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于秦哥脚手架创建项目">
+<meta property="og:url" content="https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="前后端分离项目，但是不使用 vue，react，angular（也就是说没有现成的脚手架） generator-jason 前端模块化脚手架">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-27T02:16:44.000Z">
+<meta property="article:modified_time" content="2020-07-24T00:16:27.049Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="前端脚手架">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">基于秦哥脚手架创建项目</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">基于秦哥脚手架创建项目</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-27T02:16:44.000Z" itemprop="datePublished" class="page-time">
+  2020-03-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E8%84%9A%E6%89%8B%E6%9E%B6/">前端模块化脚手架</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#generator-jason"><span class="post-toc-number">1.</span> <span class="post-toc-text">generator-jason</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Installation"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Installation</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用场景"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录解析"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">目录解析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组件化"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">组件化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">注意</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css使用说明"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">css使用说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成的-css-文件说明"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">生成的 css 文件说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成的-js-文件说明"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">生成的 js 文件说明</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-基于秦哥脚手架创建项目"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">基于秦哥脚手架创建项目</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-27 10:16:44" datetime="2020-03-27T02:16:44.000Z"  itemprop="datePublished">2020-03-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E8%84%9A%E6%89%8B%E6%9E%B6/">前端模块化脚手架</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>前后端分离项目，但是不使用 vue，react，angular（也就是说没有现成的脚手架）</p>
+<h1 id="generator-jason"><a href="#generator-jason" class="headerlink" title="generator-jason"></a>generator-jason</h1><blockquote>
+<p>前端模块化脚手架</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>First, install <a href="http://yeoman.io" target="_blank" rel="noopener">Yeoman</a> and generator-jason using <a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm</a> (we assume you have pre-installed <a href="https://nodejs.org/" target="_blank" rel="noopener">node.js</a>).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo</span><br><span class="line">npm install -g generator-jason</span><br></pre></td></tr></table></figure>
+
+<p>Then generate your new project:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yo jason</span><br><span class="line">npm run dev -&gt; localhost:8080</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
+<li>非前后端分离，后端模板项目</li>
+<li>前后端分离项目，但是不使用 vue，react，angular（也就是说没有现成的脚手架）</li>
+</ol>
+<h2 id="目录解析"><a href="#目录解析" class="headerlink" title="目录解析"></a>目录解析</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">管理员目录，项目会生成一个管理员目录</span><br><span class="line">启动开发环境后</span><br><span class="line">可以在 http://localhost:8080/admin.html 中</span><br><span class="line">查看全部页面的链接 和 组件</span><br><span class="line">- admin</span><br><span class="line"></span><br><span class="line">打包后的目录</span><br><span class="line">- dist</span><br><span class="line"></span><br><span class="line">项目源码</span><br><span class="line">src</span><br><span class="line">  资产目录，css，js，font</span><br><span class="line">  - assets</span><br><span class="line">  </span><br><span class="line">  组件目录，由于使用的 ejs 作为 html 语言，可通过 require 的方式引入并且传入 prop，实现组件化</span><br><span class="line">  其中 components/index.js 会在 main.js 中执行，初始化组件</span><br><span class="line">  - components</span><br><span class="line">  </span><br><span class="line">  国际化目录</span><br><span class="line">  - i18n</span><br><span class="line">  </span><br><span class="line">  页面目录，存放着页面组件</span><br><span class="line">  - views</span><br><span class="line">  </span><br><span class="line">  项目公共配置</span><br><span class="line">  - main.js</span><br></pre></td></tr></table></figure>
+
+<h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><blockquote>
+<p>components 和 views 目录下的 A 文件夹作为模板，复制改名用即可 <br><br>ejs require 实现<br>&lt;% ‘脚本’ 标签，用于流程控制，无输出，任意类型。 %&gt;<br>  &lt;%_ 删除其前面的空格符<br>  &lt;%= 输出数据到模板（输出是转义 HTML 标签）<br>  &lt;%- 输出非转义的数据到模板<br>  &lt;%# 注释标签，不执行、不输出内容<br>  &lt;%% 输出字符串 ‘&lt;%’<br>  %&gt; 一般结束标签<br>  -%&gt; 删除紧随其后的换行符<br>  _%&gt; 将结束标签后面的空格符删除</p>
+</blockquote>
+<p>ejs基本使用方法，循环，判断，赋值，传值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;组件模板中定义：</span><br><span class="line">&#x2F;*</span><br><span class="line">*如果text有值的时候是假的，之后执行假的，也就是显示组件上的值</span><br><span class="line">*&#x2F;</span><br><span class="line">&lt;%</span><br><span class="line">if (!text) var text &#x3D; &#39;&#39;;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;定义之后使用</span><br><span class="line">  &lt;div class&#x3D;&quot;product-active-title&quot;&gt;</span><br><span class="line">    &lt;%&#x3D; text %&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">*组件内可以进行判断，ejs可以写判断的代码</span><br><span class="line">*&#x2F;</span><br><span class="line">&lt;% if (title) &#123; %&gt;</span><br><span class="line">        &lt;%&#x3D; title %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- ejs 中引入组件 --&gt;</span><br><span class="line">&lt;%&#x3D; require(&#39;..&#x2F;..&#x2F;components&#x2F;A&#x2F;index.ejs&#39;)(&#123;</span><br><span class="line">  &#x2F;&#x2F; 可传参数任意类型</span><br><span class="line">  title: &#39;我是title&#39;，</span><br><span class="line">  arr：[&#123;name:&#39;mame&#39;&#125;]</span><br><span class="line">&#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;组件内进行判断 -三元表达式</span><br><span class="line">&lt;%</span><br><span class="line">if (!dir) var dir &#x3D; &#39;x&#39;;</span><br><span class="line">var coverPath &#x3D; dir &#x3D;&#x3D;&#x3D; &#39;x&#39; ? require(&#39;.&#x2F;images&#x2F;article-x.jpg&#39;) : require(&#39;.&#x2F;images&#x2F;article-y.jpg&#39;)</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;模板使用</span><br><span class="line">&lt;a class&#x3D;&quot;comp-article &lt;%&#x3D; dir %&gt;&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">    &lt;b class&#x3D;&quot;comp-article-media-inner&quot; style&#x3D;&quot;background-image: url(&lt;%&#x3D; coverPath %&gt;);&quot;&gt;&lt;&#x2F;b&gt;</span><br><span class="line">&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>//使用循环,定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">*if判断这传来的参数，有传来的参数的时候显示传来的参数，没有显示[ &#39;1&#39;, &#39;2&#39; ]</span><br><span class="line">*注意 &lt;% 循环 %&gt;  注意是&lt;% %&gt; 之后内如何显示参数：&lt;%&#x3D; 参数值[i索引值] %&gt; </span><br><span class="line">*&#x2F;</span><br><span class="line">&lt;%</span><br><span class="line">if (!dataArr) var dataArr &#x3D; [ &#39;1&#39;, &#39;2&#39; ]</span><br><span class="line">%&gt;</span><br><span class="line">&#x2F;&#x2F;模板使用</span><br><span class="line">&lt;div class&#x3D;&quot;comp-tab&quot;&gt;</span><br><span class="line">  &lt;% for (var i &#x3D; 0; i &lt; dataArr.length; i++) &#123; %&gt;</span><br><span class="line">    &lt;a class&#x3D;&quot;comp-tab-item &lt;%&#x3D; i &#x3D;&#x3D;&#x3D; 0 ? &#39;active&#39; : &#39;&#39; %&gt;&quot; href&#x3D;&quot;#&quot;&gt;</span><br><span class="line">      &lt;%&#x3D; product[ i ].name %&gt;</span><br><span class="line">      &lt;%&#x3D; product[ i ].age %&gt;</span><br><span class="line">    &lt;&#x2F;a&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>//ejs使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">*使用require导入这个模板之后可使用定义的参数进行传参，使用逗号进行隔开，传输值，</span><br><span class="line">*例子是传输一个字符串的方式</span><br><span class="line">*&#x2F;</span><br><span class="line">&lt;%&#x3D; require(&#39;..&#x2F;..&#x2F;components&#x2F;list&#x2F;index.ejs&#39;)(&#123;</span><br><span class="line">    text:&quot;Apis&quot;,</span><br><span class="line">    product:[&#123;name:&quot;nihao&quot;,age:&#39;18&#39;&#125;,&#123;name:&quot;nihao&quot;,age:&#39;18&#39;&#125;]</span><br><span class="line">&#125;) %&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;条件判断</span><br><span class="line">&lt;% if(false) &#123; %&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    我是显示的</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;% &#125;else&#123; %&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    我是隐藏的</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li><p>views</p>
+<blockquote>
+<p>打包时，页面组件的 css 和 js 的名称，进行了单独的处理 <br><br>将按照页面组件的目录名编译成 hash 字符串（相同页面的 css 和 js 名称是一样的）<br><br>目的是实现页面组件的中文目录命名，方便开发（后端模板项目建议中文命名，前后端分离项目不建议中文命名）</p>
+</blockquote>
+</li>
+<li><p>html 路径问题</p>
+<blockquote>
+<p>使用下面方法引入即可</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&lt;%&#x3D; require(&#39;.&#x2F;images&#x2F;abc.jpg&#39;) %&gt;&quot;&gt;</span><br><span class="line">&lt;div style&#x3D;&quot;background-image: url(&lt;%&#x3D; require(&#39;.&#x2F;images&#x2F;abc.jpg&#39;) %&gt;)&quot;&gt;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="css使用说明"><a href="#css使用说明" class="headerlink" title="css使用说明"></a>css使用说明</h2><ul>
+<li><p>include引入外部文件 res是一个变量</p>
+<blockquote>
+<p>@include res(width,100px,20/100);<br>@include res(width,100px,(xs:10px,md:20px)); </p>
+</blockquote>
+</li>
+<li><p>import引入’css路径’ ~包内的css</p>
+<blockquote>
+<p>@import “../../assets/styles/utils”;<br>@import “~jason-css/src/responsive/util”;</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="生成的-css-文件说明"><a href="#生成的-css-文件说明" class="headerlink" title="生成的 css 文件说明"></a>生成的 css 文件说明</h2><ul>
+<li><p>vendor</p>
+<blockquote>
+<p>第三方模块 css（node_modules）</p>
+</blockquote>
+</li>
+<li><p>common</p>
+<blockquote>
+<p>项目中的通用样式以及组件样式（assets，components）</p>
+</blockquote>
+</li>
+<li><p>hash.css</p>
+<blockquote>
+<p>各个页面的单独样式（views/**/index.scss）</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="生成的-js-文件说明"><a href="#生成的-js-文件说明" class="headerlink" title="生成的 js 文件说明"></a>生成的 js 文件说明</h2><ul>
+<li><p>vendor</p>
+<blockquote>
+<p>第三方模块（node_modules）</p>
+</blockquote>
+</li>
+<li><p>common</p>
+<blockquote>
+<p>项目中的工具库以及组件（assets，components）</p>
+</blockquote>
+</li>
+<li><p>main</p>
+<blockquote>
+<p>main.js</p>
+</blockquote>
+</li>
+<li><p>hash.js</p>
+<blockquote>
+<p>各页面单独的业务逻辑（views/**/index.js）</p>
+</blockquote>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-07-24T00:16:27.049Z" itemprop="dateUpdated">2020-07-24 08:16:27</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/" rel="tag">前端脚手架</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/&title=《基于秦哥脚手架创建项目》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/&title=《基于秦哥脚手架创建项目》 — 四叶草的个人博客&source=前后端分离项目，但是不使用 vue，react，angular（也就是说没有现成的脚手架）
+generator-jason
+前端模块化脚手架
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于秦哥脚手架创建项目》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2020/03/27/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">如何创建一个博客网站</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2020/03/25/vue/px%E8%BD%AC%E6%8D%A2%E5%8D%95%E4%BD%8D%E4%B8%BArpx/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">px转换单位为vw和rpx的插件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/&title=《基于秦哥脚手架创建项目》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/&title=《基于秦哥脚手架创建项目》 — 四叶草的个人博客&source=前后端分离项目，但是不使用 vue，react，angular（也就是说没有现成的脚手架）
+generator-jason
+前端模块化脚手架
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于秦哥脚手架创建项目》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/27/%E5%9F%BA%E4%BA%8E%E7%A7%A6%E5%93%A5%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEk0lEQVR42u3aS27bQBAFQN//0g6QVYBY0nvddKKhiyvDlsiZooH+TH98xNfn7+v5z+23/rwe/f7v+7crefSUj++4MGHChAnTWzJ9Pr2Szzzf0vPPPCJI0Nv1tPfBhAkTJkx3Ympvl3+3hWhxnwf+PKV4sU5MmDBhwvQDmDbbzrnb9KItjzFhwoQJE6a2mZu3WfdhPl9hXtJjwoQJE6afwJTfbtbq/b5EYXYW+Y29cEyYMGHC9GZMVw3unPjzf5hvwoQJEyZM/5Dps7zyQJu3gPP7tOXrbI9fPAUTJkyYMB3LNBvKacvL9hA0b/Im5fSmSC6qZ0yYMGHC9JZM+5DfBv6r7p+g5MNAL4p8TJgwYcJ0C6Y8ACeLbkvWvCE7G9aZtX0xYcKECdPpTN+x1eTz+ctoh4raAjvZNSZMmDBhOpepbba2Az15Obqnb9dcNIUxYcKECdOxTJsN58VnG/I3he7mkxEcJkyYMGE6iumq8Zqcuz1c3IwNbcaDitIXEyZMmDC9MdO+ULzq4LMdx9kkEHniggkTJkyYTmfKl5s8LF9ungS0L2MzmlPnTZgwYcKE6e2ZkjCcHy4mYzptSpGUprOGcvviMWHChAnTiUxtoL2qCTtrzuZ/3byAVS8cEyZMmDC9GVMeLNsSd98ablONpLm8OkzFhAkTJkwHMhWnnYt27Wwb+UjN7GA1SRQwYcKECdM9mNqmbVt2toejeZN3lgTUiQUmTJgwYbodUx4siybpqFk8a0PX1f9zaEyYMGHCdFOmWfN3ll7kyUSeCsxWjgkTJkyY7sTUBv78MW3jdXOfTdmcvGBMmDBhwnRvprzV25ays+Rj89o26QImTJgwYTqRaVjsleH8qjDfBu99QxkTJkyYMN2DqR3HaR+cv4x9s7g9fI2IMWHChAnTsUx5AE742lbp7P51OA/2VRfzmDBhwoTpEKZZYZkH1BZ3Bp2XwW0S80WHABMmTJgwHciUH/W1EO1x455mMyr08DeYMGHChOlwps0x5GagZ9+uzb+1OXzFhAkTJkznMu0D9lVlZ1s8bziS3WU1MSZMmDBhenemfShtDyzb3+RYeeKSH6ZiwoQJE6Z7ML1ocZYoCdks1WgRZ0Xvi144JkyYMGE6likviWfF82yMZhPg85XUp76YMGHChOkops2t220/L1zz1GTWpP6YXZgwYcKE6Vima0vTfKurQnRd9K7+UTBhwoQJ01FMeRu3Hb7ZHDfmW21fTDvigwkTJkyY7sTUPj5p+7alcttKbrlXx5mYMGHChOlApj3Q86XkzeW8NbwZD7psVZgwYcKE6RCmWdM2X3peTuf3SRKOzb/CFyvEhAkTJkzHMm3mVWbjNW3wnhXYdRsXEyZMmDDdmmk/fDNr2s5K7vzAdXNc+sVTMGHChAnT4UxXDeJcVaAmr6c4gFw8CxMmTJgw/RymvNxtW8Cb8jVfbULzEAsTJkyYMP0YprwknoX5vJBONp+P7Lz4JCZMmDBhOpxp1uTNU4F9ozYhyOkTyst64ZgwYcKE6b8ytYM77aKTJealac7RluIXXJgwYcKE6b2YfgEPgdzeJok0rwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
