@@ -6,7 +6,7 @@
   <link href="https://a-lyc.github.io/atom.xml" rel="self"/>
   
   <link href="https://a-lyc.github.io/"/>
-  <updated>2020-12-07T07:09:35.345Z</updated>
+  <updated>2021-02-08T08:27:13.047Z</updated>
   <id>https://a-lyc.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数组字符串方法</title>
+    <link href="https://a-lyc.github.io/2999/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/"/>
+    <id>https://a-lyc.github.io/2999/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</id>
+    <published>2999-05-18T13:56:36.000Z</published>
+    <updated>2021-02-08T08:27:13.047Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;总结的数组字符串的基本应用&lt;/p&gt;
+&lt;h3 id=&quot;数组：&quot;&gt;&lt;a href=&quot;#数组：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="常用数组字符串api" scheme="https://a-lyc.github.io/categories/%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2api/"/>
+    
+    
+    <category term="常用数组字符串api" scheme="https://a-lyc.github.io/tags/%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2api/"/>
+    
+  </entry>
   
   <entry>
     <title>vue-element-admin</title>
@@ -125,32 +151,6 @@
     <category term="mongoDB" scheme="https://a-lyc.github.io/tags/mongoDB/"/>
     
     <category term="node入门" scheme="https://a-lyc.github.io/tags/node%E5%85%A5%E9%97%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数组字符串方法</title>
-    <link href="https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/"/>
-    <id>https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</id>
-    <published>2099-05-18T13:56:36.000Z</published>
-    <updated>2021-02-08T08:17:24.698Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;总结的数组字符串的基本应用&lt;/p&gt;
-&lt;h3 id=&quot;数组：&quot;&gt;&lt;a href=&quot;#数组：&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="js数组字符串方法" scheme="https://a-lyc.github.io/categories/js%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/"/>
-    
-    
-    <category term="js 数组字符串方法 常用数组字符串api  ES6" scheme="https://a-lyc.github.io/tags/js-%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95-%E5%B8%B8%E7%94%A8%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2api-ES6/"/>
     
   </entry>
   
