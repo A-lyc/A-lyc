@@ -73,10 +73,8 @@ vue add vue-next
 注意该插件还不能支持 typescript，用 typescript 的同学还得再等等。（就是目前还不太支持TS）
 
 
-<<<<<<< HEAD
 ### Vue 3.0 基本特性体验
-## 创建路由
-=======
+
 ## 创建路由 router/index
 ```shell
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -86,8 +84,9 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home,// 父组件模板
+    component: Home,// 父组件模板 Layout 机制
     redirect: '/dashboard', // 重定向
+    meta: { title: '标题', icon: 'dashboard' } // mate标签， 可做权限设置
     children:[{
       path: 'dashboard',// 连接是/home/dashboard
       name: 'Dashboard', // 和模板文件最好对应
@@ -112,6 +111,7 @@ export default router
 初始化 Vue Router 的过程与 3.0 版本变化不大，只是之前采用构造函数的方式，
 这里改为使用 createRouter 来创建 Vue Router 实例，
 建一个公共的layout文件是一个公共的文件header和footer公用 都是home的子文件所以改变的是router-view这个状态
+可以使用循环来便利路由内的标题
 ```shell
 <template>
     <div>
@@ -120,9 +120,10 @@ export default router
             <router-link to="/home/dashboard">首页</router-link> |
             <router-link to="/home/index">关于我们</router-link> |
             <router-link to="/home/Content">内容 - Content</router-link>
+
         </div>
         ==========================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        <router-view :key="key"/>
+        <router-view :key="key"/> // key() {return this.$route.path},
         ==========================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         <h1>footer</h1>
         <div class="nav">
@@ -133,7 +134,7 @@ export default router
     </div>
 </template>
 ```
-app.vue
+app.vue   放置内容的一个
 ```shell
 <template>
   <div id="app">
@@ -149,11 +150,12 @@ npm run serve
 
 ## 状态和事件绑定
 Vue 3.0 中定义状态的方法改为类似 React Hooks 的方法，下面我们在 Test.vue 中定义一个状态 count：
+setup(){}函数内return 出的值可以使用this访问的到
 
 ```shell
 <template>
   <div class="test">
-    <h1>test count: {{count}}</h1>
+    <h1 :ref='countOne'>test count: {{count}}</h1>
   </div>
 </template>
 
@@ -162,16 +164,23 @@ Vue 3.0 中定义状态的方法改为类似 React Hooks 的方法，下面我�
 
   export default {
     setup () {
+// 设置默认值位0
       const count = ref(0)
       return {
         count
       }
+    },
+    methods:{
+        countOne(el){
+            console.log(el)
+        }
     }
   }
 </script>
 ```
 
-## Vue 3.0 中初始化状态通过 setup 方法，
+## Vue 3.0 中初始化状态通过 setup 方法， 
+组件也可使用
 定义状态需要调用 ref 方法。接下来我们定义一个事件，用来更新 count 状态：
 ```shell
 <template>
@@ -311,9 +320,10 @@ Vue 3.0 中定义状态的方法改为类似 React Hooks 的方法，下面我�
 
 ```
 
-这里的 add 方法不再需要定义在 methods 中，
+这里的 add 方法不再需要定义在 methods 中，这样会造成setup内代码复杂化，找不到那个
 但注意更新 count 值的时候不能直接使用 count++，而应使用 count.value++，
 更新代码后，点击按钮，count 的值就会更新了：
+在 methods 中不需要count.value++ 直接 count++ 即可
 
 ## 计算属性和监听器
 Vue 3.0 中计算属性和监听器的实现依赖 computed 和 watch 方法：
@@ -616,7 +626,7 @@ ctx 是上节中我们提到的当前组件实例
 
 ## render函数
 新建一个js文件之后直接写js即可
-```shell script
+```shell
 // 基础写法，不完全，需要查询官网所给出的api
  export default {
      data(){
@@ -646,21 +656,28 @@ export default {
         }
     },
     render() {
-        return (
-            <div class="works-wrapper">
-                <span>Hello</span>
-            </div>
-        )
+let text = `<div class="works-wrapper" class="${this.red}">
+                            <span>Hello</span>
+                        </div>`
+        return text
     },
     methods: {
     },
 }
 ```
 ### 使用方法
-```shell script
+```shell
 import 命名的名称 from "@/components/render的js文件.js";
 ```
-在模板中导入直接使用 - 和模板一个使用方式
 
 ### 在render中使用
+在模板中导入直接使用 - 和模板一个使用方式
 
+## 背景问题
+如果背景在div的style标签上显示不出来的时候，需要添加require('图片的路径')，下面由魔法字符串组成
+ ```shell
+<div class="machine-bg" :style="{
+      backgroundImage:`url(${require('../common/sprite-map.jpg')})`
+    }">
+    </div>
+```
