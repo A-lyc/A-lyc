@@ -148,9 +148,42 @@ app.vue   放置内容的一个
 npm run serve
 ```
 
+## watch的应用
+· watch监听器可以监听一个getter函数
+ - 这个getter要返回一个响应式对象
+ - 当该对象更新后，会执行对应的回调函
+```shell
+import { reactive, watch } from 'vue'
+const state = reactive({ count: 0 })
+watch(() => state.count, (newValue, oldValue) => {
+    // 因为watch被观察的对象只能是getter/effect函数、ref、热active对象或者这些类型是数组
+    // 所以需要将state.count变成getter函数
+})
+```
+· watch可以监听响应式对象
+```shell
+import { ref, watch } from 'vue' 
+const count = ref(0) 
+watch(count, (newValue, oldValue) => {
+})
+```
+· watch可以监听多个响应式对线，任何一个响应式对象更新，就会执行回调函数
+```shell
+import { ref, watch } from 'vue' 
+const count = ref(0) 
+const count2 = ref(1) 
+watch([count, count2], ([newCount, newCount2], [oldCount, oldCount2]) => { 
+})
+//还有第二种写法
+watch([count, count2], (newValue, oldVlaue) => {
+    console.log(newValue)//[newCount, newCount2]
+    console.log(oldValue)//[oldCount, oldCount2]
+})
+```
+
 ## 状态和事件绑定
 Vue 3.0 中定义状态的方法改为类似 React Hooks 的方法，下面我们在 Test.vue 中定义一个状态 count：
-setup(){}函数内return 出的值可以使用this访问的到
+setup(){}函数内return 出的值可以使用this访问的到 这里面无法访问methods和data中的内容
 
 ```shell
 <template>
@@ -172,7 +205,10 @@ setup(){}函数内return 出的值可以使用this访问的到
     },
     methods:{
         countOne(el){
+            // 返回的是一个Proxy 可以直接点后面跟着方法即可 
             console.log(el)
+            // 直接点可以直接调出来即可    
+            console.log(el.message)
         }
     }
   }
@@ -674,7 +710,7 @@ import 命名的名称 from "@/components/render的js文件.js";
 在模板中导入直接使用 - 和模板一个使用方式
 
 ## 背景问题
-如果背景在div的style标签上显示不出来的时候，需要添加require('图片的路径')，下面由魔法字符串组成
+如果背景在div的style标签上显示不出来的时候，需要添加 require('图片的路径')，下面由魔法字符串组成
  ```shell
 <div class="machine-bg" :style="{
       backgroundImage:`url(${require('../common/sprite-map.jpg')})`
