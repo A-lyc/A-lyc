@@ -6,7 +6,7 @@
   <link href="https://a-lyc.github.io/atom.xml" rel="self"/>
   
   <link href="https://a-lyc.github.io/"/>
-  <updated>2021-02-10T06:23:11.409Z</updated>
+  <updated>2021-02-11T09:42:04.209Z</updated>
   <id>https://a-lyc.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://a-lyc.github.io/2099/11/12/vue/vue-element-admin/"/>
     <id>https://a-lyc.github.io/2099/11/12/vue/vue-element-admin/</id>
     <published>2099-11-12T13:00:25.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.209Z</updated>
     
     
       
@@ -47,7 +47,7 @@
     <link href="https://a-lyc.github.io/2099/10/24/vue/vue3.0X%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3/"/>
     <id>https://a-lyc.github.io/2099/10/24/vue/vue3.0X%E6%9B%B4%E6%96%B0%E6%96%87%E6%A1%A3/</id>
     <published>2099-10-24T03:04:50.000Z</published>
-    <updated>2021-02-10T06:23:11.421Z</updated>
+    <updated>2021-02-11T09:42:04.221Z</updated>
     
     
       
@@ -74,7 +74,7 @@
     <link href="https://a-lyc.github.io/2099/10/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/"/>
     <id>https://a-lyc.github.io/2099/10/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/</id>
     <published>2099-10-19T13:35:13.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
       
@@ -101,7 +101,7 @@
     <link href="https://a-lyc.github.io/2099/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     <id>https://a-lyc.github.io/2099/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
     <published>2099-10-11T01:43:18.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
       
@@ -133,7 +133,7 @@
     <link href="https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/"/>
     <id>https://a-lyc.github.io/2099/05/18/js/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</id>
     <published>2099-05-18T13:56:36.000Z</published>
-    <updated>2021-02-10T06:23:11.405Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
       
@@ -159,7 +159,7 @@
     <link href="https://a-lyc.github.io/2099/05/01/vue/%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E5%99%A8%E5%92%8C%E5%93%8D%E5%BA%94%E5%BC%8F%E6%8B%A6%E6%88%AA/"/>
     <id>https://a-lyc.github.io/2099/05/01/vue/%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E5%99%A8%E5%92%8C%E5%93%8D%E5%BA%94%E5%BC%8F%E6%8B%A6%E6%88%AA/</id>
     <published>2099-05-01T08:11:14.000Z</published>
-    <updated>2021-02-10T06:23:11.441Z</updated>
+    <updated>2021-02-11T09:42:04.237Z</updated>
     
     
     <summary type="html">&lt;p&gt;headers需要三个参数，url {} {}可参靠打印出来的值 ，请求之前需要做点什么和请求中处理之后发给页面做点什么，可以使用拦截器，在全局使用一下，min.js&lt;/p&gt;</summary>
@@ -178,7 +178,7 @@
     <link href="https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/"/>
     <id>https://a-lyc.github.io/2099/03/20/css/%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E7%A5%9E%E5%99%A8display-flex/</id>
     <published>2099-03-20T12:13:53.000Z</published>
-    <updated>2021-02-10T06:23:11.405Z</updated>
+    <updated>2021-02-11T09:42:04.201Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;一、Flex不仅可以水平方向布局也可以垂直方向布局&quot;&gt;&lt;a href=&quot;#一、Flex不仅可以水平方向布局也可以垂直方向布局&quot; class=&quot;headerlink&quot; title=&quot;一、Flex不仅可以水平方向布局也可以垂直方向布局&quot;&gt;&lt;/a&gt;一、Flex不仅可以水平方向布局也可以垂直方向布局&lt;/h3&gt;&lt;ul&gt;
@@ -198,7 +198,7 @@
     <link href="https://a-lyc.github.io/2099/01/01/nuxt/nuxt%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     <id>https://a-lyc.github.io/2099/01/01/nuxt/nuxt%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6%E5%AE%89%E8%A3%85/</id>
     <published>2099-01-01T02:58:16.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
     <summary type="html">&lt;hr&gt;
@@ -218,7 +218,7 @@
     <link href="https://a-lyc.github.io/2021/02/07/vue/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF/"/>
     <id>https://a-lyc.github.io/2021/02/07/vue/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E9%80%9A%E8%AE%AF/</id>
     <published>2021-02-07T13:49:37.000Z</published>
-    <updated>2021-02-10T06:23:11.441Z</updated>
+    <updated>2021-02-11T09:42:04.237Z</updated>
     
     
       
@@ -243,7 +243,7 @@
     <link href="https://a-lyc.github.io/2020/12/01/%E9%B2%81%E7%8F%ADh5/"/>
     <id>https://a-lyc.github.io/2020/12/01/%E9%B2%81%E7%8F%ADh5/</id>
     <published>2020-12-01T05:48:15.000Z</published>
-    <updated>2021-02-10T06:23:11.441Z</updated>
+    <updated>2021-02-11T09:42:04.241Z</updated>
     
     
       
@@ -268,7 +268,7 @@
     <link href="https://a-lyc.github.io/2020/11/14/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/"/>
     <id>https://a-lyc.github.io/2020/11/14/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/</id>
     <published>2020-11-14T00:30:12.000Z</published>
-    <updated>2021-02-10T06:23:11.441Z</updated>
+    <updated>2021-02-11T09:42:04.237Z</updated>
     
     
       
@@ -293,7 +293,7 @@
     <link href="https://a-lyc.github.io/2020/11/13/uniapp/uniapp%E4%BA%91%E5%BC%80%E5%8F%91/"/>
     <id>https://a-lyc.github.io/2020/11/13/uniapp/uniapp%E4%BA%91%E5%BC%80%E5%8F%91/</id>
     <published>2020-11-13T03:51:04.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
       
@@ -323,7 +323,7 @@
     <link href="https://a-lyc.github.io/2020/11/11/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BA%91%E5%BC%80%E5%8F%91/"/>
     <id>https://a-lyc.github.io/2020/11/11/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E4%BA%91%E5%BC%80%E5%8F%91/</id>
     <published>2020-11-11T00:33:19.000Z</published>
-    <updated>2021-02-10T06:23:11.441Z</updated>
+    <updated>2021-02-11T09:42:04.237Z</updated>
     
     
       
@@ -350,7 +350,7 @@
     <link href="https://a-lyc.github.io/2020/10/08/js/%E5%8E%9F%E7%94%9F%E5%B0%81%E8%A3%85ajax/"/>
     <id>https://a-lyc.github.io/2020/10/08/js/%E5%8E%9F%E7%94%9F%E5%B0%81%E8%A3%85ajax/</id>
     <published>2020-10-08T01:52:48.000Z</published>
-    <updated>2021-02-10T06:23:11.405Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
     <summary type="html">&lt;p&gt;原生封装js 请求方式 原生，封装的Promise的方法，使用async/await 用try/catch捕捉错误&lt;/p&gt;</summary>
@@ -369,7 +369,7 @@
     <link href="https://a-lyc.github.io/2020/09/27/node/node-express/"/>
     <id>https://a-lyc.github.io/2020/09/27/node/node-express/</id>
     <published>2020-09-27T12:17:11.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
     <summary type="html">&lt;p&gt;express官网：&lt;a href=&quot;https://www.expressjs.com.cn/starter/installing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.expressjs.com.cn/starter/installing.html&lt;/a&gt;&lt;/p&gt;</summary>
@@ -388,7 +388,7 @@
     <link href="https://a-lyc.github.io/2020/09/27/node/node/"/>
     <id>https://a-lyc.github.io/2020/09/27/node/node/</id>
     <published>2020-09-27T10:32:25.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
     <summary type="html">&lt;p&gt;node服务器语言&lt;/p&gt;</summary>
@@ -407,7 +407,7 @@
     <link href="https://a-lyc.github.io/2020/09/05/nuxt/nuxt%E4%BD%BF%E7%94%A8layui/"/>
     <id>https://a-lyc.github.io/2020/09/05/nuxt/nuxt%E4%BD%BF%E7%94%A8layui/</id>
     <published>2020-09-05T14:46:34.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
       
@@ -432,7 +432,7 @@
     <link href="https://a-lyc.github.io/2020/08/19/js/ES6/"/>
     <id>https://a-lyc.github.io/2020/08/19/js/ES6/</id>
     <published>2020-08-19T12:14:36.000Z</published>
-    <updated>2021-02-10T06:23:11.405Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
     <summary type="html">&lt;p&gt;定义变量 let&lt;br&gt;定义常量 const&lt;br&gt;魔法字符串 &lt;code&gt;${}&lt;/code&gt;&lt;br&gt;结构语法 let {data} = res;let [a,b,c] = arr&lt;br&gt;函数默认语法 f function f( x = {}){return x} // 默认空对象&lt;br&gt;遍历追加数组 arr.push(…array)&lt;/p&gt;
@@ -452,7 +452,7 @@
     <link href="https://a-lyc.github.io/2020/08/19/vue/aip%E6%96%B9%E6%B3%95/"/>
     <id>https://a-lyc.github.io/2020/08/19/vue/aip%E6%96%B9%E6%B3%95/</id>
     <published>2020-08-19T12:07:03.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
     <summary type="html">&lt;p&gt;集合了一些自己感觉常用的api，组件构造器，全局安装组件，除去计算属性和wacth的监听数据变化&lt;/p&gt;</summary>
@@ -473,7 +473,7 @@
     <link href="https://a-lyc.github.io/2020/07/05/nuxt/nuxt%E5%8D%95%E4%B8%AA%E8%A3%81%E5%88%87%E5%9B%BE%E7%89%87%E5%92%8C%E5%A4%9A%E4%B8%AA%E8%A3%81%E5%88%87/"/>
     <id>https://a-lyc.github.io/2020/07/05/nuxt/nuxt%E5%8D%95%E4%B8%AA%E8%A3%81%E5%88%87%E5%9B%BE%E7%89%87%E5%92%8C%E5%A4%9A%E4%B8%AA%E8%A3%81%E5%88%87/</id>
     <published>2020-07-05T01:10:29.000Z</published>
-    <updated>2021-02-10T06:23:11.409Z</updated>
+    <updated>2021-02-11T09:42:04.205Z</updated>
     
     
     <summary type="html">&lt;p&gt;安装方法安装富文本图片裁切：npm install -d vue-cropper&lt;br&gt;vue-cropper：&lt;a href=&quot;https://github.com/xyxiao001/vue-cropper&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/xyxiao001/vue-cropper&lt;/a&gt;&lt;br&gt;之后直接可以使用了，我是用的element上传的方法，单个图片裁切和多个图片裁切， - 问题：裁切之后鼠标不能滚动的问题，使用v-if在弹出框上解决一下看看&lt;/p&gt;</summary>
