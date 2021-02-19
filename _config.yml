@@ -14,7 +14,7 @@ email: 2294016229@qq.com
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://a-lyc.github.io/
+url: https://a-lyc.github.io/A-lyc/
 root: /A-lyc/
 permalink: :year/:month/:day/:title/
 permalink_defaults: article/:id/
@@ -119,6 +119,6 @@ theme: indigo
 #   type: ''
 deploy:
   type: git
-  repo: https://github.com/A-lyc/A-lyc
+  repo: https://github.com/A-lyc
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
