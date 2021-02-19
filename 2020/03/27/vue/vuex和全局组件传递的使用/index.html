@@ -32,12 +32,12 @@
     <meta name="description" content="使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state &#x3D;&gt; state.XX.XXX.XXX})，使用方法的时候可以直接this.$store.commit(“logout”);就是调用mutations上的方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vuex和全局组件传递的使用">
-<meta property="og:url" content="https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:url" content="https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="四叶草的个人博客">
 <meta property="og:description" content="使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state &#x3D;&gt; state.XX.XXX.XXX})，使用方法的时候可以直接this.$store.commit(“logout”);就是调用mutations上的方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-27T13:14:50.000Z">
-<meta property="article:modified_time" content="2021-02-19T07:07:18.297Z">
+<meta property="article:modified_time" content="2021-02-19T07:23:46.637Z">
 <meta property="article:author" content="四叶草">
 <meta property="article:tag" content="vue 全局组件传递">
 <meta name="twitter:card" content="summary">
@@ -275,17 +275,17 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-02-19T07:07:18.297Z" itemprop="dateUpdated">2021-02-19 15:07:18</time>
+    最后更新时间：<time datetime="2021-02-19T07:23:46.637Z" itemprop="dateUpdated">2021-02-19 15:23:46</time>
 </span><br>
 
 
         
-        文章连接：<a href="/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/</a>
+        文章连接：<a href="/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/</a>
         
     </div>
     
     <footer>
-        <a href="https://a-lyc.github.io">
+        <a href="https://a-lyc.github.io/A-lyc">
             <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
             四叶草
         </a>
@@ -311,7 +311,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&pic=https://a-lyc.github.io/A-lyc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -321,22 +321,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&source=使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state =&gt; state.XX.XXX.XXX})，..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&source=使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state =&gt; state.XX.XXX.XXX})，..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和全局组件传递的使用》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&via=https://a-lyc.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和全局组件传递的使用》 — 四叶草的个人博客&url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&via=https://a-lyc.github.io/A-lyc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -494,7 +494,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&pic=https://a-lyc.github.io/A-lyc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -504,22 +504,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&source=使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state =&gt; state.XX.XXX.XXX})，..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&title=《vuex和全局组件传递的使用》 — 四叶草的个人博客&source=使用vuex中的state需要在组件中导入，计算属性中使用…mapState({name: state =&gt; state.XX.XXX.XXX})，..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和全局组件传递的使用》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&via=https://a-lyc.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和全局组件传递的使用》 — 四叶草的个人博客&url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/&via=https://a-lyc.github.io/A-lyc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/A-lyc/2020/03/27/vue/vuex%E5%92%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E7%9A%84%E4%BD%BF%E7%94%A8/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -530,7 +530,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEnUlEQVR42u3aW27bMBQFwOx/0+5vi1b2Obw0KtqjryCJJXJkgPf18xNfj9+uv3+/9vPVX59fyWev7na1hm0XJkyYMGG6JVOyrKuFJogTsuf/ubbh/MVgwoQJE6ZPYkpu156YyWdzghfbeLrtdl+YMGHChOmbmYpbx3dLftMGMfmzMGHChAkTpqR4mqe7bco6Z2qDFUyYMGHC9HlM+e3ycnBySLf0UUE2frVvqYVjwoQJE6abMa21AD/j57fMN2HChAkTptswPcprEka0B3OSTrdBzOKuMWHChAnTsUyToZz5cEx7FuejQkmaXT8XEyZMmDAdy7R2eLeNxrYEPH8ZeYBSjPVgwoQJE6ZjmXaloJOxm3bpa63H9rVhwoQJE6bTmdZo2mO4hZgM5UxGcy53hwkTJkyYjmVqD9r2P3cFEHuLvG1qjQkTJkyYTmRKUse1xmSy1Ry3fVVtqvwiCceECRMmTMcy5Ufs3gR17/hOnoRP9oIJEyZMmE5kmh+9820kwUdbtG1L0i+wMGHChAnTsUx5orv24LX2Z94WXWvHboihMGHChAnTIUz5obuWjs6T6nZjbZH6EVyYMGHChOl0pskS60cuhQVJM/VRXsVKMGHChAnTsUx5SXdSZm3vtlYanm9+VOTFhAkTJky3Z3q+7XyhE6xJ07EtCm+bbMKECRMmTDdmagujE8Q11kkjMx88evFFwYQJEyZMH8GUNybzkZc8oV1riLbN1PZZdaUZEyZMmDDdjCk/hvOt5snnZFQofz2TcvPldwoTJkyYMB3C1CaNeVhQDMHERd55SzVJ7C/jJkyYMGHCdCDTWgl10vhsA4I8KGk/lQcfmDBhwoTpdKa1Ymh7DM9Lyflg0K5S8oaaMSZMmDBh+q9Mk7JpnqDmh3d7YCeg+X9GSS8mTJgwYTqKqY0a2lJsW7TNw4gkumlXUgQQmDBhwoTpWKb2Ye0G9haF2/ClDRHq7xcmTJgwYboZU5KCvqOt2G4mv2fLHYUFmDBhwoTpWKZ5A/IdBG0ZOi8oj74QmDBhwoTpQKa1Y7VNcdvmZT6gk6e1ecJcfBcwYcKECdMhTO0G1oZykm3n4zWTUZ56nZgwYcKE6VimfDQnOW53LbFYbvDXdrQo6vdiwoQJE6ajmPLmX3uot43GSdl3kuhGwQcmTJgwYTqcKU818wN+3mhs0+x5uHC5EkyYMGHCdCzTJGVtj/88hc5blclLzVPiokKACRMmTJhuz5S09CaH6ISsLRC3Dc6CGxMmTJgwfQTT/DBeG7KZtyrzdeZfkT8+hQkTJkyYjmXKH5m3CfNNroUdbU6fP6X4FCZMmDBhOoTpUV7J0teAkpGapKWavMJ6fAcTJkyYMB3L1B6Q+SjP3nGctQClfdYkgMCECRMmTHdmSoKA9ghvW6Tzu+UhxWK6jgkTJkyYDmdqm45rBdy1lDK/W37wL8ZEmDBhwoTpC5jWUtC8TDwvK+dhTf50TJgwYcL0bUy7kuS1EdIJXLLTf/w/JkyYMGE6nCnZfEKwl29tw2ul4Rf3x4QJEyZMxzLtqnC2ZeL8BeSBSPKUbSiYMGHChOnuTL8A2mKWh7qGqAgAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEiUlEQVR42u3aQZKjMBAEwPn/p3cj9jweV3XDBhonJ4eNBSSHVpf09RUff/4dP/+an/PqmI3/82ivvvm648CECRMmTI9kSm69/bW9oVf/yu8tf7Xt+JgwYcKE6Xcw5cNd9TAJdPLfn79JrhsRY8KECROmD2DKbzRnba+YFO/8upgwYcKECVNyTtsS541xEgHnITImTJgwYfpkpny4TWHOx6xD2PJ13piFY8KECROmhzHtlxvP/Xzj/iZMmDBhwvQAplm7mAS1+8K8abM3z/jN+JgwYcKE6Vim5NaT4HVWbjdnJq9nc1dRQoAJEyZMmB7PNCuibQnfb5q5ahtQEuB+cxVMmDBhwvQrmJI/79vda6cas8XIdnxMmDBhwnQu0x1N5r6VbePX/AW3r//GXhwTJkyYMP13pqRNTZrJfKExKdJXfdPeeTQVwIQJEyZMBzLtL5+3qas12Bgib92jRVBMmDBhwnQs0439dNxI79vsWeBbT2IwYcKECdMhTC1Hu3y4XyK9asqy2sSDCRMmTJiOZWofrG0+80nAZnG0bdGT5y0ScUyYMGHC9HimTXOYX2xW4PPHS6YpySt5OQImTJgwYTqQKc+A82C3TZdnG1LviHrfJASYMGHChOlAprb9y2PfWameLaDevaUVEyZMmDCdztSGvLMwd7Yk2Tar+T3PomRMmDBhwnQWU16GZ3x5OW/b3dkS6WyKgwkTJkyYzmWaFci8uF67NWc/Ncnj6ZchLyZMmDBhOoppU0TzQrsqwxdNUNrgGBMmTJgwfQ7TVTnn7FqzAHc2dYhmTJgwYcKE6UCmpBXMlypnC6Wza9WlPb7WNxMCTJgwYcJ0LNNsv8+sqG8C5Q3crFXGhAkTJky/jykJZNsCn0erbaw8e53Jr1FCgAkTJkyYDmHKC3x7zmy5dNYYb8LfNyNgwoQJE6ZjmZLhZkFq3li2LyNZIo2i2zgIxoQJEyZM5zJdFYzu/9Vu8cmB8u07mDBhwoTp9zHNmt5k0LbR3WwASiYxbST9JhHHhAkTJkyHMOWbb9pIdFbIZxFw2x63rTgmTJgwYTqXaVZW95tv2klA27gOm9vkrjBhwoQJ01FMswu3y5CbZjVpmNujXuDEhAkTJkzHMiVHG87m5+ff5AW+Lf+z8zFhwoQJ0ylM+203LUq+NeeOJnYYImPChAkTpmOZrmpr24XPWWN81cSivUNMmDBhwnQuU1sgN+fnrea+2d4suEbLmZgwYcKE6UCm2eabNlFuJxCbRco2en75SjBhwoQJ07FMVwFtHngzWh5YFzFu0hhjwoQJE6ZDmP6Ux2a58dpVwk05zycHmDBhwoTpdKa2QOZRb9LuJuPnxX72mvcvGBMmTJgwPZ8pHzovsZttNNdOODaTjOghMWHChAnTIUztJGA/IZiFvNeGufmkBBMmTJgwfQJT20y2bXAe47ZThNnGIEyYMGHC9MlMswdrQffRc/7rmytiwoQJE6bDmdqQd7aZZv+QLehmg84Fy5mYMGHChOkBTG0A2pbYdktNu/TYLpomTzQ8MGHChAnTs5j+Av4bWKlWBhblAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

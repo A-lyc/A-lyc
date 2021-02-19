@@ -32,12 +32,12 @@
     <meta name="description" content="vue中使用很频繁的组件可以使用依赖注入的形式去编写，就是在一个公共文件，或者根组件app.vue中定义一个样式，之后使用provide(){return {}}的方法进行导出，之后在子组件中使用inject:[“”]进行导入，下面是举例子说明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue的依赖注入provide，inject">
-<meta property="og:url" content="https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:url" content="https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="四叶草的个人博客">
 <meta property="og:description" content="vue中使用很频繁的组件可以使用依赖注入的形式去编写，就是在一个公共文件，或者根组件app.vue中定义一个样式，之后使用provide(){return {}}的方法进行导出，之后在子组件中使用inject:[“”]进行导入，下面是举例子说明">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-24T12:02:39.000Z">
-<meta property="article:modified_time" content="2021-02-19T07:07:18.297Z">
+<meta property="article:modified_time" content="2021-02-19T07:23:46.637Z">
 <meta property="article:author" content="四叶草">
 <meta property="article:tag" content="全局依赖注入">
 <meta name="twitter:card" content="summary">
@@ -218,17 +218,17 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-02-19T07:07:18.297Z" itemprop="dateUpdated">2021-02-19 15:07:18</time>
+    最后更新时间：<time datetime="2021-02-19T07:23:46.637Z" itemprop="dateUpdated">2021-02-19 15:23:46</time>
 </span><br>
 
 
         
-        文章连接：<a href="/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" target="_blank" rel="external">https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</a>
+        文章连接：<a href="/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" target="_blank" rel="external">https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</a>
         
     </div>
     
     <footer>
-        <a href="https://a-lyc.github.io">
+        <a href="https://a-lyc.github.io/A-lyc">
             <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
             四叶草
         </a>
@@ -254,7 +254,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&pic=https://a-lyc.github.io/A-lyc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -264,22 +264,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&source=vue中使用很频繁的组件可以使用依赖注入的形式去编写，就是在一个公共文件，或者根组件app.vue中定义一个样式，之后使用provide(){return..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&source=vue中使用很频繁的组件可以使用依赖注入的形式去编写，就是在一个公共文件，或者根组件app.vue中定义一个样式，之后使用provide(){return..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue的依赖注入provide，inject》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&via=https://a-lyc.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue的依赖注入provide，inject》 — 四叶草的个人博客&url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&via=https://a-lyc.github.io/A-lyc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -437,7 +437,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&pic=https://a-lyc.github.io/A-lyc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -447,22 +447,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&source=vue中使用很频繁的组件可以使用依赖注入的形式去编写，就是在一个公共文件，或者根组件app.vue中定义一个样式，之后使用provide(){return..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&title=《vue的依赖注入provide，inject》 — 四叶草的个人博客&source=vue中使用很频繁的组件可以使用依赖注入的形式去编写，就是在一个公共文件，或者根组件app.vue中定义一个样式，之后使用provide(){return..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue的依赖注入provide，inject》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&via=https://a-lyc.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue的依赖注入provide，inject》 — 四叶草的个人博客&url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/&via=https://a-lyc.github.io/A-lyc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/A-lyc/2020/04/24/vue/vue%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -473,7 +473,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOElEQVR42u3ay24bMRAEwPz/TztXB8FK3TNrwEuVToaeWxTgEbv55098+/p2+/+e7/dfPdq+9vXnXj168w0bGxv7Ieyvl7fXH9C+Kv/7CpMvxOvFxcbGxj6PffUByXPy5Zgtbn5tiQUbGxsbe//bPvmsZCmxsbGxsWfsdhswGzkzEjY2NvYns9uLjoKbYPzcFST9YJaGjY2N/evZeSv6+//+kX4bGxsb+xez7wrxk0M5yTi5t2y+fDdsbGzsg9ib6L8OcYKtRftubTGMjY2NfR77rqgoD3o2kdCmxohaZWxsbOwHsjdlah7xby59M/zejFtsbGzsI9htQLOvDWaDsK2B3yw6NjY29qHsqyVoh83m+M5scZMvCRsbG/sT2EnVujno09YJxUBqKwdsbGzsD2Dn4U5bALTLnY+6fCGwsbGxT2K3/8/3te6+MN4c6MHGxsY+ld1G7fttTDt+NmFTFHVhY2NjH8dOGHm4MwuP8iKhPeKDjY2NfRJ7VrgmFzE7ItnGWG2A9U+Who2NjX0Qe1OgtjXwJgCaDbM3RS82Njb2Eey2WN0Mp7uiqOTLeNNvY2NjYx/Bvjf0z3OsWZA0K5WLSgAbGxv74exZ4J7XCW39kHxufhjoTUmAjY2N/XD2LL5vl2k2IO8qHqKACRsbG/vh7KRA3ZTBefSTXHoeh9WtBTY2Nvaj2HWkHo+ldjS2wyz5Yi7vx8bGxj6OPdsS5O+Qj7T9aIzeGRsbG/tQ9l3lbnu+cbaBSQbk5WuxsbGxj2O30fz+YM3rjU1+3CevK7CxsbFPZeebkPaik8Vqg639NqaY0tjY2NgPZM9+1ueXO1vQ4hhleXgIGxsb+zx2/rO+jeNnG558+ZKp9GYrgo2NjX0EO3+LzXLMAPkAK44NYWNjYx/B/ipv+ci569hlWz9E14aNjY19EHs190YHJfPla0vc9pnY2NjYJ7HbofXT5W5e8c4OD2FjY2Ofyk5CpXzwJM9vA6x2a/Hmy8PGxsb+YPbsSE27WJtjl9EgxMbGxsaOg6f2QmfU/KgoNjY29qnsPNyZVQKzR/NOIw+zsLGxsc9j50XvXaVsXgO0G57ZcMXGxsZ+LPsvIpENmKk0wJsAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADI0lEQVR42u3awYrjQAwE0Pn/n87CnhYGJ1VqLyTK82kITtuvc9BI1T8/8fX4e+V3/nv9/vz3mld/X333+ee3XdjY2Ngfwn48vRL2c8DV6971DldPvFoHGxsbeys7xzwvIfmDkw3Kn5JbsLGxsb+ZnRSekwLTMrCxsbGxTwpYvgV5cUrGRkkhxMbGxv5OdlJI8rLRrplvbj7Gum2Who2Njf327Dbofee//2O+jY2Njf2W7MfBlQ938uYkjxCO3hwbGxt7EXt2hDGPBGablbzJrLF5sQQ2Njb2CnZSik6K0OzOZHTVurCxsbF3s0+GSm3zkCNn8cPlmtjY2Njr2CePz7dgVthmMcaLIAEbGxt7BXtWVNqjPLPjNW1UELUfxU3Y2NjYn8q+a1PylU8i3laBjY2NvZXdthl3DetPYuNZeouNjY39newEXxSPUUHKw4BoIIWNjY29iD0bsudHdvKylAQG7Q+Qr4+NjY39uezZwP2kwWibkPaHKYJebGxs7KXs/NBMW2zy9ZOydzQUw8bGxl7Eng3Z2zJ2F2x4QCcfOWFjY2N/IPtkyD5rS/KhVV4s63fAxsbGXsTOi8SsEs5Kziysres2NjY29gp2++BhbjxqcmYNSbQp2NjY2OvYSQR7HtC2w6l845KxFDY2NvZWdrvQySHIk6j43oEXNjY29jew26FPdORxFCG3R3CKBgkbGxt7HbuNXduCl5erPL5NqJcWbGxs7BXsfIjTFqe8jZkFBiexBDY2NvYm9uyf+JMCM4xmD8rqixWwsbGxF7HbkpN80sbD7bHLkwYGGxsb+3vY7ajo5olX0PzMQg5sbGzsfeyThqENdNvAOC+oeQyMjY2NvY+dj2YSfPtJu92zCxsbG3sf+1Fes8e0Y/1ZGJx/FxsbG3sT+6Tite1BO9Bv3yRvjbCxsbH3sc8PQbbgvOAlWzP7AbCxsbH3sWfx6iy4bSPe4gBlHktjY2Njfz07P5pzcv+9W4ONjY2NPQtok/uT5ie/P3pnbGxs7HXskzC1Hf23oezzDZ29DzY2NvYmdjv6mZWxdjiVb/0skMbGxsZewf4DaoHoTGzE2S0AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

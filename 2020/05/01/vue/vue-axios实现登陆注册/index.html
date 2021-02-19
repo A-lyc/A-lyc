@@ -32,12 +32,12 @@
     <meta name="description" content="vue的实现等登录注册，使用vuex来管理登录状态，登录的时候就是接收axios成功把用户名等信息保存起来，之后保存到浏览器的方法内（因为刷新的时候要保证登陆状态是存在的，关闭浏览器的时候登陆状态是没有的，退出登录的是时候登录状态没有，） 首先通过axios请求来的数据保存到vuex中去，在mutations中定义几个方法，：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-axios实现登陆注册">
-<meta property="og:url" content="https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/index.html">
+<meta property="og:url" content="https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/index.html">
 <meta property="og:site_name" content="四叶草的个人博客">
 <meta property="og:description" content="vue的实现等登录注册，使用vuex来管理登录状态，登录的时候就是接收axios成功把用户名等信息保存起来，之后保存到浏览器的方法内（因为刷新的时候要保证登陆状态是存在的，关闭浏览器的时候登陆状态是没有的，退出登录的是时候登录状态没有，） 首先通过axios请求来的数据保存到vuex中去，在mutations中定义几个方法，：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-01T07:15:29.000Z">
-<meta property="article:modified_time" content="2021-02-19T07:07:18.265Z">
+<meta property="article:modified_time" content="2021-02-19T07:23:46.605Z">
 <meta property="article:author" content="四叶草">
 <meta property="article:tag" content="vue 登录注册">
 <meta name="twitter:card" content="summary">
@@ -220,17 +220,17 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-02-19T07:07:18.265Z" itemprop="dateUpdated">2021-02-19 15:07:18</time>
+    最后更新时间：<time datetime="2021-02-19T07:23:46.605Z" itemprop="dateUpdated">2021-02-19 15:23:46</time>
 </span><br>
 
 
         
-        文章连接：<a href="/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" target="_blank" rel="external">https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/</a>
+        文章连接：<a href="/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" target="_blank" rel="external">https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/</a>
         
     </div>
     
     <footer>
-        <a href="https://a-lyc.github.io">
+        <a href="https://a-lyc.github.io/A-lyc">
             <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
             四叶草
         </a>
@@ -256,7 +256,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&pic=https://a-lyc.github.io/A-lyc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -266,22 +266,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&source=vue的实现等登录注册，使用vuex来管理登录状态，登录的时候就是接收axios成功把用户名等信息保存起来，之后保存到浏览器的方法内（因为刷新的时候要保证..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&source=vue的实现等登录注册，使用vuex来管理登录状态，登录的时候就是接收axios成功把用户名等信息保存起来，之后保存到浏览器的方法内（因为刷新的时候要保证..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-axios实现登陆注册》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&via=https://a-lyc.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-axios实现登陆注册》 — 四叶草的个人博客&url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&via=https://a-lyc.github.io/A-lyc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -439,7 +439,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&pic=https://a-lyc.github.io/A-lyc/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -449,22 +449,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&source=vue的实现等登录注册，使用vuex来管理登录状态，登录的时候就是接收axios成功把用户名等信息保存起来，之后保存到浏览器的方法内（因为刷新的时候要保证..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&title=《vue-axios实现登陆注册》 — 四叶草的个人博客&source=vue的实现等登录注册，使用vuex来管理登录状态，登录的时候就是接收axios成功把用户名等信息保存起来，之后保存到浏览器的方法内（因为刷新的时候要保证..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-axios实现登陆注册》 — 四叶草的个人博客&url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&via=https://a-lyc.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-axios实现登陆注册》 — 四叶草的个人博客&url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/&via=https://a-lyc.github.io/A-lyc" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/A-lyc/2020/05/01/vue/vue-axios%E5%AE%9E%E7%8E%B0%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -475,7 +475,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLElEQVR42u3a204jQQwEUP7/p7OvrFAmVe5BEHPmKcpl0qcjYVzuj4/4eny5Pj//7HH+zmff9fX55A63XdjY2Nhvwn5cXgn7GplvxDNw+zNcW7CxsbG3sp/dun18vfR2O67XM/ssNjY2NvZ1qZgVxWQ918UMGxsbG7stYCexzkkslYdN2NjY2H+NnRSbNiRKQv9k42ZjiduyNGxsbOxfz7635Pzs42+Zb2NjY2P/YvajvNrIaTY2mIVQhQIbGxt7ETsvAPnS26FCG2/l7c2Ld2JjY2MvYrflIf9UEvTnkVASPNUDY2xsbOw3Z7cjgTzoz1uRdmw8a1H+uzM2Njb2OvYssmkDprz8zAKp5FVsbGzsrez21icNQ97AzDYlWgM2Njb2UvZ50UoYsxFCvp5kVdjY2Nib2HmwHk0YgqFCW6JmP0O0xdjY2NiL2N9x7KYoJMfstn3CxsbG3sROvuykaCXlKmlv2hL7YuuxsbGxF7FnAVNbxtrNPTnu046BsbGxsTexT5abFI+2bWi3pn0nNjY29j72TxWhe0OlNszCxsbG3sE+D9yvke2rSaTVtkZP59vY2NjYK9h5OcmX2y6oPmRTjqWL+QY2Njb2W7HbcnJ+JigvZm3gVYwxsLGxsRex80B/1k60gVFbPmfDZmxsbOxN7Pyf/vaITHtAMymNdx0hwsbGxt7Ebger561CSzopfi9+KmxsbOxF7HZIMCt4bcvxfduKjY2NvYk9W8TJ189yr7rNuP4sNjY29iL2+XXecuTP5D/PbTxsbGzsN2HPBqh5eWjbmNkoN78zNjY29lb2eXCfH7XJW5RZSxONqLGxsbHXsWdlI49y8k2ZfWN9Z2xsbOyl7Dy+mR2OOWkqzoN+bGxs7H3sR3klW5BES225Oml1hikaNjY29puw2z/9s+J0Hi2144r8VWxsbOwd7LZgnGxNG/3ka6s3BRsbG3sdO1ncrFDNBrQnI+GoTcLGxsb+w+zZKDdvS2bDgPyHwcbGxsZOCk87ym2jpaRBio7sYGNjYy9i58HNbNR63ma0w4moFcHGxsZewc4HvbNi1paoPCqaFTNsbGzsRex/q5GH861k07MAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD3UlEQVR42u3cy24aURAEUP//TydSVrYiTHVXg704s0IWucwcFkU/lI+P+Prz7/r/L5+v5t9+fk9/5qP3nF04cODAgSN41OQWk9tNbjT/9Pyzvr/Dwck4cODAgeOII/mwHcojoGmINveWf3k4cODAgeOdHLsCLKfJT0seGAcOHDhw/H6OqjQq2pG7k3HgwIEDx89y5PHZvD8fXOUtxWn8n/VKceDAgQNHkYBJSfabX79wvwMHDhw4cKyWCZI2XN7Iy9t8u7DfXThw4MCBo+eYLhxMG3O37cJ8iNWsOODAgQMHjtdxTI9OHns34tqdnP9QwIEDBw4cr+PIG2279YLknOQvCeUSBQcOHDhwFBxJjDUtvB19E9JToC/vx4EDBw4cpxzTrNmF621rr1mMezhwwoEDBw4cNcc0OPPmXR7eSeOvKQKjO8eBAwcOHDVH3ubbBfC0tMtPGC/A5YsROHDgwIHjlGNc9qwWGpK2YFLsTUGjpiQOHDhw4Cg48seovGvKaZMx//SP3beKAwcOHDiGb8pDd9x6i5cbpiOo6dpEtNCAAwcOHDg2r7v/gn91wu6Bm3HXoK2JAwcOHDhexrFrFOYrC0mE3wZwVM7hwIEDB46CY7oE0JdMTSNv9xccOHDgwPFTHEmwfU/QNwGnIT39ufAxdcKBAwcOHCuOZk2hqR13SwlT7kG7EAcOHDhwvIUjb7pNH3W3KnEVtA9LOBw4cODAUXDsAm9a/u1OThqF4yIt+DJw4MCBA0fDMW3MTQc/0xHULmLzIvNJDOPAgQMHjpojv7m8BErCb3daErS7+MeBAwcOHFccza1fNQ375mDfrMSBAwcOHO/hmMbbbtEhb+017b8o5nHgwIEDxynHeFo1jN7dElteqvVjMxw4cODAccWxe7DktpJRU15uJWfuxmZfghYHDhw4cNQc+bA/GU3tBkh5W3AXxlHRiAMHDhw4ao7bm9gtK/Tl4vQHwRMaHDhw4MBRc+TB2RRRu8DOx1r568H4CgcOHDhwDDma0Mo5kghvvpj805+EPQ4cOHDgOOKYrprlj52vFOy486W6KMhx4MCBA0fN0QyEpjfxinMGbb64/MOBAwcOHA1HM5hpSqxpVOdh3JSdOHDgwIGj58ivZGi0ayxehXT+QwEHDhw4cLyaY7eCMN0E2IVxU7btSjscOHDgwHHF0a8UTMN4GvPJksRB8xEHDhw4cLyRY1osTcunaWDvyrwncDhw4MCB40c5ktu9HSntcPPVDRw4cODAccWx++BdCZcPmaasTVGKAwcOHDiuOHYLDbtiKR8UXY2gpiUlDhw4cOAoOP4CHiZ9T5vYaSUAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
