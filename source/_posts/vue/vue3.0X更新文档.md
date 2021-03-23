@@ -9,30 +9,25 @@ category: vue
 ```shell
 npm install -g @vue/cli
 ```
-注意以下命令是错误的！
-npm install -g vue
-npm install -g vue-cli
-
-## 安装成功后，我们即可使用 vue 命令，测试方法
+ - 安装成功后，我们即可使用 vue 命令，测试方法
 ```shell
  $ vue -V
  @vue/cli 4.3.1
 ```
 
-## 第二步，初始化 vue 项目：
+ - 第二步，初始化 vue 项目：
 ```shell
 vue create vue-next-test
 ```
 
-## 输入命令后，会出现命令行交互窗口，这里我们选择 Manually select features：
+ - 输入命令后，会出现命令行交互窗口，这里我们选择 Manually select features：
 ```shell
  Vue CLI v4.3.1
  ? Please pick a preset: 
    default (babel, eslint) 
  ❯ Manually select features 
 ```
-随后我们勾选：Router、Vuex、CSS Pre-processors 和 Linter / Formatter，
-这些都是开发商业级项目必须的：
+ - 随后我们勾选：Router、Vuex、CSS Pre-processors 和 Linter / Formatter，这些都是开发商业级项目必须的：
 ```shell
 Vue CLI v4.3.1
 ? Please pick a preset: Manually select features
@@ -47,35 +42,12 @@ Vue CLI v4.3.1
  ◯ Unit Testing
  ◯ E2E Testing
 ```
-```shell
-注意：Vue 3.0 项目目前需要从 Vue 2.0 项目升级而来，所以为了直接升级到 Vue 3.0 全家桶，
+ - 注意：Vue 3.0 项目目前需要从 Vue 2.0 项目升级而来，所以为了直接升级到 Vue 3.0 全家桶，
 我们需要在 Vue 项目创建过程中勾选 Router 和 Vuex，所以避免手动写初始化代码
-```
 
-## 升级 Vue 3.0 项目
-目前创建 Vue 3.0 项目需要通过插件升级的方式来实现，
+## Vue 3.0 基本特性体验
 
-vue-cli 还没有直接支持，我们进入项目目录，并输入以下指令：
-
-```shell
-cd vue-next-test
-vue add vue-next
-```
-执行上述指令后，会自动安装 vue-cli-plugin-vue-next 插件（查看项目代码），该插件会完成以下操作：
-
-安装 Vue 3.0 依赖
-更新 Vue 3.0 webpack loader 配置，使其能够支持 .vue 文件构建（这点非常重要）
-创建 Vue 3.0 的模板代码
-自动将代码中的 Vue Router 和 Vuex 升级到 4.0 版本，如果未安装则不会升级
-自动生成 Vue Router 和 Vuex 模板代码
-完成上述操作后，项目正式升级到 Vue 3.0，
-
-注意该插件还不能支持 typescript，用 typescript 的同学还得再等等。（就是目前还不太支持TS）
-
-
-### Vue 3.0 基本特性体验
-
-## 创建路由 router/index
+ - 创建路由 router/index
 ```shell
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
@@ -143,15 +115,11 @@ app.vue   放置内容的一个
 </template>
 ```
 
-## 启动项目：
-```shell script
-npm run serve
-```
-
 ## watch的应用
 · watch监听器可以监听一个getter函数
  - 这个getter要返回一个响应式对象
  - 当该对象更新后，会执行对应的回调函
+ 
 ```shell
 import { reactive, watch } from 'vue'
 const state = reactive({ count: 0 })
@@ -184,6 +152,7 @@ watch([count, count2], (newValue, oldVlaue) => {
 ## 状态和事件绑定
 Vue 3.0 中定义状态的方法改为类似 React Hooks 的方法，下面我们在 Test.vue 中定义一个状态 count：
 setup(){}函数内return 出的值可以使用this访问的到 这里面无法访问methods和data中的内容
+点击事件@click=“click” 获取ref的时候和vue2.0一样 ref=‘refs’
 
 ```shell
 <template>
@@ -205,7 +174,8 @@ setup(){}函数内return 出的值可以使用this访问的到 这里面无法�
     },
     methods:{
         countOne(el){
-            // 返回的是一个Proxy 可以直接点后面跟着方法即可 
+            // 组件返回的是一个Proxy 可以直接点后面跟着方法即可 
+            // 非组件返回dom
             console.log(el)
             // 直接点可以直接调出来即可    
             console.log(el.message)
@@ -356,7 +326,7 @@ setup(){}函数内return 出的值可以使用this访问的到 这里面无法�
 
 ```
 
-这里的 add 方法不再需要定义在 methods 中，这样会造成setup内代码复杂化，找不到那个
+这里的 add(点击动作的方法) 方法不再需要定义在 methods 中，这样会造成setup内代码复杂化，找不到那个
 但注意更新 count 值的时候不能直接使用 count++，而应使用 count.value++，
 更新代码后，点击按钮，count 的值就会更新了：
 在 methods 中不需要count.value++ 直接 count++ 即可
@@ -448,14 +418,27 @@ const axios = require('axios')
 
 //git请求
 export function request(config) {
-    // 1.创建axios的实例
+    // 定义一个url为空，开发环境为‘/api’，非开发环境为线上地址
+    let apiurl = ''
+    // 判断环境
+    if(process.env.NODE_ENV === 'development'){
+        apiurl = '/api';
+    }else {
+        apiurl = 'http://www.baidu.com/api'
+    }
+    // 1.1.创建axios的实例
     const instance = axios.create({
-        baseURL: '/api',
+        baseURL: apiurl,
     })
 
     // 2.axios的拦截器
     // 2.1.请求拦截的作用
     instance.interceptors.request.use(config => {
+        /**
+        *  在这里写请求时候的token，等添加到请求之前的信息
+        * 在此之前可以通过路由导航首位获取token，之后根据vuex来去添加token
+        * 也可以保存到浏览器内，在浏览器内获取
+        */
         console.log("请求拦截器")
         return config
     },err => {
@@ -465,6 +448,9 @@ export function request(config) {
     // 2.2.响应拦截
     instance.interceptors.response.use(res => {
         console.log("响应拦截")
+        /**
+        * 返回来的数据，由于返回数据很多，截取code和data重要输出数据返回到页面进行渲染
+        **/
         return res.data
     },err => {
         return err.data
@@ -497,24 +483,13 @@ module.exports = {
 ```js
 import {request} from "./index";
 
-export function query(){
-    return request({
-        url: '/goods',
-        method:'get'
-    })
-}
-export function add(){
-    return request({
-        url: '/goods/add',
-        method:'get'
-    })
-}
 export function del(id){
     return request({
         url: `/goods/del?id=${id}`,
         method:'get'
     })
 }
+
 export function amend(data){
     return request({
         url: `/goods/amend`,
@@ -522,15 +497,6 @@ export function amend(data){
         method:'post'
     })
 }
-
-export function upImage(data){
-    return request({
-        url: `/goods/upImage`,
-        data:data,
-        method:'post'
-    })
-}
-
 ```
 组件中使用
 ```js
@@ -538,6 +504,13 @@ export function upImage(data){
  $api.getHomeMultidata().then(res=>{
    message.value = res.data
  })
+```
+开放api接口 需要建一个api.js文件，之后把全部的api接口导入进去，之后在min.js进行导入，之后开放这个api接口
+```shell
+// 导入api内容
+import api from './api/api'
+// 开放api接口
+Vue.prototype.$api = api
 ```
 
 ## Vuex 的集成方法如下：
@@ -560,12 +533,20 @@ export default Vuex.createStore({
     }
   },
   actions: {
+    ceshi(){
+      console.log('我是一直存在的，在这获取token和用户信息')
+    }
   },
   modules: {
   }
 })
 ```
-Vuex 的语法和 API 基本没有改变,我们在 state 中创建了一个 test.a 状态，在 mutations 中添加了修改 state.test.a 状态的方法： setTestA
+Vuex 的语法和 API 基本没有改变,我们在 state 中创建了一个 test.a 状态，
+在 mutations 中添加了修改 state.test.a 状态的方法： setTestA
+actions s是调用就执行的一个，可以在router的导航守卫的时候进入之前巧用，
+期间在这获取token和用户信息，之后保存到state中，这样即可保证刷新不会没有数据等
+使用方法：store.dispatch('ceshi')（需要先导入 imputed store from ‘vuex的路径’）
+
 
 ## 引用 Vuex 状态
 第二步，在 Test.vue 中，通过计算属性使用 Vuex 状态：
@@ -595,6 +576,7 @@ Vuex 的语法和 API 基本没有改变,我们在 state 中创建了一个 test
       const doubleCount = computed(() => count.value * 2)
       const { ctx } = getCurrentInstance()
       console.log(ctx.$router.currentRoute.value)
+      // 更改vuex的值：ctx.$store.state.test.a
       const a = computed(() => ctx.$store.state.test.a)
       return {
         count,
@@ -607,7 +589,6 @@ Vuex 的语法和 API 基本没有改变,我们在 state 中创建了一个 test
 </script>
 ```
 这里我们通过计算属性来引用 Vuex 中的状态：
-
 const a = computed(() => ctx.$store.state.test.a)
 ctx 是上节中我们提到的当前组件实例
 
@@ -655,34 +636,12 @@ ctx 是上节中我们提到的当前组件实例
   }
 </script>
 ```
-这里我们点击 update a 按钮后，会触发 update 方法，此时会通过 ctx.$store.commit 调用 setTestA 方法，将 count 的值覆盖 state.test.a 的值
-
-总的效果呢是这样的
-文章来源于：https://www.cnblogs.com/yf-html/p/12753540.html
+这里我们点击 update a 按钮后，会触发 update 方法，此时会通过 ctx.$store.commit 调用 setTestA 方法，
+将 count 的值覆盖 state.test.a 的值
 
 ## render函数
 新建一个js文件之后直接写js即可
 ```shell
-// 基础写法，不完全，需要查询官网所给出的api
- export default {
-     data(){
-         return {
-             red:'red',
-             cont:1
-         }
-     },
-     render() {
-         return ('div',{
-             'class': {
-                 'isRed':this.red
-             },
-         },[
-             ('p','我是p标签' + this.cont)
-         ])
-     },
-     methods: {
-     },
- }
 // jsx 写法，很多需要自己去查写法，比如文字在div中显示不出来，在span标签中显示出来
 export default {
     data(){
@@ -709,7 +668,8 @@ import 命名的名称 from "@/components/render的js文件.js";
 ### 在render中使用
 在模板中导入直接使用 - 和模板一个使用方式
 
-## 背景问题
+## 遇到的问题
+### 背景图片问题
 如果背景在div的style标签上显示不出来的时候，需要添加 require('图片的路径')，下面由魔法字符串组成
  ```shell
 <div class="machine-bg" :style="{
@@ -717,3 +677,77 @@ import 命名的名称 from "@/components/render的js文件.js";
     }">
     </div>
 ```
+### 如何让使用ref
+在vue3.0之后的是 :ref='fangfa';这个是在方法内获取 
+需要区别，第一个不带：是点页面加载没有直接打印出来的，
+:ref='' 是页面加载的时候同时加载了
+ ```shell
+<div class="machine-bg" ref='refss' @click='click' :ref='fangfa'>
+    </div>
+    methods: {
+        click(){
+            console.log(this.$refs['refss'])
+        },
+        fangfa(el){
+            console.log(el)
+        }
+    },
+```
+### 组件上使用v-model
+默认情况下，v-model在组件上modelValue用作道具和update:modelValue事件。我们可以通过将参数传递给来修改这些名称v-model：
+```html
+<my-component v-model:title="bookTitle"></my-component>
+```
+在这种情况下，子组件将期望一个titleprop并发出update:title事件以进行同步
+
+```js
+app.component('my-component', {
+  props: {
+    title: String
+  },
+  emits: ['update:title'],
+  template: `
+    <input
+      type="text"
+      :value="title"
+      @input="$emit('update:title', $event.target.value)">
+  `
+})
+```
+```html
+<my-component v-model:title="bookTitle"></my-component>
+```
+
+通过利用我们以前通过v-model参数来针对特定道具和事件的能力，我们现在可以在单个组件实例上创建多个v-model绑定。
+
+每个v模型将同步到不同的prop，而无需在组件中使用其他选项：
+```shell
+ // 使用
+<user-name
+  v-model:first-name="firstName"
+  v-model:last-name="lastName"
+></user-name>
+ // 组件
+app.component('user-name', {
+  props: {
+    firstName: String,
+    lastName: String
+  },
+  emits: ['update:firstName', 'update:lastName'],
+  template: `
+    <input
+      type="text"
+      :value="firstName"
+      @input="$emit('update:firstName', $event.target.value)">
+
+    <input
+      type="text"
+      :value="lastName"
+      @input="$emit('update:lastName', $event.target.value)">
+  `
+})
+```
+
+### 全局依赖注入
+title：vue的依赖注入provide，inject
+Tags: 全局依赖注入
