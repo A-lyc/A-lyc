@@ -695,10 +695,11 @@ import 命名的名称 from "@/components/render的js文件.js";
 ```
 ### 组件上使用v-model
 默认情况下，v-model在组件上modelValue用作道具和update:modelValue事件。我们可以通过将参数传递给来修改这些名称v-model：
+监听组件内v-model 的input属性title值的变化
 ```html
 <my-component v-model:title="bookTitle"></my-component>
 ```
-在这种情况下，子组件将期望一个titleprop并发出update:title事件以进行同步
+在这种情况下，子组件将期望一个title prop并发出update:title事件以进行同步
 
 ```js
 app.component('my-component', {
@@ -747,7 +748,32 @@ app.component('user-name', {
   `
 })
 ```
-
 ### 全局依赖注入
 title：vue的依赖注入provide，inject
 Tags: 全局依赖注入
+### 全局挂在的 通过min实现挂在
+类型： [key: string]: any
+默认： undefined
+用法：
+```js
+app.config.globalProperties.foo = 'bar'
+// 使用
+
+app.component('child-component', {
+  mounted() {
+    console.log(this.foo) // 'bar'
+  }
+})
+```
+添加可以在应用程序内的任何组件实例中访问的全局属性。当键冲突时，组件的属性将具有优先权。
+这可以代替Vue 2.xVue.prototype扩展：
+```js
+// vue2.0
+Vue.prototype.$http = () => {}
+
+// After vue3.0
+const app = createApp({})
+app.config.globalProperties.$http = () => {}
+```
+// Before
+
