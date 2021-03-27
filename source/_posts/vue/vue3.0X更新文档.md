@@ -694,13 +694,14 @@ import 命名的名称 from "@/components/render的js文件.js";
     },
 ```
 ### 组件上使用v-model
-默认情况下，v-model在组件上modelValue用作道具和update:modelValue事件。我们可以通过将参数传递给来修改这些名称v-model：
+默认情况下，v-model在组件上modelValue用作道具和update:modelValue事件。
+我们可以通过将参数传递给来修改这些名称v-model：
 监听组件内v-model 的input属性title值的变化
 ```html
 <my-component v-model:title="bookTitle"></my-component>
 ```
 在这种情况下，子组件将期望一个title prop并发出update:title事件以进行同步
-
+update是input更新事件，这个为标识
 ```js
 app.component('my-component', {
   props: {
@@ -719,7 +720,8 @@ app.component('my-component', {
 <my-component v-model:title="bookTitle"></my-component>
 ```
 
-通过利用我们以前通过v-model参数来针对特定道具和事件的能力，我们现在可以在单个组件实例上创建多个v-model绑定。
+通过利用我们以前通过v-model参数来针对特定道具和事件的能力，
+我们现在可以在单个组件实例上创建多个v-model绑定。
 
 每个v模型将同步到不同的prop，而无需在组件中使用其他选项：
 ```shell
@@ -748,8 +750,19 @@ app.component('user-name', {
   `
 })
 ```
-### 全局依赖注入
+### 全局依赖注入 对所有子组件作用
 title：vue的依赖注入provide，inject
+注入
+```shell script
+  provide: {
+    user: 'John Doe'
+  },
+```
+使用：
+```shell script
+inject: ['user'],
+```
+
 Tags: 全局依赖注入
 ### 全局挂在的 通过min.js实现挂在
 类型： [key: string]: any
@@ -774,10 +787,37 @@ const app = createApp({})
 app.config.globalProperties.$http = () => {}
 ```
 // Before
+<<<<<<< HEAD
 ### 循环遍历对象
 ```html
 <div v-for="(key,value) of obj" :key="key">
       {{key}} : {{value}}
     </div>
 ```
+=======
+### 子组件继承父组件
+自我理解：当父组件传一个参数给子组件，并且子组件上没有pros接收，应该
+是默认到第一个父元素上去，需要改变元素的时候用到<main v-bind="$attrs">...</main>
+v-bind="$attrs"进行接收
+```shell 
+
+```
+### 事件传输
+像组件和道具一样，事件名称提供了自动的大小写转换。如果在驼峰情况下从子组件发出事件，则可以在父组件中添加kebab大小的侦听器：
+
+```shell script
+this.$emit('myEvent')
+<my-component @my-event="doSomething"></my-component>
+
+```
+
+可在js内定义一个emits: ['inFocus', 'submit']// 数组内是向外提供的事件名称
+```shell script
+app.component('custom-form', {
+  emits: ['inFocus', 'submit']
+})
+```
+与props外壳一样，我们建议您在使用in-DOM模板时使用kebab-cased事件监听器。如果您使用的是字符串模板，则此限制不适用。
+
+>>>>>>> decf0832e5b74c7af1acb81c7086b9d4b70e81d3
 
