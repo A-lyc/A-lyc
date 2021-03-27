@@ -751,7 +751,7 @@ app.component('user-name', {
 ### 全局依赖注入
 title：vue的依赖注入provide，inject
 Tags: 全局依赖注入
-### 全局挂在的 通过min实现挂在
+### 全局挂在的 通过min.js实现挂在
 类型： [key: string]: any
 默认： undefined
 用法：
@@ -759,11 +759,9 @@ Tags: 全局依赖注入
 app.config.globalProperties.foo = 'bar'
 // 使用
 
-app.component('child-component', {
   mounted() {
     console.log(this.foo) // 'bar'
   }
-})
 ```
 添加可以在应用程序内的任何组件实例中访问的全局属性。当键冲突时，组件的属性将具有优先权。
 这可以代替Vue 2.xVue.prototype扩展：
@@ -776,4 +774,10 @@ const app = createApp({})
 app.config.globalProperties.$http = () => {}
 ```
 // Before
+### 循环遍历对象
+```html
+<div v-for="(key,value) of obj" :key="key">
+      {{key}} : {{value}}
+    </div>
+```
 
