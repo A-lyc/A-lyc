@@ -752,6 +752,10 @@ app.component('user-name', {
 ```
 ### 全局依赖注入 对所有子组件作用
 title：vue的依赖注入provide，inject
+provide传输实例的时候需要传输一个function()
+provide(){return {than:this}}
+即可把当前实例传输进去
+使用的时候，inject: ['than'],this.than即可获取注入的实例，父子孙组件使用，非父组件下的不能使用
 注入
 ```shell script
   provide: {
@@ -762,9 +766,17 @@ title：vue的依赖注入provide，inject
 ```shell script
 inject: ['user'],
 ```
+更新之后有一个setuo
+```js
+ import { provide,inject } from 'vue'
+ setup(){
+  provide('注入名称','注入属性，不能使用this，注入的是setup的内容')
+inject('注入来的名称')
+ }
+```
 
 Tags: 全局依赖注入
-### 全局挂在的 通过min.js实现挂在
+### 全局挂在的
 类型： [key: string]: any
 默认： undefined
 用法：
@@ -787,14 +799,6 @@ const app = createApp({})
 app.config.globalProperties.$http = () => {}
 ```
 // Before
-<<<<<<< HEAD
-### 循环遍历对象
-```html
-<div v-for="(key,value) of obj" :key="key">
-      {{key}} : {{value}}
-    </div>
-```
-=======
 ### 子组件继承父组件
 自我理解：当父组件传一个参数给子组件，并且子组件上没有pros接收，应该
 是默认到第一个父元素上去，需要改变元素的时候用到<main v-bind="$attrs">...</main>
@@ -818,6 +822,33 @@ app.component('custom-form', {
 })
 ```
 与props外壳一样，我们建议您在使用in-DOM模板时使用kebab-cased事件监听器。如果您使用的是字符串模板，则此限制不适用。
+### mixins
+```js
+const myMixin = {
+  data() {
+    return {
+      message: 'hello',
+      foo: 'abc'
+    }
+  }
+}
 
->>>>>>> decf0832e5b74c7af1acb81c7086b9d4b70e81d3
 
+const app = Vue.createApp({
+  mixins: [myMixin],
+  data() {
+    return {
+      message: 'goodbye',
+      bar: 'def'
+    }
+  },
+  created() {
+    console.log(this.$data) // => { message: "goodbye", foo: "abc", bar: "def" }
+  }
+})
+```
+
+
+
+
+### 
