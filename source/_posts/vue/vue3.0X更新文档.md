@@ -767,11 +767,11 @@ provide(){return {than:this}}
 inject: ['user'],
 ```
 更新之后有一个setuo
-```js
+```shell script
  import { provide,inject } from 'vue'
  setup(){
-  provide('注入名称','注入属性，不能使用this，注入的是setup的内容')
-inject('注入来的名称')
+    provide('注入名称','注入属性，不能使用this，注入的是setup的内容')
+    inject('注入来的名称')
  }
 ```
 
@@ -780,11 +780,11 @@ Tags: 全局依赖注入
 类型： [key: string]: any
 默认： undefined
 用法：
-```js
+```shell script
 app.config.globalProperties.foo = 'bar'
 // 使用
 
-  mounted() {
+  mounted(){
     console.log(this.foo) // 'bar'
   }
 ```
@@ -798,21 +798,12 @@ Vue.prototype.$http = () => {}
 const app = createApp({})
 app.config.globalProperties.$http = () => {}
 ```
-// Before
-### 子组件继承父组件
-自我理解：当父组件传一个参数给子组件，并且子组件上没有pros接收，应该
-是默认到第一个父元素上去，需要改变元素的时候用到<main v-bind="$attrs">...</main>
-v-bind="$attrs"进行接收
-```shell 
-
-```
 ### 事件传输
 像组件和道具一样，事件名称提供了自动的大小写转换。如果在驼峰情况下从子组件发出事件，则可以在父组件中添加kebab大小的侦听器：
 
 ```shell script
 this.$emit('myEvent')
 <my-component @my-event="doSomething"></my-component>
-
 ```
 
 可在js内定义一个emits: ['inFocus', 'submit']// 数组内是向外提供的事件名称
@@ -847,8 +838,4 @@ const app = Vue.createApp({
   }
 })
 ```
-
-
-
-
 ### 
