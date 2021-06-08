@@ -23,5 +23,5 @@ category: AE
  - 8：也可以直接拖动到这个网站进行预览 ——&nbsp;<a href="http://svga.io/svga-preview.html">http://svga.io/svga-preview.html</a>&nbsp;
  - 9：链接：https://www.bilibili.com/video/BV1Ut411r7Gj?p=3
  - 10：链接：http://svga.io/designer.html
- - 11:压缩包：<a href="./SVGAConverter_AE.zip" target="_blank">SVGAConverter_AE</a>
- 
+ - 11：压缩包：<a href="./SVGAConverter_AE.zip" target="_blank">SVGAConverter_AE</a>
+ - 12：<a href="https://www.nangonghan.com/svga/" target="_blank">gif转svga</a> 导出png序列之后使用AE，之后导出即可
