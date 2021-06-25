@@ -5,10 +5,10 @@ date: 2020-03-21 19:09:05
 tags: css效果
 category: css
 ---
-tarnsfrom可以用来设置元素的形状改变、主要有几种：
+transform可以用来设置元素的形状改变、主要有几种：
 <!-- more -->
-### transfrom设置元素的形状改变
-tarnsfrom可以用来设置元素的形状改变、主要有几种：
+### transform设置元素的形状改变
+transform可以用来设置元素的形状改变、主要有几种：
 rotata（旋转（单位deg））、
 scale（缩放）、
 skew（扭曲）、
