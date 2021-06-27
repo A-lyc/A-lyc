@@ -24,6 +24,7 @@ category: githup
 6：git remote add origin https://github.com/A-lyc/XXXXXX.git
 获取谁的分支 - 执行过之后，远程仓库已经存在了
 
+
 6-1：git config --global http.sslVerify "false"
 报错，OpenSSL SSL_read: Connection 被重置
 
