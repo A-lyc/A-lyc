@@ -189,11 +189,36 @@
     
     
     <entry>
-      <title>自定义域名指向本地服务器</title>
-      <link href="/A-lyc/2021/06/27/%E8%B5%84%E6%BA%90/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-      <url>/A-lyc/2021/06/27/%E8%B5%84%E6%BA%90/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <title>githup上传下载</title>
+      <link href="/A-lyc/2021/06/30/githup%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/"/>
+      <url>/A-lyc/2021/06/30/githup%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/</url>
       
-        <content type="html"><![CDATA[<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><ul><li><p>1、win10 x64系统，hosts文件位置：</p></li><li><p>C:\Windows\System32\drivers\etc</p></li><li><p>修改hosts这个文件 ，使用管理员打开，</p></li><li><p>最后一行添加 127.0.0.1 csgo.skins.com<br>意思就是127.0.0.1  这个指向csgo.skins.com这个本地域名，打开的时候需要端口号</p></li></ul><h2 id="node修改vue-config-js"><a href="#node修改vue-config-js" class="headerlink" title="node修改vue.config.js"></a>node修改vue.config.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">       disableHostCheck: true,&#x2F;&#x2F; 必须添加，要不然报错，无效的头部好像是</span><br><span class="line">       proxy: &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><p>1 首先在githup上新建一个仓库<br>一定是英文常见，Description (optional)自述信息要写和项目相关的，要不然找不到了<br>点击创建即可</p><p>2：git init 初始化 git<br>会在文件内有一个.git文件夹</p><p>3：git add .<br>提交文件 .代表这个文件夹内的全部提交上去</p><p>4：git commit -m “提交备注”<br>翻译是首先提交，提交之后 没理解啥意思</p><p>5：git branch -M main<br>获取git分支 - 执行过一次之后就不需要了，</p><p>6：git remote add origin <a href="https://github.com/A-lyc/XXXXXX.git" target="_blank" rel="noopener">https://github.com/A-lyc/XXXXXX.git</a><br>获取谁的分支 - 执行过之后，远程仓库已经存在了</p><p>6-1：git config –global http.sslVerify “false”<br>报错，OpenSSL SSL_read: Connection 被重置</p><p>7：git push -u origin main<br>提交</p><p>本地新建文件夹，之后执行git init ，之后把项目拖入文件夹内，执行git add . 之后 git commit -m “提交备注”之后git branch -M main之后git remote add origin <a href="https://github.com/A-lyc/XXXXXX.git之后git" target="_blank" rel="noopener">https://github.com/A-lyc/XXXXXX.git之后git</a> config –global http.sslVerify “false”之后git push -u origin main</p><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>压缩包下载<br>下载<br>1：git clone <a href="https://github.com/A-lyc/XXXXXX.git" target="_blank" rel="noopener">https://github.com/A-lyc/XXXXXX.git</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> githup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> githup </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自定义域名指向本地服务器</title>
+      <link href="/A-lyc/2021/06/30/%E8%B5%84%E6%BA%90/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <url>/A-lyc/2021/06/30/%E8%B5%84%E6%BA%90/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><ul><li><p>1、win10 x64系统，hosts文件位置：</p></li><li><p>C:\Windows\System32\drivers\etc</p></li><li><p>修改hosts这个文件 ，使用管理员打开，</p></li><li><p>最后一行添加 127.0.0.1 csgo.skins.com<br>意思就是127.0.0.1  这个指向csgo.skins.com这个本地域名，打开的时候需要端口号</p></li></ul><h2 id="node修改vue-config-js"><a href="#node修改vue-config-js" class="headerlink" title="node修改vue.config.js"></a>node修改vue.config.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">       host: <span class="string">"csgo.skins.com"</span>,<span class="comment">// 自定义域名</span></span><br><span class="line">       port: <span class="string">"80"</span>,<span class="comment">// 端口号</span></span><br><span class="line">       disableHostCheck: <span class="literal">true</span>,<span class="comment">// 必须添加，要不然报错，无效的头部好像是</span></span><br><span class="line">       proxy: &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><h2 id="想不带端口号-默认80端口"><a href="#想不带端口号-默认80端口" class="headerlink" title="想不带端口号  默认80端口"></a>想不带端口号  默认80端口</h2><ul><li><p>netstat -ano<br>查看端口号</p></li><li><p>netstat -aon|findstr “80”<br>查看80端口是谁在使用<br>最后面的数子就是这个使用者PID</p></li><li><p>打开任务管理器<br>找到详情信息  和PID对应的直接结束掉</p></li></ul>]]></content>
       
       
       <categories>
