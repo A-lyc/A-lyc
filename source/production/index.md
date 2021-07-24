@@ -16,6 +16,8 @@ reward: false       # 禁用打赏，可选，默认开启
 
 | 项目名称 | 备注 | 网址 |
 | :-----  | :----      | :---- |
+| {% link CSGO http://www.92skins.cn/home [CSGO] %} | vue，element，老虎机，web端， | 网址：https://www.92skins.cn/ |
+| {% link CSGO http://www.97skins.cn/home [CSGO] %} | vue，element，老虎机，自适应， | 网址：https://www.97skins.cn/ |
 | {% link 缪克发卡 https://www.miuke.net/ [缪克发卡] %} | 原生html，css，js，含有layui后台 | 网址：https://www.miuke.net/ |
 | {% link CS:GO开箱 http://m.skinworld.cc [CS:GO] %} | uniappp，h5，实时通讯，渣渣老虎机，无PC端 | 网址：http://m.skinworld.cc |
 | {% link 滨州致学 https://www.zhixue88.com/ [滨州致学] %} | 服务器端渲染，nuxt.js | 网址：https://www.zhixue88.com/ |
