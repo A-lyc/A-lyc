@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>老虎机插件文档draw-lottery | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="老虎机插件,抽奖,无限滚动老虎机">
+    <meta name="description" content="draw lottery一个横向竖向滚动抽奖，用到import TweenMax from ‘gsap’，TweenMax的插件let webUrl &#x3D; 网址：https:&#x2F;&#x2F;www.tweenmax.com.cn 123import VueDrawLottery from &#39;lottery&#39;Vue.use(VueDrawLottery);&lt;draw-lottery&#x2F;&gt; props">
+<meta property="og:type" content="article">
+<meta property="og:title" content="老虎机插件文档draw-lottery">
+<meta property="og:url" content="https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="draw lottery一个横向竖向滚动抽奖，用到import TweenMax from ‘gsap’，TweenMax的插件let webUrl &#x3D; 网址：https:&#x2F;&#x2F;www.tweenmax.com.cn 123import VueDrawLottery from &#39;lottery&#39;Vue.use(VueDrawLottery);&lt;draw-lottery&#x2F;&gt; props">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a-lyc.github.io/A-lyc/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/result.gif">
+<meta property="article:published_time" content="2021-09-26T10:32:25.000Z">
+<meta property="article:modified_time" content="2021-11-19T04:37:33.301Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="老虎机插件">
+<meta property="article:tag" content="抽奖">
+<meta property="article:tag" content="无限滚动老虎机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a-lyc.github.io/A-lyc/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/result.gif">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">老虎机插件文档draw-lottery</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">老虎机插件文档draw-lottery</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-09-26T10:32:25.000Z" itemprop="datePublished" class="page-time">
+  2021-09-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3/">老虎机插件文档</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#draw-lottery"><span class="post-toc-number">1.</span> <span class="post-toc-text">draw lottery</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#props"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">props</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#multiDrawData"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">multiDrawData</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#resData-定义样式"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">resData 定义样式</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#老虎机思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">老虎机思路</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node/老虎机插件文档draw-lottery"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">老虎机插件文档draw-lottery</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-09-26 18:32:25" datetime="2021-09-26T10:32:25.000Z"  itemprop="datePublished">2021-09-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3/">老虎机插件文档</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="draw-lottery"><a href="#draw-lottery" class="headerlink" title="draw lottery"></a>draw lottery</h1><p>一个横向竖向滚动抽奖，用到import TweenMax from ‘gsap’，TweenMax的插件<br>let webUrl = 网址：<a href="https://www.tweenmax.com.cn" target="_blank" rel="noopener">https://www.tweenmax.com.cn</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueDrawLottery <span class="keyword">from</span> <span class="string">'lottery'</span></span><br><span class="line">Vue.use(VueDrawLottery);</span><br><span class="line">&lt;draw-lottery/&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><table>
+<thead>
+<tr>
+<th align="left">描述</th>
+<th align="center">名称</th>
+<th align="center">类型</th>
+<th align="left">例子</th>
+<th align="left">解释</th>
+<th align="left">是否必传</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">动画时间</td>
+<td align="center">animationTime</td>
+<td align="center">Number:10</td>
+<td align="left">10</td>
+<td align="left">10秒</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left">列表数据</td>
+<td align="center">multiDrawData</td>
+<td align="center">Array</td>
+<td align="left">{drawData:[{src:’’,name:’’},drawDataSuccess:{}],}</td>
+<td align="left">包含全部数据以及中将数据</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">中奖位置</td>
+<td align="center">winPrizeIndex</td>
+<td align="center">String:-2000</td>
+<td align="left">-2000</td>
+<td align="left">多少px，总长</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">中奖前留几个</td>
+<td align="center">winIndex</td>
+<td align="center">Number:0</td>
+<td align="left">1</td>
+<td align="left">（是第1个）</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">滚动方式</td>
+<td align="center">drawXY</td>
+<td align="center">Boolean:true</td>
+<td align="left">Y:true X:false</td>
+<td align="left">Y:true X:false</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left">模型数据</td>
+<td align="center">resData</td>
+<td align="center">Object</td>
+<td align="left">resData 定义样式</td>
+<td align="left">下方resData</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">动画初始化</td>
+<td align="center">TweenMaxInit</td>
+<td align="center">Object</td>
+<td align="left">{ease:””}</td>
+<td align="left">webUrl上方地址</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left">开始动画</td>
+<td align="center">getStart</td>
+<td align="center">Function</td>
+<td align="left">收不到参数（bug）</td>
+<td align="left">webUrl上方地址</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left">进行中</td>
+<td align="center">getUpdate</td>
+<td align="center">Function</td>
+<td align="left">收不到参数（bug）</td>
+<td align="left">webUrl上方地址</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left">已结束</td>
+<td align="center">getComplete</td>
+<td align="center">Function</td>
+<td align="left">收不到参数（bug）</td>
+<td align="left">webUrl上方地址</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left">Repeat</td>
+<td align="center">getRepeat</td>
+<td align="center">Function</td>
+<td align="left">收不到参数（bug）</td>
+<td align="left">webUrl上方地址</td>
+<td align="left">no</td>
+</tr>
+</tbody></table>
+<h3 id="multiDrawData"><a href="#multiDrawData" class="headerlink" title="multiDrawData"></a>multiDrawData</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">multiDrawData: [</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="comment">// 全部数据</span></span><br><span class="line">       drawData: [</span><br><span class="line">         &#123;</span><br><span class="line">           src: <span class="string">"https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png"</span>,</span><br><span class="line">           name: <span class="string">"1"</span>,</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">           src: <span class="string">"https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png"</span>,</span><br><span class="line">           name: <span class="string">"2"</span>,</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">           src: <span class="string">"https://asset.yskins.com/9frg4EpbifmM1FjkvQtu3hvSMoEF0h9JjjpzfeLv.png"</span>,</span><br><span class="line">           name: <span class="string">"3"</span>,</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">           src: <span class="string">"https://asset.yskins.com/Ke4T4zu8wQTmHWdHGFuqwarAzIAe9wPlaMAasu76.png"</span>,</span><br><span class="line">           name: <span class="string">"4"</span>,</span><br><span class="line">         &#125;,</span><br><span class="line">       ],</span><br><span class="line">       <span class="comment">// 中将</span></span><br><span class="line">       drawDataSuccess: &#123;</span><br><span class="line">         src: <span class="string">"https://asset.yesskins.com/pvzZR7bOvTkf9jPYlDo1d6rnrA3x7u6RPbCv0Ljm.png"</span>,</span><br><span class="line">         name: <span class="string">"中奖1"</span>,</span><br><span class="line">       &#125;,</span><br><span class="line">     &#125;,</span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
+
+<h3 id="resData-定义样式"><a href="#resData-定义样式" class="headerlink" title="resData 定义样式"></a>resData 定义样式</h3><ul>
+<li>WH:定义宽高必填，其他样式随便，定义在style内的样式，(必传宽高)，要加入溢出隐藏属性</li>
+<li>IdBox：最外层div添加类，可以添加背景，</li>
+<li>Flex：套在滚动的外框添加类，这个控制横竖想滚动，</li>
+<li>classBox:每一个滚动的小item添加类，</li>
+<li>classImg：内部图片添加类，</li>
+<li>名称使用div包裹，可使用.XX div{}定义</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    WH:&#123;</span><br><span class="line">    width:<span class="string">'110'</span>,</span><br><span class="line">    height:<span class="string">"110"</span>,</span><br><span class="line">    overflow:<span class="string">"hidden"</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    IdBox:[<span class="string">''</span>],</span><br><span class="line">    classBox:[<span class="string">''</span>,<span class="string">''</span>],</span><br><span class="line">    classImg:[<span class="string">''</span>],<span class="attr">Flex</span>:[<span class="string">''</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/A-lyc/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/result.gif" alt="查入图片" title>
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure> 
+<img src>
+
+
+
+<h1 id="老虎机思路"><a href="#老虎机思路" class="headerlink" title="老虎机思路"></a>老虎机思路</h1><p>自己一开始写的<br>横向或者竖向显示全部的数据，之后给包裹的框一个溢出隐藏<br>再给一个框放置全部数据，之后点击开始的时候放置数据的框向上或者向下移动，奖中奖的奖品放到一个位置，之后使用动画移动到这个位置即可<br>需要整理一下数据</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2021-11-19T04:37:33.301Z" itemprop="dateUpdated">2021-11-19 12:37:33</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/" target="_blank" rel="external">https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E6%8A%BD%E5%A5%96/" rel="tag">抽奖</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E6%97%A0%E9%99%90%E6%BB%9A%E5%8A%A8%E8%80%81%E8%99%8E%E6%9C%BA/" rel="tag">无限滚动老虎机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6/" rel="tag">老虎机插件</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/&title=《老虎机插件文档draw-lottery》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/&title=《老虎机插件文档draw-lottery》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《老虎机插件文档draw-lottery》 — 四叶草的个人博客&url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2021/09/26/%E6%8F%92%E4%BB%B6/tweenmax/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">tweenmax</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2021/09/25/node/npm%E4%B8%8A%E4%BC%A0%E6%8F%92%E4%BB%B6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">npm上传插件</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/&title=《老虎机插件文档draw-lottery》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/&title=《老虎机插件文档draw-lottery》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《老虎机插件文档draw-lottery》 — 四叶草的个人博客&url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD4UlEQVR42u3ay24bQQwEQP//TztArsFK3STlJEDNyZCl2ZnSgeLj6yte37/X61dmn/p+WE/vedrtz/ckJxwuHDhw4MARHPr1sdojPh003yc529MJkzM8PhcHDhw4cBxxvA6TeUibIbZwV0EXBw4cOHD8XY5ZAE4CXo41Sxdx4MCBA8e/yZGnVXkKl1fqNgVNHDhw4MDx8xztlfIHtEybQmF7fhw4cODA8QmOTdD6X/7+4HwHDhw4cOA4Cl37dlEbttvAX98LBw4cOHCsOTYFuDYZuyrwXb1yXI/EgQMHDhxxsMxD2tVgQTvQkH8BxVeFAwcOHDgWHLOWzypNehng9+MReeK3moPAgQMHDhyjRK49UHu9JNFKLpCXL6NP4cCBAweOI45867ztlKdhM5S2KBmVC3HgwIEDx4LjNg1LLjYLhG1iNhyGwIEDBw4cRxz74YaEYBMmk6JhG+CjthMOHDhw4Ij/+71e+aDbrHTYFvtWQxI4cODAgePDHJtxtJZsNiSR1z6jFBQHDhw4cBxxzI47u15LkLes8pTv8fw4cODAgeOIY/b45JJJItcmafsk8BEFBw4cOHCsOVqUfLghZ/pEuti2snDgwIEDx+c48vGFWWicJY2z8bh8/OKx+YQDBw4cOEqOTeDMyZJweLVn2wDDgQMHDhy3HG0LZ1/yy9+fNJNm7aii8YYDBw4cOEqOfbEvCZP5wEGb1LXtqDf0OHDgwIHjlCMPkHkhLx+SSHbeBNRoZxw4cODAccSRBKrZgX5+/G42JIcDBw4cOK44Nu2ffTkvufZsh9nCgQMHDhxXHEnYex3GZm2hZFhhX1Kc/XTAgQMHDhwzjjZJ2zeNkuZQPmbXBt03QR0HDhw4cBxxzC4wKwvmHLcpX9FDw4EDBw4cRxx5a6ctCNYja2WI/SpXFGhx4MCBA8cpxybstUW9fdmxZX1THMSBAwcOHAuOTfLWNo1mxcRPDFUU58GBAwcOHCOOtqmzueTVF5Az1WVEHDhw4MCx4NgU73KU24GGWTJWZLQ4cODAgWPNkW+Rl+Fu20JJsMybUjhw4MCB43Mcs0JbO+KwQWkLf/un4MCBAweOzVO+y9WW+ZKEcDYGkfMdFAdx4MCBA0fZdmoD0icaUXlRclbKbIueOHDgwIFjw9EG14Rj3wrKm1X7QBv9XsCBAwcOHCVH2565QsxbUPl5ZnviwIEDB46/xdGOFyRwm6e0wxBvyHDgwIEDxw9y5OlWm4C1F8tTyjow48CBAweOI44kGctTtTx9aoPirO1UpHk4cODAgWPN0Q40zLKe5KD7gmD+nnzwAgcOHDhwxBy/ADLJhymW53YHAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
