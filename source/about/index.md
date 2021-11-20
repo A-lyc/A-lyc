@@ -59,12 +59,13 @@ reward: false       # 禁用打赏，可选，默认开启
   · 海信地产微网站（团队合作/已停用）
   
 * <b>功能型网站:</b>
-  ·	滨州致学网址：www.zhixue88.com，
-  · CSGO（手机端）：http://m.skinworld.cc/（已关站）
-  · CSGO开箱网站：http://www.97skins.cn，（自适应网站）
-  · CSGO开箱网站：http://www.92skins.com/，
+  ·	滨州致学网址：www.zhixue88.com（已停止运营）
+  · CSGO开箱网站：http://100steam.com（自适应网站）
+  · CSGO开箱网站：http://www.97skins.cn（自适应网站）
+  · CSGO开箱网站：http://www.92skins.com/（手机端）
   · 缪克发卡官网：https://www.miuke.net/
-  · CSGO开箱网站：92skins的手机站暂未上线，
+  · CSGO（手机端）：http://m.skinworld.cc/（已关站）
+ 
   
 * <b>前端web网站：</b>
   ·	门户网站：海信网络科技，海信地产，澳科软件，国运集团，兴和石墨，luxxan，20+......
