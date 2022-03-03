@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>ts面向对象 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ts,ts面向对象">
+    <meta name="description" content="第二章：面向对象面向对象是程序中一个非常重要的思想，它被很多同学理解成了一个比较难，比较深奥的问题，其实不然。面向对象很简单，简而言之就是程序之中所有的操作都需要通过对象来完成。  举例来说： 操作浏览器要使用window对象 操作网页要使用document对象 操作控制台要使用console对象    一切操作都要通过对象，也就是所谓的面向对象，那么对象到底是什么呢？这就要先说到程序是什么，计算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ts面向对象">
+<meta property="og:url" content="https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="第二章：面向对象面向对象是程序中一个非常重要的思想，它被很多同学理解成了一个比较难，比较深奥的问题，其实不然。面向对象很简单，简而言之就是程序之中所有的操作都需要通过对象来完成。  举例来说： 操作浏览器要使用window对象 操作网页要使用document对象 操作控制台要使用console对象    一切操作都要通过对象，也就是所谓的面向对象，那么对象到底是什么呢？这就要先说到程序是什么，计算">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-15T05:48:16.000Z">
+<meta property="article:modified_time" content="2022-03-03T08:33:28.824Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="ts,ts面向对象">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ts面向对象</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ts面向对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-02-15T05:48:16.000Z" itemprop="datePublished" class="page-time">
+  2022-02-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/ts-ts%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">ts,ts面向对象</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章：面向对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">第二章：面向对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、类（class）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1、类（class）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、面向对象的特点"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2、面向对象的特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3、接口（Interface）"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3、接口（Interface）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4、泛型（Generic）"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4、泛型（Generic）</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-ts/面向对象"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ts面向对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-15 13:48:16" datetime="2022-02-15T05:48:16.000Z"  itemprop="datePublished">2022-02-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/ts-ts%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">ts,ts面向对象</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="第二章：面向对象"><a href="#第二章：面向对象" class="headerlink" title="第二章：面向对象"></a>第二章：面向对象</h1><p>面向对象是程序中一个非常重要的思想，它被很多同学理解成了一个比较难，比较深奥的问题，其实不然。面向对象很简单，简而言之就是程序之中所有的操作都需要通过对象来完成。</p>
+<ul>
+<li>举例来说：<ul>
+<li>操作浏览器要使用window对象</li>
+<li>操作网页要使用document对象</li>
+<li>操作控制台要使用console对象</li>
+</ul>
+</li>
+</ul>
+<p>一切操作都要通过对象，也就是所谓的面向对象，那么对象到底是什么呢？这就要先说到程序是什么，计算机程序的本质就是对现实事物的抽象，抽象的反义词是具体，比如：照片是对一个具体的人的抽象，汽车模型是对具体汽车的抽象等等。程序也是对事物的抽象，在程序中我们可以表示一个人、一条狗、一把枪、一颗子弹等等所有的事物。一个事物到了程序中就变成了一个对象。</p>
+<p>在程序中所有的对象都被分成了两个部分数据和功能，以人为例，人的姓名、性别、年龄、身高、体重等属于数据，人可以说话、走路、吃饭、睡觉这些属于人的功能。数据在对象中被成为属性，而功能就被称为方法。所以简而言之，在程序中一切皆是对象。</p>
+<h2 id="1、类（class）"><a href="#1、类（class）" class="headerlink" title="1、类（class）"></a>1、类（class）</h2><p>要想面向对象，操作对象，首先便要拥有对象，那么下一个问题就是如何创建对象。要创建对象，必须要先定义类，所谓的类可以理解为对象的模型，程序中可以根据类创建指定类型的对象，举例来说：可以通过Person类来创建人的对象，通过Dog类创建狗的对象，通过Car类来创建汽车的对象，不同的类可以用来创建不同的对象。</p>
+<ul>
+<li><p>定义类：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> 类名 &#123;</span><br><span class="line">	属性名: 类型;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">constructor</span>(<span class="params">参数: 类型</span>)&#123;</span><br><span class="line">		<span class="keyword">this</span>.属性名 = 参数;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	方法名()&#123;</span><br><span class="line">		....</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sayHello()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`大家好，我是<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用类：</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">'孙悟空'</span>, <span class="number">18</span>);</span><br><span class="line">p.sayHello();</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、面向对象的特点"><a href="#2、面向对象的特点" class="headerlink" title="2、面向对象的特点"></a>2、面向对象的特点</h2><ul>
+<li><p>封装</p>
+<ul>
+<li><p>对象实质上就是属性和方法的容器，它的主要作用就是存储属性和方法，这就是所谓的封装</p>
+</li>
+<li><p>默认情况下，对象的属性是可以任意的修改的，为了确保数据的安全性，在TS中可以对属性的权限进行设置</p>
+</li>
+<li><p>只读属性（readonly）：</p>
+<ul>
+<li>如果在声明属性时添加一个readonly，则属性便成了只读属性无法修改</li>
+</ul>
+</li>
+<li><p>TS中属性具有三种修饰符：</p>
+<ul>
+<li>public（默认值），可以在类、子类和对象中修改</li>
+<li>protected ，可以在类、子类中修改</li>
+<li>private ，可以在类中修改</li>
+</ul>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>public</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    <span class="keyword">public</span> name: <span class="built_in">string</span>; <span class="comment">// 写或什么都不写都是public</span></span><br><span class="line">    <span class="keyword">public</span> age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name; <span class="comment">// 可以在类中修改</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sayHello()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`大家好，我是<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Employee <span class="keyword">extends</span> Person&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">        <span class="keyword">this</span>.name = name; <span class="comment">//子类中可以修改</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">'孙悟空'</span>, <span class="number">18</span>);</span><br><span class="line">p.name = <span class="string">'猪八戒'</span>;<span class="comment">// 可以通过对象修改</span></span><br></pre></td></tr></table></figure>
+
+<p>protected</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    <span class="keyword">protected</span> name: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">protected</span> age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name; <span class="comment">// 可以修改</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sayHello()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`大家好，我是<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Employee <span class="keyword">extends</span> Person&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">        <span class="keyword">this</span>.name = name; <span class="comment">//子类中可以修改</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">'孙悟空'</span>, <span class="number">18</span>);</span><br><span class="line">p.name = <span class="string">'猪八戒'</span>;<span class="comment">// 不能修改</span></span><br></pre></td></tr></table></figure>
+
+<p>private</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    <span class="keyword">private</span> name: <span class="built_in">string</span>;</span><br><span class="line">    <span class="keyword">private</span> age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name; <span class="comment">// 可以修改</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sayHello()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`大家好，我是<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Employee <span class="keyword">extends</span> Person&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">super</span>(name, age);</span><br><span class="line">        <span class="keyword">this</span>.name = name; <span class="comment">//子类中不能修改</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">'孙悟空'</span>, <span class="number">18</span>);</span><br><span class="line">p.name = <span class="string">'猪八戒'</span>;<span class="comment">// 不能修改</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>属性存取器</p>
+<ul>
+<li><p>对于一些不希望被任意修改的属性，可以将其设置为private</p>
+</li>
+<li><p>直接将其设置为private将导致无法再通过对象修改其中的属性</p>
+</li>
+<li><p>我们可以在类中定义一组读取、设置属性的方法，这种对属性读取或设置的属性被称为属性的存取器</p>
+</li>
+<li><p>读取属性的方法叫做setter方法，设置属性的方法叫做getter方法</p>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&#123;</span><br><span class="line">    <span class="keyword">private</span> _name: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>._name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">get</span> name()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">set</span> name(name: <span class="built_in">string</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>._name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> Person(<span class="string">'孙悟空'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p1.name); <span class="comment">// 通过getter读取name属性</span></span><br><span class="line">p1.name = <span class="string">'猪八戒'</span>; <span class="comment">// 通过setter修改name属性</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>静态属性</p>
+<ul>
+<li><p>静态属性（方法），也称为类属性。使用静态属性无需创建实例，通过类即可直接使用</p>
+</li>
+<li><p>静态属性（方法）使用static开头</p>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Tools&#123;</span><br><span class="line">    <span class="keyword">static</span> PI = <span class="number">3.1415926</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> sum(num1: <span class="built_in">number</span>, num2: <span class="built_in">number</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 + num2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Tools.PI);</span><br><span class="line"><span class="built_in">console</span>.log(Tools.sum(<span class="number">123</span>, <span class="number">456</span>));</span><br></pre></td></tr></table></figure>
+
+<p>this</p>
+<pre><code>- 在类中，使用this表示当前对象</code></pre><ul>
+<li><p>继承</p>
+<ul>
+<li><p>继承时面向对象中的又一个特性</p>
+</li>
+<li><p>通过继承可以将其他类中的属性和方法引入到当前类中</p>
+<ul>
+<li>示例：</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Animal&#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Dog <span class="keyword">extends</span> Animal&#123;</span><br><span class="line"></span><br><span class="line">    bark()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>在汪汪叫！`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dog = <span class="keyword">new</span> Dog(<span class="string">'旺财'</span>, <span class="number">4</span>);</span><br><span class="line">dog.bark();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>通过继承可以在不修改类的情况下完成对类的扩展</p>
+</li>
+<li><p>重写</p>
+<ul>
+<li><p>发生继承时，如果子类中的方法会替换掉父类中的同名方法，这就称为方法的重写</p>
+</li>
+<li><p>示例：</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Animal&#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    run()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`父类中的run方法！`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Dog <span class="keyword">extends</span> Animal&#123;</span><br><span class="line"></span><br><span class="line">    bark()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>在汪汪叫！`</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    run()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`子类中的run方法，会重写父类中的run方法！`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dog = <span class="keyword">new</span> Dog(<span class="string">'旺财'</span>, <span class="number">4</span>);</span><br><span class="line">dog.bark();</span><br></pre></td></tr></table></figure>
+
+<p>在子类中可以使用super来完成对父类的引用</p>
+<ul>
+<li><p>抽象类（abstract class）</p>
+<ul>
+<li>抽象类是专门用来被其他类所继承的类，它只能被其他类所继承不能用来创建实例</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Animal&#123;</span><br><span class="line">    <span class="keyword">abstract</span> run(): <span class="built_in">void</span>;</span><br><span class="line">    bark()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'动物在叫~'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Dog <span class="keyword">extends</span> Animals&#123;</span><br><span class="line">    run()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'狗在跑~'</span>,<span class="keyword">this</span>.bark());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用abstract开头的方法叫做抽象方法，抽象方法没有方法体只能定义在抽象类中，继承抽象类时抽象方法必须要实现</p>
+<h2 id="3、接口（Interface）"><a href="#3、接口（Interface）" class="headerlink" title="3、接口（Interface）"></a>3、接口（Interface）</h2><p>接口的作用类似于抽象类，不同点在于接口中的所有方法和属性都是没有实值的，换句话说接口中的所有方法都是抽象方法。接口主要负责定义一个类的结构，接口可以去限制一个对象的接口，对象只有包含接口中定义的所有属性和方法时才能匹配接口。同时，可以让一个类去实现接口，实现接口时类中要保护接口中的所有属性。</p>
+<p>示例（检查对象类型）：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person&#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    sayHello():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">per: Person</span>)</span>&#123;</span><br><span class="line">    per.sayHello();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(&#123;name:<span class="string">'孙悟空'</span>, sayHello() &#123;<span class="built_in">console</span>.log(<span class="string">`Hello, 我是 <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>)&#125;&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>示例（实现）</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person&#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    sayHello():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Student <span class="keyword">implements</span> Person&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sayHello() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'大家好，我是'</span>+<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="4、泛型（Generic）"><a href="#4、泛型（Generic）" class="headerlink" title="4、泛型（Generic）"></a>4、泛型（Generic）</h2><p>定义一个函数或类时，有些情况下无法确定其中要使用的具体类型（返回值、参数、属性的类型不能确定），此时泛型便能够发挥作用。</p>
+<p>举个例子：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">arg: <span class="built_in">any</span></span>): <span class="title">any</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上例中，test函数有一个参数类型不确定，但是能确定的时其返回值的类型和参数的类型是相同的，由于类型不确定所以参数和返回值均使用了any，但是很明显这样做是不合适的，首先使用any会关闭TS的类型检查，其次这样设置也不能体现出参数和返回值是相同的类型</li>
+</ul>
+<p>使用泛型：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>这里的<code>&lt;T&gt;</code>就是泛型，T是我们给这个类型起的名字（不一定非叫T），设置泛型后即可在函数中使用T来表示该类型。所以泛型其实很好理解，就表示某个类型。</p>
+</li>
+<li><p>那么如何使用上边的函数呢？</p>
+</li>
+</ul>
+<p>方式一（直接使用）：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>- 使用时可以直接传递参数使用，类型会由TS自动推断出来，但有时编译器无法自动推断时还需要使用下面的方式</code></pre><p>方式二（指定类型）：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test&lt;<span class="built_in">number</span>&gt;(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<p>也可以在函数后手动指定泛型</p>
+<p>可以同时指定多个泛型，泛型间使用逗号隔开：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>&lt;<span class="title">T</span>, <span class="title">K</span>&gt;(<span class="params">a: T, b: K</span>): <span class="title">K</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test&lt;<span class="built_in">number</span>, <span class="built_in">string</span>&gt;(<span class="number">10</span>, <span class="string">"hello"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用泛型时，完全可以将泛型当成是一个普通的类去使用</p>
+<p>类中同样可以使用泛型：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> MyClass&lt;T&gt;&#123;</span><br><span class="line">    prop: T;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params">prop: T</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.prop = prop;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>除此之外，也可以对泛型的范围进行约束</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> MyInter&#123;</span><br><span class="line">    length: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">MyInter</span>&gt;(<span class="params">arg: T</span>): <span class="title">number</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arg.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用T extends MyInter表示泛型T必须是MyInter的子类，不一定非要使用接口类和抽象类同样适用。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-03-03T08:33:28.824Z" itemprop="dateUpdated">2022-03-03 16:33:28</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_blank" rel="external">https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/ts-ts%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">ts,ts面向对象</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/&title=《ts面向对象》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/&title=《ts面向对象》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ts面向对象》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">egg后台开发</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/02/15/ts/ts%E7%B1%BB%E5%9E%8B/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ts类型</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/&title=《ts面向对象》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/&title=《ts面向对象》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ts面向对象》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpklEQVR42u3aQW7DMAwEwP7/0ynQaxt7SYpJUIxPRe3YGgWwmBW/vuLj8XM8+//v4/fZZ5+6vmdy/YEDDw8PrzX0fKDXD77+1DX12dn8zn9MAR4eHt4a73oxuGZsL0L50/Hw8PA+jZeXxcmV1QnCw8PD+0+8/GxOystrPDw8vHfxkjCiWvLm+FMxBx4eHt5reJNy9l1/L+YfeHh4eINd9d7LfR5M5AvAzWjx8PDwFni94OBUc1UeOkwmDg8PD2+P13uVV6nVpSXfNnv6xeDh4eEd5eUFcf76rkbAk62vm8nFw8PDW+P1mgPmxXS+FDUXITw8PLwF3qQVoLoMVFsEelFyYZ3Bw8PDa/Gqw82nIy9/J50AN2fx8PDwFnjVJqfqq3kyWadaxPDw8PA2eL0f/NUQttqIcHiTDA8PD+8oL48MJhta1ZK6145QuBEeHh7egNcrrKtR7GTQvfHg4eHh7fHy4VYjiepA8/EUrsTDw8N7Ca8XIky2r06FwtHCgIeHhzfg5T/v85d+NThI7tP7LB4eHt42rxof9MC9gvtYuxUeHh7emJcXytXGqV4TQC8KKRT6eHh4eId4vZamSWPBvHAvNBng4eHhLfPyEDaPYqulcz6JUfSMh4eHt8bLi9Tqqz8PI3qbZzcTioeHh3eU12uuSm7d41WbGG6egoeHh/cS3qkSuTfQfDzRF4CHh4e3wNuLG3oFdz7phRgXDw8P7yjvUTzyEGEC64Uaf9wHDw8Pb4GXH2c3sfKFZL5VhoeHh7fBq0ax1W2w3p3z/xc6I/Dw8PCO8vLANC98zy4GzQMPDw/vrbx8echJe3EwHh4e3mfyJkFtbwqqkS4eHh7eHi+PDJLre3Fw71mFzjI8PDy8Q7xeY9P1lfOXfr54VJu08PDw8Aa8b77rVLk5l/otAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

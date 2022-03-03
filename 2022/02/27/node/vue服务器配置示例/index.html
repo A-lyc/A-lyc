@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>vue服务器配置示例 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue服务器配置示例">
+    <meta name="description" content="Apache123456789&lt;IfModule mod_rewrite.c&gt;  RewriteEngine On  RewriteBase &#x2F;  RewriteRule ^index\.html$ - [L]  RewriteCond %&amp;#123;REQUEST_FILENAME&amp;#125; !-f  RewriteCond %&amp;#123;REQUEST_FILENAME&amp;#125">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue服务器配置示例">
+<meta property="og:url" content="https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="Apache123456789&lt;IfModule mod_rewrite.c&gt;  RewriteEngine On  RewriteBase &#x2F;  RewriteRule ^index\.html$ - [L]  RewriteCond %&amp;#123;REQUEST_FILENAME&amp;#125; !-f  RewriteCond %&amp;#123;REQUEST_FILENAME&amp;#125">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-27T10:32:25.000Z">
+<meta property="article:modified_time" content="2022-03-03T08:33:28.816Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="vue服务器配置示例">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue服务器配置示例</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue服务器配置示例</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-02-27T10:32:25.000Z" itemprop="datePublished" class="page-time">
+  2022-02-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/">vue服务器配置示例</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Apache"><span class="post-toc-number">1.</span> <span class="post-toc-text">Apache</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#nginx"><span class="post-toc-number">2.</span> <span class="post-toc-text">nginx</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#原生-Node-js"><span class="post-toc-number">3.</span> <span class="post-toc-text">原生 Node.js</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Express-Node-js"><span class="post-toc-number">4.</span> <span class="post-toc-text">Express + Node.js</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其他看地址"><span class="post-toc-number">5.</span> <span class="post-toc-text">其他看地址</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node/vue服务器配置示例"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue服务器配置示例</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-27 18:32:25" datetime="2022-02-27T10:32:25.000Z"  itemprop="datePublished">2022-02-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/">vue服务器配置示例</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;IfModule mod_rewrite.c&gt;</span><br><span class="line">  RewriteEngine On</span><br><span class="line">  RewriteBase /</span><br><span class="line">  RewriteRule ^index\.html$ - [L]</span><br><span class="line">  RewriteCond %&#123;REQUEST_FILENAME&#125; !-f</span><br><span class="line">  RewriteCond %&#123;REQUEST_FILENAME&#125; !-d</span><br><span class="line">  RewriteRule . /index.html [L]</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
+<p>也可以使用 FallbackResource 代替 mod_rewrite</p>
+<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  try_files $uri $uri/ /index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="原生-Node-js"><a href="#原生-Node-js" class="headerlink" title="原生 Node.js"></a>原生 Node.js</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const http = require('http')</span><br><span class="line">const fs = require('fs')</span><br><span class="line">const httpPort = 80</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">  .createServer((req, res) =&gt; &#123;</span><br><span class="line">    fs.readFile('index.html', 'utf-8', (err, content) =&gt; &#123;</span><br><span class="line">      if (err) &#123;</span><br><span class="line">        console.log('We cannot open "index.html" file.')</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      res.writeHead(200, &#123;</span><br><span class="line">        'Content-Type': 'text/html; charset=utf-8',</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      res.end(content)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(httpPort, () =&gt; &#123;</span><br><span class="line">    console.log('Server listening on: http://localhost:%s', httpPort)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Express-Node-js"><a href="#Express-Node-js" class="headerlink" title="Express + Node.js"></a>Express + Node.js</h1><p> 对于 Node.js/Express，可以考虑使用 connect-history-api-fallback 中间件。</p>
+<p> Internet Information Services (IIS)#<br> 安装 IIS UrlRewrite<br> 在网站的根目录下创建一个 web.config 文件，内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">  &lt;system.webServer&gt;</span><br><span class="line">    &lt;rewrite&gt;</span><br><span class="line">      &lt;rules&gt;</span><br><span class="line">        &lt;rule name="Handle History Mode and custom 404/500" stopProcessing="true"&gt;</span><br><span class="line">          &lt;match url="(.*)" /&gt;</span><br><span class="line">          &lt;conditions logicalGrouping="MatchAll"&gt;</span><br><span class="line">            &lt;add input="&#123;REQUEST_FILENAME&#125;" matchType="IsFile" negate="true" /&gt;</span><br><span class="line">            &lt;add input="&#123;REQUEST_FILENAME&#125;" matchType="IsDirectory" negate="true" /&gt;</span><br><span class="line">          &lt;/conditions&gt;</span><br><span class="line">          &lt;action type="Rewrite" url="/" /&gt;</span><br><span class="line">        &lt;/rule&gt;</span><br><span class="line">      &lt;/rules&gt;</span><br><span class="line">    &lt;/rewrite&gt;</span><br><span class="line">  &lt;/system.webServer&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他看地址"><a href="#其他看地址" class="headerlink" title="其他看地址"></a>其他看地址</h1><p>vue router后台配置：<a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#netlify" target="_blank" rel="noopener">https://router.vuejs.org/zh/guide/essentials/history-mode.html#netlify</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-03-03T08:33:28.816Z" itemprop="dateUpdated">2022-03-03 16:33:28</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/" target="_blank" rel="external">https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/" rel="tag">vue服务器配置示例</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/&title=《vue服务器配置示例》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/&title=《vue服务器配置示例》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue服务器配置示例》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/03/03/%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">第二章：面向对象</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">宝塔配置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/&title=《vue服务器配置示例》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/&title=《vue服务器配置示例》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue服务器配置示例》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD50lEQVR42u3ay07jQBAF0Pz/T2ekWQ2COPdWtQFpjlfIOO3uE6SiHo9HfD3/Xp9/Tu68+u2/16v7n59J1nz1zLELBw4cOHAER73eRLLpZM0cOjlYssMWGgcOHDhwnOJIXpYw5Ssk723Ddht0ceDAgQPHz3K0S7dp1SxhSz6FAwcOHDh+J8d9ydgsPZvtBwcOHDhwfA9HUhzcN5OS53O4Z3DdWCvFgQMHDhxXUWkV9n7/z98034EDBw4c/z3Hs7w27aUk+J0dU6hPhwMHDhw41hzJ8ZJjtyh3hPwZ5aOdp8CBAwcOHCVH3mpKxhfaLGlfrNzsHwcOHDhw7Dn2Bz7brNq3uDYDEDhw4MCB4xTHLPS2CV49sjZK59qU8sOTOHDgwIFjzbFp/yTH27es9o2o9gvDgQMHDhxnOTZtnmuUPAFr93D4S8KBAwcOHEc52uQtOerZEmEbjNvRBxw4cODAcYpj347a5EHFdtcrvNk/Dhw4cOBYcLSN/3agLW84tWF+k0xGIRYHDhw4cMz7PquQltyZlQWTFW4pJuLAgQMHjpN9meGHc5TNcF5bHMxDPg4cOHDgOMuRv7JN3vJNt4fMx+OGfxE4cODAgeMoxyO+NkfdFPL2678MyThw4MCBY8GRBLmWqU262vttk6wIwDhw4MCBY82xLwgmpcDrI82aTLPxi6h9hQMHDhw41hxJ6+juo95H3zbAcODAgQPHhiPZymyIrf42Foc/lWriwIEDB449R7KJvCSXh95ZqpYnnC00Dhw4cOA4xZEc6VQx7nrrp4qDydcTDTTgwIEDB44FR1uq2yR4e9zNV/jmRDhw4MCB4zaOPDTmqVcbINtkrA3SRaDFgQMHDhwjjk0Ya1tBm3GHdlcFKA4cOHDgWHO0RbS6lzUadMgbV8k+65YVDhw4cOBYc5wKn8nzbdDN07PZ+EUxT4cDBw4cOAKOVm4WYtv7efI2azVF8x04cODAgWPN0Qa/6xfnTPsC4r6Y+NhsBQcOHDhwvODIC237YYL9p2bjF2/gcODAgQPHIY6kUJhAbNpReaMoGVnIm1tfpHA4cODAgWPBUaQ3o2ZPMTowSvDyZlixPg4cOHDgWKz/LK/ZiNumnDcrVub3P6yJAwcOHDjWHPmVcLRhdXbIdvQhCd44cODAgeMsRxJc27GzWRqWt7I2z78pNeLAgQMHjkMcbbrVpkZ58a4tF+6Lg9F/Bzhw4MCB4waO5DXtwEF7vPYteZERBw4cOHD8FMepMbg2PLcpZZt84sCBAweOsxx5epYX6c6WBWfjC3mAx4EDBw4cpzjODjS0DarZmEJ77MMoOHDgwIHj6538ASRYfU9AEnqUAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

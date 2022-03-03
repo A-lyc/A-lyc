@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>egg后台开发 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="egg后台开发">
+    <meta name="description" content="安装node，之后安装egg   · 自己已写完一个egg，基础的增删改查，基础上写了一个后台，可在这个基础之上继续开发，对接数据库的时候很不友好。需要改进和数据库的链接 egg目录介绍 主要文件：app.js，config，app Application - app.js 新建app.js  和app文件夹是同级目录在app.js中写入方法在Controller 文件中使用的时候1console">
+<meta property="og:type" content="article">
+<meta property="og:title" content="egg后台开发">
+<meta property="og:url" content="https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="安装node，之后安装egg   · 自己已写完一个egg，基础的增删改查，基础上写了一个后台，可在这个基础之上继续开发，对接数据库的时候很不友好。需要改进和数据库的链接 egg目录介绍 主要文件：app.js，config，app Application - app.js 新建app.js  和app文件夹是同级目录在app.js中写入方法在Controller 文件中使用的时候1console">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-16T10:32:25.000Z">
+<meta property="article:modified_time" content="2022-03-03T08:33:28.772Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="egg后台开发">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">egg后台开发</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">egg后台开发</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-02-16T10:32:25.000Z" itemprop="datePublished" class="page-time">
+  2022-02-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/">egg后台开发</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装node，之后安装egg"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装node，之后安装egg</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#egg目录介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">egg目录介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Application-app-js"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Application - app.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#入口-app-js"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">入口:app.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#router-js"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">router.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Service"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Service</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#操作数据库"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">操作数据库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Middleware"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Middleware</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#model-创建数据库模型-不完善"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">model 创建数据库模型 不完善</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#controller-上传文件"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">controller 上传文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#插件"><span class="post-toc-number">3.</span> <span class="post-toc-text">插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用egg-sequelize-和-mysql2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">使用egg-sequelize 和 mysql2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#qrcode生成二维码"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">qrcode生成二维码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成token"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">生成token</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上传文件-multipart"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">上传文件 multipart</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实时通讯egg-socket-io"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">实时通讯egg-socket.io</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模板引擎"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">模板引擎</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#跨域"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">跨域</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node/egg后台开发"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">egg后台开发</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-16 18:32:25" datetime="2022-02-16T10:32:25.000Z"  itemprop="datePublished">2022-02-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/">egg后台开发</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="安装node，之后安装egg"><a href="#安装node，之后安装egg" class="headerlink" title="安装node，之后安装egg"></a>安装node，之后安装egg</h1><p>   · 自己已写完一个egg，基础的增删改查，基础上写了一个后台，可在这个基础之上继续开发，对接数据库的时候很不友好。需要改进和数据库的链接</p>
+<h1 id="egg目录介绍"><a href="#egg目录介绍" class="headerlink" title="egg目录介绍"></a>egg目录介绍</h1><p> 主要文件：app.js，config，app</p>
+<h2 id="Application-app-js"><a href="#Application-app-js" class="headerlink" title="Application - app.js"></a>Application - app.js</h2><ul>
+<li>新建app.js  和app文件夹是同级目录<br>在app.js中写入方法<br>在Controller 文件中使用的时候<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.app.cache());</span><br></pre></td></tr></table></figure>
+<h2 id="入口-app-js"><a href="#入口-app-js" class="headerlink" title="入口:app.js"></a>入口:app.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</span><br><span class="line">  app.beforeStart(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'系统启动的时候执行 会执行这个函数 之后直接创建的数据库的表'</span>)</span><br><span class="line">    <span class="comment">//  await app.model.sync(&#123;force:true&#125;)  //每次启动删除全部的表，按照模型创建新的表 开发环境使用，会删除数据表</span></span><br><span class="line">    <span class="comment">// sync方法会根据模型创建一个表</span></span><br><span class="line">    <span class="keyword">await</span> app.model.sync(&#123;&#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  app.cache = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(app.controller);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是app.js'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="router-js"><a href="#router-js" class="headerlink" title="router.js"></a>router.js</h2>撰写路由，数据在controller这里来，所有的路由都在这个位置，可以新建js导入<ul>
+<li>请求的名称，2：中间件，下面这个是判断有无token，3：controller文件夹下news.js内的list方法<br>get请求：router.get(‘/news/list’, app.middleware.checktoken(), controller.news.list);<br>post请求：router.post()<br>包含增删改查的请求router.resources(‘/testCrud’,app.middleware.checktoken(), controller.testCrud)；controller需要：index：查看，create：添加；destroy：删除，update：更新<br>例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">    module.exports &#x3D; app &#x3D;&gt; &#123;</span><br><span class="line">        const &#123; router, controller, io &#125; &#x3D; app;</span><br><span class="line">        router.get(&#39;&#x2F;&#39;,controller.home.index);</span><br><span class="line">        router.get(&#39;&#x2F;product_active&#x2F;:id&#39;,controller.home.index);</span><br><span class="line">        router.resources(&#39;&#x2F;banner&#39;, controller.banner)</span><br><span class="line">        &#x2F;&#x2F; socket, 指向app&#x2F;io&#x2F;controller&#x2F;chat.js的index方法</span><br><span class="line">        io.of(&#39;&#x2F;&#39;).route(&#39;chat&#39;, app.io.controllers.chat.index);</span><br><span class="line">    &#125;</span><br><span class="line">&#96;&#96;&#96;&#96; </span><br><span class="line">## controller </span><br><span class="line">自我理解：是一个获取 （servic对数据库操作之后返回的信息） 之后返回给router，数据的控制器</span><br><span class="line"></span><br><span class="line">框架提供了一个 Controller 基类，并推荐所有的 Controller 都继承于该基类实现。这个 Controller 基类有下列属性：</span><br><span class="line">ctx - 当前请求的 Context 实例。</span><br><span class="line">app - 应用的 Application 实例。</span><br><span class="line">config - 应用的配置。</span><br><span class="line">service - 应用所有的 service。</span><br><span class="line">logger - 为当前 controller 封装的 logger 对象。</span><br><span class="line">在 Controller 文件中，可以通过两种方式来引用 Controller 基类：</span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">&#x2F;&#x2F; app&#x2F;controller&#x2F;user.js</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 从 egg 上获取（推荐）</span><br><span class="line">const Controller &#x3D; require(&#39;egg&#39;).Controller;</span><br><span class="line">&#x2F;&#x2F; UserController这个方法继承了Controller</span><br><span class="line">class UserController extends Controller &#123;</span><br><span class="line">  &#x2F;&#x2F; 查询，首页展示</span><br><span class="line">  async index() &#123;</span><br><span class="line">   let &#123;ctx,app&#125; &#x3D; this</span><br><span class="line">    let data &#x3D; ctx.request.body &#x2F;&#x2F; 拿到post请求数据</span><br><span class="line">    let data1 &#x3D; ctx.params &#x2F;&#x2F;params  &#x2F;a&#x2F;a&#x2F;a</span><br><span class="line">    let data2 &#x3D; ctx.request.query &#x2F;&#x2F;query&amp;</span><br><span class="line">    &#x2F;&#x2F; 获取数据库</span><br><span class="line">    const result &#x3D; await ctx.service.&#x2F;&#x2F; server下的js文件名&#x2F;&#x2F;js内的方法 &#x2F;&#x2F; 是个函数（）</span><br><span class="line">    ctx.body &#x3D;  &#123;result,data,data1,data2&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports &#x3D; UserController;</span><br></pre></td></tr></table></figure>
+配置路由映射：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app/router.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; router, controller &#125; = app;</span><br><span class="line">  router.get(<span class="string">'/'</span>, controller.home.index);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Service = <span class="built_in">require</span>(<span class="string">'egg'</span>).Service;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewsService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</span><br><span class="line">  <span class="comment">/* 这里进行了数据库操作 - 已对接数据库 */</span></span><br><span class="line">  <span class="keyword">async</span> list() &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; app,ctx &#125; = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 这个是egg内置的方法</span></span><br><span class="line">    <span class="keyword">const</span> res1 = <span class="keyword">await</span> app.mysql.insert(<span class="string">'user'</span>, &#123; <span class="attr">username</span>: <span class="string">'egg'</span>, <span class="attr">phone</span>: <span class="string">'123456789'</span>, <span class="attr">create_time</span>: <span class="string">'2021-08-16'</span> &#125;);</span><br><span class="line">    <span class="comment">// 数据库原生的方法</span></span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> app.mysql.query(<span class="string">'SELECT * FROM `user` LIMIT 0, 2'</span>);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = NewsService;</span><br></pre></td></tr></table></figure>
+<h3 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h3><p>使用插件：sequelized（推荐）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Service = <span class="built_in">require</span>(<span class="string">'egg'</span>).Service;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> findAll(where) &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; app &#125; = <span class="keyword">this</span></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">    * where: &#123; status: 'draft', author: ['author1', 'author2'] &#125;, // WHERE 条件</span></span><br><span class="line"><span class="comment">    * columns: ['author', 'title'], // 要查询的表字段</span></span><br><span class="line"><span class="comment">    * order: [['created_at','desc'], ['id','desc']], // 排序方式</span></span><br><span class="line"><span class="comment">    * limit: 10, // 返回数据量</span></span><br><span class="line"><span class="comment">    * offset: 0, // 数据偏移量</span></span><br><span class="line"><span class="comment">    * 前台分页组件有时会需要查询全部记录数，这时可以直接使用count</span></span><br><span class="line"><span class="comment">    * where: &#123;</span></span><br><span class="line"><span class="comment">    *    status: 1</span></span><br><span class="line"><span class="comment">    * &#125;</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">let</span> data = <span class="keyword">await</span> app.model.Business.findAll(&#123; <span class="attr">limit</span>: where.limit*<span class="number">1</span>, <span class="attr">offset</span>: (where.page - <span class="number">1</span>) * where.limit,<span class="attr">order</span>:[[<span class="string">'display_time'</span>,<span class="string">'desc'</span>]]&#125;)</span><br><span class="line">     <span class="comment">// 查询 findAll</span></span><br><span class="line">     <span class="comment">// 创建：create</span></span><br><span class="line">     <span class="comment">// 删除 destroy</span></span><br><span class="line">     <span class="comment">// 更新 update</span></span><br><span class="line">    <span class="keyword">let</span> dataList = <span class="keyword">await</span> app.model.Business.findAll()</span><br><span class="line">    <span class="keyword">let</span> total = dataList.length</span><br><span class="line">    <span class="keyword">return</span> &#123; data, <span class="attr">total</span>: <span class="built_in">Math</span>.ceil(total) &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每一次用户请求，框架都会实例化对应的 Service 实例，由于它继承于 egg.Service，故拥有下列属性方便我们进行开发：<br>this.ctx: 当前请求的上下文 Context 对象的实例，通过它我们可以拿到框架封装好的处理当前请求的各种便捷属性和方法。<br>this.app: 当前应用 Application 对象的实例，通过它我们可以拿到框架提供的全局对象和方法。<br>this.service：应用定义的 Service，通过它我们可以访问到其他业务层，等价于 this.ctx.service 。<br>this.config：应用运行时的配置项。<br>this.logger：logger 对象，上面有四个方法（debug，info，warn，error），分别代表打印四个不同级别的日志，使用方法和效果与 context logger 中介绍的一样，但是通过这个 logger 对象记录的日志，在日志前面会加上打印该日志的文件路径，以便快速定位日志打印位置。</p>
+<h2 id="Middleware"><a href="#Middleware" class="headerlink" title="Middleware"></a>Middleware</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 中间件是一个函数</span></span><br><span class="line"><span class="comment">// 使用的时候在router 通过app.middleware.checktoken</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checktoken</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 返回的本身有两个参数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">ctx,next</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'我是中间件的内容'</span>)</span><br><span class="line">      <span class="comment">// 获取token</span></span><br><span class="line">      <span class="keyword">let</span> token = ctx.request.header.token</span><br><span class="line">      <span class="comment">// 校验token</span></span><br><span class="line">      <span class="keyword">let</span> ddecode = ctx.app.jwt.verify(token, ctx.app.config.jwt.secret)</span><br><span class="line">      <span class="comment">//ddecode.name和数据库进项校验也可以</span></span><br><span class="line">      <span class="keyword">if</span> (ddecode.name) &#123;</span><br><span class="line">        <span class="keyword">await</span> next()</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ctx.body = <span class="string">'中间件返回用户不存在'</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(ddecode)</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">      ctx.body = <span class="string">'中间件返回用户不存在 - catch'</span></span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = checktoken</span><br></pre></td></tr></table></figure>
+<p>router使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面的请求使用了中间件  参数位：路由路径，中间件，控制器返回的内容</span></span><br><span class="line">  router.get(<span class="string">'/jwt'</span>, app.middleware.checktoken() ,controller.jwt.index)<span class="comment">// jwt 生成token</span></span><br><span class="line">  router.get(<span class="string">'/jwtmessage'</span>, app.middleware.checktoken(), controller.jwt.getmessage)</span><br></pre></td></tr></table></figure>
+
+<h2 id="model-创建数据库模型-不完善"><a href="#model-创建数据库模型-不完善" class="headerlink" title="model 创建数据库模型 不完善"></a>model 创建数据库模型 不完善</h2><p>基本操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; STRING &#125; = app.Sequelize</span><br><span class="line">  <span class="comment">// 默认情况下Sequelize将自动传递所有的模型名称（define的第一个参数）转换为复数</span></span><br><span class="line">  <span class="comment">// 这里会自动生成一个ID,数据库中有一个字段的名字叫做name</span></span><br><span class="line">  <span class="keyword">const</span> Banner = app.model.define(<span class="string">'banner'</span>, &#123;</span><br><span class="line">    name: STRING,</span><br><span class="line">    dscription: STRING,</span><br><span class="line">    img_url: STRING,</span><br><span class="line">    urllink: STRING,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> Banner</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关联数据库表：</p>
+<h2 id="controller-上传文件"><a href="#controller-上传文件" class="headerlink" title="controller 上传文件"></a>controller 上传文件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Controller = <span class="built_in">require</span>(<span class="string">'egg'</span>).Controller;</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> awaitWriteStream = <span class="built_in">require</span>(<span class="string">'await-stream-ready'</span>).write;<span class="comment">// 重点在这</span></span><br><span class="line"><span class="keyword">const</span> sendToWormhole = <span class="built_in">require</span>(<span class="string">'stream-wormhole'</span>);</span><br><span class="line"><span class="keyword">const</span> dayjs = <span class="built_in">require</span>(<span class="string">'dayjs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 上传未指定那个文件夹</span></span><br><span class="line">  <span class="keyword">async</span> upload() &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; ctx &#125; = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">const</span> stream = <span class="keyword">await</span> <span class="keyword">this</span>.ctx.getFileStream();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'上传的文件'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(stream)</span><br><span class="line">    <span class="comment">// 定义文件名 </span></span><br><span class="line">    <span class="keyword">const</span> filename = <span class="built_in">Date</span>.now() + path.extname(stream.filename).toLocaleLowerCase();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'上传文件名'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(filename)</span><br><span class="line">    <span class="comment">// 目标文件 </span></span><br><span class="line">    <span class="keyword">const</span> target = path.join(<span class="string">'app/public/upload'</span>, filename);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'目标文件'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(target)</span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    <span class="keyword">const</span> writeStream = fs.createWriteStream(target);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'writeStream'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(writeStream)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">//异步把文件流 写入 </span></span><br><span class="line">      <span class="keyword">await</span> awaitWriteStream(stream.pipe(writeStream));</span><br><span class="line">      ctx.body = &#123;</span><br><span class="line">        ...stream.fields,</span><br><span class="line">        url: <span class="string">'/public/upload/'</span> + filename,</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      <span class="comment">//如果出现错误，关闭管道</span></span><br><span class="line">      <span class="keyword">await</span> sendToWormhole(stream)</span><br><span class="line">      <span class="built_in">console</span>.log(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 上传指定那个文件夹</span></span><br><span class="line">  <span class="keyword">async</span> uploadFile() &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123; ctx &#125; = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">const</span> stream = <span class="keyword">await</span> ctx.getFileStream();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'上传的文件'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(stream)</span><br><span class="line">    <span class="comment">// 基础的目录 </span></span><br><span class="line">    <span class="keyword">const</span> uplaodBasePath = <span class="string">'app/public/upload'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'基础的目录'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(uplaodBasePath)</span><br><span class="line">    <span class="comment">// 生成文件名 </span></span><br><span class="line">    <span class="keyword">const</span> filename = <span class="string">`<span class="subst">$&#123;<span class="built_in">Date</span>.now()&#125;</span><span class="subst">$&#123;<span class="built_in">Number</span>.<span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * <span class="number">1000</span>,)&#125;</span><span class="subst">$&#123;path.extname(stream.filename).toLocaleLowerCase()&#125;</span>`</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 生成文件夹 </span></span><br><span class="line">    <span class="keyword">const</span> dirname = dayjs(<span class="built_in">Date</span>.now()).format(<span class="string">'YYYY/MM/DD'</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">mkdirsSync</span>(<span class="params">dirname</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (fs.existsSync(dirname)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (mkdirsSync(path.dirname(dirname))) &#123;</span><br><span class="line">          fs.mkdirSync(dirname); <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    mkdirsSync(path.join(uplaodBasePath, dirname));</span><br><span class="line">    <span class="comment">// 生成写入路径</span></span><br><span class="line">    <span class="keyword">const</span> target = path.join(uplaodBasePath, dirname, filename);</span><br><span class="line">    <span class="comment">// 写入流</span></span><br><span class="line">    <span class="keyword">const</span> writeStream = fs.createWriteStream(target);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">//异步把文件流 写入</span></span><br><span class="line">      <span class="keyword">await</span> awaitWriteStream(stream.pipe(writeStream));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      <span class="comment">//如果出现错误，关闭管道</span></span><br><span class="line">      <span class="keyword">await</span> sendToWormhole(stream);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ctx.body = &#123; stream,<span class="attr">url</span>:<span class="string">'/public/upload/'</span>+dirname+<span class="string">'/'</span>+filename &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="使用egg-sequelize-和-mysql2"><a href="#使用egg-sequelize-和-mysql2" class="headerlink" title="使用egg-sequelize 和 mysql2"></a>使用egg-sequelize 和 mysql2</h2><p>1： 首先安装：npm i –save egg-sequelize msyql2<br>egg-sequelize</p>
+<ul>
+<li>1: STRING =&gt; varchar(255)</li>
+<li>2: INTEGER =&gt; int</li>
+<li>3: DOUBLE =&gt; double</li>
+<li>4: DATE =&gt; datetime</li>
+<li>5: TEXT =&gt; text<br>2： 在plugin.js文件中引入插件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sequelize插件，实现数据持久化</span></span><br><span class="line">sequelize:&#123;</span><br><span class="line">  enable: <span class="literal">true</span>,</span><br><span class="line">   package: <span class="string">'egg-sequelize'</span>,</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 引入mysql数据库2</span></span><br><span class="line">mysql2: &#123;</span><br><span class="line">  enable: <span class="literal">true</span>,</span><br><span class="line">  package: <span class="string">'mysql2'</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+3： 在config.default.js文件中配置这个数据库链接<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sequelized的配置文件</span></span><br><span class="line">config.sequelize = &#123;</span><br><span class="line">  <span class="comment">// 数据库类型 是mysql</span></span><br><span class="line">  dialect:<span class="string">"mysql"</span>,</span><br><span class="line">  <span class="comment">// host</span></span><br><span class="line">  host: <span class="string">'localhost'</span>,</span><br><span class="line">  <span class="comment">// 端口号</span></span><br><span class="line">  port: <span class="string">'3306'</span>,</span><br><span class="line">  <span class="comment">// 用户名</span></span><br><span class="line">  username: <span class="string">'exapp_admin'</span>,</span><br><span class="line">  <span class="comment">// 密码</span></span><br><span class="line">  password: <span class="string">'123456789'</span>,</span><br><span class="line">  <span class="comment">// 数据库名</span></span><br><span class="line">  database: <span class="string">'exapp_admin'</span>,</span><br><span class="line">  <span class="comment">// 时区</span></span><br><span class="line">  timezone:<span class="string">'+08:00'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+4： 在app/model文件中创建数据模型<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; STRING &#125; = app.Sequelize</span><br><span class="line">  <span class="comment">// 默认情况下Sequelize将自动传递所有的模型名称（define的第一个参数）转换为复数</span></span><br><span class="line">  <span class="comment">// 这里会自动生成一个ID,数据库中有一个字段的名字叫做name</span></span><br><span class="line">  <span class="keyword">const</span> Banner = app.model.define(<span class="string">'banner'</span>, &#123;</span><br><span class="line">    name: STRING,</span><br><span class="line">    dscription: STRING,</span><br><span class="line">    img_url: STRING,</span><br><span class="line">    urllink: STRING,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> Banner</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+5： 添加app.js文件，初始化数据库<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">app.beforeStart(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'系统启动的时候执行 会执行这个函数 之后直接创建的数据库的表'</span>)</span><br><span class="line">  <span class="comment">//  await app.model.sync(&#123;force:true&#125;)  //每次启动删除全部的表，按照模型创建新的表 开发环境使用，会删除数据表</span></span><br><span class="line">  <span class="comment">// sync方法会根据模型创建一个表</span></span><br><span class="line">  <span class="keyword">await</span> app.model.sync(&#123;&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+6：在service中的增删改查<br>// 添加<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/***</span></span><br><span class="line"><span class="comment">    * where: &#123; status: 'draft', author: ['author1', 'author2'] &#125;, // WHERE 条件</span></span><br><span class="line"><span class="comment">    * columns: ['author', 'title'], // 要查询的表字段</span></span><br><span class="line"><span class="comment">    * order: [['created_at','desc'], ['id','desc']], // 排序方式</span></span><br><span class="line"><span class="comment">    * limit: 10, // 返回数据量</span></span><br><span class="line"><span class="comment">    * offset: 0, // 数据偏移量</span></span><br><span class="line"><span class="comment">    * 前台分页组件有时会需要查询全部记录数，这时可以直接使用count</span></span><br><span class="line"><span class="comment">    * where: &#123;</span></span><br><span class="line"><span class="comment">    *    status: 1</span></span><br><span class="line"><span class="comment">    * &#125;</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="keyword">await</span> app.model.Clazz.create(&#123;<span class="attr">name</span>:name&#125;)</span><br><span class="line"><span class="comment">// 条件添加</span></span><br><span class="line"><span class="keyword">let</span> data = <span class="keyword">await</span> app.model.Clazz.findAll(&#123; <span class="attr">where</span>: &#123; <span class="attr">id</span>: id &#125; &#125;)</span><br></pre></td></tr></table></figure>
+// 删除<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> app.model.Clazz.destroy( &#123; <span class="attr">where</span>: &#123; <span class="attr">id</span>: id &#125; &#125;)</span><br></pre></td></tr></table></figure>
+// 更新<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> app.model.Clazz.update(&#123; <span class="attr">name</span>: name &#125;, &#123; <span class="attr">where</span>: &#123; <span class="attr">id</span>: id &#125; &#125;)</span><br></pre></td></tr></table></figure>
+// 查看<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = <span class="keyword">await</span> app.model.Clazz.findAll()</span><br><span class="line"><span class="comment">// 按条件查看</span></span><br><span class="line"><span class="keyword">let</span> data = <span class="keyword">await</span> app.model.Clazz.findAll(&#123;<span class="attr">where</span>:&#123;<span class="attr">id</span>:<span class="number">5</span>&#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>原则应该在server中实现和数据库之间的交互</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> findAll()&#123;</span><br><span class="line">     <span class="keyword">let</span> &#123; app &#125; = <span class="keyword">this</span></span><br><span class="line">     <span class="keyword">let</span> data = <span class="keyword">await</span> app.model.Clazz.findAll()</span><br><span class="line">     <span class="keyword">return</span> data</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>添加外键<br>在Student通过asssociate属性指定外键<br>1：创建一个名为clazz的班级表，包含ID，和name两个字段<br>2：学生模型中添加下面的代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Student.associate = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 所属性于那本书，指向书记的主键</span></span><br><span class="line">  app.model.Student.belongsTo(app.model.clazz,&#123;</span><br><span class="line">    foreignKey:<span class="string">'clazz_id'</span>,</span><br><span class="line">    <span class="keyword">as</span>:<span class="string">'clazz'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="qrcode生成二维码"><a href="#qrcode生成二维码" class="headerlink" title="qrcode生成二维码"></a>qrcode生成二维码</h2><ul>
+<li>简单实现，在服务器端使用生成画布二维码和生成base64的二维码</li>
+<li>前端如何实现生成二维码的 需要导入此插件</li>
+<li>详细网址：<a href="https://www.npmjs.com/package/qrcode" target="_blank" rel="noopener">https://www.npmjs.com/package/qrcode</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="生成token"><a href="#生成token" class="headerlink" title="生成token"></a>生成token</h2><p>  1：按住啊那个egg-jwt ： npm i –save egg-jwt<br>  2：在plugin.js引入<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jwt:&#123;</span><br><span class="line">  enable: true,</span><br><span class="line">  package: &#39;egg-jwt&#39;,</span><br><span class="line">  secret: &#39;siyecao&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>  3:config.default.js配置文件，设置secret，注意secret不能泄露<br>  config.jwt = {secret:’配置的加密字符串’}<br>  验证流程’<br>  1根据用户信息生成一个token 生成之后给到客户端<br>  2客户端将生成的token保存到浏览器中<br>  3每次请求的时候请求头携带token<br>  4服务器一年挣的时候验证token</p>
+<h2 id="上传文件-multipart"><a href="#上传文件-multipart" class="headerlink" title="上传文件 multipart"></a>上传文件 multipart</h2><p>  multipart 可以接受的默认文件大小是10mb. 如果你上传一个大文件，你应该指定这个配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config.multipart = &#123;</span><br><span class="line">  fileSize: <span class="string">'50mb'</span>,</span><br><span class="line">  whitelist: [</span><br><span class="line">    <span class="string">'.png'</span>, <span class="string">'.jpg'</span>, <span class="string">'.mp4'</span>,<span class="string">'.docx'</span></span><br><span class="line">  ],</span><br><span class="line">  mode: <span class="string">'stream'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实时通讯egg-socket-io"><a href="#实时通讯egg-socket-io" class="headerlink" title="实时通讯egg-socket.io"></a>实时通讯egg-socket.io</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实时通讯</span></span><br><span class="line">config.io = &#123;</span><br><span class="line">  <span class="comment">// namespace命名空间配置为/</span></span><br><span class="line">  namespace: &#123;</span><br><span class="line">    <span class="string">'/'</span>: &#123;</span><br><span class="line">      <span class="comment">//  预处理器中间件, 我们这里配置了一个auth, 进行权限判断, 它对应的文件是/app/io/middleware/auth.js, 这里可以配置多个文件, 用逗号隔开</span></span><br><span class="line">      connectionMiddleware: [<span class="string">'auth'</span>], <span class="comment">//这里我们可以做一些权限校验之类的操作// 开始 链接的时候</span></span><br><span class="line">      packetMiddleware: [<span class="string">'filter'</span>], <span class="comment">// 通常用于对消息做预处理，又或者是对加密消息的解密等操作</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 配置redis, 非必须, 不需要的可以不配置这块, egg-socket.io内置了socket-io-redis， 在cluster模式下, 使用redis可以较为简单的实现clients/rooms等信息共享</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置模板引擎</span></span><br><span class="line">config.view = &#123;</span><br><span class="line">  <span class="comment">// 配置视图根路径</span></span><br><span class="line">  root: path.join(appInfo.baseDir, <span class="string">'app/view'</span>),</span><br><span class="line">  <span class="comment">// 是否缓存路径</span></span><br><span class="line">  cache: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// 配置文件默认扩展名</span></span><br><span class="line">  defaultExtension: <span class="string">'.html'</span>,</span><br><span class="line">  <span class="comment">// 默认渲染模板引擎</span></span><br><span class="line">  defaultViewEngine: <span class="string">'nunjucks'</span>,</span><br><span class="line">  <span class="comment">// 文件映射配置</span></span><br><span class="line">  mapping: &#123;</span><br><span class="line">    <span class="string">'.html'</span>: <span class="string">'nunjucks'</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 跨站请求的伪造 不做这个会禁止 关于post请求的安全设置，// 图片上传问题</span></span><br><span class="line">config.security = &#123;</span><br><span class="line">  csrf: &#123;</span><br><span class="line">    enable: <span class="literal">false</span>,</span><br><span class="line">    ignoreJSON: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  domainWhiteList: [<span class="string">'http://www.hengmaikj.com'</span>],</span><br><span class="line">&#125;</span><br><span class="line">config.cors = &#123;</span><br><span class="line">  origin: <span class="string">'*'</span>, <span class="comment">// 匹配规则  域名+端口  *则为全匹配</span></span><br><span class="line">  allowMethods: <span class="string">'GET,HEAD,PUT,POST,DELETE,PATCH'</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<p><a href="./egg_admin.zip">后台模板</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-03-03T08:33:28.772Z" itemprop="dateUpdated">2022-03-03 16:33:28</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" target="_blank" rel="external">https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" rel="tag">egg后台开发</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/&title=《egg后台开发》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/&title=《egg后台开发》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《egg后台开发》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">宝塔配置</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/02/15/ts/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ts面向对象</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/&title=《egg后台开发》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/&title=《egg后台开发》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《egg后台开发》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3awY7qQAwEQP7/p9nrk1aBbjvD8qTKKYKQTOUwNrYfj/h4/nMkn/++5uqTq98+L47HiQMPDw9vsfSr2yXfJuftcfUSk1/h4eHhnea93tCTkPA6eOzDRh5O8PDw8L6ZlyffeahI7omHh4f3P/LyILEJFX8WGPDw8PACXl5uiG662Po3QQUPDw/vM7y8i/Q950f6e3h4eHjrrnq7WZ8uOtSrxcPDwzvAyzfctqnf7tVJS6xdJx4eHt453qyAmy8rb4xt2EXyjYeHh7fmtQNVm+R7Flra8dlHG2fw8PDwYl7S9NoHhra1ll8T/VfAw8PDu5WX/3hWJsgZs3BS/z/Aw8PDO8DLiwKzMaxZYeKGxBoPDw/vJt65zXofHoqt/+oaPDw8vAO8/PE5fhYG6tpzHqjw8PDwbuW1pdW8KXVvYt2WSPDw8PDO8fbLbTFtOXg2svAmSODh4eEteK///G8a9psi7CYFj94oHh4e3pqXb8c5Pi/ItryEioeHh3eO1zaTNoWGWRjIiyMFEg8PD2/By7f7TSN/8+7bAgQeHh7eZ3j3DlG1ie8mpX4T8fDw8PAO8NrSQ15mzRtp+RPb9B0PDw/vBG+T2s4CxqbRVQcnPDw8vAO8Wbsrbzttlr4JV8O4h4eHh1fyZhv6uRJtu89H0Q8PDw/vVl5eDmhT4eR1zJLsaFV4eHh4h3ntppyPRs0KHHnr6zIs4eHh4d3Ke5ZHntrOSrTtE998i4eHh3eANxtpytPrWVDZnD82sQUPDw9v3VvPb31vuWETNurEGg8PD2/B2zf42+Um17fFiHqyDA8PD+8jvE0xd1ZWyAcU8PDw8L6ZNxsaSF5Z8pThTBkeHh7erbx20GpTvNgv+nU4wcPDwzvNmw02taMD7dBVUgq5ub+Hh4eH9573AxHC2k/GFMbfAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

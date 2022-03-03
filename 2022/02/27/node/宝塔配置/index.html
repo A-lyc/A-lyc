@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>宝塔配置 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="域名,域名链接本地地址,egg配置">
+    <meta name="description" content="安装必要的软件 win · node.js · 宝塔（win系统） · 最好有个谷歌浏览器 解析 · 根据服务器和域名进行解析，将域名解析到当前的服务器，开放80端口 · 多解析一个为后台的而域名到这个服务器上。 宝塔安装 配置 · 需要安装数据库（myspl*），nginx（目前只知道之个，其他需要百度），等等 · 数据库应该是3306端口，可以在首页数据库点击更改 · 点击域名弹出站点修改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宝塔配置">
+<meta property="og:url" content="https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="安装必要的软件 win · node.js · 宝塔（win系统） · 最好有个谷歌浏览器 解析 · 根据服务器和域名进行解析，将域名解析到当前的服务器，开放80端口 · 多解析一个为后台的而域名到这个服务器上。 宝塔安装 配置 · 需要安装数据库（myspl*），nginx（目前只知道之个，其他需要百度），等等 · 数据库应该是3306端口，可以在首页数据库点击更改 · 点击域名弹出站点修改">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-27T10:32:25.000Z">
+<meta property="article:modified_time" content="2022-03-03T08:33:28.816Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="域名,域名链接本地地址,egg配置">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">宝塔配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">宝塔配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-02-27T10:32:25.000Z" itemprop="datePublished" class="page-time">
+  2022-02-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%9F%9F%E5%90%8D-%E5%9F%9F%E5%90%8D%E9%93%BE%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%9C%B0%E5%9D%80-egg%E9%85%8D%E7%BD%AE/">域名,域名链接本地地址,egg配置</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装必要的软件-win"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装必要的软件 win</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解析"><span class="post-toc-number">2.</span> <span class="post-toc-text">解析</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#宝塔安装-配置"><span class="post-toc-number">3.</span> <span class="post-toc-text">宝塔安装 配置</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node/宝塔配置"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">宝塔配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-27 18:32:25" datetime="2022-02-27T10:32:25.000Z"  itemprop="datePublished">2022-02-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%9F%9F%E5%90%8D-%E5%9F%9F%E5%90%8D%E9%93%BE%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%9C%B0%E5%9D%80-egg%E9%85%8D%E7%BD%AE/">域名,域名链接本地地址,egg配置</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="安装必要的软件-win"><a href="#安装必要的软件-win" class="headerlink" title="安装必要的软件 win"></a>安装必要的软件 win</h1><p> · node.js<br> · 宝塔（win系统）<br> · 最好有个谷歌浏览器</p>
+<h1 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h1><p> · 根据服务器和域名进行解析，将域名解析到当前的服务器，开放80端口<br> · 多解析一个为后台的而域名到这个服务器上。</p>
+<h1 id="宝塔安装-配置"><a href="#宝塔安装-配置" class="headerlink" title="宝塔安装 配置"></a>宝塔安装 配置</h1><p> · 需要安装数据库（myspl*），nginx（目前只知道之个，其他需要百度），等等<br> · 数据库应该是3306端口，可以在首页数据库点击更改<br> · 点击域名弹出站点修改<br>   · 将修改配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">server </span><br><span class="line">&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name www.XXXXX.com XXXXX.com; </span><br><span class="line">    index index.php index.html index.htm default.php default.htm default.html;</span><br><span class="line">    root C:/wwwroot/www.XXXXX.com;</span><br><span class="line">		</span><br><span class="line"><span class="meta">	#</span><span class="bash">START-ERROR-PAGE</span></span><br><span class="line"><span class="meta">	#</span><span class="bash">error_page 403 /403.html;</span></span><br><span class="line">	error_page 404 /404.html;</span><br><span class="line">    #error_page 502 /502.html;</span><br><span class="line"><span class="meta">	#</span><span class="bash">END-ERROR-PAGE</span></span><br><span class="line">    </span><br><span class="line">    #HTTP_TO_HTTPS_START</span><br><span class="line">    #HTTP_TO_HTTPS_END</span><br><span class="line"></span><br><span class="line">    #LIMIT_INFO_START</span><br><span class="line">    #LIMIT_INFO_END</span><br><span class="line"></span><br><span class="line">    #SSL-INFO-START</span><br><span class="line">    #SSL-INFO-END</span><br><span class="line">        </span><br><span class="line">    #反代清理缓存配置</span><br><span class="line">    location ~ /purge(/.*) &#123;</span><br><span class="line">        proxy_cache_purge cache_one $1$is_args$args;</span><br><span class="line">    &#125;</span><br><span class="line">    #proxy 反向代理</span><br><span class="line">    include proxy/www.XXXXX.com/*.conf;</span><br><span class="line"></span><br><span class="line">    #PHP-INFO-START </span><br><span class="line">    include php/00.conf;</span><br><span class="line">    #PHP-INFO-END</span><br><span class="line">    </span><br><span class="line">    #REWRITE-START</span><br><span class="line">    include rewrite/www.XXXXX.com/*.conf;</span><br><span class="line">    #REWRITE-END</span><br><span class="line"></span><br><span class="line">    #redirect 重定向</span><br><span class="line">    include redirect/www.XXXXX.com/*.conf;</span><br><span class="line"></span><br><span class="line">    #禁止访问的文件或目录</span><br><span class="line">    location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)</span><br><span class="line">    &#123;</span><br><span class="line">        return 404;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    #一键申请SSL证书验证目录相关设置</span><br><span class="line">    location ~ \.well-known&#123;</span><br><span class="line">        allow all;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	access_log  C:/BtSoft/wwwlogs/www.XXXXX.com.log;</span><br><span class="line">    error_log  C:/BtSoft/wwwlogs/www.XXXXX.com.error.log;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  · 修改反向代理<br>    · 添加代理 目标URL：服务器IP加上端口号。如：32.234.66.111:7002 即可<br>    · 未上线之前关闭缓存<br>    · 反向代理之后有个配置文件，点击修改</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">location /</span><br><span class="line">&#123;</span><br><span class="line">    expires 12h;</span><br><span class="line">    if ($request_uri ~* "(php|jsp|cgi|asp|aspx)")</span><br><span class="line">    &#123;</span><br><span class="line">         expires 0;</span><br><span class="line">    &#125;</span><br><span class="line">    proxy_pass http://服务器IP:端口号;</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line"></span><br><span class="line">    add_header X-Cache $upstream_cache_status;</span><br><span class="line">    </span><br><span class="line">    proxy_set_header Accept-Encoding "";</span><br><span class="line">	</span><br><span class="line">    sub_filter_once off;</span><br><span class="line">    </span><br><span class="line">    proxy_cache cache_one;</span><br><span class="line">    proxy_cache_key $host$uri$is_args$args;</span><br><span class="line">    proxy_cache_valid 200 304 301 302 12h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-03-03T08:33:28.816Z" itemprop="dateUpdated">2022-03-03 16:33:28</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" target="_blank" rel="external">https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E5%9F%9F%E5%90%8D-%E5%9F%9F%E5%90%8D%E9%93%BE%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%9C%B0%E5%9D%80-egg%E9%85%8D%E7%BD%AE/" rel="tag">域名,域名链接本地地址,egg配置</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/&title=《宝塔配置》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/&title=《宝塔配置》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《宝塔配置》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/02/27/node/vue%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue服务器配置示例</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/02/16/node/egg%E5%90%8E%E5%8F%B0%E5%BC%80%E5%8F%91/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">egg后台开发</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/&title=《宝塔配置》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/&title=《宝塔配置》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《宝塔配置》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3aQW7cMBAEQP//0w6Qq7Ha7hkyXgSlkyF4KRUPQ6qHX1/x9f33er7z8/7+V8+jHbvw8PDwRq/+6nr1Pzkpmab8yt8ZDw8P7zZvX+Jz9mx5aEfAw8PD+wReUvSTUv7qV8mYeHh4eP8Tb1bQEzYeHh7eZ/I2w+XRQDJ+/vfhrAUPDw8v5rUNsE/4+2J/Dw8PD2/RVW+bUskCkAcQ+7fFw8PDu8FLtqr5hni2LuXHEZLnvsla8PDw8A7x2gMBs1/lB7na8LeYXDw8PLw1L9/U5sehNkemkicWgQUeHh7eBV7ysFlkkG+O23Ahb4nh4eHh3ePNquhm8UheOvkOqD8A8PDw8Na8vBDnm+DZJrsdIZoUPDw8vGu8WcSwKfGzI1b1G+Lh4eFd4CWN/NlAbVk/m7u+CSPw8PDwFrzNQYHNlrddQhJwlE/j4eHhrXn7yPXsOM8j58ExHh4e3m3ec7coXzD25T7h5dEGHh4e3g1e0qRvYe3xqfx+Mn1v+nt4eHh4a15SdlvkJrzYhx3F0Ss8PDy8NW/2kb8v/bMJipYEPDw8vGu8tm3/XLhnU9MuFe0E4eHh4Z3itQcFZiFvPhGbRld06AoPDw/vKO9Ugc5XpNnT8w09Hh4e3r/htR/5s9h33xKLphUPDw/vAq8NJnLq7IjV81Kx2XDj4eHhneLNCnEbTLQvnbxJNAIeHh7eBV6+RU5aVskrzp4yC5rx8PDwbvBmpf8sOAlnh0e48PDw8C7wZoexToUIs2ZbsvDg4eHh3ea17aVNRHsKnGzZ8fDw8G7zksWgLc1JtFokJeVBBDw8PLxP5s32sZtpKiYaDw8P71d5efibRxiz7Xix/ODh4eFd4+VhxKyJ1Y42Q75cGPDw8PCO8mYNsHyT3Qavebyb3MHDw8M7yvsDQfEDJ1p6dyUAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
