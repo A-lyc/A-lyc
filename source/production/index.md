@@ -8,14 +8,19 @@ comments: false     # 禁用评论，可选，默认开启
 reward: false       # 禁用打赏，可选，默认开启
 ---
 
-## 欢迎观看我的作品   
-###  前端使用：使用webpack + node.js 脚手架写出的，使用HTML+CSS+js等技术，模块化思想，实现自适应布局，兼容手机端，
-###  小程序：使用的uniapp框架进行，使用npm引入进行的方式编写；
-###  部分网站：使用nuxt.js 实现服务器端渲染（利于seo优化，和新技术实现） 
-###  设计方面使用：ps和ai等设计工具完成页面的展示效果以及适合自适应的布局方式
+## 欢迎观看我的作品  
+- 设计方面使用：ps和ai等设计工具完成页面的展示效果以及适合自适应的布局方式 
+- 前端使用：使用webpack + node.js 脚手架写出的，使用HTML+CSS+js等技术，模块化思想，实现自适应布局，兼容手机端，
+  熟练使用vue2.0，3.0等技术，vue可使用大部分框架进行编写，了解ts技术面向对象编程。
+- 小程序：使用的uniapp框架进行，使用npm引入进行的方式编写；
+- 部分网站：使用nuxt.js 实现服务器端渲染（利于seo优化，和新技术实现） 
+- 后端使用node+egg+mysql+vue-element-admin(后台界面)
+- 服务器：win+宝塔+Nginx+mysql
 
 | 项目名称 | 备注 | 网址 |
 | :-----  | :----      | :---- |
+| {% link 恒麦智能科技 http://www.hengmaikj.com/ [恒麦智能科技] %} | 恒麦智能科技官网egg模板项目利于优化， | 网址：//www.hengmaikj.com/ |
+| {% link 恒麦只能科技后台  %} | 后端:egg,node + 前端：vue-element-admin后台管理系统 | 网址：暂不提供 |
 | {% link CSGO http://www.100steam.com/home [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//www.100steam.com/ |
 | {% link CSGO http://www.92skins.cn/home [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//www.92skins.com/ |
 | {% link CSGO http://www.97skins.cn/home [CSGO] %} | vue，element，老虎机，自适应， | 网址：//www.97skins.cn/ |
