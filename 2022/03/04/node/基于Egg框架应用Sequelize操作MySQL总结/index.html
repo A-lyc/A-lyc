@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>基于Egg框架应用Sequelize操作MySQL总结 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Egg框架,Sequelize,MySQL总结,MySQL">
+    <meta name="description" content="Sequelize，是一个广泛使用的 ORM 框架，它支持 MySQL、PostgreSQL、SQLite 和 MSSQL 等多个数据源。如何在 egg 项目中使用 sequelize，请查看Egg项目中使用Sequelize。如果需要获取更多Sequelize的功能，可以查看  Sequelize 中文文档。 1.安装注意点script1npm install --save egg-sequel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Egg框架应用Sequelize操作MySQL总结">
+<meta property="og:url" content="https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="Sequelize，是一个广泛使用的 ORM 框架，它支持 MySQL、PostgreSQL、SQLite 和 MSSQL 等多个数据源。如何在 egg 项目中使用 sequelize，请查看Egg项目中使用Sequelize。如果需要获取更多Sequelize的功能，可以查看  Sequelize 中文文档。 1.安装注意点script1npm install --save egg-sequel">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-04T10:32:25.000Z">
+<meta property="article:modified_time" content="2022-03-05T09:33:32.755Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="Egg框架,Sequelize,MySQL总结,MySQL">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">基于Egg框架应用Sequelize操作MySQL总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">基于Egg框架应用Sequelize操作MySQL总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-03-04T10:32:25.000Z" itemprop="datePublished" class="page-time">
+  2022-03-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/">基于Egg框架应用Sequelize操作MySQL总结</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-安装注意点"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.安装注意点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-配置数据库-时区配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.配置数据库-时区配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#否修改表名为复数配置"><span class="post-toc-number">3.</span> <span class="post-toc-text">否修改表名为复数配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表关联"><span class="post-toc-number">4.</span> <span class="post-toc-text">表关联</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表关联后，获取的数据修改key值"><span class="post-toc-number">5.</span> <span class="post-toc-text">表关联后，获取的数据修改key值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#server文件夹"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">server文件夹</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考文档"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考文档</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node/基于Egg框架应用Sequelize操作MySQL总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">基于Egg框架应用Sequelize操作MySQL总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-03-04 18:32:25" datetime="2022-03-04T10:32:25.000Z"  itemprop="datePublished">2022-03-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/">基于Egg框架应用Sequelize操作MySQL总结</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Sequelize，是一个广泛使用的 ORM 框架，它支持 MySQL、PostgreSQL、SQLite 和 MSSQL 等多个数据源。<br>如何在 egg 项目中使用 sequelize，请查看Egg项目中使用Sequelize。<br>如果需要获取更多Sequelize的功能，可以查看 <a herf="https://www.sequelize.com.cn/"> Sequelize 中文文档。</a></p>
+<h1 id="1-安装注意点"><a href="#1-安装注意点" class="headerlink" title="1.安装注意点"></a>1.安装注意点</h1><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save egg-sequelize mysql2</span><br></pre></td></tr></table></figure>
+<p>如果遇到报错：”Please install mysql2 package manually“，<br>解决方案：删除node_modules，使用npm安装，不要用cnpm；</p>
+<h1 id="2-配置数据库-时区配置"><a href="#2-配置数据库-时区配置" class="headerlink" title="2.配置数据库-时区配置"></a>2.配置数据库-时区配置</h1><p>在config.json文件中，配置完开发环境和测试环境数据库信息后，默认时区为美国时间，需要添加如下配置，设置为北京时间，后续在创建表、更新表结构时，时间就不会出错了。</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timezone: '+08:00'</span><br></pre></td></tr></table></figure>
+
+<h1 id="否修改表名为复数配置"><a href="#否修改表名为复数配置" class="headerlink" title="否修改表名为复数配置"></a>否修改表名为复数配置</h1><p>默认情况下，我们在model文件内和数据库关联时，还是拿上述示例来说，如果我们需要在model文件夹创建users.js和users表进行关联，需要这么写</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">'use strict';</span><br><span class="line"></span><br><span class="line">module.exports = app =&gt; &#123;</span><br><span class="line">  const &#123; STRING, INTEGER, DATE &#125; = app.Sequelize;</span><br><span class="line"></span><br><span class="line">  const Users = app.model.define('user', &#123;</span><br><span class="line">    id: &#123; type: INTEGER, primaryKey: true, autoIncrement: true &#125;,</span><br><span class="line">    name: STRING,</span><br><span class="line">    created_at: DATE,</span><br><span class="line">    updated_at: DATE,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  return Users;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，app.model.define()的第一个参数是user，而不是users，这也是笔者曾经踩过的坑。为什么呢，网上了解到说，是因为squelize会将user默认转变为复数</p>
+<p>如果不想使用默认变更为复数配置，解决方案有两种：<br>(1).对app.model.define的第三个参数进行配置，整体代码如下：</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">'use strict';</span><br><span class="line"></span><br><span class="line">module.exports = app =&gt; &#123;</span><br><span class="line">  const &#123; STRING, INTEGER, DATE &#125; = app.Sequelize;</span><br><span class="line"></span><br><span class="line">  const Users = app.model.define('user', &#123;</span><br><span class="line">    id: &#123; type: INTEGER, primaryKey: true, autoIncrement: true &#125;,</span><br><span class="line">    name: STRING,</span><br><span class="line">    created_at: DATE,</span><br><span class="line">    updated_at: DATE,</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    freezeTableName: true, // 默认false修改表名为复数，true不修改表名，与数据库表名同步</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  return Users;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>(2).在config.json文件中，添加如下配置：</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"define": &#123;</span><br><span class="line">   "freezeTableName": true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方式的优势是，对新增的其他表结构，都会设置不修改表名为复数。</p>
+<h1 id="表关联"><a href="#表关联" class="headerlink" title="表关联"></a>表关联</h1><p>我们实现具体业务，往往需要创建多张表，而表与表之间需要进行关联，如：一对一、一对多、多对多等，具体可以参考<a href="https://www.sequelize.com.cn/core-concepts/assocs" target="_blank" rel="noopener">Sequelize 中文文档 - 关联。</a>      </p>
+<p>对于关联的方式，我们可以写在service文件夹里面，也可以写在model文件夹里面。经过个人实践，service文件夹里面主要是写的业务接口，所以不推荐使用。model文件夹里面是实现表结构连接数据库，这里比较适合写表关联逻辑。<br>创建关联A表和B表关联 创建了未使用，需要操作使用 <a href="#guanlian">表关联后</a><br>(1).一对多关联：A 有多个 B（如一个用户下面有多个订单）</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">'use strict';</span><br><span class="line"></span><br><span class="line">module.exports = app =&gt; &#123;</span><br><span class="line">  const &#123; STRING, INTEGER, DATE &#125; = app.Sequelize;</span><br><span class="line"></span><br><span class="line">  const A = app.model.define('A', &#123;</span><br><span class="line">    id: &#123; type: INTEGER, primaryKey: true, autoIncrement: true &#125;,</span><br><span class="line">    name: &#123; type: STRING, unique: true &#125;,</span><br><span class="line">    created_at: DATE,</span><br><span class="line">    updated_at: DATE,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  // 创建关联A表和B表关联，即：A 有多个 B</span><br><span class="line">  A.associate = function() &#123;</span><br><span class="line">    app.model.A.hasMany(app.model.B, &#123;</span><br><span class="line">      foreignKey: 'B_id', // 指定外键这个外键要和A表的ID相对应，这样才能找到是哪一个下面的</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">/*</span><br><span class="line">如果A表有个ID：1</span><br><span class="line">那么想要关联B表有数据的话，B表中的B_id需要和A表中的ID相等</span><br><span class="line">*/</span><br><span class="line">  return A;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>(2).一对多关联：C 属于 D（如一个订单属于所有订单中的其中之一，和上述例子逻辑相反）</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">'use strict';</span><br><span class="line"></span><br><span class="line">module.exports = app =&gt; &#123;</span><br><span class="line">  const &#123; STRING, INTEGER, DATE &#125; = app.Sequelize;</span><br><span class="line"></span><br><span class="line">  const D = app.model.define('D', &#123;</span><br><span class="line">    id: &#123; type: INTEGER, primaryKey: true, autoIncrement: true &#125;,</span><br><span class="line">    name: STRING,</span><br><span class="line">    created_at: DATE,</span><br><span class="line">    updated_at: DATE,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  // C表和D表关联，即：C 属于 D</span><br><span class="line">  D.associate = function() &#123;</span><br><span class="line">    app.model.C.belongsTo(app.model.D, &#123;</span><br><span class="line">      foreignKey: 'c_id', // 指定外键</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  return Device;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<p><a name="guanlian"></a></p>
+<h1 id="表关联后，获取的数据修改key值"><a href="#表关联后，获取的数据修改key值" class="headerlink" title="表关联后，获取的数据修改key值"></a>表关联后，获取的数据修改key值</h1><h2 id="server文件夹"><a href="#server文件夹" class="headerlink" title="server文件夹"></a>server文件夹</h2><p>(1).按照上述例子，如果A表和B表关联后，可以通过如下方式获取：<br>attributes：不传全部返回<br>必要的进行确认关联：include:[{model:”关联的数据库表”,attributes:[‘关联之后返回的属性’]}]</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const res = await A.findAll(&#123;</span><br><span class="line">    attributes: [ 'id', 'path' ],</span><br><span class="line">    include: [&#123;</span><br><span class="line">      model: B,</span><br><span class="line">      attributes: [ 'id', 'url',],</span><br><span class="line">    &#125;],</span><br><span class="line">    raw: false,</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>得到的结果为：</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">      id: 1,</span><br><span class="line">      path: "https://xxx.com/test.html",</span><br><span class="line">      t_urls: [&#123;</span><br><span class="line">          id: 101,</span><br><span class="line">          url: "https://xxx.cdn.com/a.png",</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">          id: 102,</span><br><span class="line">          url: "https://xxx.cdn.com/b.png"</span><br><span class="line">      &#125;]</span><br><span class="line">  &#125;]</span><br></pre></td></tr></table></figure>
+<p>如果想修改t_urls的key为urlList，可以手动转换：</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const targetRes = res.map((&#123; id, path, t_urls &#125;) =&gt; &#123;</span><br><span class="line">    return &#123; id, path, urlList: t_urls &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>(2).按照上述例子，如果C表和D表关联后，可以通过如下方式获取：</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const res = await C.findOne(&#123;</span><br><span class="line">    attributes: [ 'url', 'modify' ],</span><br><span class="line">    where: &#123; id: urlId &#125;,</span><br><span class="line">    include: [&#123;</span><br><span class="line">      model: D,</span><br><span class="line">      attributes: [ 'ua', 'device' ],</span><br><span class="line">    &#125;],</span><br><span class="line">    raw: false,</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>获取的数据结构如下：<br> <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    data: &#123;</span><br><span class="line">        url: "http://xxx.cdn.com/1617278622883.png",</span><br><span class="line">        modify: "666",</span><br><span class="line">        t_device: &#123;</span><br><span class="line">            ua: "chrome",</span><br><span class="line">            device: "HUAWEI"</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    code: 0,</span><br><span class="line">    msg: "操作成功"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>如果想修改t_device的key，把ua和device调整为和url、modify同级，可以手动转换：</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 这里需要注意的是，对res的操作，一定要先JSON.stringify，再JSON.parse</span><br><span class="line">// 因为res对象不仅包含上述值，还包含有表结构相关信息</span><br><span class="line">const targetRes = JSON.parse(JSON.stringify(res));</span><br><span class="line">const &#123; ua = '', device = '' &#125; = targetRes.t_device || &#123;&#125;;</span><br><span class="line">delete targetRes.t_device;</span><br><span class="line">targetRes.ua = ua;</span><br><span class="line">targetRes.device = device;</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p><a href="https://eggjs.org/zh-cn/intro/index.html" target="_blank" rel="noopener">Egg.js 是什么? - 为企业级框架和应用而生</a></p>
+<p><a href="https://eggjs.org/zh-cn/tutorials/sequelize.html" target="_blank" rel="noopener">Sequelize - 为企业级框架和应用而生</a></p>
+<p><a href="https://www.sequelize.com.cn/" target="_blank" rel="noopener">Sequelize 中文文档 | Sequelize 中文网</a></p>
+<p><a href="https://www.sequelize.com.cn/core-concepts/assocs" target="_blank" rel="noopener">关联 | Sequelize 中文网</a></p>
+<p><a href="https://blog.tcs-y.com/2020/05/14/sequelize-migrations/" target="_blank" rel="noopener">sequelize 数据库迁移命令 migrations</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-03-05T09:33:32.755Z" itemprop="dateUpdated">2022-03-05 17:33:32</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/" target="_blank" rel="external">https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/Egg%E6%A1%86%E6%9E%B6-Sequelize-MySQL%E6%80%BB%E7%BB%93-MySQL/" rel="tag">Egg框架,Sequelize,MySQL总结,MySQL</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/&title=《基于Egg框架应用Sequelize操作MySQL总结》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/&title=《基于Egg框架应用Sequelize操作MySQL总结》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于Egg框架应用Sequelize操作MySQL总结》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/03/05/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E8%AE%A2%E9%98%85%E5%8F%B7/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">微信订阅号</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/02/27/node/%E5%AE%9D%E5%A1%94%E9%85%8D%E7%BD%AE/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">宝塔配置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/&title=《基于Egg框架应用Sequelize操作MySQL总结》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/&title=《基于Egg框架应用Sequelize操作MySQL总结》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于Egg框架应用Sequelize操作MySQL总结》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/03/04/node/%E5%9F%BA%E4%BA%8EEgg%E6%A1%86%E6%9E%B6%E5%BA%94%E7%94%A8Sequelize%E6%93%8D%E4%BD%9CMySQL%E6%80%BB%E7%BB%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEjElEQVR42u3aO3LbQBAFQN3/0nLiwC6b5HszYBWWakQqigB3G8HO7+srvr7/uP79/NEnj+56/v1/7330hOffefTf5+tZXZgwYcKE6ZZM30+v5CfzBbUbS77fbj5Z/3+ehgkTJkyYDmdqj+r23ucoLWL+Gma4mDBhwoQJUx4c5Ntrk+cZCiZMmDBhwpQcnNcWZPNktU252xeGCRMmTJg+lan94ejRJXq74Vn6/fZaOCZMmDBhuhnTrAX4GX+/Zb4JEyZMmDDdhum7vPKfmY34JIXaJKTYF6P/ugsTJkyYMB3LtNn2JomdncXt0Z5QFvvFhAkTJkzHMm2W1RZ881Gbq1qks7EeTJgwYcL0c5g2i9tUTWcDOvsWaRQ0YMKECROmA5nyG/KN5c3RdkBnQ5nsa9jaxIQJEyZMN2OaHczvKAFvRoXa0KRu1mLChAkTpmOZ8odeVTa9quk4+908xHlBhgkTJkyYjmJKHjcbedmM3cxezGZVw04vJkyYMGG6PVPb2rxq80nBN0+GN8HHCgsTJkyYMB3C1B7PsyVetYG2+Zqn2S/2ggkTJkyYDmdqW5v7oZnZtNGmgJt/BxMmTJgwnc6UJ7EzviTUaDcwK/vOdrq6GRMmTJgw3Z7p+SbzA3sTXswGfdrw4gU9JkyYMGE6nGn2uNnoT96ebIuweTKchyOYMGHChOlTma5CaRuQbaO0DSCG38SECRMmTMcyzQZMN8XW2ZBQmx7PfvGFAyZMmDBhOpYpOfg3pd527Cbf0qxYPHu1mDBhwoTpRKY2FWyHe/KDdlMOng3xFKEJJkyYMGE6lilvEF515G8CgmTDSUl3GC5gwoQJE6YDmYrjsDxQN2ltUuRNjvPZ7i57ECZMmDBhuhlTOwx6VWL5vkAk/049soMJEyZMmA5kmlU4ZxvbD/rkQzxJ0PAiWMGECRMmTIcz5e3A4hCNC69JSpw3KevDPrkXEyZMmDAdzpQsNymwJhxteJHcO0MswgJMmDBhwnQsU1KcbQu1baqZhwJtYfeqoSJMmDBhwnQ6U1tanTUO2+Ge5L/5K5wFFpgwYcKE6ZOY8sW1BdM8+dyM12zChYgMEyZMmDAdyDRb+j5oSIrFybUJYooEGxMmTJgwHcuUp6Ozwm67xGSh7ZjRJrXGhAkTJkynM7UNv02S3BLkrce8VN0S//4EEyZMmDAdy5TfnCx91uBsy6+zoCQPa+paOCZMmDBhujHTpt34lkN30YZsC74FNyZMmDBh+gimWTSRA+Xtw9k4Tk5ZBxaYMGHChOlYplmTMtl8u5n2yXnKPdvFCwFMmDBhwnQI03d5tXMs+yN588y8JP0CHRMmTJgwHcu0jybyMZo8xc23NCvdzoISTJgwYcJ0LtMsCMibiO9+DcnKNw1XTJgwYcL0GUx503GTuF5VPs7blsMkFhMmTJgw/WCmWQszT4bzjc1ChCQoWb0rTJgwYcJ0OFM7HJO3Dzfl4M06ozACEyZMmDAdztSWSjcF4lnC3B7keVASJeeYMGHChOlYprbcOWt2tiOke4LZK1ldmDBhwoTpXky/AOeg3j9/S2zxAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
