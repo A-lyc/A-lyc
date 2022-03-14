@@ -1,7 +1,7 @@
 ---
 uuid: 34d68fb9-97e7-6b64-3b66-8737dc36a179
 title: nuxt的基本组件安装
-date: 2099-1-1 10:58:16
+date: 2022-1-1 10:58:16
 tags: nuxt的使用 nuxt的基本组件安装
 category: Nuxt
 ---
