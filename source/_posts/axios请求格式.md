@@ -42,6 +42,7 @@ let qStr = Object.keys(params).map(v => `${v}=${encodeURI(params[v])}`).join('&'
 // qStr 输出 为 name=%E5%B0%8F%E6%98%8E&age=18
 
 这是格式化看起来很像，get 请求中的 参数
+
 ### URLSearchParams
 这个写法和上面的qs是一样的 请求头需要自己加
 ```js
@@ -65,10 +66,12 @@ axios.post(url,params,{headers: { 'content-type': 'application/x-www-form-urlenc
 <input id="name" name="name"/>
 <input id="age" name="age"/>
 <input id="file" type="file" name="file" multiple>
+
 let forms = new FormData()
 forms.append('name', document.getElementById('name').value)
 forms.append('age', document.getElementById('age').value)
 let files = document.getElementById('file').files
+
 // 上传多个文件
 Array.from(files).forEach(item => {
 	forms.append('file', item)
