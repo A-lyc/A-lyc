@@ -1,7 +1,7 @@
 ---
 uuid: 5af8db2d-f6c8-ae8c-c397-5d833fd3ec13
 title: 'css3动画'
-date: 2020-03-21 19:09:05
+date: 2099-03-21 19:09:05
 tags: css效果
 category: css
 ---
@@ -17,7 +17,7 @@ marix（矩形变阵）
 
 使用方法
 .类名称{
-transfrom：rotate（60deg） scale（.2） skew（） translate（X，Y） matrix（）；
+transform：rotate（60deg） scale（.2） skew（） translate（X，Y） matrix（）；
 }
 
 ### transfrom-origin基点设置
