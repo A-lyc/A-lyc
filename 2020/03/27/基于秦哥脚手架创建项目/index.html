@@ -37,7 +37,7 @@
 <meta property="og:description" content="前后端分离项目，但是不使用 vue，react，angular（也就是说没有现成的脚手架） generator-jason 前端模块化脚手架">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-27T02:16:44.000Z">
-<meta property="article:modified_time" content="2022-03-05T09:33:32.795Z">
+<meta property="article:modified_time" content="2022-08-06T03:02:39.915Z">
 <meta property="article:author" content="四叶草">
 <meta property="article:tag" content="前端脚手架">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,7 @@
 <h2 id="目录解析"><a href="#目录解析" class="headerlink" title="目录解析"></a>目录解析</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">管理员目录，项目会生成一个管理员目录</span><br><span class="line">启动开发环境后</span><br><span class="line">可以在 http://localhost:8080/admin.html 中</span><br><span class="line">查看全部页面的链接 和 组件</span><br><span class="line">- admin</span><br><span class="line"></span><br><span class="line">打包后的目录</span><br><span class="line">- dist</span><br><span class="line"></span><br><span class="line">项目源码</span><br><span class="line">src</span><br><span class="line">  资产目录，css，js，font</span><br><span class="line">  - assets</span><br><span class="line">  </span><br><span class="line">  组件目录，由于使用的 ejs 作为 html 语言，可通过 require 的方式引入并且传入 prop，实现组件化</span><br><span class="line">  其中 components/index.js 会在 main.js 中执行，初始化组件</span><br><span class="line">  - components</span><br><span class="line">  </span><br><span class="line">  国际化目录</span><br><span class="line">  - i18n</span><br><span class="line">  </span><br><span class="line">  页面目录，存放着页面组件</span><br><span class="line">  - views</span><br><span class="line">  </span><br><span class="line">  项目公共配置</span><br><span class="line">  - main.js</span><br></pre></td></tr></table></figure>
 
 <h2 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h2><blockquote>
-<p>components 和 views 目录下的 A 文件夹作为模板，复制改名用即可 <br><br>ejs require 实现<br>&lt;% ‘脚本’ 标签，用于流程控制，无输出，任意类型。 %&gt;<br>  &lt;%_ 删除其前面的空格符<br>  &lt;%= 输出数据到模板（输出是转义 HTML 标签）<br>  &lt;%- 输出非转义的数据到模板<br>  &lt;%# 注释标签，不执行、不输出内容<br>  &lt;%% 输出字符串 ‘&lt;%’<br>  %&gt; 一般结束标签<br>  -%&gt; 删除紧随其后的换行符<br>  _%&gt; 将结束标签后面的空格符删除</p>
+<p>components 和 views 目录下的 A 文件夹作为模板，复制改名用即可 <br/><br>ejs require 实现<br>&lt;% ‘脚本’ 标签，用于流程控制，无输出，任意类型。 %&gt;<br>  &lt;%_ 删除其前面的空格符<br>  &lt;%= 输出数据到模板（输出是转义 HTML 标签）<br>  &lt;%- 输出非转义的数据到模板<br>  &lt;%# 注释标签，不执行、不输出内容<br>  &lt;%% 输出字符串 ‘&lt;%’<br>  %&gt; 一般结束标签<br>  -%&gt; 删除紧随其后的换行符<br>  _%&gt; 将结束标签后面的空格符删除</p>
 </blockquote>
 <p>ejs基本使用方法，循环，判断，赋值，传值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;组件模板中定义：</span><br><span class="line">&#x2F;*</span><br><span class="line">*如果text有值的时候是假的，之后执行假的，也就是显示组件上的值</span><br><span class="line">*&#x2F;</span><br><span class="line">&lt;%</span><br><span class="line">if (!text) var text &#x3D; &#39;&#39;;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;定义之后使用</span><br><span class="line">  &lt;div class&#x3D;&quot;product-active-title&quot;&gt;</span><br><span class="line">    &lt;%&#x3D; text %&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
@@ -244,7 +244,7 @@
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
 <li><p>views</p>
 <blockquote>
-<p>打包时，页面组件的 css 和 js 的名称，进行了单独的处理 <br><br>将按照页面组件的目录名编译成 hash 字符串（相同页面的 css 和 js 名称是一样的）<br><br>目的是实现页面组件的中文目录命名，方便开发（后端模板项目建议中文命名，前后端分离项目不建议中文命名）</p>
+<p>打包时，页面组件的 css 和 js 的名称，进行了单独的处理 <br/><br>将按照页面组件的目录名编译成 hash 字符串（相同页面的 css 和 js 名称是一样的）<br/><br>目的是实现页面组件的中文目录命名，方便开发（后端模板项目建议中文命名，前后端分离项目不建议中文命名）</p>
 </blockquote>
 </li>
 <li><p>html 路径问题</p>
@@ -313,7 +313,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2022-03-05T09:33:32.795Z" itemprop="dateUpdated">2022-03-05 17:33:32</time>
+    最后更新时间：<time datetime="2022-08-06T03:02:39.915Z" itemprop="dateUpdated">2022-08-06 11:02:39</time>
 </span><br>
 
 

@@ -37,7 +37,7 @@
 <meta property="og:description" content="如何创建一个博客网站 如何创建一个博客网站参考网址：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-27T02:46:43.000Z">
-<meta property="article:modified_time" content="2022-03-05T09:33:32.795Z">
+<meta property="article:modified_time" content="2022-08-06T03:02:39.915Z">
 <meta property="article:author" content="四叶草">
 <meta property="article:tag" content="零散资源">
 <meta name="twitter:card" content="summary">
@@ -254,7 +254,7 @@
 </ul>
 <h3 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h3><p>在静态模式下，服务器只处理 public 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 hexo generate，此模式通常用于生产环境（production mode）下。<br>$ hexo server -s</p>
 <h3 id="草稿发布"><a href="#草稿发布" class="headerlink" title="草稿发布"></a>草稿发布</h3><ul>
-<li><p>hexo publish [layout] <filename>“草稿名称”</filename></p>
+<li><p>hexo publish [layout] <filename>“草稿名称”</p>
 </li>
 <li><p>草稿建立</p>
 <ul>
@@ -295,7 +295,7 @@
 <ul>
 <li>hexo clean</li>
 </ul>
-<h3 id="列出网站资料"><a href="#列出网站资料" class="headerlink" title="列出网站资料"></a>列出网站资料</h3><p>list<br>$ hexo list <type><br>列出网站资料</type></p>
+<h3 id="列出网站资料"><a href="#列出网站资料" class="headerlink" title="列出网站资料"></a>列出网站资料</h3><p>list<br>$ hexo list <type><br>列出网站资料</p>
 <ul>
 <li>hexo list</li>
 </ul>
@@ -339,7 +339,7 @@
 </li>
 <li>hexo generate # generate static files<br>deploy:<br>provider: pages<br>skip-cleanup: true<br>github-token: $GH_TOKEN<br>keep-history: true<br>on:<br>branch: master<br>local-dir: public<br>将 .travis.yml 推送到 repository 中。Travis CI 应该会自动开始运行，并将生成的文件推送到同一 repository 下的 gh-pages 分支下<br>在 GitHub 中前往你的 repository 的设置页面，修改 GitHub Pages 的部署分支为 gh-pages。<br>前往 https://&lt;你的 GitHub 用户名&gt;.github.io 查看你的站点是否可以访问。这可能需要一些时间。<br>Project page<br>如果你更希望你的站点部署在 &lt;你的 GitHub 用户名&gt;.github.io 的子目录中，你的 repository 需要直接命名为子目录的名字，这样你的站点可以通过 https://&lt;你的 GitHub 用户名&gt;.github.io/&lt;repository 的名字&gt; 访问。你需要检查你的 Hexo 配置文件，将 url 修改为 https://&lt;你的 GitHub 用户名&gt;.github.io/&lt;repository 的名字&gt;、将 root 的值修改为 /&lt;repository 的名字&gt;/<br>Private repository<br>The following instruction is adapted from one-command deployment page.<br>Install hexo-deployer-git.<br>Add the following configurations to _config.yml, (remove existing lines if any)</li>
 </ul>
-<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><username>/<project></project></username></p>
+<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a><username>/<project></p>
 <h1 id="example-https-github-com-hexojs-hexojs-github-io"><a href="#example-https-github-com-hexojs-hexojs-github-io" class="headerlink" title="example, https://github.com/hexojs/hexojs.github.io"></a>example, <a href="https://github.com/hexojs/hexojs.github.io" target="_blank" rel="noopener">https://github.com/hexojs/hexojs.github.io</a></h1><p>  branch: gh-pages<br>Run hexo clean &amp;&amp; hexo deploy.<br>Check the webpage at username.github.io.</p>
 <ul>
 <li><a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/github-pages</a></li>
@@ -374,7 +374,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2022-03-05T09:33:32.795Z" itemprop="dateUpdated">2022-03-05 17:33:32</time>
+    最后更新时间：<time datetime="2022-08-06T03:02:39.915Z" itemprop="dateUpdated">2022-08-06 11:02:39</time>
 </span><br>
 
 

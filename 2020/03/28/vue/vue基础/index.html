@@ -37,7 +37,7 @@
 <meta property="og:description" content="vue属性methods:{}&#x2F;&#x2F;定义方法属性computed:{}&#x2F;&#x2F;计算属性watch:{}&#x2F;&#x2F;监听属性变化components:{}&#x2F;&#x2F;模板注册props:{}&#x2F;&#x2F;获取父组件的数据">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-28T09:29:25.000Z">
-<meta property="article:modified_time" content="2022-03-05T09:33:32.795Z">
+<meta property="article:modified_time" content="2022-08-06T03:02:39.911Z">
 <meta property="article:author" content="四叶草">
 <meta property="article:tag" content="vue 基本生命周期">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
 <h3 id="组件传递"><a href="#组件传递" class="headerlink" title="组件传递"></a>组件传递</h3><p>props：父传子<br>ref：子传父//定义到父组件模板上ref=“scroll”  通过this.$refs.scroll<br>emit：子传父//子组件发出事件this.$emit(“scroll”, position);   父组件接收@scroll=””</p>
 <h3 id="事件监听基本使用"><a href="#事件监听基本使用" class="headerlink" title="事件监听基本使用"></a>事件监听基本使用</h3><p>v-once<br>v-html=“”<br>v-text=“”<br>v-cloak<br>v-pre<br>v-bind<br>v-on:<br>v-for=“变量 in 数组或对象”<br>v-if/v-else<br>v-show<br>ladet，点击输入框会有一个聚焦状态<br>v-model=“”数据的双向绑定<br>事件@input=“”</p>
 <h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>stop；//可以阻止事件冒泡<br>prevent；//阻止系统自动提交<br>.enter；//键盘按下回车事件<br>.native；//组件定义事件的时候使用@cilkc.native=””<br>.once；//只执行一次的事件</p>
-<h3 id="插槽语法"><a href="#插槽语法" class="headerlink" title="插槽语法"></a>插槽语法</h3><p>slot name=”left“单个替换<br>  html使用的时候需要更具名字进行替换例子：<br>  <slot name="left"><button>左边</button></slot><br>  <slot name="btn"><button>按钮</button></slot><br>  <cpn><button slot="btn">1</button></cpn><br>  如果html没有名字，替换模板没有名字的数据—注意模板是给slot一个name=“”    使用的时候是给buttom slot=“”的</p>
+<h3 id="插槽语法"><a href="#插槽语法" class="headerlink" title="插槽语法"></a>插槽语法</h3><p>slot name=”left“单个替换<br>  html使用的时候需要更具名字进行替换例子：<br>  <slot name="left"><button >左边</button></slot><br>  <slot name="btn"><button >按钮</button></slot><br>  <cpn><button slot="btn">1</button></cpn><br>  如果html没有名字，替换模板没有名字的数据—注意模板是给slot一个name=“”    使用的时候是给buttom slot=“”的</p>
 <p>:img加载完成<br>  @load=“方法”</p>
 <h3 id="数据传输给对象需要新加建给对象"><a href="#数据传输给对象需要新加建给对象" class="headerlink" title="数据传输给对象需要新加建给对象"></a>数据传输给对象需要新加建给对象</h3><p>this.res.data = res//data是对象中新加的值</p>
 <h3 id="数据传输给数组的时候需要push进去，或者用数组其他方法"><a href="#数据传输给数组的时候需要push进去，或者用数组其他方法" class="headerlink" title="数据传输给数组的时候需要push进去，或者用数组其他方法"></a>数据传输给数组的时候需要push进去，或者用数组其他方法</h3>
@@ -243,7 +243,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2022-03-05T09:33:32.795Z" itemprop="dateUpdated">2022-03-05 17:33:32</time>
+    最后更新时间：<time datetime="2022-08-06T03:02:39.911Z" itemprop="dateUpdated">2022-08-06 11:02:39</time>
 </span><br>
 
 

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>new Promise 理解 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Promise">
+    <meta name="description" content="1234567  function getData()&amp;#123;        setTimeout(function()&amp;#123;          var name &#x3D; &#39;tom&#39;;          return name;        &amp;#125;,1000)    &amp;#125;console.log(getData());  &#x2F;&#x2F; undefined; 一开始以为能获取到tom ·">
+<meta property="og:type" content="article">
+<meta property="og:title" content="new Promise 理解">
+<meta property="og:url" content="https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="1234567  function getData()&amp;#123;        setTimeout(function()&amp;#123;          var name &#x3D; &#39;tom&#39;;          return name;        &amp;#125;,1000)    &amp;#125;console.log(getData());  &#x2F;&#x2F; undefined; 一开始以为能获取到tom ·">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/1.webp">
+<meta property="og:image" content="https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/2.webp">
+<meta property="og:image" content="https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/3.webp">
+<meta property="article:published_time" content="2022-07-14T02:51:51.000Z">
+<meta property="article:modified_time" content="2022-08-06T03:02:39.831Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="Promise">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/1.webp">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">new Promise 理解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">new Promise 理解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-07-14T02:51:51.000Z" itemprop="datePublished" class="page-time">
+  2022-07-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/Promise/">Promise</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-js/new Promise 理解"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">new Promise 理解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-07-14 10:51:51" datetime="2022-07-14T02:51:51.000Z"  itemprop="datePublished">2022-07-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/Promise/">Promise</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="keyword">var</span> name = <span class="string">'tom'</span>;</span><br><span class="line">          <span class="keyword">return</span> name;</span><br><span class="line">        &#125;,<span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">console</span>.log(getData());  <span class="comment">// undefined; 一开始以为能获取到tom</span></span><br></pre></td></tr></table></figure>
+<p>· 需要回调函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params">callback</span>)</span>&#123;    </span><br><span class="line">   setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">var</span> name = <span class="string">'tom'</span>;</span><br><span class="line">       callback(name);</span><br><span class="line">   &#125;,<span class="number">1000</span>)</span><br><span class="line"> &#125;</span><br><span class="line"> getData(<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(val);    <span class="comment">// tom</span></span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>· 使用promise方法 获取异步方法里面的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">         setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">             <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">             <span class="keyword">if</span>(count)&#123;</span><br><span class="line">                 resolve( count );</span><br><span class="line">             &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                 reject( count );</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;,<span class="number">1000</span>)</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   p.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;           <span class="comment">//异步调用</span></span><br><span class="line">       <span class="built_in">console</span>.log(res);   </span><br><span class="line">   &#125;,err=&gt;&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(err)     </span><br><span class="line">   &#125;)</span><br><span class="line">   p.then().calch()</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="number">1</span>);     <span class="comment">//比then先执行，也就证明then是异步调用</span></span><br></pre></td></tr></table></figure>
+<p>· then链式调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">p.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">              resolve(<span class="string">'需再return promise对象，才能继续then调用'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(res) <span class="comment">// 需要return p.....</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>err &amp; catch 谁会捕捉reject?</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">&#125;, err=&gt;&#123;</span><br><span class="line">    <span class="comment">// 当同时存在，会直接走then的err回调函数, catch不执行</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'then的'</span>, err);   </span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'cathc的'</span>, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>· 快速获得promise对象<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入的参数非promise对象，则返回resolve/reject的promise对象</span></span><br><span class="line"> <span class="keyword">let</span> p1 = <span class="built_in">Promise</span>.resolve(<span class="string">'abc'</span>);      </span><br><span class="line"> <span class="keyword">let</span> p3 = <span class="built_in">Promise</span>.reject(<span class="string">'wrong'</span>)；</span><br><span class="line"></span><br><span class="line"> <span class="comment">//传入的参数promise对象，则结果根据resolve / reject</span></span><br><span class="line"> <span class="keyword">let</span> p2 = <span class="built_in">Promise</span>.resolve( </span><br><span class="line">             <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">                 reject(<span class="string">'abc'</span>)</span><br><span class="line">             &#125;) </span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> [nameOptions,methodOptions] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([</span><br><span class="line">         getDictionaries(&#123;<span class="attr">code</span>:<span class="string">'BILL_BUSINESS_NAME'</span>,<span class="attr">status</span>:<span class="number">1</span>&#125;),</span><br><span class="line">         getDictionaries(&#123;<span class="attr">code</span>:<span class="string">'BILL_PAYMENT_METHOD'</span>,<span class="attr">status</span>:<span class="number">1</span>&#125;),</span><br><span class="line"> ]);</span><br><span class="line"> p.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(res.code === <span class="number">200</span>)&#123;</span><br><span class="line"></span><br><span class="line">         <span class="comment">// 有时候业务不需要处理逻辑,就可以很方便直接返回promise对象。</span></span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve( res.data );</span><br><span class="line">         <span class="comment">// 不需要↓这样复杂;</span></span><br><span class="line">         <span class="comment">// return new Promise((resolve,reject)&#123;resolve( res.data )&#125;); </span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;).then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'成功啦!!'</span>)</span><br><span class="line">     <span class="built_in">console</span>.log(data);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>· promise对象提供了then，catch, all, race方法</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./1.webp" alt="查入图片" title="">
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure> 
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./2.webp" alt="查入图片" title="">
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure> 
+
+<p>· 注意:<br>1.all方法的传递参数需要是数组;<br>2.all方法的所有promise是并发执行(同时执行);<br>3.任何一个promise返回reject，就会中断去执行catch</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./3.webp" alt="查入图片" title="">
+                </div>
+                <div class="image-caption">查入图片</div>
+            </figure> 
+
+<p>· ES7提供的async &amp; await处理异步函数<br>1.async使得函数变成异步,添加后依然同普通函数使用;<br>2.await操作符必须在async函数内使用;<br>3.await操作符等待的函数必须要返回的一个promise对象;<br>4.promise返回的是reject, await拿不到, 需要配合try catch来捕捉reject;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> status = <span class="keyword">await</span> <span class="built_in">Promise</span>.resolve(<span class="number">200</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(status);      <span class="comment">// 200</span></span><br><span class="line">    <span class="keyword">var</span> notFound = <span class="keyword">await</span> <span class="built_in">Promise</span>.reject(<span class="number">404</span>);</span><br><span class="line">     <span class="built_in">console</span>.log(notFound);   <span class="comment">// 没有打印; ↓catch会捕捉到reject;</span></span><br><span class="line"></span><br><span class="line">     <span class="built_in">console</span>.log(<span class="number">55</span>)          <span class="comment">// 没有打印; 当前面返回reject，后续不再执行;</span></span><br><span class="line">  </span><br><span class="line">  &#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);         <span class="comment">// 404</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>)    <span class="comment">// 比test函数先执行,也就证明test是异步函数;</span></span><br></pre></td></tr></table></figure>
+
+<p>作者：Peter_2B<br>链接：<a href="https://www.jianshu.com/p/42c5eea9b698" target="_blank" rel="noopener">https://www.jianshu.com/p/42c5eea9b698</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-08-06T03:02:39.831Z" itemprop="dateUpdated">2022-08-06 11:02:39</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/" target="_blank" rel="external">https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/Promise/" rel="tag">Promise</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/&title=《new Promise 理解》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/&title=《new Promise 理解》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《new Promise 理解》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/08/06/%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">第二章：面向对象</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/06/18/axios%E8%AF%B7%E6%B1%82%E6%A0%BC%E5%BC%8F/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">axios请求格式</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/&title=《new Promise 理解》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/&title=《new Promise 理解》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《new Promise 理解》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/07/14/js/new%20Promise%20%E7%90%86%E8%A7%A3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3aSW7DMBAEwPz/0wmQU4BESs9C2YfSyfAisXgg6Z75+Iivz+/r/p2f7//89Or17+9XP1278PDw8FpDv7ruMVfgfCj3E3f/+n7MeHh4eKd5yXDzB98PIp+O6nTj4eHhvRsvP68m20O0rAeTi4eHh/fOvPtFvxpe5BtPdbrx8PDwnuElS3x1+U7ez+Pd41kLHh4eXsyrhq3v8PpgfQ8PDw9vUFXPF9z8gFsNf0ejxcPDwzvAy4OD/GCdH7UnoXAhMsbDw8Nb5eUFqrwcNZ+aPHT4Zwx4eHh4L+L1yld52Sz/tBz44uHh4R3m9SKAfDPI2XlU8c+d8fDw8A7zekWmvMkgeaf6lLWUBQ8PD69Yc6/+4Z8cdvPQodfccFkAw8PDw1vi9UpZybI+WfQnIfIfMS4eHh7eYV7hx0uNBXnrwGjHw8PDw1vi9RbrvMDfizPmmEI8gYeHh1fkLRSZim0Ek/Ci/E08PDy8A7zJNrAVQCTx8aREh4eHh3eOl8e11Vat3saz9Ss8PDy8Xd7uEbbHvr//6CCOh4eHd4CXP6CKrxbVkoJc8pTL++Ph4eE9wqsOKA9/84at/LiPh4eH9wwvWcq3FvF5w0E+3YW9Dg8PD2+JN3lAPgXVZ+UhCB4eHt6TvN1NYh71Vie0fN7Hw8PDa/Gqt64Wt5LB5ROXtybg4eHhneDlAUGvFSBn91oTomM6Hh4e3iqvXIBvLdb5U+axBR4eHt6TvN6W0Iseeq0D5ZACDw8P7wCvl4j2wtxk0FvbCR4eHt5p3rxZal7Qqk5fYcvBw8PDO8arlvmTo21yHO9FuuXWKzw8PLwX8fK+pl4QXG1TKByp8fDw8N6Ad6KsNWEsHKnx8PDwirwkjJgEuPMyWHLIxsPDw3uGN/mrPzkcV1sTltsF8PDw8Dq8L/yh5ClrF6uSAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

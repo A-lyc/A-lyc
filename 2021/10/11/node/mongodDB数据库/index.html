@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>mongodDB数据库 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="node入门,数据库,node,mongoDB">
+    <meta name="description" content="安装 网址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;community 下载社区级别的，免费 也就是本地的第二个 根绝菜鸟教程进行安装 网址：https:&#x2F;&#x2F;www.runoob.com&#x2F;mongodb&#x2F;mongodb-window-install.html 环境变量配置，把mongod的路径给到path添加上即可 我的电脑右键属性。。。。。 mongod –ve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodDB数据库">
+<meta property="og:url" content="https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="安装 网址：https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;community 下载社区级别的，免费 也就是本地的第二个 根绝菜鸟教程进行安装 网址：https:&#x2F;&#x2F;www.runoob.com&#x2F;mongodb&#x2F;mongodb-window-install.html 环境变量配置，把mongod的路径给到path添加上即可 我的电脑右键属性。。。。。 mongod –ve">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-11T01:43:18.000Z">
+<meta property="article:modified_time" content="2022-08-06T03:02:39.871Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="node入门">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="mongoDB">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">mongodDB数据库</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">mongodDB数据库</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-10-11T01:43:18.000Z" itemprop="datePublished" class="page-time">
+  2021-10-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/node%E5%85%A5%E9%97%A8/">node入门</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动"><span class="post-toc-number">2.</span> <span class="post-toc-text">启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#停止数据库"><span class="post-toc-number">3.</span> <span class="post-toc-text">停止数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#停止"><span class="post-toc-number">4.</span> <span class="post-toc-text">停止</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接数据库和退出数据库"><span class="post-toc-number">5.</span> <span class="post-toc-text">连接数据库和退出数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">6.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在Node中操作mongod数据库"><span class="post-toc-number">7.</span> <span class="post-toc-text">在Node中操作mongod数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用第三方mongoose框架来操作mongoDB操作数据库"><span class="post-toc-number">8.</span> <span class="post-toc-text">使用第三方mongoose框架来操作mongoDB操作数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mongoDB的基本概念"><span class="post-toc-number">9.</span> <span class="post-toc-text">mongoDB的基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mongoose-router文件加内的路由"><span class="post-toc-number">10.</span> <span class="post-toc-text">mongoose router文件加内的路由</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#官方指南"><span class="post-toc-number">11.</span> <span class="post-toc-text">官方指南</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计Scheme，发布model"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">设计Scheme，发布model</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#增加数据"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">增加数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查询数据"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">查询数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除数据"><span class="post-toc-number">11.4.</span> <span class="post-toc-text">删除数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改数据"><span class="post-toc-number">11.5.</span> <span class="post-toc-text">修改数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#express-mongoose-上传图片"><span class="post-toc-number">11.6.</span> <span class="post-toc-text">express + mongoose 上传图片</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node/mongodDB数据库"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">mongodDB数据库</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-10-11 09:43:18" datetime="2021-10-11T01:43:18.000Z"  itemprop="datePublished">2021-10-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/node%E5%85%A5%E9%97%A8/">node入门</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>网址：<a href="https://www.mongodb.com/try/download/community" target="_blank" rel="noopener">https://www.mongodb.com/try/download/community</a></li>
+<li>下载社区级别的，免费 也就是本地的第二个</li>
+<li>根绝菜鸟教程进行安装 网址：<a href="https://www.runoob.com/mongodb/mongodb-window-install.html" target="_blank" rel="noopener">https://www.runoob.com/mongodb/mongodb-window-install.html</a></li>
+<li>环境变量配置，把mongod的路径给到path添加上即可 我的电脑右键属性。。。。。</li>
+<li>mongod –version  =&gt; 查看是否安装很成功</li>
+</ul>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><ul>
+<li>打开控制台输入 mongod<br>· mongod 默认使用执行mongod命令所处盘符根目录下的/data/db作为自己的数据存储<br>· 第一次执行mongod时候需要在根盘符创建/data/db文件夹<br>· 在那个盘符输入，需要在哪一个盘符中创建一个/data/db 文件夹<br>· 修改默认的储存目录  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath-数据存储目录路径</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="停止数据库"><a href="#停止数据库" class="headerlink" title="停止数据库"></a>停止数据库</h2><ul>
+<li>开启服务的控制台ctrl+c，或者直接关闭数据库</li>
+</ul>
+<h2 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h2><ul>
+<li>开启服务的控制台ctrl+c，或者直接关闭</li>
+</ul>
+<h2 id="连接数据库和退出数据库"><a href="#连接数据库和退出数据库" class="headerlink" title="连接数据库和退出数据库"></a>连接数据库和退出数据库</h2><ul>
+<li>连接之前确保开启数据库</li>
+<li>重新打开控制台<br>· 使用命令mongo 默认打开本机的数据库mongod服务</li>
+<li>退出<br>· exit 在连接状态输入exit 就是退出连接</li>
+</ul>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
+<li>show dbs<br>· 查看当前数据库列表</li>
+<li>db<br>· 查看当前操作的数据库</li>
+<li>use 数据库名称<br>· 切换到指定的数据库（如果没有会新建,没有数据show dbs命令显示不出来）</li>
+<li>db.student.insertOne({‘name’:’syc’})<br>· 插入数据库 名称为student 插入数据</li>
+<li>show collections<br>· 查看数据库名称</li>
+<li>db.student.find()<br>· 查看数据库内容</li>
+<li>db.dropDatabase()<br>· 删除数据库</li>
+<li>db.createCollection(name, options)<br>· 创建集合</li>
+<li>db.名称.drop()<br>· 删除集合 在show collections查看之后删出</li>
+</ul>
+<h2 id="在Node中操作mongod数据库"><a href="#在Node中操作mongod数据库" class="headerlink" title="在Node中操作mongod数据库"></a>在Node中操作mongod数据库</h2><ul>
+<li>使用官方的mongod包来操作<br>· 网址gethup：<a href="https://github.com/mongodb/node-mongodb-native" target="_blank" rel="noopener">https://github.com/mongodb/node-mongodb-native</a></li>
+</ul>
+<h2 id="使用第三方mongoose框架来操作mongoDB操作数据库"><a href="#使用第三方mongoose框架来操作mongoDB操作数据库" class="headerlink" title="使用第三方mongoose框架来操作mongoDB操作数据库"></a>使用第三方mongoose框架来操作mongoDB操作数据库</h2><ul>
+<li>第三方包，基于mongoDB官方第三方包做了封装，名字交mongoose<br>· 官网：<a href="http://www.mongoosejs.net/" target="_blank" rel="noopener">http://www.mongoosejs.net/</a></li>
+<li>安装使用<br>· npm i –save mongoose<br>· 引入mongoose<br>· 设计Schema<br>· 发布model（得到模型构造函数）<ul>
+<li>所有操作基于model操作</li>
+<li>查询，增加，修改，删除<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载包</span></span><br><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"><span class="comment">// 连接mongoDB数据库</span></span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/test'</span>,&#123;<span class="attr">useMongoClient</span>:<span class="literal">true</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个模型，设计数据库</span></span><br><span class="line"><span class="comment">// mongoDB时动态的，非常灵活，只需要在代码中设计你的数据库就可以了</span></span><br><span class="line"><span class="comment">// mongoose这个包就可以让你的设计编写过程变得简单</span></span><br><span class="line"><span class="comment">// 第一个参数：表名(生成小写复数表明)，第二个参数：数据结构 表中存储的文档，有个name时字符串格式</span></span><br><span class="line"><span class="keyword">const</span> Cat = mongoose.model(<span class="string">'Cat'</span>, &#123; <span class="attr">name</span>: <span class="built_in">String</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例化一个Cat</span></span><br><span class="line"><span class="keyword">const</span> kitty = <span class="keyword">new</span> Cat(&#123; <span class="attr">name</span>: <span class="string">'四叶草'</span> + i &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 持久化保存kitty实例</span></span><br><span class="line">kitty.save().then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'meow,成功'</span>)).catch(<span class="function"><span class="params">e</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(e)&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li>查看是否存进去了<br>· 数据库的名叫test<br>· use test中去<br>· show collections 查看数据库名<br>· db.cats.find()</li>
+<li>问题 如何让在数据库中出来到最初始目录</li>
+</ul>
+</li>
+</ul>
+<h2 id="mongoDB的基本概念"><a href="#mongoDB的基本概念" class="headerlink" title="mongoDB的基本概念"></a>mongoDB的基本概念</h2><ul>
+<li>多个数据库 - 最外层的对象是数据库</li>
+<li>一个数据库中可以有多个集合 - 是里面对象中的数组（user:[]）</li>
+<li>一个集合当中可以有多个文档 - 是集合里面的每一个对象 </li>
+<li>文档结构没有任何限制</li>
+<li>mongodb多个数据库表<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    QQ:&#123;</span><br><span class="line">     users:[</span><br><span class="line">      &#123;dom:"文档"&#125;,&#123;&#125;,&#123;&#125;...</span><br><span class="line">    ],</span><br><span class="line">     products:[],</span><br><span class="line">      ...</span><br><span class="line">    &#125;,</span><br><span class="line">    taobao:&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;,</span><br><span class="line">    baidu:&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="mongoose-router文件加内的路由"><a href="#mongoose-router文件加内的路由" class="headerlink" title="mongoose router文件加内的路由"></a>mongoose router文件加内的路由</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">const express = require('express')</span><br><span class="line">// 引用数据模块</span><br><span class="line">const mongoose = require('mongoose')</span><br><span class="line"></span><br><span class="line">// 导入可接收图片的插件</span><br><span class="line">var multer = require('multer')</span><br><span class="line"></span><br><span class="line">// 使用Router</span><br><span class="line">const router = express.Router()</span><br><span class="line"></span><br><span class="line">// 定义图片中间件的内容</span><br><span class="line">var storage = multer.diskStorage(&#123;</span><br><span class="line">    // 定义保存图片的地址</span><br><span class="line">    destination: function (req, file, cb) &#123;</span><br><span class="line">        cb(null, __dirname + '/../uploads')</span><br><span class="line">    &#125;,</span><br><span class="line">    // 定义保存图片的名称，默认没有后缀名，需要添加后缀名</span><br><span class="line">    filename: function (req, file, cb) &#123;</span><br><span class="line">        let mimetype = file.mimetype.split('/')[1]</span><br><span class="line">        cb(null, file.fieldname + '-' + Date.now() + '.' + mimetype)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// 使用图片中间见</span><br><span class="line">var upload = multer(&#123; storage &#125;)</span><br><span class="line"></span><br><span class="line">const Goods = require('../models/goods')</span><br><span class="line"></span><br><span class="line">// 连接数据库 数据库的表名叫shop </span><br><span class="line">mongoose.connect('mongodb://localhost/shop', &#123;useNewUrlParser: true&#125;)</span><br><span class="line"></span><br><span class="line">//下面就进行判断，（连接成功，连接失败，连接断开）</span><br><span class="line">mongoose.connection.on('connected', function () &#123;</span><br><span class="line">    console.log("连接成功 - 1");</span><br><span class="line">&#125;)</span><br><span class="line">mongoose.connection.on('error', function () &#123;</span><br><span class="line">    console.log("连接失败 - 2");</span><br><span class="line">&#125;)</span><br><span class="line">mongoose.connection.on('disconnected', function () &#123;</span><br><span class="line">    console.log("断开连接 - 3");</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//路由获取 列表</span><br><span class="line">router.get('/', function (req, res, next) &#123;</span><br><span class="line">    //查询mongoDB的goods数据</span><br><span class="line">    Goods.find().then((doc) =&gt;&#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            data:doc,// 返回数据的名称</span><br><span class="line">            count:doc.length // 返回数据的长度</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).catch(err=&gt;&#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            status: '1',</span><br><span class="line">            msg: err.message</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 添加</span><br><span class="line">router.get('/add', function (req, res, next) &#123;</span><br><span class="line">    //查询mongoDB的goods数据</span><br><span class="line">    let obj = new Goods(&#123;</span><br><span class="line">        name:'四叶草',</span><br><span class="line">        title:'这是内容信息'</span><br><span class="line">    &#125;)</span><br><span class="line">    obj.save().then(doc =&gt;&#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            data:doc,// 返回数据的名称</span><br><span class="line">            count:doc.length // 返回数据的长度</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 删除</span><br><span class="line">router.get('/del',(req, res, next) =&gt; &#123;</span><br><span class="line">    let id = req.query.id</span><br><span class="line">    Goods.remove(&#123;_id: id&#125;).then(data=&gt;&#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            data:data,// 返回数据的名称</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 修改</span><br><span class="line">router.post('/amend',(req,res)=&gt;&#123;</span><br><span class="line">    let data = req.body</span><br><span class="line">    Goods.findByIdAndUpdate(data.id,&#123;</span><br><span class="line">        name: data.name,</span><br><span class="line">    &#125;).then(data =&gt; &#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            data: data,// 返回数据的名称</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 上传upload.single('files') files上传文件类型</span><br><span class="line">router.post('/upImage',upload.single('files'),async (req,res)=&gt;&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">        // 接收传来的信息 </span><br><span class="line">        let file = req.file</span><br><span class="line">        // 传来之后返回数据 定义返回数据的 url，方便线上访问</span><br><span class="line">        file.url = `http://localhost:3000/uploads/$&#123;file.filename&#125;`</span><br><span class="line">        console.log('---- 1 ----')</span><br><span class="line">        console.log(file)</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            data: file,// 返回数据的名称</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;catch(e)&#123;</span><br><span class="line">        console.log(e)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">module.exports = router; //暴露路由</span><br></pre></td></tr></table></figure>
+
+<h2 id="官方指南"><a href="#官方指南" class="headerlink" title="官方指南"></a>官方指南</h2><h3 id="设计Scheme，发布model"><a href="#设计Scheme，发布model" class="headerlink" title="设计Scheme，发布model"></a>设计Scheme，发布model</h3><ul>
+<li><p>Schema({opstion})：<br>· required: 布尔值或函数 如果值为真，为此属性添加 required 验证器<br>· default: 任何值或函数 设置此路径默认值。如果是函数，函数返回值为默认值<br>· select: 布尔值 指定 query 的默认 projections<br>· validate: 函数 adds a validator function for this property<br>· get: 函数 使用 Object.defineProperty() 定义自定义 getter<br>· set: 函数 使用 Object.defineProperty() 定义自定义 setter<br>· alias: 字符串 仅mongoose &gt;= 4.10.0。 为该字段路径定义虚拟值 gets/sets</p>
+</li>
+<li><p>索引<br>· index: 布尔值 是否对这个属性创建索引<br>· unique: 布尔值 是否对这个属性创建唯一索引<br>· sparse: 布尔值 是否对这个属性创建稀疏索引</p>
+</li>
+<li><p>String<br>lowercase: 布尔值 是否在保存前对此值调用 .toLowerCase()<br>uppercase: 布尔值 是否在保存前对此值调用 .toUpperCase()<br>trim: 布尔值 是否在保存前对此值调用 .trim()<br>match: 正则表达式 创建验证器检查这个值是否匹配给定正则表达式<br>enum: 数组 创建验证器检查这个值是否包含于给定数组</p>
+</li>
+<li><p>Number<br>min: 数值 创建验证器检查属性是否大于或等于该值<br>max: 数值 创建验证器检查属性是否小于或等于该值</p>
+</li>
+<li><p>Date<br>min: Date<br>max: Date<br>网址：<a href="http://www.mongoosejs.net/docs/schematypes.html" target="_blank" rel="noopener">http://www.mongoosejs.net/docs/schematypes.html</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"><span class="comment">//拿到mongoose的架构</span></span><br><span class="line"><span class="keyword">const</span> &#123; Schema &#125; = mongoose;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 连接mongoDB数据库</span></span><br><span class="line">mongoose.createConnection(<span class="string">'mongodb://localhost/test'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 设计文档结构 （表结构）</span></span><br><span class="line"><span class="comment">// 就是常见的js数据类型 就是属性名称</span></span><br><span class="line"><span class="comment">// 要求每个文档是下面的类型  Date：是日期  default: Date.now： 默认值</span></span><br><span class="line"><span class="keyword">const</span> userSchema = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">    title:  <span class="built_in">String</span>,</span><br><span class="line">    email:&#123;</span><br><span class="line">        type:<span class="built_in">String</span></span><br><span class="line">    &#125;,<span class="comment">// 名字是title，类型String 可以不填写</span></span><br><span class="line">    userName:&#123;</span><br><span class="line">        type:<span class="built_in">String</span>,<span class="comment">// 类型</span></span><br><span class="line">        <span class="keyword">default</span>:<span class="literal">true</span>, <span class="comment">// 默认值</span></span><br><span class="line">        age:&#123; <span class="attr">type</span>: <span class="built_in">Number</span>, <span class="attr">min</span>: <span class="number">18</span>, <span class="attr">max</span>: <span class="number">65</span> &#125;,<span class="comment">//最大最小值</span></span><br><span class="line">        test: &#123;</span><br><span class="line">            type: <span class="built_in">String</span>,</span><br><span class="line">            index: <span class="literal">true</span>, <span class="comment">// 索引值</span></span><br><span class="line">            unique: <span class="literal">true</span> <span class="comment">// Unique index. If you specify `unique: true`</span></span><br><span class="line">            <span class="comment">// specifying `index: true` is optional if you do `unique: true`</span></span><br><span class="line">          &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    password:&#123;</span><br><span class="line">        type:<span class="built_in">String</span>,<span class="comment">// 类型String,Number,Date,Buffer,Boolean,Mixed,Obj,Array</span></span><br><span class="line">        required:<span class="literal">true</span>, <span class="comment">// 必选项required required: [true, 'Why no bacon?']</span></span><br><span class="line">        binary:  Buffer, <span class="comment">//binary = new Buffer(0);</span></span><br><span class="line">        <span class="keyword">default</span>:<span class="string">'12'</span>, <span class="comment">// 默认default</span></span><br><span class="line">        date: <span class="built_in">Date</span>.now,</span><br><span class="line">        enum: [<span class="string">'Coffee'</span>, <span class="string">'Tea'</span>],<span class="comment">// 可选项</span></span><br><span class="line">        age:&#123; <span class="comment">// 最大值最小值</span></span><br><span class="line">        type:<span class="built_in">String</span>,</span><br><span class="line">        min:<span class="number">18</span>,</span><br><span class="line">        max:<span class="number">60</span></span><br><span class="line">        &#125;,</span><br><span class="line">        stuff: &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">lowercase</span>: <span class="literal">true</span>, <span class="attr">trim</span>: <span class="literal">true</span> &#125; <span class="comment">// lowercase：小写字体，trim：修剪</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3 将文档结构发布为模型 - 第一个参数为字符串，第二个为表架构</span></span><br><span class="line"><span class="comment">// mongoose.model用来将一个架构发布为model</span></span><br><span class="line"><span class="comment">// 第一个参数：传入一个大写名词但数字字符串表示你的数据库名称</span></span><br><span class="line"><span class="comment">//            mongoose会将自动大写名词的字符串生成小写复数集合名称</span></span><br><span class="line"><span class="comment">//            举例：这里的User会变成users集合名称</span></span><br><span class="line"><span class="comment">// 第二个参数：是架构 Schema</span></span><br><span class="line"><span class="comment">// 返回值：模型构造函数</span></span><br><span class="line"><span class="built_in">module</span>.exports =  mongoose.model(<span class="string">'User'</span>, userSchema);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4 当有了模型构造函数之后，就可以使用这个构造函数对users集合中的数据操作了（增删改查）</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 4 当有了模型构造函数之后，就可以使用这个构造函数对users集合中的数据操作了（增删改查）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> admin = <span class="keyword">new</span> User(&#123;</span><br><span class="line">    userName:<span class="string">"admin"</span>,</span><br><span class="line">    password: <span class="string">"12345"</span>,</span><br><span class="line">    email: <span class="string">"admin@admin.com"</span>,</span><br><span class="line">    title:<span class="string">"user"</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">admin.save().then(<span class="function">(<span class="params">ret</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(ret)</span><br><span class="line">    res.json(&#123;</span><br><span class="line">            data:doc,<span class="comment">// 返回数据的名称</span></span><br><span class="line">            count:doc.length <span class="comment">// 返回数据的长度</span></span><br><span class="line">        &#125;)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查询所有</span></span><br><span class="line">User.find().then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'查询'</span>)</span><br><span class="line">     res.json(&#123;</span><br><span class="line">                data:doc,<span class="comment">// 返回数据的名称</span></span><br><span class="line">                count:doc.length <span class="comment">// 返回数据的长度</span></span><br><span class="line">            &#125;)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'失败'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显示翻页</span></span><br><span class="line"><span class="comment">// 根据query获取page后的参数为1，2.。。。。</span></span><br><span class="line"> <span class="keyword">let</span> page = req.query.page</span><br><span class="line"> <span class="keyword">let</span> data = &#123;&#125;</span><br><span class="line">    <span class="comment">// page*5 - 5 = 0   =&gt;页码*也页显示条数 - 也页显示条数</span></span><br><span class="line">    <span class="comment">// page为1的时候结果为0   page为2的时候结果为limit内的参数</span></span><br><span class="line">    <span class="comment">// limit：一页显示多少个 skip跳过多少个显示  公式：(page-1)*5</span></span><br><span class="line">    User.find().limit(<span class="number">5</span>).skip((page<span class="number">-1</span>)*<span class="number">5</span>).then(<span class="function"><span class="params">doc</span> =&gt;</span> &#123;</span><br><span class="line">       data.doc = doc</span><br><span class="line">        <span class="keyword">return</span> active.find()</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">doc</span> =&gt;</span>&#123;</span><br><span class="line">        data.doc2 = doc</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            data,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 按条件查询 - 得到一个数组。查询多个</span></span><br><span class="line">User.find(&#123;<span class="attr">userName</span>:<span class="string">'admin'</span>&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'查询'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(ret)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'失败'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 得到一个对象。直接找到第一个直接返回，没有返回第一个</span></span><br><span class="line">User.findOne(&#123;<span class="attr">userName</span>:<span class="string">'张三'</span>&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'查询'</span>)</span><br><span class="line">     res.json(&#123;</span><br><span class="line">                data:doc,<span class="comment">// 返回数据的名称</span></span><br><span class="line">                count:doc.length <span class="comment">// 返回数据的长度</span></span><br><span class="line">            &#125;)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'失败'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除数据</span></span><br><span class="line">User.remove(&#123;<span class="attr">_id</span>:<span class="string">'5f82a84a875939195ceff0e3'</span>&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'---- 1 ----'</span>)</span><br><span class="line">     res.json(&#123;</span><br><span class="line">                data:doc,<span class="comment">// 返回数据的名称</span></span><br><span class="line">                count:doc.length <span class="comment">// 返回数据的长度</span></span><br><span class="line">            &#125;)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'---- 2 ----'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//根据条件删除一个</span></span><br><span class="line">User.findOneAndRemove(conditions,[options],callback)</span><br><span class="line"><span class="comment">// 根据id删除一个</span></span><br><span class="line">User.findByIdAndRemove(id,[options],callback)</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// conditions:条件</span></span><br><span class="line"><span class="comment">// 根据条件更新所有</span></span><br><span class="line">User.update(conditions,doc,[options],callback)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据条件更新一个</span></span><br><span class="line">User.findOneAndUpdate(conditions,doc,[options],callback)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据ID更新</span></span><br><span class="line">User.findByIdAndUpdate(<span class="string">'5f82a8741c097b40345a29f6'</span>,&#123;</span><br><span class="line">    password: <span class="string">'1111'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    res.json(&#123;</span><br><span class="line">                    data:doc,<span class="comment">// 返回数据的名称</span></span><br><span class="line">                    count:doc.length <span class="comment">// 返回数据的长度</span></span><br><span class="line">                &#125;)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'shibai'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="express-mongoose-上传图片"><a href="#express-mongoose-上传图片" class="headerlink" title="express + mongoose 上传图片"></a>express + mongoose 上传图片</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装：npm i multer //express插件上有</span></span><br><span class="line"><span class="comment">/** 在路由文件内 **/</span></span><br><span class="line"><span class="comment">// 初始化安装</span></span><br><span class="line"><span class="keyword">var</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>)</span><br><span class="line"><span class="keyword">var</span> storage = multer.diskStorage(&#123;</span><br><span class="line">    destination: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 图片上传路径 根目录下的/../uploads 需要公开这个目录  </span></span><br><span class="line"><span class="comment">// 返回路径：F:\ceshiXM\demo01\routes/../uploads</span></span><br><span class="line">        cb(<span class="literal">null</span>, __dirname + <span class="string">'/../uploads'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    filename: <span class="function"><span class="keyword">function</span> (<span class="params">req, file, cb</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 图片默认上传没有后缀的，添加后缀名称</span></span><br><span class="line">        <span class="keyword">let</span> mimetype = file.mimetype.split(<span class="string">'/'</span>)[<span class="number">1</span>]</span><br><span class="line">        cb(<span class="literal">null</span>, file.fieldname + <span class="string">'-'</span> + <span class="built_in">Date</span>.now() + <span class="string">'.'</span> + mimetype)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 导出storage 为upload</span></span><br><span class="line"><span class="comment">// 上传 upload.single('files') 可以req结构出file</span></span><br><span class="line">router.post(<span class="string">'/upImage'</span>,upload.single(<span class="string">'files'</span>),<span class="keyword">async</span> (req,res)=&gt;&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> file = req.file</span><br><span class="line">        <span class="comment">// 返回的线上地址</span></span><br><span class="line">        file.url = <span class="string">`http://localhost:3000/uploads/<span class="subst">$&#123;file.filename&#125;</span>`</span></span><br><span class="line">        <span class="comment">// 返回json数据</span></span><br><span class="line">        res.json(&#123;</span><br><span class="line">                    data: file,<span class="comment">// 返回数据的名称</span></span><br><span class="line">                &#125;)</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-08-06T03:02:39.871Z" itemprop="dateUpdated">2022-08-06 11:02:39</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank" rel="external">https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/mongoDB/" rel="tag">mongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/node/" rel="tag">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/node%E5%85%A5%E9%97%A8/" rel="tag">node入门</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《mongodDB数据库》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《mongodDB数据库》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mongodDB数据库》 — 四叶草的个人博客&url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2021/11/12/vue/vue-element-admin/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-element-admin</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2021/09/26/node/%E8%80%81%E8%99%8E%E6%9C%BA%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3draw-lottery/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">老虎机插件文档draw-lottery</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《mongodDB数据库》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《mongodDB数据库》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mongodDB数据库》 — 四叶草的个人博客&url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3aQW4bMQwF0Nz/0inQVYHUnv8pMU2BN6vAkUd6Wkg0yY+P+Pn8/SRj/hz59ZNX478+X+dN1jB88PDw8EZLT6bJJ3v1nleLzkfma8bDw8Pb5r2/DN4f8bPx+SWUby4eHh7eT+Ml18nsemjZeHh4eP8jLw98z9+Jh4eH9zN55+nUJGmbJ3yTNVzOteDh4eHFvJNw9l/9vVjfw8PDwzuoqifFsPPj++QND+/Hw8PDW+C9T7a2zVJ5cNwmHWYtX3h4eHgbvByQvC4vic1Swy0VDw8Pb483uwzyJbYJhdk7H34x4OHh4V3ltYDzslMLaIN1PDw8vD3erSln6d32oE/AKzuKh4eHV4a8syJW23Yw6wR4+C8eHh7eN/JuhcjD8Let4L0ag4eHh7fAm6UAbiVkZyH1sKiGh4eHt8xLMLNjOg/iZ9fMUTyOh4eHF/Dawz1vw2rLV+dH/1/G4OHh4a3xZo2hLaNdaH45DXMteHh4eCNee2S3xa1249oyW7QReHh4eAu8dvo8mM6XcrK50Xg8PDy8S7z2kJ0lc9u3vd+avC0MDw8Pb4PXpmLbO+dWAexaYxYeHh7eVd7swM2/NQu7h6mH5NcAHh4e3oiXHP0ttU03tPMWgTseHh7eAq9Nzp5ni/MtO9lEPDw8vD1ee+yeFMby6L4lRT1leHh4eAu8k8amkw1qPynWhoeHh7fAOy/q5+A2ddtu2cMK8fDw8C7xPsunvRhm5a629eqhpwwPDw/vKi9/8gTB7KrIE7uz4hweHh7eXV7eGtVeD7OEbH4BRAllPDw8vDVecqwn0x8tpbx4LjRd4eHh4S3z8uXm3z1vWXhYGx4eHt4P4LUlru0i2cMm4uHh4a3x8mREnsBtA/H8u3n6GA8PD2+Dd6sAliRnZ9dDElJ/nDx4eHh4Ke8XOtdUuW8RvokAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

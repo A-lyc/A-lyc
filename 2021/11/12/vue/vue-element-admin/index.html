@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>vue-element-admin | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue-element-admin">
+    <meta name="description" content="这是一个极简的 vue admin 管理后台。它只包含了 Element UI &amp; axios &amp; iconfont &amp; permission control &amp; lint，这些搭建后台必要的东西 安装方法这是一个极简的 vue admin 管理后台。它只包含了 Element UI &amp; axios &amp; iconfont &amp; permissi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-element-admin">
+<meta property="og:url" content="https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="这是一个极简的 vue admin 管理后台。它只包含了 Element UI &amp; axios &amp; iconfont &amp; permission control &amp; lint，这些搭建后台必要的东西 安装方法这是一个极简的 vue admin 管理后台。它只包含了 Element UI &amp; axios &amp; iconfont &amp; permissi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-12T13:00:25.000Z">
+<meta property="article:modified_time" content="2022-08-06T03:02:39.883Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="vue-element-admin">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-element-admin</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-element-admin</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-11-12T13:00:25.000Z" itemprop="datePublished" class="page-time">
+  2021-11-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#发布"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">发布</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">其他</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#登录注册"><span class="post-toc-number">2.</span> <span class="post-toc-text">登录注册</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置跨域"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">配置跨域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#axios请求"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">axios请求</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#layout自己理解的机制"><span class="post-toc-number">3.</span> <span class="post-toc-text">layout自己理解的机制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#h2全局导航首位-router"><span class="post-toc-number">4.</span> <span class="post-toc-text">h2全局导航首位 router</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#element上传图片"><span class="post-toc-number">5.</span> <span class="post-toc-text">element上传图片</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子template"><span class="post-toc-number">6.</span> <span class="post-toc-text">例子template</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue/vue-element-admin"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-element-admin</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-11-12 21:00:25" datetime="2021-11-12T13:00:25.000Z"  itemprop="datePublished">2021-11-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/vue/">vue</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>这是一个极简的 vue admin 管理后台。它只包含了 Element UI &amp; axios &amp; iconfont &amp; permission control &amp; lint，这些搭建后台必要的东西</p>
+<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><p>这是一个极简的 vue admin 管理后台。它只包含了 Element UI &amp; axios &amp; iconfont &amp; permission control &amp; lint，这些搭建后台必要的东西。<br>下载安装vue-elenemt-admin 下载admin和template，需要使用npm进行安装使用,访问地址：<a href="https://panjiachen.gitee.io/vue-admin-template/#/login?redirect=%2Fdashboard" target="_blank" rel="noopener">https://panjiachen.gitee.io/vue-admin-template/#/login?redirect=%2Fdashboard</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// vue-elenemt-admin</span><br><span class="line"><span class="meta">#</span><span class="bash"> 克隆项目</span></span><br><span class="line">git clone https://github.com/PanJiaChen/vue-element-admin.git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入项目目录</span></span><br><span class="line">cd vue-element-admin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 建议不要用 cnpm 安装 会有各种诡异的bug 可以通过如下操作解决 npm 下载速度慢的问题</span></span><br><span class="line">npm install --registry=https://registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 本地开发 启动项目</span></span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 构建测试环境</span></span><br><span class="line">npm run build:stage</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 构建生产环境</span></span><br><span class="line">npm run build:prod</span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 预览发布环境效果</span></span><br><span class="line">npm run preview</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 预览发布环境效果 + 静态资源分析</span></span><br><span class="line">npm run preview -- --report</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 代码格式检查</span></span><br><span class="line">npm run lint</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 代码格式检查并自动修复</span></span><br><span class="line">npm run lint -- --fix</span><br></pre></td></tr></table></figure>
+
+<h2 id="登录注册"><a href="#登录注册" class="headerlink" title="登录注册"></a>登录注册</h2><p>删除一些请求，在vue.config.js中删除，删除之后会导致登录不上去的，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">before: require('./mock/mock-server.js')</span><br></pre></td></tr></table></figure>
+<h3 id="配置跨域"><a href="#配置跨域" class="headerlink" title="配置跨域"></a>配置跨域</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">  proxy: &#123;</span><br><span class="line">    '/dev-api': &#123; // 重点</span><br><span class="line">      target: 'http://localhost:3000',// 重点</span><br><span class="line">      ws: true,</span><br><span class="line">      changeOrigin: true,</span><br><span class="line">      pathRewrite: &#123;</span><br><span class="line">        '^/dev-api': ''</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  port: port,</span><br><span class="line">  open: true,</span><br><span class="line">  overlay: &#123;</span><br><span class="line">    warnings: false,</span><br><span class="line">    errors: true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><p>请求是在vuex中发出的之后保存token到浏览器，由于在router的导航首位中重复获取所以保证了一直处于登录状态<br>请求之前保证数据库内有这个用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">// login - index</span><br><span class="line">this.$store.dispatch('user/login', this.loginForm).then(() =&gt; &#123;</span><br><span class="line">        this.$router.push(&#123; path: this.redirect || '/' &#125;)</span><br><span class="line">        this.loading = false</span><br><span class="line">      &#125;).catch(() =&gt; &#123;</span><br><span class="line">        this.loading = false</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">//  store - modules - user</span><br><span class="line">// 导入了请求方式</span><br><span class="line">import &#123; login, logout, getInfo &#125; from '@/api/user'</span><br><span class="line">import &#123; getToken, setToken, removeToken &#125; from '@/utils/auth'</span><br><span class="line">  login(&#123; commit &#125;, userInfo) &#123;</span><br><span class="line">    const &#123; username, password &#125; = userInfo</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">      // 网络请求 .trim()去除空格</span><br><span class="line">      login(&#123; username: username.trim(), password: password &#125;).then(response =&gt; &#123;</span><br><span class="line">        const &#123; data &#125; = response</span><br><span class="line">        console.log('---- 登录成功 ----')</span><br><span class="line">        commit('SET_TOKEN', data.token)</span><br><span class="line">         // 保存token 方便使用token来获取用户的信息</span><br><span class="line">        setToken(data.token)</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;).catch(error =&gt; &#123;</span><br><span class="line">        reject(error)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">// 获取用户信息</span><br><span class="line"> // get user info</span><br><span class="line">  getInfo(&#123; commit, state &#125;) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">      // 网络请求获取数据</span><br><span class="line">      getInfo(state.token).then(response =&gt; &#123;</span><br><span class="line">        console.log('---- 获取用户信息 ----')</span><br><span class="line">        const &#123; data &#125; = response</span><br><span class="line">        if (!data) &#123;</span><br><span class="line">          return reject('验证失败，请重新登录。')</span><br><span class="line">        &#125;</span><br><span class="line">        const &#123; name, avatar &#125; = data</span><br><span class="line">        // 更改数据</span><br><span class="line">        commit('SET_NAME', name)</span><br><span class="line">        commit('SET_AVATAR', avatar)</span><br><span class="line">        resolve(data)</span><br><span class="line">      &#125;).catch(error =&gt; &#123;</span><br><span class="line">        reject(error)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="axios请求"><a href="#axios请求" class="headerlink" title="axios请求"></a>axios请求</h3><p>在api文件夹中创建user.js之后关于用户的请求在这</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import request from '@/utils/request'</span><br><span class="line"></span><br><span class="line">// 传输账号密码，获取token</span><br><span class="line">export function login(data) &#123;</span><br><span class="line">  return request(&#123;</span><br><span class="line">    url: '/users/login',</span><br><span class="line">    method: 'post',</span><br><span class="line">    data</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="layout自己理解的机制"><a href="#layout自己理解的机制" class="headerlink" title="layout自己理解的机制"></a>layout自己理解的机制</h2><p>在layout文件夹：是一个公共文件这个文件属于公共信息，之后可以直接引入<br>类似于nuxt.js<br>这个layout作为父级其他的作为子集</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">import Vue from 'vue'</span><br><span class="line">import Router from 'vue-router'</span><br><span class="line">Vue.use(Router)</span><br><span class="line">/* Layout */</span><br><span class="line">import Layout from '@/layout'</span><br><span class="line">  &#123;</span><br><span class="line">    path: '/example', // 名称</span><br><span class="line">    component: Layout, // 父组件 组件</span><br><span class="line">    redirect: '/example/table', // 重定向</span><br><span class="line">    name: 'example',</span><br><span class="line">    meta: &#123; title: '展示列表', icon: 'el-icon-s-help' &#125;,</span><br><span class="line">    children: [ // 组件的孩子</span><br><span class="line">      &#123;</span><br><span class="line">        path: 'edit',</span><br><span class="line">        name: 'edit',</span><br><span class="line">        component: () =&gt; import('@/views/table/edit'),</span><br><span class="line">        meta: &#123; title: '新闻添加', icon: 'el-icon-s-help' &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: 'table',</span><br><span class="line">        name: 'table',</span><br><span class="line">        component: () =&gt; import('@/views/table/index'),</span><br><span class="line">        meta: &#123; title: '新闻列表', icon: 'table' &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: '/nested',</span><br><span class="line">    component: Layout,</span><br><span class="line">    redirect: '/nested/menu1',</span><br><span class="line">    name: 'nested',</span><br><span class="line">    meta: &#123;</span><br><span class="line">      title: '内容',</span><br><span class="line">      icon: 'nested'</span><br><span class="line">    &#125;,</span><br><span class="line">    children: [</span><br><span class="line">      &#123;</span><br><span class="line">        path: 'menu1',</span><br><span class="line">        component: () =&gt; import('@/views/nested/menu1/index'), // Parent router-view</span><br><span class="line">        name: 'menu1',</span><br><span class="line">        meta: &#123; title: 'Menu1' &#125;,</span><br><span class="line">        children: [</span><br><span class="line">          &#123;</span><br><span class="line">            path: 'menu1-2',</span><br><span class="line">            component: () =&gt; import('@/views/nested/menu1/menu1-2'),</span><br><span class="line">            name: 'menu1-2',</span><br><span class="line">            meta: &#123; title: '菜单-2' &#125;,</span><br><span class="line">            children: [</span><br><span class="line">              &#123;</span><br><span class="line">                path: 'menu1-2-1',</span><br><span class="line">                component: () =&gt; import('@/views/nested/menu1/menu1-2/menu1-2-1'),</span><br><span class="line">                name: 'menu1-2-1',</span><br><span class="line">                meta: &#123; title: '菜单-2-1' &#125;</span><br><span class="line">              &#125;,</span><br><span class="line">              &#123;</span><br><span class="line">                path: 'menu1-2-2',</span><br><span class="line">                component: () =&gt; import('@/views/nested/menu1/menu1-2/menu1-2-2'),</span><br><span class="line">                name: 'menu1-2-2',</span><br><span class="line">                meta: &#123; title: '菜单-2-2' &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            ]</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p><a href="#"></a></p>
+<h2 id="h2全局导航首位-router"><a href="#h2全局导航首位-router" class="headerlink" title="h2全局导航首位 router"></a>h2全局导航首位 router</h2><p>在这个文件permission.js<br>组件生命周期操作路由</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 路由进入的时候</span><br><span class="line">beforeRouteEnter(to, from, next) &#123;</span><br><span class="line">  console.log('---- 4 ----')</span><br><span class="line">  console.log(to)</span><br><span class="line">  console.log(from)</span><br><span class="line">  next()</span><br><span class="line">&#125;,</span><br><span class="line">// 路由离开之前</span><br><span class="line">beforeRouteLeave(to, from, next) &#123;</span><br><span class="line">  console.log('---- 5 ----')</span><br><span class="line">  console.log(to)</span><br><span class="line">  console.log(from)</span><br><span class="line">  next()</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="element上传图片"><a href="#element上传图片" class="headerlink" title="element上传图片"></a>element上传图片</h2><p>上传插件：:before-upload=’beforeUpload’</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">beforeUpload(file) &#123;</span><br><span class="line">   console.log('用户上传之前')</span><br><span class="line">   let param = new FormData()</span><br><span class="line">   param.append('files', file)</span><br><span class="line">   getUpImage(param).then(res =&gt; &#123;</span><br><span class="line">     this.tempUrl = res.data.url</span><br><span class="line">     this.dataObj = &#123;</span><br><span class="line">       url: res.data.url,</span><br><span class="line">       name: res.data.originalname,</span><br><span class="line">       filename: res.data.filename,</span><br><span class="line">       uid: file.uid</span><br><span class="line">     &#125;</span><br><span class="line">     this.emitInput(res.data.url)</span><br><span class="line">   &#125;)</span><br><span class="line">   return true</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例子template"><a href="#例子template" class="headerlink" title="例子template"></a>例子template</h2><p>template自己定义模板这个需要有后端的支持<br><a href="./newAdmin.zip" target="_blank"> template自己定义模板 </a><br>选要后端支持 npm i<br><a href="./demo01.zip" target="_blank"> node+express+mongoose后端模板 </a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-08-06T03:02:39.883Z" itemprop="dateUpdated">2022-08-06 11:02:39</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2021/11/12/vue/vue-element-admin/" target="_blank" rel="external">https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/vue-element-admin/" rel="tag">vue-element-admin</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/&title=《vue-element-admin》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/&title=《vue-element-admin》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-element-admin》 — 四叶草的个人博客&url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/01/01/nuxt/nuxt%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6%E5%AE%89%E8%A3%85/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">nuxt的基本组件安装</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2021/10/11/node/mongodDB%E6%95%B0%E6%8D%AE%E5%BA%93/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">mongodDB数据库</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/&title=《vue-element-admin》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/&title=《vue-element-admin》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-element-admin》 — 四叶草的个人博客&url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2021/11/12/vue/vue-element-admin/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQZLCIBAFUO9/6czWKifM7yaxJvBYWRojL4sW+vN6xeN4G+N3Pj99f398z8/7XDwwMDAeyziGYzytMWx8//E1+dwwMDD2YZxVsLNrEnZSQMcFN5kbBgYGRr5cq8ISNgYGBkaPMS6+922MMTAwMOaXejP3+epeHAMD44GMvDh+//Ut+QYGBsajGEdx9Npk1cihPCsMDIylGfOttPkwcr61h4GBsQPj2q1s0oDrHde4+HAYBgbGQxjV2/UCzmqZLs8QAwNjaUY1Vuw1zpJgshBVJp9iYGAsxEjCyJw3X3Zz2On/BgYGxqKM6uSqLbZeOFo4doaBgbExY/xj1SMRyeIyeUC/3AEDA2NpRn4wYqY0J8vBmUAUAwNjbUavTd9cwE3EAGMSBgbGbozqJrYHntl73rIXx8DA+PeMXrHrFdY8qiw8PgwMjKUZedzY+4HeJrbayMPAwNiHkR+tqH7rjsMWGBgYuzHyrWz1IEWvoPc2uhgYGDswkndm2nDVKDR5fKdJLAYGxqKM6ugtGfP4M/8WBgYGRpIS5qFjHkVUD2pgYGCsyriqyM5vevNF5AX/GBgYGI9izDfIkiMavRZbr9BjYGCsyphqcgULxOpTbMacGBgYGzDywldttFULazP+xMDAwGiVyHLRLBbc8jkyDAyMzRi9Rlg1yMwXrxgYGDsw8jAgv+a+Yo2BgbEbo7ru+qPwTZfdajyAgYGxNOMHxA0ZBvXLJPQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

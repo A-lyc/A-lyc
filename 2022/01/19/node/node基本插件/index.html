@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>node基本插件 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="node,node服务器，node插件">
+    <meta name="description" content="后端：Strapi 非常好的后端框架官网：https:&#x2F;&#x2F;strapi.io&#x2F;  使用npm1npx create-strapi-app my-project --quickstart    express node框架可查官网 官网：https:&#x2F;&#x2F;www.expressjs.com.cn&#x2F;starter&#x2F;installing.html1npm i --save express    art-t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node基本插件">
+<meta property="og:url" content="https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="后端：Strapi 非常好的后端框架官网：https:&#x2F;&#x2F;strapi.io&#x2F;  使用npm1npx create-strapi-app my-project --quickstart    express node框架可查官网 官网：https:&#x2F;&#x2F;www.expressjs.com.cn&#x2F;starter&#x2F;installing.html1npm i --save express    art-t">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-19T13:35:13.000Z">
+<meta property="article:modified_time" content="2022-08-06T03:02:39.871Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="node服务器，node插件">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">node基本插件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">node基本插件</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-01-19T13:35:13.000Z" itemprop="datePublished" class="page-time">
+  2022-01-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/node/">node</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后端：Strapi-非常好的后端框架"><span class="post-toc-number">1.</span> <span class="post-toc-text">后端：Strapi 非常好的后端框架</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#express-node框架可查官网"><span class="post-toc-number">2.</span> <span class="post-toc-text">express node框架可查官网</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#art-template-模板插件"><span class="post-toc-number">3.</span> <span class="post-toc-text">art-template 模板插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nodemon-修改自动更新代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">nodemon 修改自动更新代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析post请求体的插件"><span class="post-toc-number">5.</span> <span class="post-toc-text">解析post请求体的插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在Node中操作mongod数据库"><span class="post-toc-number">6.</span> <span class="post-toc-text">在Node中操作mongod数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用第三方mongoose框架来操作mongoDB操作数据库"><span class="post-toc-number">7.</span> <span class="post-toc-text">使用第三方mongoose框架来操作mongoDB操作数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#处理excel文件的读写"><span class="post-toc-number">8.</span> <span class="post-toc-text">处理excel文件的读写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、读取"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">一、读取</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-安装-node-xlsx"><span class="post-toc-number">8.1.1.</span> <span class="post-toc-text">1. 安装 node-xlsx</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-解析代码"><span class="post-toc-number">8.1.2.</span> <span class="post-toc-text">2. 解析代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、写入"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">二、写入</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件解压"><span class="post-toc-number">9.</span> <span class="post-toc-text">文件解压</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装node-stream-zip"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">安装node-stream-zip</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建文件使用"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">新建文件使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图片批处理插件-images"><span class="post-toc-number">10.</span> <span class="post-toc-text">图片批处理插件 images</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#首先先安装npm-install-images"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">首先先安装npm install images</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#router"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">router</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#批量压缩图片-img-js"><span class="post-toc-number">10.3.</span> <span class="post-toc-text">批量压缩图片 - img.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#附注：api接口"><span class="post-toc-number">10.4.</span> <span class="post-toc-text">附注：api接口</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#node的实时通讯socket-io"><span class="post-toc-number">11.</span> <span class="post-toc-text">node的实时通讯socket.io</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#pdf-lib-模块可让你处理PDF，"><span class="post-toc-number">12.</span> <span class="post-toc-text">pdf-lib 模块可让你处理PDF，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sharp-可让您处理几乎所有带有图像的东西，"><span class="post-toc-number">13.</span> <span class="post-toc-text">sharp 可让您处理几乎所有带有图像的东西，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#pkg-将Node项目捆绑到独立的可执行文件中"><span class="post-toc-number">14.</span> <span class="post-toc-text">pkg 将Node项目捆绑到独立的可执行文件中</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#qrcode生成二维码"><span class="post-toc-number">15.</span> <span class="post-toc-text">qrcode生成二维码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#百度图表"><span class="post-toc-number">16.</span> <span class="post-toc-text">百度图表</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-node/node基本插件"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">node基本插件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-19 21:35:13" datetime="2022-01-19T13:35:13.000Z"  itemprop="datePublished">2022-01-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/A-lyc/categories/node/">node</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="后端：Strapi-非常好的后端框架"><a href="#后端：Strapi-非常好的后端框架" class="headerlink" title="后端：Strapi 非常好的后端框架"></a>后端：Strapi 非常好的后端框架</h2><p>官网：<a href="https://strapi.io/" target="_blank" rel="noopener">https://strapi.io/</a></p>
+<ul>
+<li>使用npm<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-strapi-app my-project --quickstart</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="express-node框架可查官网"><a href="#express-node框架可查官网" class="headerlink" title="express node框架可查官网"></a>express node框架可查官网</h2><ul>
+<li>官网：<a href="https://www.expressjs.com.cn/starter/installing.html" target="_blank" rel="noopener">https://www.expressjs.com.cn/starter/installing.html</a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save express</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="art-template-模板插件"><a href="#art-template-模板插件" class="headerlink" title="art-template 模板插件"></a>art-template 模板插件</h2><ul>
+<li>官网：<a href="https://aui.github.io/art-template/zh-cn/index.html" target="_blank" rel="noopener">https://aui.github.io/art-template/zh-cn/index.html</a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save art-template express-art-template</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="nodemon-修改自动更新代码"><a href="#nodemon-修改自动更新代码" class="headerlink" title="nodemon 修改自动更新代码"></a>nodemon 修改自动更新代码</h2><ul>
+<li>node自带应该 最好全局安装<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i nodemon -g</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="解析post请求体的插件"><a href="#解析post请求体的插件" class="headerlink" title="解析post请求体的插件"></a>解析post请求体的插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save body-parser</span><br></pre></td></tr></table></figure>
+
+<h2 id="在Node中操作mongod数据库"><a href="#在Node中操作mongod数据库" class="headerlink" title="在Node中操作mongod数据库"></a>在Node中操作mongod数据库</h2><ul>
+<li>使用官方的mongod包来操作<br>· 网址gethup：<a href="https://github.com/mongodb/node-mongodb-native" target="_blank" rel="noopener">https://github.com/mongodb/node-mongodb-native</a></li>
+</ul>
+<h2 id="使用第三方mongoose框架来操作mongoDB操作数据库"><a href="#使用第三方mongoose框架来操作mongoDB操作数据库" class="headerlink" title="使用第三方mongoose框架来操作mongoDB操作数据库"></a>使用第三方mongoose框架来操作mongoDB操作数据库</h2><ul>
+<li>第三方包，基于mongoDB官方第三方包做了封装，名字交mongoose<br>· 官网：<a href="http://www.mongoosejs.net/" target="_blank" rel="noopener">http://www.mongoosejs.net/</a></li>
+<li>安装使用<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save mongoose</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="处理excel文件的读写"><a href="#处理excel文件的读写" class="headerlink" title="处理excel文件的读写"></a>处理excel文件的读写</h2><h3 id="一、读取"><a href="#一、读取" class="headerlink" title="一、读取"></a>一、读取</h3><h4 id="1-安装-node-xlsx"><a href="#1-安装-node-xlsx" class="headerlink" title="1. 安装 node-xlsx"></a>1. 安装 node-xlsx</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install node-xlsx --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-解析代码"><a href="#2-解析代码" class="headerlink" title="2. 解析代码"></a>2. 解析代码</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const xlsx = require('node-xlsx');</span><br><span class="line"> </span><br><span class="line">// 解析得到文档中的所有 sheet</span><br><span class="line">let sheets = xlsx.parse('xxx.xls');</span><br><span class="line"> </span><br><span class="line">// 遍历 sheet</span><br><span class="line">sheets.forEach(function(sheet)&#123;</span><br><span class="line">    console.log(sheet['name']);</span><br><span class="line">    // 读取每行内容</span><br><span class="line">    for(let rowId in sheet['data'])&#123;</span><br><span class="line">        console.log(rowId);</span><br><span class="line">        let row=sheet['data'][rowId];</span><br><span class="line">        console.log(row);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="二、写入"><a href="#二、写入" class="headerlink" title="二、写入"></a>二、写入</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">var data = [</span><br><span class="line">    &#123;</span><br><span class="line">        name: 'sheet1',</span><br><span class="line">        data: [</span><br><span class="line">            [</span><br><span class="line">                'ID',</span><br><span class="line">                'Name',</span><br><span class="line">                'Score'</span><br><span class="line">            ],</span><br><span class="line">            [</span><br><span class="line">                '1',</span><br><span class="line">                'Michael',</span><br><span class="line">                '99'</span><br><span class="line"></span><br><span class="line">            ],</span><br><span class="line">            [</span><br><span class="line">                '2',</span><br><span class="line">                'Jordan',</span><br><span class="line">                '98'</span><br><span class="line">            ]</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name: 'sheet2',</span><br><span class="line">        data: [</span><br><span class="line">            [</span><br><span class="line">                'AA',</span><br><span class="line">                'BB'</span><br><span class="line">            ],</span><br><span class="line">            [</span><br><span class="line">                '23',</span><br><span class="line">                '24'</span><br><span class="line">            ]</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">var buffer = xlsx.build(data);</span><br><span class="line"></span><br><span class="line">// 写入文件</span><br><span class="line">fs.writeFile('a.xlsx', buffer, function(err) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">        console.log("Write failed: " + err);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    console.log("Write completed.");</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件解压"><a href="#文件解压" class="headerlink" title="文件解压"></a>文件解压</h2><h3 id="安装node-stream-zip"><a href="#安装node-stream-zip" class="headerlink" title="安装node-stream-zip"></a>安装node-stream-zip</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save node-stream-zip</span><br></pre></td></tr></table></figure>
+<p>新建文件夹为fileType内有files-1605681955440.zip文件<br>同级别的新建unapi.js,代码如下，<br>这个是导出了一个Promise</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">// 导入压缩包</span><br><span class="line">const StreamZip = require('node-stream-zip');</span><br><span class="line"></span><br><span class="line">// 导入文件模块</span><br><span class="line">const fs = require('fs');</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 插件字写 格式化时间</span><br><span class="line">const &#123; getNowFormatDate &#125; = require('./common/dateTime')</span><br><span class="line">let time = getNowFormatDate('')</span><br><span class="line"></span><br><span class="line">// 手动删除压缩包</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * path:传入路径压缩包的路径，包括文件夹和文件名</span><br><span class="line"> * </span><br><span class="line"> */</span><br><span class="line">module.exports = function unzipCompress(path,) &#123;</span><br><span class="line">  // 文件路径，固定的</span><br><span class="line">  let filesType = './fileType/'</span><br><span class="line"></span><br><span class="line">  // 根据路径裁切出文件名</span><br><span class="line">  // let name = path.split(filesType)[1]</span><br><span class="line"></span><br><span class="line">  // 查找 某个文件 测试使用</span><br><span class="line">  const zip = new StreamZip(&#123;</span><br><span class="line">    file: './fileType/files-1605681955440.zip',</span><br><span class="line">    storeEntries: true</span><br><span class="line">  &#125;);</span><br><span class="line">  // 返回一个promise</span><br><span class="line">  return new Promise((res,rej)=&gt; &#123;</span><br><span class="line">    // 错误的时候</span><br><span class="line">    zip.on('error', err =&gt; &#123;</span><br><span class="line">      rej(err)</span><br><span class="line">    &#125;);</span><br><span class="line">    // 返回一个数组，但是会少去一个文件</span><br><span class="line">    let arr = []</span><br><span class="line"></span><br><span class="line">    // 在解压文件夹时，您可以侦听解压事件 - 图片重命名</span><br><span class="line">    zip.on('extract', (entry, file) =&gt; &#123;</span><br><span class="line">      console.log(`Extracted $&#123;entry.name&#125; to $&#123;file&#125;`);</span><br><span class="line">      let name = file.split('.')[1]</span><br><span class="line">      /**</span><br><span class="line">       * 1：旧文件所在的目录，包括文件名，2：新文件所在的目录，包括文件名，3：回调</span><br><span class="line">       */</span><br><span class="line">      fs.rename(`$&#123;file&#125;`, `./fileType/files-$&#123;Date.now()&#125;$&#123;time&#125;.$&#123;name&#125;`, err =&gt; &#123;</span><br><span class="line">        if (err) throw err;</span><br><span class="line">        console.log('重命名完成')</span><br><span class="line">        arr.push(`./fileType/files-$&#123;Date.now()&#125;$&#123;time&#125;.$&#123;name&#125;`)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 提取所有</span><br><span class="line">    zip.on('ready', () =&gt; &#123;</span><br><span class="line">      // 创建目录</span><br><span class="line">      // fs.mkdirSync('extracted');</span><br><span class="line">      // 1：unll ，2：文件路径， 3：回调函数</span><br><span class="line">      zip.extract(null, './fileType', (err, count) =&gt; &#123;</span><br><span class="line">        console.log(err ? 'Extract error' : `Extracted $&#123;count&#125; entries`);</span><br><span class="line">        res(arr)</span><br><span class="line">        zip.close();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 在加载期间为每个条目生成条目事件</span><br><span class="line">    zip.on('entry', entry =&gt; &#123;</span><br><span class="line">      console.log('在加载期间为每个条目生成条目事件')</span><br><span class="line">      // you can already stream this entry,</span><br><span class="line">      // without waiting until all entry descriptions are read (suitable for very large archives)</span><br><span class="line">      console.log(`XXX ：  $&#123;entry.name.split('.')[1]&#125; + ./fileType/$&#123;entry.name&#125;`);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="新建文件使用"><a href="#新建文件使用" class="headerlink" title="新建文件使用"></a>新建文件使用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const xlsxCompress = require('./xlsx');</span><br><span class="line">async function name(params) &#123;</span><br><span class="line">  xlsxCompress().then(res =&gt; &#123;</span><br><span class="line">   console.log('---- 1 ----')</span><br><span class="line">   console.log(res)</span><br><span class="line">   console.log('---- 2 ----')</span><br><span class="line"> &#125;)</span><br><span class="line">  </span><br><span class="line">&#125; </span><br><span class="line">name()</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片批处理插件-images"><a href="#图片批处理插件-images" class="headerlink" title="图片批处理插件 images"></a>图片批处理插件 images</h2><h3 id="首先先安装npm-install-images"><a href="#首先先安装npm-install-images" class="headerlink" title="首先先安装npm install images"></a>首先先安装npm install images</h3><p>文件夹：models内建立一个上传图片插件文件夹例如名字：uploadimg<br>uploadimg.js</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// 导入可接收图片的插件</span><br><span class="line">const multer = require('multer')</span><br><span class="line"></span><br><span class="line">const fs = require('fs')</span><br><span class="line"></span><br><span class="line">// 插件字写 格式化时间</span><br><span class="line">const &#123; getNowFormatDate &#125; = require('../common/dateTime')</span><br><span class="line">let time = getNowFormatDate('')</span><br><span class="line"></span><br><span class="line">// 定义图片中间件的内容</span><br><span class="line">const storage = multer.diskStorage(&#123;</span><br><span class="line">  // 定义保存图片的地址</span><br><span class="line">  destination: function (req, file, cb) &#123;</span><br><span class="line">    // 某个文件夹下的日期文件下的图片目录</span><br><span class="line">    let path = __dirname + '/../uploads/' + time</span><br><span class="line">    // 返回这个目录</span><br><span class="line">    file.time = time</span><br><span class="line">    let ifFile = fs.existsSync(path)</span><br><span class="line">    </span><br><span class="line">    if (ifFile)&#123;</span><br><span class="line">      cb(null, path)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      fs.mkdirSync(path)</span><br><span class="line">      cb(null, path)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 定义保存图片的名称，默认没有后缀名，需要添加后缀名</span><br><span class="line">  filename: function (req, file, cb) &#123;</span><br><span class="line">    let suffix = file.originalname.split('.')</span><br><span class="line">    suffix = suffix[suffix.length - 1]</span><br><span class="line">    // console.log(suffix)</span><br><span class="line"></span><br><span class="line">    // 图片使用</span><br><span class="line">    // let mimetype = file.mimetype.split('/')[1]</span><br><span class="line">    cb(null, file.fieldname + '-' + Date.now() + time + '.' + suffix)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">module.exports = multer(&#123; storage &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="router"><a href="#router" class="headerlink" title="router"></a>router</h3><p>之后在router路由文件内写上传的图片批处理的过程<br>内有一个批量压缩的文件，可以直接去除</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 导入express</span><br><span class="line">const express = require('express')</span><br><span class="line"></span><br><span class="line">// 导入文件系统</span><br><span class="line">const fs = require('fs')</span><br><span class="line"></span><br><span class="line">// 导入路径</span><br><span class="line">const path = require('path')</span><br><span class="line"></span><br><span class="line">// 压缩图片插件</span><br><span class="line">var images = require("images");</span><br><span class="line"></span><br><span class="line">// 导入压缩图片 - 批量压缩图片</span><br><span class="line">const imageCompress = require('../img.js')</span><br><span class="line"></span><br><span class="line">// 使用Router</span><br><span class="line">const router = express.Router()</span><br><span class="line"></span><br><span class="line">// 导入上面的图片压缩插件</span><br><span class="line">const upload = require('../models/uploadimg')</span><br><span class="line"></span><br><span class="line"> // 上传图片并进行压缩 upload.single('files') - 必选</span><br><span class="line">router.post('/', upload.single('files'), async (req, res) =&gt; &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    let file = req.file</span><br><span class="line">    console.log(file)</span><br><span class="line">    // 返回的线上地址</span><br><span class="line">    file.url = `http://localhost:3000/uploads/$&#123;file.filename&#125;`</span><br><span class="line">    /**</span><br><span class="line">    *压缩图片的比例</span><br><span class="line">    * 上传之后直接进行压缩</span><br><span class="line">    *file.path：图片路径</span><br><span class="line">    *size：图片宽高</span><br><span class="line">    *save：（保存路径 - quality：保存质量）</span><br><span class="line">    */</span><br><span class="line">    images(file.path).size(500).save(file.path, &#123; quality: 90&#125;)</span><br><span class="line"></span><br><span class="line">    // 返回json数据</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      code: 20000,</span><br><span class="line">      data: file,// 返回数据的名称</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.log(e)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 删除图片</span><br><span class="line">router.delete('/', async (req, res) =&gt; &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    // 传来的数据</span><br><span class="line">    let body = req.body</span><br><span class="line">    // 传来的名称</span><br><span class="line">    let name = body.filename</span><br><span class="line">    // 使用node的fs删除当前图片，可以直接传路径</span><br><span class="line">    fs.unlinkSync(path.join(__dirname, '../uploads/' + name))</span><br><span class="line">    // 返回数据</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      code: 20000,</span><br><span class="line">      data: [],// 返回数据的名称</span><br><span class="line">      message: '文件已删除',// 返回数据的名称</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.log('错误')</span><br><span class="line">    console.log(e)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 批量压缩图片</span><br><span class="line">router.get('/compress',async (req,res)=&gt;&#123;</span><br><span class="line">  try&#123;</span><br><span class="line">    // 插件时导入的 const imageCompress = require('../img.js') </span><br><span class="line">    // 需要传入压缩路径</span><br><span class="line">    imageCompress('uploads')</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.log('错误')</span><br><span class="line">    console.log(e)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// 导出这个路由</span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure>
+<h3 id="批量压缩图片-img-js"><a href="#批量压缩图片-img-js" class="headerlink" title="批量压缩图片 - img.js"></a>批量压缩图片 - img.js</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">const images = require("images");</span><br><span class="line">const fs = require("fs");</span><br><span class="line">// 导入路径</span><br><span class="line">const WithPath = require('path')</span><br><span class="line">// 需要传入一个参数是文件目录</span><br><span class="line">const path = "uploads"; </span><br><span class="line">// 压缩后的文件夹，是否保存源文件的问题</span><br><span class="line">const outpath = "compress"; </span><br><span class="line">module.exports = function compress(path) &#123;</span><br><span class="line">  // 操作文件 读取目录的内容</span><br><span class="line">  fs.readdir(path, function (err, files) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">      console.log('error:\n' + err);</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    // 循环遍历当前文件目录</span><br><span class="line">    files.forEach(function (file) &#123;</span><br><span class="line">      fs.stat(WithPath.join(__dirname, path + '/' + file), function (err, stat) &#123;</span><br><span class="line">        if (err) &#123; console.log(err); return; &#125;</span><br><span class="line">        if (stat.isDirectory()) &#123;</span><br><span class="line">          // 如果是文件夹遍历</span><br><span class="line">          compress(path + '/' + file);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          //遍历图片</span><br><span class="line">          // console.log(__dirname + '文件名:' + path + '/' + file);</span><br><span class="line">          // console.log(WithPath.join(__dirname, path + '/' + file))</span><br><span class="line">          // 要处理的文件夹</span><br><span class="line">          var name = path + '/' + file;</span><br><span class="line">          // 处理之后另保存的文件夹</span><br><span class="line">          var outName = outpath + '/' + file</span><br><span class="line">            /**</span><br><span class="line">            * 压缩图片的比例</span><br><span class="line">            * name：图片路径</span><br><span class="line">            * size：图片宽高</span><br><span class="line">            * save：（保存路径 - quality：保存质量）</span><br><span class="line">            */</span><br><span class="line">          images(name).size(20).save(name, &#123;</span><br><span class="line">          &#125;);            quality: 82                   </span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="附注：api接口"><a href="#附注：api接口" class="headerlink" title="附注：api接口"></a>附注：api接口</h3><p>images(file)<br>Load and decode image from file<br>从指定文件加载并解码图像</p>
+<p>images(width, height)<br>Create a new transparent image<br>创建一个指定宽高的透明图像</p>
+<p>images(buffer[, start[, end]])<br>Load and decode image from a buffer<br>从Buffer数据中解码图像</p>
+<p>images(image[, x, y, width, height])<br>Copy from another image<br>从另一个图像中复制区域来创建图像</p>
+<p>.fill(red, green, blue[, alpha])<br>eg:images(200, 100).fill(0xff, 0x00, 0x00, 0.5) Fill image with color<br>以指定颜色填充图像</p>
+<p>.draw(image, x, y)<br>Draw image on the current image position( x , y )<br>在当前图像( x , y )上绘制 image 图像</p>
+<p>.encode(type[, config])<br>eg:images(“input.png”).encode(“jpg”, {operation:50}) Encode image to buffer, config is image setting.<br>以指定格式编码当前图像到Buffer，config为图片设置，目前支持设置JPG图像质量<br>Return buffer<br>返回填充好的Buffer<br>Note:The operation will cut off the chain<br>注意:该操作将会切断调用链<br>See:.save(file[, type[, config]]) 参考:.save(file[, type[, config]])</p>
+<p>.save(file[, type[, config]])<br>eg:images(“input.png”).encode(“output.jpg”, {operation:50}) Encoding and save the current image to a file, if the type is not specified, type well be automatically determined according to the file, config is image setting. eg: { operation:50 }<br>编码并保存当前图像到 file ,如果type未指定,则根据 file 自动判断文件类型，config为图片设置，目前支持设置JPG图像质量</p>
+<p>.size([width[, height]])<br>Get size of the image or set the size of the image,if the height is not specified, then scaling based on the current width and height<br>获取或者设置图像宽高，如果height未指定，则根据当前宽高等比缩放</p>
+<p>.resize(width[, height])<br>Set the size of the image,if the height is not specified, then scaling based on the current width and height<br>设置图像宽高，如果height未指定，则根据当前宽高等比缩放, 默认采用 bicubic 算法。</p>
+<p>.width([width])<br>Get width for the image or set width of the image<br>获取或设置图像宽度</p>
+<p>.height([height])<br>Get height for the image or set height of the image<br>获取或设置图像高度</p>
+<p>images.setLimit(width, height)<br>Set the limit size of each image<br>设置库处理图片的大小限制,设置后对所有新的操作生效(如果超限则抛出异常)</p>
+<p>images.setGCThreshold(value)<br>Set the garbage collection threshold<br>设置图像处理库自动gc的阈值(当新增内存使用超过该阈值时，执行垃圾回收)</p>
+<p>images.getUsedMemory()<br>Get used memory (in bytes)<br>得到图像处理库占用的内存大小(单位为字节)</p>
+<p>images.gc()<br>Forced garbage collection<br>强制调用V8的垃圾回收机制</p>
+<h2 id="node的实时通讯socket-io"><a href="#node的实时通讯socket-io" class="headerlink" title="node的实时通讯socket.io"></a>node的实时通讯socket.io</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save socket.io</span><br></pre></td></tr></table></figure>
+<p>需要研究一下 。。。。。。</p>
+<h2 id="pdf-lib-模块可让你处理PDF，"><a href="#pdf-lib-模块可让你处理PDF，" class="headerlink" title="pdf-lib 模块可让你处理PDF，"></a>pdf-lib 模块可让你处理PDF，</h2><p>后台文件的functionLife中的psfLid.js中</p>
+<h2 id="sharp-可让您处理几乎所有带有图像的东西，"><a href="#sharp-可让您处理几乎所有带有图像的东西，" class="headerlink" title="sharp 可让您处理几乎所有带有图像的东西，"></a>sharp 可让您处理几乎所有带有图像的东西，</h2><p>暂时为使用。。。。。。</p>
+<h2 id="pkg-将Node项目捆绑到独立的可执行文件中"><a href="#pkg-将Node项目捆绑到独立的可执行文件中" class="headerlink" title="pkg 将Node项目捆绑到独立的可执行文件中"></a>pkg 将Node项目捆绑到独立的可执行文件中</h2><p>暂时为使用。。。。。。</p>
+<h2 id="qrcode生成二维码"><a href="#qrcode生成二维码" class="headerlink" title="qrcode生成二维码"></a>qrcode生成二维码</h2><p>前端直接使用，之后把图传给后端，或者前端把需要生成的东西传给后端后端进行生成之后返回图片</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let canvas = this.$refs['canvas']</span><br><span class="line">  QRCode.toCanvas(canvas, 'sample text', function (error) &#123;</span><br><span class="line">    if (error) console.error(error)</span><br><span class="line">    console.log('success!')</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="百度图表"><a href="#百度图表" class="headerlink" title="百度图表"></a>百度图表</h2><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install echarts --save</span><br></pre></td></tr></table></figure>
+<p>简单使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// 此方法是挂载dom之后</span><br><span class="line"> mounted() &#123;</span><br><span class="line">    // 图表 - 需要页面挂在之后完成</span><br><span class="line">    let echart = this.$refs['echarts']</span><br><span class="line">    var myChart = echarts.init(echart)</span><br><span class="line">    var option = &#123;</span><br><span class="line">      legend: &#123;&#125;,</span><br><span class="line">      tooltip: &#123;&#125;,</span><br><span class="line">      dataset: &#123;</span><br><span class="line">        // 提供一份数据。</span><br><span class="line">        source: [</span><br><span class="line">          ['product', '2015', '2016', '2017', '2018'],</span><br><span class="line">          ['Matcha', 43.3, 85.8, 93.7],</span><br><span class="line">          ['Milk', 83.1, 73.4, 55.1],</span><br><span class="line">          ['Cheese', 86.4, 65.2, 82.5],</span><br><span class="line">          ['W', 72.4, 53.9, 39.1],</span><br><span class="line">          ['Wal=', 70, 1, 90,100],</span><br><span class="line">          ['Waln', 70, 1, 90,100],</span><br><span class="line">          ['Walnu', 70, 1, 90,100],</span><br><span class="line">          ['Walnut', 70, 1, 90,100],</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      // 声明一个 X 轴，类目轴（category）。默认情况下，</span><br><span class="line">      // 类目轴对应到 dataset 第一列。</span><br><span class="line">      xAxis: &#123;type: 'category'&#125;,</span><br><span class="line">      // 声明一个 Y 轴，数值轴。</span><br><span class="line">      yAxis: &#123;&#125;,</span><br><span class="line">      // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。</span><br><span class="line">      series: [</span><br><span class="line">        &#123;type: 'bar'&#125;,</span><br><span class="line">        &#123;type: 'bar'&#125;,</span><br><span class="line">        &#123;type: 'bar'&#125;,</span><br><span class="line">        &#123;type: 'bar'&#125;,</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">    // 使用刚指定的配置项和数据显示图表。</span><br><span class="line">    myChart.setOption(option)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-08-06T03:02:39.871Z" itemprop="dateUpdated">2022-08-06 11:02:39</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/" target="_blank" rel="external">https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/node/" rel="tag">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/A-lyc/tags/node%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8Cnode%E6%8F%92%E4%BB%B6/" rel="tag">node服务器，node插件</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/&title=《node基本插件》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/&title=《node基本插件》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node基本插件》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/02/15/ts/ts/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ts快速入门</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/01/01/nuxt/nuxt%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6%E5%AE%89%E8%A3%85/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">nuxt的基本组件安装</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/&title=《node基本插件》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/&title=《node基本插件》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node基本插件》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/01/19/node/node%E5%9F%BA%E6%9C%AC%E6%8F%92%E4%BB%B6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrElEQVR42u3aQU4EMQwEwP3/pxeJE5eZbdsxA1LlhBBMUjkkVjuvVzze3+PqN+8fI//a/bia5bUx8PDw8FpLT6a5Qt4v4n5Z91tzT71fMx4eHt42L/n0/QT58X0/Y5X64ct4eHh4j/ISalLT9paLh4eH9395yXE/DxeS+AMPDw/vWV4ep/ZihWTp+XasZC14eHh4Ma/aAPsLPy/29/Dw8PDGLfw8aMhbZXm5/B4MPDw8vA3e2VZW9dFAHhBXb4FyioyHh4c34E3aTtWIthpe5Ft5eTHg4eHhHeJNDvqNQKFXcEdRMh4eHt4hXm8/knBhUmTnDxE+zIKHh4e3wKu29pNNqV4VvWcBzUcDeHh4eId45eo72JSzTwFGVDw8PLw1XtKaShi9oCGPgMsbjYeHh7fAmx/lvUulV6yP5sXDw8Mb8PIjvhoNVEvhaiuuGdfi4eHhHeVVg9R5A6y3uQULHh4e3jJvEhxMmlu9KySaEQ8PD2+B1wsgJlFFXkDnl1M5pcbDw8Mb8KqN/Ly8ri4l+Vq5+MbDw8Nb4FUP6OpxP2+h9QpxPDw8vD3evMF/bF+LAUf0v3h4eHgLvPnFMNmOPPbNm2oftgAPDw9vzDsV11YfRfVaWdUtxsPDw9vgnQpnk6VMltsr3/Hw8PA2eMmf5g2n/LivXif5OvHw8PCe4kX3yeD4zgv9PJLAw8PD+x1e9RN5438eOlQbZs18Gg8PD6/IexdH9cKYtLvyhlz06AoPDw/vEK/XKutFq8mmVJ8R4OHh4T3Fqza6Jk8TcljvEdhlDIGHh4e3wOs9yeqV2r0Io3mN4eHh4T3KSy6Mahusedz38mk8PDy8h3hV/OQRQDXUuAwj8PDw8BZ41TCiF8ImzxHmxToeHh7eNq8XyM4fWvU2bsTAw8PDm/K+ACFDkTar4zVXAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
