@@ -59,7 +59,7 @@ category: uniapp webview怎么后退返回 uniapp前进后退
 
 ## h5中修改
 接下来处理H5页面： 要在H5页面中加入uni的SDK，只有引入了这个SDK，才可以在uni-app的webview页面中使用uni的api方法 
-App 端使用 自定义组件模式 时，uni.web-view.js 的最低版为 uni.webview.1.5.2.js
+App 端使用 自定义组件模式 时，uni.web-view.js 的最低版为 <a href="./uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4.js">uni.webview.1.5.2.js</a>
 由于需要全局引入  所以直接在index.html操作了
 ```js
 <script type="text/javascript" src="./uni.webview.1.5.4.js"></script>
