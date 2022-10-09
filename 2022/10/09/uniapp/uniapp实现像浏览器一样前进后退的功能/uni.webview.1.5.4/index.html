@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="sogou_site_verification" content="pGzFNVpJoz"/>
+    
+    
+    <meta name="sogou_site_verification" content="true">
+    
+    
+    
+    <title>uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4 | 四叶草的个人博客 | 联系方式：15854388082</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="!function(e,n){&quot;object&quot;&#x3D;&#x3D;typeof exports&amp;&amp;&quot;undefined&quot;!&#x3D;typeof module?module.exports&#x3D;n():&quot;function&quot;&#x3D;&#x3D;typeof define&amp;&amp;define.amd?define(n):(e&#x3D;e||self).uni&#x3D;n()}(this,(function(){&quot;use strict&quot;;try{var e&#x3D;{};O">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uniapp&#x2F;uniapp实现像浏览器一样前进后退的功能&#x2F;uni.webview.1.5.4">
+<meta property="og:url" content="https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/index.html">
+<meta property="og:site_name" content="四叶草的个人博客">
+<meta property="og:description" content="!function(e,n){&quot;object&quot;&#x3D;&#x3D;typeof exports&amp;&amp;&quot;undefined&quot;!&#x3D;typeof module?module.exports&#x3D;n():&quot;function&quot;&#x3D;&#x3D;typeof define&amp;&amp;define.amd?define(n):(e&#x3D;e||self).uni&#x3D;n()}(this,(function(){&quot;use strict&quot;;try{var e&#x3D;{};O">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-09T08:56:32.581Z">
+<meta property="article:modified_time" content="2022-10-09T08:56:32.581Z">
+<meta property="article:author" content="四叶草">
+<meta property="article:tag" content="四叶草">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="四叶草的个人博客" href="/A-lyc/atom.xml">
+    
+    <link rel="shortcut icon" href="/A-lyc/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?502a249bf91aa7bc75f321292b2295fe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/A-lyc/img/brand.jpg)">
+      <div class="brand">
+        <a href="/A-lyc/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/A-lyc/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">四叶草</h5>
+          <a href="mailto:2294016229@qq.com" title="2294016229@qq.com" class="mail">2294016229@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                个人简历
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/production" target="_blank" >
+                <i class="icon icon-lg icon-id-badge"></i>
+                作品集
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/A-lyc/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                历史
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-10-09T08:56:32.581Z" itemprop="datePublished" class="page-time">
+  2022-10-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-10-09 16:56:32" datetime="2022-10-09T08:56:32.581Z"  itemprop="datePublished">2022-10-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            !function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e=e||self).uni=n()}(this,(function(){"use strict";try{var e={};Object.defineProperty(e,"passive",{get:function(){!0}}),window.addEventListener("test-passive",null,e)}catch(e){}var n=Object.prototype.hasOwnProperty;function i(e,i){return n.call(e,i)}var t=[];function r(){return window.__dcloud_weex_postMessage||window.__dcloud_weex_}var o=function(e,n){var i={options:{timestamp:+new Date},name:e,arg:n};if(r()){if("postMessage"===e){var o={data:[n]};return window.__dcloud_weex_postMessage?window.__dcloud_weex_postMessage(o):window.__dcloud_weex_.postMessage(JSON.stringify(o))}var a={type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}};window.__dcloud_weex_postMessage?window.__dcloud_weex_postMessageToService(a):window.__dcloud_weex_.postMessageToService(JSON.stringify(a))}if(!window.plus)return window.parent.postMessage({type:"WEB_INVOKE_APPSERVICE",data:i,pageId:""},"*");if(0===t.length){var d=plus.webview.currentWebview();if(!d)throw new Error("plus.webview.currentWebview() is undefined");var s=d.parent(),w="";w=s?s.id:d.id,t.push(w)}if(plus.webview.getWebviewById("__uniapp__service"))plus.webview.postMessageToUniNView({type:"WEB_INVOKE_APPSERVICE",args:{data:i,webviewIds:t}},"__uniapp__service");else{var u=JSON.stringify(i);plus.webview.getLaunchWebview().evalJS('UniPlusBridge.subscribeHandler("'.concat("WEB_INVOKE_APPSERVICE",'",').concat(u,",").concat(JSON.stringify(t),");"))}},a={navigateTo:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;o("navigateTo",{url:encodeURI(n)})},navigateBack:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.delta;o("navigateBack",{delta:parseInt(n)||1})},switchTab:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;o("switchTab",{url:encodeURI(n)})},reLaunch:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;o("reLaunch",{url:encodeURI(n)})},redirectTo:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=e.url;o("redirectTo",{url:encodeURI(n)})},getEnv:function(e){r()?e({nvue:!0}):window.plus?e({plus:!0}):e({h5:!0})},postMessage:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};o("postMessage",e.data||{})}},d=/uni-app/i.test(navigator.userAgent),s=/Html5Plus/i.test(navigator.userAgent),w=/complete|loaded|interactive/;var u=window.my&&navigator.userAgent.indexOf(["t","n","e","i","l","C","y","a","p","i","l","A"].reverse().join(""))>-1;var g=window.swan&&window.swan.webView&&/swan/i.test(navigator.userAgent);var v=window.qq&&window.qq.miniProgram&&/QQ/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var c=window.tt&&window.tt.miniProgram&&/toutiaomicroapp/i.test(navigator.userAgent);var m=window.wx&&window.wx.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var p=window.qa&&/quickapp/i.test(navigator.userAgent);var f=window.ks&&window.ks.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var l=window.tt&&window.tt.miniProgram&&/Lark|Feishu/i.test(navigator.userAgent);var _=window.jd&&window.jd.miniProgram&&/micromessenger/i.test(navigator.userAgent)&&/miniProgram/i.test(navigator.userAgent);var E=window.xhs&&window.xhs.miniProgram&&/xhsminiapp/i.test(navigator.userAgent);for(var h,P=function(){window.UniAppJSBridge=!0,document.dispatchEvent(new CustomEvent("UniAppJSBridgeReady",{bubbles:!0,cancelable:!0}))},b=[function(e){if(d||s)return window.__dcloud_weex_postMessage||window.__dcloud_weex_?document.addEventListener("DOMContentLoaded",e):window.plus&&w.test(document.readyState)?setTimeout(e,0):document.addEventListener("plusready",e),a},function(e){if(m)return window.WeixinJSBridge&&window.WeixinJSBridge.invoke?setTimeout(e,0):document.addEventListener("WeixinJSBridgeReady",e),window.wx.miniProgram},function(e){if(v)return window.QQJSBridge&&window.QQJSBridge.invoke?setTimeout(e,0):document.addEventListener("QQJSBridgeReady",e),window.qq.miniProgram},function(e){if(u){document.addEventListener("DOMContentLoaded",e);var n=window.my;return{navigateTo:n.navigateTo,navigateBack:n.navigateBack,switchTab:n.switchTab,reLaunch:n.reLaunch,redirectTo:n.redirectTo,postMessage:n.postMessage,getEnv:n.getEnv}}},function(e){if(g)return document.addEventListener("DOMContentLoaded",e),window.swan.webView},function(e){if(c)return document.addEventListener("DOMContentLoaded",e),window.tt.miniProgram},function(e){if(p){window.QaJSBridge&&window.QaJSBridge.invoke?setTimeout(e,0):document.addEventListener("QaJSBridgeReady",e);var n=window.qa;return{navigateTo:n.navigateTo,navigateBack:n.navigateBack,switchTab:n.switchTab,reLaunch:n.reLaunch,redirectTo:n.redirectTo,postMessage:n.postMessage,getEnv:n.getEnv}}},function(e){if(f)return window.WeixinJSBridge&&window.WeixinJSBridge.invoke?setTimeout(e,0):document.addEventListener("WeixinJSBridgeReady",e),window.ks.miniProgram},function(e){if(l)return document.addEventListener("DOMContentLoaded",e),window.tt.miniProgram},function(e){if(_)return window.JDJSBridgeReady&&window.JDJSBridgeReady.invoke?setTimeout(e,0):document.addEventListener("JDJSBridgeReady",e),window.jd.miniProgram},function(e){if(E)return window.xhs.miniProgram},function(e){return document.addEventListener("DOMContentLoaded",e),a}],y=0;y<b.length&&!(h=b[y](P));y++);h||(h={});var B="undefined"!=typeof uni?uni:{};if(!B.navigateTo)for(var S in h)i(h,S)&&(B[S]=h[S]);return B.webView=h,B}));
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2022-10-09T08:56:32.581Z" itemprop="dateUpdated">2022-10-09 16:56:32</time>
+</span><br>
+
+
+        
+        文章连接：<a href="/A-lyc/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/" target="_blank" rel="external">https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://a-lyc.github.io">
+            <img src="/A-lyc/img/avatar.jpg" alt="四叶草">
+            四叶草
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/&title=《uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/&title=《uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/A-lyc/2022/10/09/%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">第二章：面向对象</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/A-lyc/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">uniapp实现像浏览器一样前进后退的功能 uniapp在webview怎么后退返回</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "UCWNzvWWJh9L3h9gmx3ETORS-gzGzoHsz",
+            appKey: "toGuOPfkaYMbDsW2atHP6cM2",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/A-lyc/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/A-lyc/img/wechat.jpg" data-alipay="/A-lyc/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/A-lyc/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>四叶草 &copy; 2018 - 2022</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/&title=《uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4》 — 四叶草的个人博客&pic=https://a-lyc.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/&title=《uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4》 — 四叶草的个人博客&source=个人整理的数据和学习资料，碰到问题及时记录，以方便查看，以及应用" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《uniapp/uniapp实现像浏览器一样前进后退的功能/uni.webview.1.5.4》 — 四叶草的个人博客&url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/&via=https://a-lyc.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://a-lyc.github.io/2022/10/09/uniapp/uniapp%E5%AE%9E%E7%8E%B0%E5%83%8F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E6%A0%B7%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80%E7%9A%84%E5%8A%9F%E8%83%BD/uni.webview.1.5.4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,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" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/A-lyc/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
