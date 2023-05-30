@@ -952,6 +952,7 @@
 			<true/>
 			<key>URL</key>
 			<string>https://www.xmcsgo.com/</string>
+			<string>https://www.xmcsgo.com/panda-box</string>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
