@@ -167,12 +167,13 @@ export const useCounterStore = defineStore('counter', () => {
 ```
 
 ### 使用
-需要看文档这个没有搞懂怎么弄
+getters相当于计算属性和start上是一样使用的
 ```js
 import { useAlertsStore } from '../stoer/counter'
 const counter = useAlertsStore()
 console.log(counter)
 counter.count++
+console.log(counter.double)
 // 自动补全！ ✨
 // counter.$patch({ count: counter.count + 1 })
 // 或使用 action 代替
