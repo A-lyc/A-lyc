@@ -169,6 +169,7 @@ export const useCounterStore = defineStore('counter', () => {
 ### 使用
 getters相当于计算属性和start上是一样使用的
 ```js
+// 不知道为啥换成@ 找不到
 import { useAlertsStore } from '../stoer/counter'
 const counter = useAlertsStore()
 console.log(counter)
@@ -178,4 +179,96 @@ console.log(counter.double)
 // counter.$patch({ count: counter.count + 1 })
 // 或使用 action 代替
 counter.increment()
+```
+
+
+## axios 用法和之前一样
+```js
+
+import axios from 'axios'
+//git请求
+export function request(config) {
+  // 定义一个url为空，开发环境为‘/api’，非开发环境为线上地址
+  let apiurl = ''
+  // 判断环境
+  if(process.env.NODE_ENV === 'development'){
+    apiurl = ''; 
+  }else {
+    apiurl = ''
+  }
+ 
+  // 1.1.创建axios的实例
+  const instance = axios.create({
+    baseURL: apiurl,
+    // withCredentials:true
+  })
+  
+  // 2.axios的拦截器
+  // 2.1.请求拦截的作用
+  instance.interceptors.request.use(config => {
+    return config
+  },err => {
+    return err.data
+  })
+  
+  // 2.2.响应拦截
+  instance.interceptors.response.use(res => {
+    return res.data
+  },err => {
+    return err.data
+  })
+  
+  // 3.发送真正的网络请求
+  return instance(config)
+}
+
+```
+```js
+// 单独模块分出来的
+import {request} from "./index";
+
+function get_top_history(){
+  return request({
+    url: `/top_history`,
+    method:'get'
+  })
+}
+export default {
+  get_top_history
+}
+
+```
+```vue
+<template>
+  <div>
+    home
+    <div @click="counter.increment()">Current Count: {{ counter.count }}</div>
+    --- {{sum}} ---adas
+    <div @click="sum++">getters: {{ counter.double }}</div>
+    {{ historyData }}
+  </div>
+</template>
+
+<script setup>
+import { useAlertsStore } from '../stoer/counter'
+import{ref} from'vue'
+import $api from '@/api/ceshi.js'
+const counter = useAlertsStore()
+// 一定是这样要不渲染不上去
+let historyData = ref('') 
+$api.get_top_history().then(res=>{
+  historyData.value = res.data
+})
+let sum = 0
+// counter.count++
+// 自动补全！ ✨
+// counter.$patch({ count:counter.count + 1 })
+// 或使用 action 代替
+// counter.increment()
+</script>
+
+<style scoped>
+
+</style>
+
 ```
