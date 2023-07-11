@@ -9,24 +9,35 @@ category: vue
 vite 安装后，根目录下创建配置文件vite.config.js，默认加载此配置文件
 可通过工具函数定义，获得类型提示。defineConfig
 异步获取配置信息数据
+解决热更新问题 - import { resolve } from "path";
+之后resolve:{alias: {"@": resolve(__dirname, "./src")}}
 ```js
-// 类型提示
-import {defineConfig} from 'vite'
+import { defineConfig,loadEnv } from 'vite'
+import { resolve } from "path";// 全局热更新需要在这个
+import vue from '@vitejs/plugin-vue'
+// https://vitejs.dev/config/
 
-// config
-export default defineConfig(async ({command,mode})=>{
-    /**
-    * command - 命令模式 'build' | 'serve'
-    * mode - 生产、开发模式 
-    * 
-    * getConfigParam()  异步接口调用 测试使用
-    */
-    const config = await getConfigParam()
-
-    return {
-        // 响应配置
-    }
+export default defineConfig(async ({ command, mode, ssrBuild }) => {
+  console.log(mode) // 环境判断
+  const env = loadEnv(mode, process.cwd(), '')
+  console.log(env.APP_ENV) // 是否是服务器端渲染
+  if (command === 'serve') {
+  } else {
+  }
+  return {
+    server:{hmr:true},
+    resolve: {
+      // 设置文件目录别名
+      // 之后在这里配置
+      alias: {
+        "@": resolve(__dirname, "./src"),
+      },
+      extensions: [".js"],
+    },
+    plugins:[vue()],
+  }
 })
+
 ```
 
 ## vite.config.js配置
