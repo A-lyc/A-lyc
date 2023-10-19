@@ -194,7 +194,88 @@ module.exports = app => {
 }
 ```
 
-关联数据库表：
+## 关联数据库表：
+### 使用egg-sequelize 和 mysql2
+### 一对多的关联数据
+```js
+
+module.exports = (app) => {
+  const { STRING, INTEGER,DATE} = app.Sequelize;
+
+  // 创建数据库
+  const Classroom = app.model.define('class', { 
+    id: { type: INTEGER, primaryKey: true, autoIncrement: true },
+    name: STRING(30),
+    create_by: STRING(100),
+    create_time: DATE,
+    update_by: STRING(100),
+    update_time: DATE
+  });
+  
+  // 声明关系
+  // 一对一多使用
+  Classroom.associate = function (){
+    //   Classroom这个对应Student   一个班有很多学生 之后在学生表中
+    /*
+    *  // 声明关系
+    *   Student.associate = function (){
+  	*   //	学生属于一个班级，外键关联是班级id
+    *   Student.belongsTo(app.model.Classroom, { foreignKey: "class_id"});
+    *   }
+    * */
+  	// 一个班有很多学生，所以用 hasMany
+    Classroom.hasMany(app.model.Student, {as: "students"});
+  }
+  return Classroom ;
+};
+
+```
+
+### 多对多的关联数据
+```js
+// 定义模型 User
+const User = sequelize.define('User', {
+  // 用户属性
+});
+
+// 定义模型 Group
+const Group = sequelize.define('Group', {
+  // 组属性
+});
+
+// 定义中间表 UserGroup，用于连接 User 和 Group
+const UserGroup = sequelize.define('UserGroup', {
+  // 可选的中间表属性
+});
+
+// 建立多对多关联关系
+User.belongsToMany(Group, { through: UserGroup });
+Group.belongsToMany(User, { through: UserGroup });
+```
+在上面的示例中，我们定义了三个模型：User、Group 和 UserGroup。UserGroup 是一个中间表，用于连接 User 和 Group。通过 belongsToMany 方法，我们定义了 User 和 Group 之间的多对多关联关系，并指定了中间表 UserGroup。
+通过这样的关联定义，Sequelize 将会自动为你生成适当的 SQL 查询，以处理多对多关联的数据操作。你可以通过调用生成的关联方法来访问关联的数据。
+-- --
+#### 不太理解的地方
+```js
+// 创建一个用户
+const user = await User.create({ /* 用户属性 */ });
+
+// 创建一个组
+const group = await Group.create({ /* 组属性 */ });
+
+// 将用户添加到组中
+await user.addGroup(group);
+
+// 从用户中获取关联的组
+const groups = await user.getGroups();
+
+// 从组中获取关联的用户
+const users = await group.getUsers();
+```
+通过调用生成的关联方法，如 addGroup、getGroups 和 getUsers，你可以方便地进行多对多关联数据的操作。
+这只是一个简单的示例，你可以根据你的实际需求对模型和关联进行更复杂的定义。更多关于 Sequelize 多对多关联的详细信息，你可以参考 Sequelize 文档中的相关章节。
+
+
 
 ## controller 上传文件
 ```js
