@@ -77,10 +77,6 @@ reward: false       # 禁用打赏，可选，默认开启
   
 * <b>功能型网站:</b>
   ·	滨州致学网址：www.zhixue88.com（已停止运营）
-  · CSGO开箱网站：http://etskins.com（自适应网站）
-  · CSGO开箱网站：http://www.a9csgo.cn（自适应网站）
-  · CSGO开箱网站：http://www.s1skins.com/（自适应网站）
-  · CSGO开箱网站：http://www.xdcsgo.com/
   · 缪克发卡官网：https://www.miuke.net/（已停止运营）
  
   
