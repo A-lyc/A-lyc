@@ -21,18 +21,7 @@ reward: false       # 禁用打赏，可选，默认开启
 | :-----  | :----      | :---- |
 | {% link 恒麦智能科技 http://www.hengmaikj.com/ [恒麦智能科技] %} | 恒麦智能科技官网egg模板项目利于优化， | 网址：//www.hengmaikj.com/ |
 | {% link 恒麦只能科技后台  %} | 后端:egg,node; 前端：vue-element-admin后台管理系统 | 网址：暂不提供 |
-| {% link 100steam http://www.100steam.com/home [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//www.100steam.com/ |
-| {% link ET http://www.etskins.com [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//www.etskins.com/ |
-| {% link xdcsgo http://www.xdcsgo.com [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//www.xdcsgo.com/ |
-| {% link zkcsgo http://zkcsgo.com/Home [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//zkcsgo.com/ |
-| {% link s1skins http://s1skins.com/ [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//s1skins.com/ |
-| {% link a9csgo http://a9csgo.com/ [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//a9csgo.com/ |
-| {% link srskins http://srskins.com/ [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//srskins.com/ |
-| {% link hellocsgo http://hellocsgo.com/ [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//hellocsgo.com/ |
-| {% link 92skins http://www.92skins.com/home [CSGO] %} | vue，element，老虎机，web端，手机端， | 网址：//www.92skins.com/ |
-| {% link 97skins http://www.97skins.cn/home [CSGO] %} | vue，element，老虎机，自适应， | 网址：//www.97skins.cn/ |
 | {% link 缪克发卡 https://www.miuke.net/ [缪克发卡] %} | 原生html，css，js，含有layui后台 | 网址：//www.miuke.net/ |
-| {% link skinworld http://m.skinworld.cc [CS:GO] %} | uniappp，h5，实时通讯，渣渣老虎机，无PC端 | 网址：http://m.skinworld.cc |
 | {% link 滨州致学 https://www.zhixue88.com/ [滨州致学] %} | 服务器端渲染，nuxt.js | 网址：https://www.zhixue88.com/ |
 | {% link 滨州致学小程序 https://www.zhixue88.com/ [滨州致学小程序] %} | 小程序，微信搜索致学网，即可 | 网址：http://m.zhixue88.com/ |
 | {% link 海信地产 https://www.haixindichan.com/ [海信地产] %} | 海信地产小程序（合作完成）微信搜索海信家，即可 | 网址：https://www.haixindichan.com/ |
